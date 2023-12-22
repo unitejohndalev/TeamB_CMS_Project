@@ -1,0 +1,34 @@
+{
+     "courses" : [
+        {
+            "id": 1,
+            "courseNum": "Course 1",
+            "courseTitle" : "Introduction to Programming",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
+        },
+        {
+            "id": 2,
+            "courseNum": "Course 2",
+            "courseTitle" : "Cloud Computing",
+            "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
+        },
+        {
+            "id": 3,
+            "courseNum": "Course 3",
+            "courseTitle" : "Java Programming",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
+        },
+        {
+            "id": 4,
+            "courseNum": "Course 4",
+            "courseTitle" : "HTML, CSS, and Bootstrap",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
+        },
+        {
+            "id": 5,
+            "courseNum": "Course 5",
+            "courseTitle" : "Network Admin Security",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
+        }
+    ]
+}
