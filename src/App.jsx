@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Dashboard />
-      hello world hello hi hi
+   hello
     </>
   );
 }
