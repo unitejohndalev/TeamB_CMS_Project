@@ -9,10 +9,13 @@ import CourseList from "./components/CourseList & AddCourseList/CourseList";
 function App() {
   return (
     <>
+      <Nav />
       <Dashboard />
-   first commit
+      <Footer/>
     </>
   );
 }
+
+
 
 export default App;
