@@ -17,7 +17,7 @@ const Nav = () => {
             src={logo}
             alt="tsukidenLogo"
           />
-          <div className="hidden lg:flex lg:items-end lg:w-[30%] lg:justify-between">
+          <div className="hidden lg:flex lg:items-end lg:w-[30%] lg:pl-10 lg:justify-between">
             <ul>Dashboard</ul>
             <ul>Profile</ul>
             <ul>My Course</ul>
@@ -28,9 +28,7 @@ const Nav = () => {
               className="text-[2rem]"
               onClick={() => setShow((prev) => !prev)}
             />
-            {show && (
-            <NavSideBar/>
-            )}
+            {show && <NavSideBar />}
           </div>
         </div>
       </nav>
