@@ -5,13 +5,14 @@ import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
 import PersonalInfo from "./components/PersonalInfo";
 import CourseList from "./components/CourseList & AddCourseList/CourseList";
+import LogIn from "./components/LogIn";
 
 function App() {
   return (
     <>
       <Nav />
-      <Dashboard />
-      <Footer/>
+      <Profile/>
+      <Footer />
     </>
   );
 }

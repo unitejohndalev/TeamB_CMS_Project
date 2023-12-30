@@ -44,18 +44,18 @@ const DashboardCard = () => {
           View Courses
         </button>
       </div>
-      <div className="flex flex-col items-center gap-5 mt-2 bg-white">
+      <div className="flex flex-col lg:flex-row lg:w-[90%] lg:m-auto lg:mt-5 items-center gap-5 mt-2 bg-white">
         {courses.map((course, idx) => {
           return (
-            <div key={idx} className="w-[95%] shadow-md rounded-sm">
+            <div key={idx} className="w-[95%] shadow-md rounded-sm ">
               <div className="bg-[#BCE8B1] flex flex-col py-10 px-5 rounded-t-sm">
                 <p className="text-[#278510]">{course.courseNum}:</p>
-                <p className="text-[#278510] font-bold text-[1.2rem]">
+                <p className="text-[#278510] font-bold text-[1.2rem] lg:h-[8vh]">
                   {course.courseTitle}
                 </p>
               </div>
               <div className="bg-[#87D275] p-5 rounded-b-sm text-justify">
-                <p>{course.description}</p>
+                <p className="">{course.description}</p>
                 <button className="text-[#1E6C0B] pt-3 font-bold">
                   See more
                 </button>
