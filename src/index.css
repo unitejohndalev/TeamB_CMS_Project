@@ -7,7 +7,7 @@
 
 @layer components {
   .btn-style {
-    @apply bg-[#126912] rounded-md py-2 lg:px-[2rem] lg:py-[.8rem] text-white font-medium
+    @apply bg-[#126912] rounded-sm py-2 lg:px-[2rem] lg:py-[.8rem] text-white font-bold
 
   }
   .input-style {
