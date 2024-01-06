@@ -1,27 +1,54 @@
-import { useState } from "react";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { useState, useEffect } from 'react';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import axios from 'axios';
 
 function MyForm() {
-  const [inputs, setInputs] = useState({});
+  const [users, setUsers] = useState([]);
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
+  const [user, setUser] = useState({
+    fname: '',
+    username: '',
+    email: '',
+  });
+
+  useEffect(() => {
+    const loadUsers = async () => {
+      const result = await axios.get('http://localhost:8080/users');
+      setUsers(result.data);
+    };
+    loadUsers();
+  }, []);
+
+  const handleInputChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Form Data:", inputs);
-    // You can perform further actions, such as sending the data to a server.
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios.post('http://localhost:8080/user', user);
   };
 
-
+  console.log(users);
+  const { email, password } = user;
   return (
     <div
       className="relative shadow-md h-full w-[90vw] mt-10 m-auto
     lg:max-w-[740px]
     ">
+      {
+        //for fetching data to show in
+        users.map((user, idx) => {
+          return (
+            <div key={idx}>
+              ,<p>{user.id}</p>
+              <p>{user.name}</p>
+              <p>{user.username}</p>
+              <p>{user.email}</p>
+              <p>{user.password}</p>
+            </div>
+          );
+        })
+      }
       <div className="flex flex-col items-center justify-center">
         <p className="text-[#4D4141] font-bold text-[1.5rem] lg:text-[2rem] text-center">
           Sign in to your account.
@@ -30,16 +57,16 @@ function MyForm() {
           Be part of the success.
         </p>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => handleSubmit(e)}
           className="flex flex-col w-[90%] min-h-[40vh] lg:mt-5 justify-between lg:flex lg:items-center">
           <div className="mt-10 h-[15vh] flex flex-col justify-between lg:w-[100%] lg:h-[17vh]">
             <input
               className="input-style"
               placeholder="Email Address"
-              type="text"
+              type="email"
               name="email"
-              value={inputs.email || ""}
-              onChange={handleChange}
+              value={email}
+              onChange={(e) => handleInputChange(e)}
             />
 
             <input
@@ -47,8 +74,8 @@ function MyForm() {
               placeholder="Password"
               type="password"
               name="password"
-              value={inputs.password || ""}
-              onChange={handleChange}
+              value={password}
+              onChange={(e) => handleInputChange(e)}
             />
           </div>
 

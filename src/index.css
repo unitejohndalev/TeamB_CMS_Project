@@ -7,18 +7,16 @@
 
 @layer components {
   .btn-style {
-    @apply bg-[#126912] rounded-sm py-2 lg:px-[2rem] lg:py-[.8rem] text-white font-bold
-
+    @apply bg-[#126912] rounded-sm py-2 lg:px-[2rem] lg:py-[.8rem] text-white font-bold;
   }
   .input-style {
     @apply drop-shadow-md px-4 py-3 placeholder:font-thin placeholder:text-[.9rem] w-full 
-    outline-none rounded-md
+    outline-none rounded-md;
   }
 }
 
-
 * {
-  font-family: "Inter";
+  font-family: 'Inter';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -74,8 +72,6 @@ ul {
   align-items: center;
 }
 
-
-
 /*dashboard*/
 .dash-card-container {
   display: flex;
@@ -118,25 +114,25 @@ ul {
   opacity: 0;
   transition: 0.3s ease-out;
 }
-.dash-card{
-  background-color: #BCE8B1;
+.dash-card {
+  background-color: #bce8b1;
 }
 .dash-text-body {
   background-color: #96c58a;
   color: rgb(0, 0, 0);
 }
-.dash-card-details{
-  background-color: #BCE8B1;
+.dash-card-details {
+  background-color: #bce8b1;
 }
 
 /*Text*/
 .dash-text-title {
-  background-color: #BCE8B1;
+  background-color: #bce8b1;
   font-size: 1em;
   font-weight: 300;
 }
 .dash-h3-card {
-  background-color: #BCE8B1;
+  background-color: #bce8b1;
 }
 
 /*Hover*/
@@ -223,13 +219,13 @@ ul {
 }
 
 /*CourseList*/
-.first{
+.first {
   width: 100px;
   height: 100px;
   background: red;
   overflow: hidden;
 }
-.CourseList-container{
+.CourseList-container {
   display: grid;
   justify-content: center;
 }
@@ -291,7 +287,6 @@ ul {
 .CourseList-h3-card {
   background-color: #0e3b03;
   color: #fff;
-
 }
 
 /*Hover*/
