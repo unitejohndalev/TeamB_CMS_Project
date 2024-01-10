@@ -1,8 +1,8 @@
 const PersonalInfo = () => {
   return (
     <>
-      <div className="w-[90%] flex flex-col m-auto h-full shadow-lg">
-        <form className="flex flex-col h-full gap-y-5 w-[90%] m-auto">
+      <div className="w-[90%] flex flex-col m-auto h-full shadow-lg lg:w-[700px]">
+        <form className="flex flex-col h-full gap-y-5 w-[90%] m-auto ">
           <img src="" alt="" />
           <input
             type="text"
@@ -20,7 +20,7 @@ const PersonalInfo = () => {
             className="input-style"
             placeholder="Contact Number*"
           />
-        <button className="mb-5 btn-style w-full m-auto">Update</button>
+          <button className="mb-5 btn-style w-full m-auto">Update</button>
         </form>
       </div>
     </>
