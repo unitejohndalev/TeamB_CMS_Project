@@ -40,7 +40,7 @@ const DashboardCard = () => {
         <p className="italic text-[1.5rem] font-bold text-[#67836B] text-opacity-[25%] pb-10 lg:pb-20">
           Learn your way at Tsukiden.
         </p>
-        <button className="px-5 font-normal btn-style">
+        <button className="px-5 font-normal btn-style jus">
           View Courses
         </button>
       </div>
