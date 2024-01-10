@@ -3,33 +3,33 @@ import { IoIosArrowRoundForward } from 'react-icons/io';
 import axios from 'axios';
 
 function MyForm() {
-  const [users, setUsers] = useState([]);
+  const [instructors, setInstructors] = useState([]);
 
-  const [user, setUser] = useState({
-    fname: '',
-    username: '',
-    email: '',
+  const [instructor, setInstructor] = useState({
+    instructor_name: '',
+    instructor_username: '',
+    instructor_email: '',
   });
 
   useEffect(() => {
-    const loadUsers = async () => {
-      const result = await axios.get('http://localhost:8080/users');
-      setUsers(result.data);
+    const loadInstructors = async () => {
+      const result = await axios.get('http://localhost:8080/instructors');
+      setInstructors(result.data);
     };
-    loadUsers();
+    loadInstructors();
   }, []);
 
   const handleInputChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setInstructor({ ...instructor, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:8080/user', user);
+    await axios.post('http://localhost:8080/instructor', instructor);
   };
 
-  console.log(users);
-  const { email, password } = user;
+  console.log(instructors);
+  const { email, password } = instructor;
   return (
     <div
       className="relative shadow-md h-full w-[90vw] mt-10 m-auto
@@ -37,14 +37,13 @@ function MyForm() {
     ">
       {
         //for fetching data to show in
-        users.map((user, idx) => {
+        instructors.map((instructor, idx) => {
           return (
             <div key={idx}>
-              ,<p>{user.id}</p>
-              <p>{user.name}</p>
-              <p>{user.username}</p>
-              <p>{user.email}</p>
-              <p>{user.password}</p>
+              ,<p>{instructor.name}</p>
+              <p>{instructor.username}</p>
+              <p>{instructor.email}</p>
+              <p>{instructor.password}</p>
             </div>
           );
         })
