@@ -29,22 +29,10 @@ const DashboardCard = () => {
   //*NOTE
   //for now I'll be displaying a data coming from a json format file
   //destructure the data
-  const { courses } = data;
-  return (
-    <div className="w-full h-full">
-      {/* change bg color to provided img */}
-      <div className="flex flex-col items-center justify-center w-full py-10 mt-3 bg-green-400 shadow-lg lg:py-15">
-        <p className="text-[1.5rem] font-bold text-white w-[80%] text-center mb-2">
-          月伝で自分のやり方を学びましょう。
-        </p>
-        <p className="italic text-[1.5rem] font-bold text-[#67836B] text-opacity-[25%] pb-10 lg:pb-20">
-          Learn your way at Tsukiden.
-        </p>
-        <button className="px-5 font-normal btn-style jus">
-          View Courses
-        </button>
-      </div>
-      <div className="flex flex-col lg:flex-row lg:w-[90%] lg:m-auto lg:mt-5 items-center gap-5 mt-2 bg-white">
+ const { courses } = data;
+    return (
+      <div>
+       <div className="flex flex-col lg:flex-row lg:w-[90%] lg:m-auto lg:mt-5 items-center gap-5 mt-2 bg-white">
         {courses.map((course, idx) => {
           return (
             <div key={idx} className="w-[95%] shadow-md rounded-sm ">
@@ -64,8 +52,8 @@ const DashboardCard = () => {
           );
         })}
       </div>
-    </div>
-  );
+      </div>
+    );
 };
 
 export default DashboardCard;
