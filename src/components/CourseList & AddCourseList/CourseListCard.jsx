@@ -42,7 +42,7 @@ const CourseListCard = () => {
               <p className="">{course.description}</p>
               </div>
  
-                <p className="text-[#278510] font-bold text-[1.2rem] lg:h-[8vh] self-center mx-10 ">
+                <p className="text-[#278510] font-bold text-[1.2rem] lg:h-[8vh] self-center mx-10 	background-color: rgb(188 232 177); ">
                   {course.courseTitle}
                 </p>
               </div>
