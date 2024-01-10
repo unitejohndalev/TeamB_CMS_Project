@@ -1,48 +1,60 @@
-import React from "react";
+/*January 10, 2024*/
+import React, { useState } from "react";
+
+//import mock data json file
+import data from "../../mockData/CourselistCard.json";
+
+
 const CourseListCard = () => {
+  // *NOTE
+  //if data is coming from db use useState hook to store the data
+  //sample: const [courses, setCourses] = useState([])
+
+  //*NOTE
+  //use GET function of axios and use useEffect hook
+  /*sample: useEffect(() => {
+  loadCourses();
+
+  }, []);
+  
+    const loadCourses = async () => {
+    const result = await axios.get("http://localhost:8080/courses");
+    setCourses(result.data);
+    }
+    */
+
+  //after getting the data display it using map
+  //get your react hook where you store the data coming from db
+  //sample: courses.map((course, idx) {return(your code here)});
+
+  //*NOTE
+  //for now I'll be displaying a data coming from a json format file
+  //destructure the data
+ const { courselist } = data;
     return (
       <div>
-        <div style={{textAlign: 'center'}}>
-        <h1>Course List</h1>
-        </div>
-       
-        <div className="CourseList-container">
-          <div className="CourseList-card">
-            <div className="CourseList-card-details">
-              <p className="CourseList-text-title">PL001:</p>
-              <h3 className='CourseList-h3-card'>Java Programming</h3>
+       <div className="flex flex-col lg:center-row lg:w-[90%] lg:m-auto lg:mt-5 items-center gap-5 mt-2 bg-white">
+        {courselist.map((course, idx) => {
+          return (
+            <div key={idx} className="w-full  shadow-md rounded-sm ">
+              <div className="bg-[#BCE8B1] flex  py-0 px-0 rounded-t-sm ">
+              <div className="bg-[#87D275] p-10 rounded-b-sm text-justify">
+              <p className="">{course.description}</p>
+              </div>
+ 
+                <p className="text-[#278510] font-bold text-[1.2rem] lg:h-[8vh] self-center mx-10 	background-color: rgb(188 232 177); ">
+                  {course.courseTitle}
+                </p>
+              </div>
+   
+             
             </div>
-            <button className="CourseList-button">More info</button>
-          </div> <br /><br />
-  
-          <div className="CourseList-card">
-            <div className="CourseList-card-details">
-              <p className="CourseList-text-title">PL002:</p>
-              <h3 className='CourseList-h3-card'>Basic HTML & CSS</h3>
-            </div>
-            <button className="CourseList-button">More info</button>
-          </div> <br /><br />
-  
-          <div className="CourseList-card">
-            <div className="CourseList-card-details">
-              <p className="CourseList-text-title">PL003:</p>
-              <h3 className='CourseList-h3-card'>C++ Programming</h3>
-            </div>
-            <button className="CourseList-button">More info</button>
-          </div> <br /><br />
-  
-          <div className="CourseList-card">
-            <div className="CourseList-card-details">
-              <p className="CourseList-text-title">PL004:</p>
-              <h3 className='CourseList-h3-card'>C# Programming for Beginners</h3>
-            </div>
-            <button className="CourseList-button">More info</button>
-          </div> <br /><br />
-         
-        </div>
+          );
+        })}
+      </div>
       </div>
     );
-  };
-  
-  export default CourseListCard;
-  
+};
+
+export default CourseListCard;
+/*January 10, 2024*/

@@ -6,12 +6,13 @@ import Dashboard from "./components/Dashboard";
 import PersonalInfo from "./components/PersonalInfo";
 import CourseList from "./components/CourseList & AddCourseList/CourseList";
 import LogIn from "./components/LogIn";
+import DashboardCard from "./components/DashboardCard";
 
 function App() {
   return (
     <>
       <Nav />
-      <Profile/>
+      <CourseList/>
       <Footer />
     </>
   );
