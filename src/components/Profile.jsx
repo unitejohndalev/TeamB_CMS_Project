@@ -13,10 +13,10 @@ const Profile = () => {
       <div>
         <div>
         {/* Use react icon instead of word back */}
-          <span>arrow</span>
+          <span>arrow back</span>
         </div>
-        <div>
-          <div>
+        <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center lg:gap-5 lg:mt-5">
+          <div className="lg:w-[30%] lg:h-[30vh] lg:shadow-lg">
             <p>Account Details</p>
             {/* Make Personal Information & Acc Details clickable */}
             {/* When element Personal Info clicked, must navigate to Personal Info Component same as Acc Details */}
