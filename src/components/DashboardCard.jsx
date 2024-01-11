@@ -47,6 +47,7 @@ const DashboardCard = () => {
       <div className="flex flex-col lg:flex-row lg:w-[90%] lg:m-auto lg:mt-5 items-center gap-5 mt-2 bg-white">
         {courses.map((course, idx) => {
           return (
+            // 1/11/2024
             <div key={idx} className="w-[95%] shadow-md rounded-sm ">
               <div className="bg-[#BCE8B1] flex flex-col py-10 px-5 rounded-t-sm">
                 <p className="text-[#278510]">{course.courseNum}:</p>
