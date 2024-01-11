@@ -2,23 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* TODO: */
 /* *BUTTON STYLE */
 
+
 @layer components {
   .btn-style {
-    @apply bg-[#126912] rounded-sm py-2 lg:px-[2rem] lg:py-[.8rem] text-white font-bold
-
+    @apply bg-[#126912] rounded-sm py-2 lg:px-[2rem] lg:py-[.8rem] text-white font-bold;
   }
   .input-style {
-    @apply drop-shadow-md px-4 py-3 placeholder:font-thin placeholder:text-[.9rem] w-full 
-    outline-none rounded-md
+    @apply drop-shadow-md px-4 py-3 placeholder:font-thin placeholder:text-[.9rem] w-full
+    outline-none rounded-md;
   }
 }
 
 
 * {
-  font-family: "Inter";
+  font-family: 'Inter';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -36,12 +37,14 @@
   padding: 0;
 }
 
+
 .nav-container-left {
   display: flex;
   justify-content: space-between;
   list-style: none;
   background-color: #bce8b1;
 }
+
 
 .nav-container-right {
   display: flex;
@@ -66,6 +69,7 @@ ul {
   margin: 10px;
 }
 
+
 /*  main*/
 .main-container {
   display: flex;
@@ -73,7 +77,6 @@ ul {
   height: 80vh;
   align-items: center;
 }
-
 
 
 /*dashboard*/
@@ -103,6 +106,7 @@ ul {
   place-content: center;
 }
 
+
 .dash-button {
   transform: translate(-50%, 125%);
   width: 60%;
@@ -118,32 +122,35 @@ ul {
   opacity: 0;
   transition: 0.3s ease-out;
 }
-.dash-card{
-  background-color: #BCE8B1;
+.dash-card {
+  background-color: #bce8b1;
 }
 .dash-text-body {
   background-color: #96c58a;
   color: rgb(0, 0, 0);
 }
-.dash-card-details{
-  background-color: #BCE8B1;
+.dash-card-details {
+  background-color: #bce8b1;
 }
+
 
 /*Text*/
 .dash-text-title {
-  background-color: #BCE8B1;
+  background-color: #bce8b1;
   font-size: 1em;
   font-weight: 300;
 }
 .dash-h3-card {
-  background-color: #BCE8B1;
+  background-color: #bce8b1;
 }
+
 
 /*Hover*/
 .dash-card:hover {
   border-color: #126912;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
+
 
 .dash-card:hover .dash-button {
   transform: translate(-50%, 50%);
@@ -154,6 +161,7 @@ ul {
   display: flex;
   justify-content: space-around;
 }
+
 .profile-card {
   width: 300px;
   height: 220px;
@@ -169,11 +177,13 @@ ul {
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
 }
 
+
 .profile-card-title {
   font-size: 1.2em;
   font-weight: 800;
   color: rgb(26, 26, 26);
 }
+
 
 .profile-card-option {
   text-align: center;
@@ -193,6 +203,7 @@ ul {
   padding: 1.5rem;
 }
 
+
 .picture-left {
   justify-content: center;
   width: 500px;
@@ -200,6 +211,7 @@ ul {
   border-radius: 0.75rem;
   background-color: black;
 }
+
 
 .information-right {
   display: flex;
@@ -209,11 +221,13 @@ ul {
   gap: 1.25rem;
 }
 
+
 .update-details {
   height: 3.5rem;
   width: 100%;
   border-radius: 1rem;
 }
+
 
 .bottom {
   margin-top: auto;
@@ -222,14 +236,15 @@ ul {
   gap: 0.75rem;
 }
 
+
 /*CourseList*/
-.first{
+.first {
   width: 100px;
   height: 100px;
   background: red;
   overflow: hidden;
 }
-.CourseList-container{
+.CourseList-container {
   display: grid;
   justify-content: center;
 }
@@ -251,6 +266,7 @@ ul {
   display: center;
 }
 
+
 .CourseList-card-details {
   background-color: #0e3b03;
   color: black;
@@ -259,7 +275,6 @@ ul {
   display: grid;
   place-content: center;
 }
-
 .CourseList-button {
   transform: translate(-50%, 125%);
   width: 60%;
@@ -276,10 +291,12 @@ ul {
   transition: 0.3s ease-out;
 }
 
+
 .CourseList-text-body {
   background-color: #0e3b03;
   color: rgb(250, 250, 250);
 }
+
 
 /*Text*/
 .CourseList-text-title {
@@ -291,14 +308,15 @@ ul {
 .CourseList-h3-card {
   background-color: #0e3b03;
   color: #fff;
-
 }
+
 
 /*Hover*/
 .CourseList-card:hover {
   border-color: #1e6c0b;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
+
 
 .CourseList-card:hover .CourseList-button {
   transform: translate(-50%, 50%);
@@ -308,29 +326,12 @@ button:hover {
   background-color: #7cca69;
 }
 
+
 /*footer*/
 .footer-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr, 1fr); /* Two columns */
-  grid-template-rows: repeat(1, 2fr);
-  justify-content: center;
-
-}
-
-.grid-item {
-  border-color: #1e6c0b;
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-  padding: 10px;
-  background-color: #7cca69;
-  justify-content: center;
-  width: 600px;
-
 }
 
 
