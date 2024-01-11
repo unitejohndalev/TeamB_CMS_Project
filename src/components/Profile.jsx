@@ -29,9 +29,9 @@ const Profile = () => {
           </div>
       <div>
       {/* Place your Component here */}
-        {/* <PersonalInfo/> */}
-        {/* Place AccDetails Component here */}
-        <AccDetails/>
+         <PersonalInfo/>
+        {/* /* Place AccDetails Component here */}
+        {/* <AccDetails/> */}
       </div>
         </div>
       </div>
