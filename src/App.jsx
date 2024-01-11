@@ -7,17 +7,14 @@ import PersonalInfo from './components/PersonalInfo';
 import CourseList from './components/CourseList & AddCourseList/CourseList';
 import LogIn from './components/LogIn';
 
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-
 function App() {
  
   return (
     <>
     
       <Nav />
+      
      
-    
       <LogIn/>
      
       <Footer />

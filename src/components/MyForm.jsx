@@ -6,10 +6,8 @@ function MyForm() {
   const [instructors, setInstructors] = useState([]);
 
   const [instructor, setInstructor] = useState({
-    instructor_name: '',
-    instructor_username: '',
-    email: '',
-    password:'',
+    instructor_email: ' ',
+    instructor_password:' ',
   });
 
   useEffect(() => {
@@ -18,18 +16,19 @@ function MyForm() {
       setInstructors(result.data);
     };
     loadInstructors();
-  }, []);
+  }, [])
 
-  const handleInputChange = (e) => {
+  const onInputChange = (e) => {
     setInstructor({ ...instructor, [e.target.name]: e.target.value });
-  };
+  }
 
-  const handleSubmit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:8080/instructor", instructor);
   };
 
   console.log(instructors);
+  
   const {email, password } = instructor;
   return (
     <div
@@ -37,17 +36,17 @@ function MyForm() {
     lg:max-w-[740px]
     ">
       {
-        /*for fetching data to show in
+        //for fetching data to show in
         instructors.map((instructor, idx) => {
           return (
             <div key={idx}>
-             , <p>{instructor.name}</p>
-              <p>{instructor.username}</p>
-              <p>{instructor.email}</p>
-              <p>{instructor.password}</p>
+             <p>{instructor.instructor_name}</p>
+              <p>{instructor.instructor_username}</p>
+              <p>{instructor.instructor_email}</p>
+              <p>{instructor.instructor_password}</p>
             </div>
           );
-        })*/
+        })
       }
       <div className="flex flex-col items-center justify-center">
         <p className="text-[#4D4141] font-bold text-[1.5rem] lg:text-[2rem] text-center">
@@ -57,7 +56,7 @@ function MyForm() {
           Be part of the success.
         </p>
         <form
-         // onSubmit={(e) => handleSubmit(e)}
+          onSubmit={(e) => onSubmit(e)}
           className="flex flex-col w-[90%] min-h-[40vh] lg:mt-5 justify-between lg:flex lg:items-center">
           <div className="mt-10 h-[15vh] flex flex-col justify-between lg:w-[100%] lg:h-[17vh]">
             <input
@@ -66,7 +65,7 @@ function MyForm() {
               type="email"
               name="email"
               value={email}
-            // onChange={(e) => handleInputChange(e)}
+            onChange={(e) => onInputChange(e)}
             />
 
             <input
@@ -75,7 +74,7 @@ function MyForm() {
               type="password"
               name="password"
               value={password}
-              //onChange={(e) => handleInputChange(e)}
+              onChange={(e) => onInputChange(e)}
             />
           </div>
 
