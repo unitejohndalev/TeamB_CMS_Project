@@ -332,6 +332,28 @@ button:hover {
   width: 600px;
 
 }
+nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
+nav .button {
+  float: right; /* Align the button to the right side */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
 
 /*AddNewCourseCard*/

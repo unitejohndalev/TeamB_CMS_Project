@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 //import mock data json file
 import data from "../mockData/MockData.json";
 
 
 const DashboardCard = () => {
+  
   // *NOTE
   //if data is coming from db use useState hook to store the data
   //sample: const [courses, setCourses] = useState([])

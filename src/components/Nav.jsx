@@ -4,6 +4,8 @@ import logo from "../assets/companyLogo.png";
 //import react icon
 import { GiHamburgerMenu } from "react-icons/gi";
 import NavSideBar from "./NavSideBar";
+import { Link } from "react-router-dom";
+
 
 const Nav = () => {
   //react hook for showing and hiding element
@@ -18,10 +20,17 @@ const Nav = () => {
             alt="tsukidenLogo"
           />
           <div className="hidden lg:flex lg:items-end lg:w-[30%] lg:pl-10 lg:justify-between">
-            <ul>Dashboard</ul>
-            <ul>Profile</ul>
-            <ul>My Course</ul>
-            <ul>Forum</ul>
+            <Link to="/">
+            <button ><ul>Dashboard</ul></button>
+            </Link>
+            <Link to="/profile">
+            <button><ul>Profile</ul></button>
+            </Link>
+            <Link to="/courselist">
+            <button><ul>My Course</ul></button>
+            </Link>
+            <button> <ul>Forum</ul></button>
+      
           </div>
           <div className="relative flex items-center px-3 lg:hidden">
             <GiHamburgerMenu
