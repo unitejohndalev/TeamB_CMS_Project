@@ -1,5 +1,6 @@
 import React from "react";
 import PersonalInfo from "./PersonalInfo";
+import AccDetails from "./AccDetails";
 
 const Profile = () => {
   // To make PersonalInfo appear when Personal Information is clicked use
@@ -15,6 +16,7 @@ const Profile = () => {
         {/* Use react icon instead of word back */}
           <span>arrow back</span>
         </div>
+        {/* 1/11/2024 fix nav */}
         <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center lg:gap-5 lg:mt-5">
           <div className="lg:w-[30%] lg:h-[30vh] lg:shadow-lg">
             <p>Account Details</p>
@@ -27,8 +29,9 @@ const Profile = () => {
           </div>
       <div>
       {/* Place your Component here */}
-        <PersonalInfo/>
+        {/* <PersonalInfo/> */}
         {/* Place AccDetails Component here */}
+        <AccDetails/>
       </div>
         </div>
       </div>
