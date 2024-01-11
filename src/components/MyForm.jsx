@@ -1,27 +1,56 @@
-import { useState } from "react";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import { useState, useEffect } from 'react';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import axios from 'axios';
 
 function MyForm() {
-  const [inputs, setInputs] = useState({});
+  //january 11 2024
+  const [instructors, setInstructors] = useState([]);
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs((values) => ({ ...values, [name]: value }));
+  const [instructor, setInstructor] = useState({
+    instructor_name: '',
+    instructor_username: '',
+    instructor_email: '',
+  });
+
+  useEffect(() => {
+    const loadInstructors = async () => {
+      const result = await axios.get('http://localhost:8080/instructors');
+      setInstructors(result.data);
+    };
+    loadInstructors();
+  }, []);
+
+  const handleInputChange = (e) => {
+    setInstructor({ ...instructor, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Form Data:", inputs);
-    // You can perform further actions, such as sending the data to a server.
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios.post('http://localhost:8080/instructor', instructor);
   };
 
-
+  console.log(instructors);
+  const { email, password } = instructor;
+  //january 11 2024
   return (
     <div
       className="relative shadow-md h-full w-[90vw] mt-10 m-auto
     lg:max-w-[740px]
     ">
+      {
+        //for fetching data to show in
+        instructors.map((instructor, idx) => {
+          return (
+            <div key={idx}>
+              ,<p>{instructor.instructor_name}</p>
+              <p>{instructor.instructor_username}</p>
+              <p>{instructor.instructor_email}</p>
+              <p>{instructor.instructor_password}</p>
+            </div>
+          );
+        })
+      }
+       {/*january102024*/}
       <div className="flex flex-col items-center justify-center">
         <p className="text-[#4D4141] font-bold text-[1.5rem] lg:text-[2rem] text-center">
           Sign in to your account.
@@ -29,26 +58,27 @@ function MyForm() {
         <p className="text-[#4D4141] font-bold text-[1.5rem] lg:text-[2rem] text-center">
           Be part of the success.
         </p>
+       
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => handleSubmit(e)} 
           className="flex flex-col w-[90%] min-h-[40vh] lg:mt-5 justify-between lg:flex lg:items-center">
           <div className="mt-10 h-[15vh] flex flex-col justify-between lg:w-[100%] lg:h-[17vh]">
             <input
               className="input-style"
               placeholder="Email Address"
-              type="text"
-              name="email"
-              value={inputs.email || ""}
-              onChange={handleChange}
+              type="email"
+              name="instructor_email"
+              value={email}
+              onChange={(e) => handleInputChange(e)}
             />
 
             <input
               className="input-style"
               placeholder="Password"
               type="password"
-              name="password"
-              value={inputs.password || ""}
-              onChange={handleChange}
+              name="instructor_password"
+              value={password}
+              onChange={(e) => handleInputChange(e)}
             />
           </div>
 
@@ -61,6 +91,7 @@ function MyForm() {
             </div>
           </button>
         </form>
+         {/*january102024*/}
       </div>
     </div>
   );
