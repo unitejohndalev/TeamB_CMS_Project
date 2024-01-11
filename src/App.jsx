@@ -14,6 +14,7 @@ import DashboardCard from "./components/DashboardCard";
 function App() {
   return (
     <><Nav/>
+    <LogIn/>
     <Routes>
       <Route path="/" element={<Dashboard />}/>
       <Route path="/courselist" element={<CourseList/>}/>
