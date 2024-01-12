@@ -15,11 +15,7 @@ function App() {
   return (
     <><Nav/>
     <LogIn/>
-    <Routes>
-      <Route path="/" element={<Dashboard />}/>
-      <Route path="/courselist" element={<CourseList/>}/>
-      <Route path="/profile" element={<Profile/>}/>
-    </Routes>
+   
       <Footer/>
     </>
   );
