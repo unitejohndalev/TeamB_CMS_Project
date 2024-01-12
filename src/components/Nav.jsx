@@ -19,7 +19,8 @@ const Nav = () => {
             src={logo}
             alt="tsukidenLogo"
           />
-          <div className="hidden lg:flex lg:items-end lg:w-[30%] lg:pl-10 lg:justify-between">
+          <div className="hidden lg:flex lg:items-end lg:w-[35%] lg:pl-10 lg:justify-between">
+          {/* 1/11/2024 */}
             <Link to="/">
             <button ><ul>Dashboard</ul></button>
             </Link>
@@ -29,7 +30,7 @@ const Nav = () => {
             <Link to="/courselist">
             <button><ul>My Course</ul></button>
             </Link>
-            <button> <ul>Forum</ul></button>
+
       
           </div>
           <div className="relative flex items-center px-3 lg:hidden">
