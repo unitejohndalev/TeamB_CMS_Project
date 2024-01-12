@@ -5,6 +5,10 @@ import logo from "../../assets/companyLogo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import NavSideBar from "./NavSideBar";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD:src/components/NavBar/Nav.jsx
+=======
+
+>>>>>>> main:src/components/Nav.jsx
 
 const Nav = () => {
   //react hook for showing and hiding element
@@ -18,6 +22,7 @@ const Nav = () => {
             src={logo}
             alt="tsukidenLogo"
           />
+<<<<<<< HEAD:src/components/NavBar/Nav.jsx
           <div className="hidden lg:flex lg:items-end lg:w-[30%] lg:pl-10 lg:justify-between">
             {/* 1/11/2024 */}
             <Link to="/">
@@ -35,6 +40,21 @@ const Nav = () => {
                 <ul>My Course</ul>
               </button>
             </Link>
+=======
+          <div className="hidden lg:flex lg:items-end lg:w-[35%] lg:pl-10 lg:justify-between">
+          {/* 1/11/2024 */}
+            <Link to="/">
+            <button ><ul>Dashboard</ul></button>
+            </Link>
+            <Link to="/profile">
+            <button><ul>Profile</ul></button>
+            </Link>
+            <Link to="/courselist">
+            <button><ul>My Course</ul></button>
+            </Link>
+
+      
+>>>>>>> main:src/components/Nav.jsx
           </div>
           <div className="relative flex items-center px-3 lg:hidden">
             <GiHamburgerMenu
