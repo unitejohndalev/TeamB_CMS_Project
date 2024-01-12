@@ -1,10 +1,15 @@
 import React from 'react';
 import CourseListCard from './CourseListCard';
+import AddNewCourse from './AddNewCourse';
+import CourseOverview from './CourseOverview';
 
 const CourseList = () => {
   return (
     <div>
-     <CourseListCard/>
+    {/* place the component you want to test here */}
+     {/* <CourseListCard/> */}
+     {/* <AddNewCourse/> */}
+     <CourseOverview/>
     </div>
   );
 };
