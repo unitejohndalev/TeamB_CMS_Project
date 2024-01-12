@@ -3,11 +3,11 @@ import { IoIosArrowRoundForward } from 'react-icons/io';
 import axios from 'axios';
 
 function MyForm() {
-  //january 11 2024
   const [instructors, setInstructors] = useState([]);
 
   const [instructor, setInstructor] = useState({
-    instructor_name: '',
+    instructor_first_name: '',
+    instructor_last_name: '',
     instructor_username: '',
     instructor_email: '',
   });
@@ -31,7 +31,6 @@ function MyForm() {
 
   console.log(instructors);
   const { email, password } = instructor;
-  //january 11 2024
   return (
     <div
       className="relative shadow-md h-full w-[90vw] mt-10 m-auto
@@ -42,7 +41,8 @@ function MyForm() {
         instructors.map((instructor, idx) => {
           return (
             <div key={idx}>
-              ,<p>{instructor.instructor_name}</p>
+              ,<p>{instructor.instructor_first_name}</p>
+              <p>{instructor.instructor_last_name}</p>
               <p>{instructor.instructor_username}</p>
               <p>{instructor.instructor_email}</p>
               <p>{instructor.instructor_password}</p>
@@ -50,7 +50,6 @@ function MyForm() {
           );
         })
       }
-       {/*january102024*/}
       <div className="flex flex-col items-center justify-center">
         <p className="text-[#4D4141] font-bold text-[1.5rem] lg:text-[2rem] text-center">
           Sign in to your account.
@@ -58,9 +57,8 @@ function MyForm() {
         <p className="text-[#4D4141] font-bold text-[1.5rem] lg:text-[2rem] text-center">
           Be part of the success.
         </p>
-       
         <form
-          onSubmit={(e) => handleSubmit(e)} 
+          onSubmit={(e) => handleSubmit(e)}
           className="flex flex-col w-[90%] min-h-[40vh] lg:mt-5 justify-between lg:flex lg:items-center">
           <div className="mt-10 h-[15vh] flex flex-col justify-between lg:w-[100%] lg:h-[17vh]">
             <input
@@ -91,7 +89,6 @@ function MyForm() {
             </div>
           </button>
         </form>
-         {/*january102024*/}
       </div>
     </div>
   );

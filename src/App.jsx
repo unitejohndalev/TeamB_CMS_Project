@@ -13,8 +13,9 @@ import DashboardCard from "./components/DashboardCard";
 
 function App() {
   return (
-    <><Nav/>
-    <LogIn/>
+    <>
+    <Nav/>
+    <PersonalInfo/>
    
       <Footer/>
     </>
