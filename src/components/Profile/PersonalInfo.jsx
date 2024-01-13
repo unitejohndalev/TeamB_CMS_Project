@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useEffect,useState } from "react";
 
-useState
+
 const PersonalInfo = () => {
   const [instructors, setInstructors] = useState([]);
 
