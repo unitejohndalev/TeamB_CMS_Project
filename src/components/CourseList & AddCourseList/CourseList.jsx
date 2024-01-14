@@ -7,9 +7,10 @@ const CourseList = () => {
   return (
     <div>
     {/* place the component you want to test here */}
-     {/* <CourseListCard/> */}
-     {/* <AddNewCourse/> */}
-     <CourseOverview/>
+     { <CourseListCard/> }
+     { <AddNewCourse/> }
+     {<CourseOverview/>}
+
     </div>
   );
 };
