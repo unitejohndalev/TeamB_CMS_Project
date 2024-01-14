@@ -13,11 +13,16 @@ import DashboardCard from "./components/DashBoard/DashboardCard";
 function App() {
   return (
 
-    <>
+    <div className="bg-[#EBFFE5]">
       <Nav />
-      <PersonalInfo />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/courselist" element={<CourseList />} />
+      </Routes>
+
       <Footer />
-    </>
+    </div>
   );
 }
 
