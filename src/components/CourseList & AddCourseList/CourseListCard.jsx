@@ -1,11 +1,13 @@
 /*January 10, 2024*/
 import React, { useState } from "react";
 import { IoAdd } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 //import mock data json file
 import data from "../../mockData/CourselistCard.json";
 
 const CourseListCard = () => {
+  
   // *NOTE
   //if data is coming from db use useState hook to store the data
   //sample: const [courses, setCourses] = useState([])
@@ -35,6 +37,7 @@ const CourseListCard = () => {
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
+      {/* 1/15/2024 functions and buttons */}
       <div className="">
         <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[50%] lg:m-auto lg:mt-5 items-center gap-5">
           {courselist.map((course, idx) => {
@@ -54,7 +57,8 @@ const CourseListCard = () => {
               </div>
             );
           })}
-
+          <Link to="/AddNewCourse">
+          <button>
           <div
             type="add"
             className=" h-[10vh] mb-10  flex items-center justify-center w-[50%] lg:w-[50%] cursor-pointer">
@@ -63,12 +67,12 @@ const CourseListCard = () => {
                 <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
               </span>
             </div>
-            <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
+            <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh] lg:w-[100vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
               <span className="text-[.8rem] lg:text-[1.3rem]">
                 Add New Course
               </span>
             </div>
-          </div>
+          </div></button></Link>
         </div>
       </div>
     </>
