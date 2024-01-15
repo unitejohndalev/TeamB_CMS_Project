@@ -35,6 +35,7 @@ const Nav = () => {
                 <ul>My Course</ul>
               </button>
             </Link>
+            
           </div>
           <div className="relative flex items-center px-3 lg:hidden">
             <GiHamburgerMenu
