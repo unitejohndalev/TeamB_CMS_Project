@@ -32,6 +32,13 @@ const CourseOverviewCard = () => {
         <p>Add Course Title</p>
         <div></div>
         <div className="flex flex-col items-center justify-center w-[90%] lg:w-[50%] m-auto gap-5">
+
+          <div className="flex items-center w-full">
+            <div className="w-[.5rem] h-[.5rem] rounded-[50%] bg-[#126912]"></div>
+            <p className="bg-[#126912]"> CHAPTER 2: TITLE OF THE CHAPTER </p>
+          </div>
+
+
           {topics.map((topic) => (
             <div key={topic.id} className="flex items-center w-full">
               <div className="w-[.5rem] h-[.5rem] rounded-[50%] bg-[#126912]"></div>
@@ -43,6 +50,7 @@ const CourseOverviewCard = () => {
               />
             </div>
           ))}
+
           <div
             onClick={handleAddTopic}
             className="h-[10vh] mb-10 flex items-center justify-center w-[60%] lg:w-[50%] cursor-pointer"

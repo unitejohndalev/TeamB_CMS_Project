@@ -4,6 +4,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const AddNewCourseCard = () => {
+  
+
   const [courses, setCourses] = useState([]);
   const [course, setCourse] = useState({
     course_id: "",
@@ -27,7 +29,12 @@ const AddNewCourseCard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    await axios.post('http://localhost:8080/createCourse', course);
+  
+
     await axios.post("http://localhost:8080/createCourse", course);
+
   };
 
   console.log(courses);
