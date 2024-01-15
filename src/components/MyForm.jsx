@@ -4,17 +4,20 @@ import axios from 'axios';
 
 function MyForm() {
   //january 11 2024
+  //useState instructors used in useEffect(loadInstructors)
   const [instructors, setInstructors] = useState([]);
 
+//useState for creatingInstructor (post)
   const [instructor, setInstructor] = useState({
     instructor_name: '',
     instructor_username: '',
     instructor_email: '',
   });
-
+  
+// get data from database using axios
   useEffect(() => {
     const loadInstructors = async () => {
-      const result = await axios.get('http://localhost:8080/instructors');
+      const result = await axios.get('http://localhost:8080/getInstructor');
       setInstructors(result.data);
     };
     loadInstructors();
@@ -26,10 +29,11 @@ function MyForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:8080/instructor', instructor);
+    await axios.post('http://localhost:8080/createInstructor', instructor);
   };
 
   console.log(instructors);
+  //destructor for instructor
   const { email, password } = instructor;
   //january 11 2024
   return (

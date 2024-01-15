@@ -10,7 +10,7 @@ const CourseOverviewCard = () => {
         <div className="flex flex-col items-center justify-center w-[90%] lg:w-[50%] m-auto gap-5">
           <div className="flex items-center w-full">
             <div className="w-[.5rem] h-[.5rem] rounded-[50%] bg-[#126912]"></div>
-            <p className="bg-[#126912]">CHAPTER 2: TITLE OF THE CHAPTER</p>
+            <p className="bg-[#126912]"> CHAPTER 2: TITLE OF THE CHAPTER </p>
           </div>
 
           <div

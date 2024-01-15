@@ -6,6 +6,8 @@ import { useEffect,useState } from "react";
 
 
 const AddNewCourseCard = () => {
+  
+
   const [courses, setCourses] = useState([]);
 
   const [course, setCourse] = useState({
@@ -32,6 +34,7 @@ const AddNewCourseCard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post('http://localhost:8080/createCourse', course);
+  
   };
 
   console.log(courses);
