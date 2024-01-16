@@ -32,6 +32,7 @@ const DashboardCard = () => {
   return (
     <div className="w-full h-full">
       {/* change bg color to provided img */}
+      
       <div className="flex flex-col items-center justify-center w-full py-10 mt-3 bg-green-400 shadow-lg lg:py-15">
         <p className="text-[1.5rem] font-bold text-white w-[80%] text-center mb-2">
           月伝で自分のやり方を学びましょう。
