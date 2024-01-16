@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import data from "../../mockData/CourselistCard.json";
 
 const CourseListCard = () => {
-  
   // *NOTE
   //if data is coming from db use useState hook to store the data
   //sample: const [courses, setCourses] = useState([])
@@ -50,7 +49,8 @@ const CourseListCard = () => {
 
                   <p
                     className="text-white lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
-                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
+                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
+                  >
                     {course.courseTitle}
                   </p>
                 </div>
@@ -58,21 +58,24 @@ const CourseListCard = () => {
             );
           })}
           <Link to="/AddNewCourse">
-          <button>
-          <div
-            type="add"
-            className=" h-[10vh] mb-10  flex items-center justify-center w-[50%] lg:w-[50%] cursor-pointer">
-            <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
-              <span>
-                <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
-              </span>
-            </div>
-            <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh] lg:w-[100vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-              <span className="text-[.8rem] lg:text-[1.3rem]">
-                Add New Course
-              </span>
-            </div>
-          </div></button></Link>
+            <button>
+              <div
+                type="add"
+                className=" h-[10vh] mb-10  flex items-center justify-center w-[50%] lg:w-[50%] cursor-pointer"
+              >
+                <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
+                  <span>
+                    <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
+                  </span>
+                </div>
+                <div className="  bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh] lg:w-[100vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
+                  <span className="text-[.8rem] lg:text-[1.3rem]">
+                    Add New Course
+                  </span>
+                </div>
+              </div>
+            </button>
+          </Link>
         </div>
       </div>
     </>
