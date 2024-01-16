@@ -46,6 +46,19 @@ const AddNewCourseCard = () => {
     // 1/15/2024 functions, buttons, and routes
     <div>
       {/* Navigation Bar */}
+      <Link to="/CourseOverview"/>
+      <div className="flex justify-end items-center p-4 text-white">
+        <div className="flex justify-end">
+          <button
+            type="button"
+            onClick={handleSubmit}
+            className="text-sm bg-white text-[#126912] px-3 py-1 rounded"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+
 
       {/* Content */}
       <div className="mt-5">
@@ -101,24 +114,23 @@ const AddNewCourseCard = () => {
                 </div>
               </span>
             {/* Repeat the input fields as needed */}
+
             <div className="h-[10vh] mb-10 flex items-center justify-center w-[60%] lg:w-[50%] cursor-pointer">
               
               <div className="bg-[#126912] w-[50%] flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                 <span>
-                  <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
+                
                 </span>
               </div>
+           
+                <button>
+                  <div className="bg-[#BCE8B1] text-white lg:font-bold lg:h-[10vh] pr-40 flex items-center justify-center rounded-r-sm lg:rounded-r-md">
+                    <span className="text-[.8rem] lg:text-[1.1rem] lg:w-[33vh] text-[#070101] opacity-[55%]">
+                      Add New Chapter Title
+                    </span>
+                  </div>
+                </button>
 
-              <button>
-                <div
-                  className="bg-[#BCE8B1] text-white lg:font-bold lg:h-[10vh] pr-40 flex items-center justify-center rounded-r-sm lg:rounded-r-md"
-                  onClick={(e) => saveCourse(e)}
-                >
-                  <span className="text-[.8rem] lg:text-[1.1rem] lg:w-[33vh] text-[#070101] opacity-[55%]">
-                    Add New Chapter Title
-                  </span>
-                </div>
-              </button>
             </div>
           </div>
         </form>
