@@ -45,9 +45,11 @@ const AddNewCourseCard = () => {
     // 1/15/2024 functions, buttons, and routes
     <div>
       {/* Navigation Bar */}
-      <Link to="/CourseOverview"/>
+    
+
       <div className="flex justify-end items-center p-4 text-white">
         <div className="flex justify-end">
+        <Link to="/CourseOverviewCard"/>
           <button
             type="button"
             onClick={handleSubmit}
@@ -99,21 +101,32 @@ const AddNewCourseCard = () => {
             />
 
             {/* Repeat the input fields as needed */}
-
+            
             <div className="h-[10vh] mb-10 flex items-center justify-center w-[60%] lg:w-[50%] cursor-pointer">
               <div className="bg-[#126912] w-[50%] flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                 <span>
-                  <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
+                
                 </span>
               </div>
-           
-                <button>
-                  <div className="bg-[#BCE8B1] text-white lg:font-bold lg:h-[10vh] pr-40 flex items-center justify-center rounded-r-sm lg:rounded-r-md">
-                    <span className="text-[.8rem] lg:text-[1.1rem] lg:w-[33vh] text-[#070101] opacity-[55%]">
-                      Add New Chapter Title
-                    </span>
-                  </div>
-                </button>
+
+              <Link to="/CourseOverviewCard">
+              <button>
+              <div
+                type="add"
+                className=" m-10 h-[10vh] mb-10  flex items-center justify-center w-[50%] lg:w-[50%] cursor-pointer "
+              >
+                <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[8vh] lg:h-[8h] rounded-l-sm lg:rounded-l-md">
+                  <span>
+                    <IoAdd className="text-[2rem] lg:text-[2rem] text-white" />
+                  </span>
+                </div>
+                <div className="  bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[8vh] lg:w-[60vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
+                  <span className="text-[.8rem] lg:text-[1.rem]">
+                    Add New Chapter Title
+                  </span>
+                </div>
+              </div>
+            </button></Link>
 
             </div>
           </div>

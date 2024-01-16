@@ -11,11 +11,12 @@ import LogIn from "./components/LogIn";
 import DashboardCard from "./components/DashBoard/DashboardCard";
 import AddNewCourse from "./components/CourseList & AddCourseList/AddNewCourse";
 import CourseOverview from "./components/CourseList & AddCourseList/CourseOverview";
+import CourseOverviewCard from "./components/CourseList & AddCourseList/CourseOverviewCard";
 
 function App() {
   return (
 
-    <div className="bg-[#EBFFE5]">
+    <div className="bg-[#EBFFE5] w-full min-h-fit">
       <Nav />
       <Routes>
         <Route path="/" element={<Dashboard />} />
@@ -23,6 +24,7 @@ function App() {
         <Route path="/courselist" element={<CourseList />} />
         <Route path="/addnewcourse" element={<AddNewCourse />} />
         <Route path="/courseoverview" element={<CourseOverview />} />
+        <Route path="/courseoverviewcard" element={<CourseOverviewCard/>}/>
       </Routes>
 
       <Footer />

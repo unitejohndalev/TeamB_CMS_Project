@@ -9,7 +9,6 @@ const CourseList = () => {
     {/* place the component you want to test here */}
     {/* 1/15/2024 functions buttons and routes */}
 
-     {<CourseListCard/>}
      {<CourseOverview/>}
     </div>
   );
