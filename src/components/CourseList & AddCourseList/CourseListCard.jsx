@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { IoAdd } from "react-icons/io5";
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 /*January 15 2024, API connection of frontend to backend can fetch data from the backend */
 const CourseListCard = () => {
@@ -17,6 +18,8 @@ const CourseListCard = () => {
     const result = await axios.get('http://localhost:8080/getCourse');
     setCourses(result.data);
   };
+
+  
  /*January 15 2024 */
   
   return (
@@ -45,7 +48,8 @@ const CourseListCard = () => {
             );
           })}
         {/*January 15 2024*/}
-          <div
+          <Link to="/AddNewCourse">
+          <button
             type="add"
             className=" h-[10vh] mb-10  flex items-center justify-center w-[50%] lg:w-[50%] cursor-pointer">
             <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
@@ -53,12 +57,13 @@ const CourseListCard = () => {
                 <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
               </span>
             </div>
-            <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-              <span className="text-[.8rem] lg:text-[1.3rem]">
+            <div className="bg-[#126912] text-white lg:font-bold h-[10vh] lg:h-[10vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
+              <span className="text-[.8rem] lg:text-[1.3rem] flex-nowrap">
                 Add New Course
               </span>
             </div>
-          </div>
+          </button>
+          </Link>
         </div>
       </div>
     </>
