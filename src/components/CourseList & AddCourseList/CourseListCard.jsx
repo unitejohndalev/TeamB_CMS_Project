@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { IoAdd } from "react-icons/io5";
+
+import axios from 'axios';
+
 import { Link } from "react-router-dom";
 
-// import mock data json file
 import data from "../../mockData/CourselistCard.json";
 
 const CourseListCard = () => {
@@ -43,28 +45,31 @@ const CourseListCard = () => {
                     {course.courseTitle}
                   </p>
                 </div>
-              </div>
-            );
-          })}
-          <Link to="/AddNewCourse">
-            <button>
-              <div
-                type="add"
-                className="h-[10vh] mb-10  flex items-center justify-center w-[50%] lg:w-[50%] cursor-pointer"
-              >
-                <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
-                  <span>
-                    <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
-                  </span>
                 </div>
-                <div className="  bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh] lg:w-[100vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className="text-[.8rem] lg:text-[1.3rem]">
-                    Add New Course
-                  </span>
+              );
+            })}
+
+            {/*January 15 2024*/}
+
+            <Link to="/AddNewCourse">
+              <button>
+                <div
+                  type="add"
+                  className=" h-[10vh] mb-10  flex items-center justify-center w-[50%] lg:w-[50%] cursor-pointer">
+                  <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
+                    <span>
+                      <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
+                    </span>
+                  </div>
+                  <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh] lg:w-[100vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
+                    <span className="text-[.8rem] lg:text-[1.3rem]">
+                      Add New Course
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </button>
-          </Link>
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </>
