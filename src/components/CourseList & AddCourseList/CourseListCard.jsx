@@ -71,7 +71,7 @@ const CourseListCard = () => {
             </Link>
           </div>
         </div>
-      </div>
+  
     </>
   );
 };
