@@ -29,14 +29,15 @@ const AddNewCourseCard = () => {
     e.preventDefault();
 
     await axios.post("http://localhost:8080/createCourse", course);
+    
 
     
   };
 
-  const saveCourse =(e) =>{
-    e.preventDefault();
-    console.log(courses);
-  }
+  // const saveCourse =(e) =>{
+  //   e.preventDefault();
+  //   console.log(courses);
+  // }
 
   console.log(courses);
 

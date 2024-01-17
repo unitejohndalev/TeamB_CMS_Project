@@ -35,8 +35,12 @@ const CourseListCard = () => {
       <div className="">
         {/* 1/15/2024 functions and buttons */}
         <div className="">
+          
           <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[50%] lg:m-auto lg:mt-5 items-center gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
+            <div className="text-black lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center">
+          <p className="lg:font-bold">Course List</p>
+          </div>  
             {courses.map((course, idx) => {
               return (
                 <div key={idx} className="w-full rounded-md shadow-md">
