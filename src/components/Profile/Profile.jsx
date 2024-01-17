@@ -30,6 +30,7 @@ const Profile = () => {
       <div>
       {/* Place your Component here */}
          <PersonalInfo/>
+         <AccDetails/>
         {/* /* Place AccDetails Component here */}
         {/* <AccDetails/> */}
       </div>
