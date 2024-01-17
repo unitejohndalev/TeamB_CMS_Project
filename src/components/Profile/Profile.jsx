@@ -36,7 +36,7 @@ const Profile = () => {
         <div>
           {/* Use react icon instead of word back */}
           <div
-            className="flex items-center mt-3 cursor-pointer"
+            className="flex items-center mt-3 cursor-pointer w-[10%]"
             onClick={goBack}>
             <span className="text-[2.5rem]">
               <IoArrowBackCircle />
