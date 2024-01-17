@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { IoAdd } from "react-icons/io5";
 
 const CourseOverviewCard = () => {
   // State to keep track of the topics
-  const [topics, setTopics] = useState([
-    { id: 1, title: "CHAPTER 1: TITLE OF THE CHAPTER" },
-  ]);
+  const [topics, setTopics] = useState([]);
 
+  useEffect(() => {
+    loadTopics();
+  },[]);
+  
+  const loadTopics = async () => {
+    const result = await axios.get("http://localhost:8080/getTopic");
+    setCTopics(result.data);
+  };
   // State to track whether titles are in edit mode
   const [editMode, setEditMode] = useState(false);
 

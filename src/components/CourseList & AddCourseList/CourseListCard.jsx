@@ -1,5 +1,5 @@
 /*January 10, 2024*/
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { IoAdd } from "react-icons/io5";
 
 import axios from 'axios';
@@ -23,7 +23,7 @@ const CourseListCard = () => {
   }, []);
   
     const loadCourses = async () => {
-    const result = await axios.get("http://localhost:8080/courses");
+    const result = await axios.get("http://localhost:8080/getCourse");
     setCourses(result.data);
   };
  /*January 15 2024 */

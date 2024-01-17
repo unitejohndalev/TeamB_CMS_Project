@@ -106,8 +106,9 @@ const AddNewCourseCard = () => {
                     <button
                       type="button"
                       onClick={handleSubmit}
+                      
                       className="text-sm bg-white text-[#126912] px-3 py-1 rounded"
-                    >
+                    >   
                       Save
                     </button>
                   </div>

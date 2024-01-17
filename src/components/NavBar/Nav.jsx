@@ -30,7 +30,7 @@ const Nav = () => {
                 <ul>Profile</ul>
               </button>
             </Link>
-            <Link to="/courselist">
+            <Link to="/courselistcard">
               <button>
                 <ul>My Course</ul>
               </button>
