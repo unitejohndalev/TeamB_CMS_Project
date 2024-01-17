@@ -1,21 +1,25 @@
+
 /*January 10, 2024*/
 import React, { useState,useEffect } from "react";
+
+import React, { useState } from "react";
+
 import { IoAdd } from "react-icons/io5";
 
 import axios from 'axios';
 
 import { Link } from "react-router-dom";
 
+import data from "../../mockData/CourselistCard.json";
 
 const CourseListCard = () => {
+  const [courses, setCourses] = useState(data.courselist);
 
-  
-  // *NOTE
-  //if data is coming from db use useState hook to store the data
-  //sample: const [courses, setCourses] = useState([])
-
-
-  const  [courses, setCourses] = useState([]);
+  const handleTitleEdit = (idx, newTitle) => {
+    const updatedCourses = [...courses];
+    updatedCourses[idx].courseTitle = newTitle;
+    setCourses(updatedCourses);
+  };
 
  
   useEffect(() => {
@@ -25,14 +29,20 @@ const CourseListCard = () => {
     const loadCourses = async () => {
     const result = await axios.get("http://localhost:8080/getCourse");
     setCourses(result.data);
+=======
+  const handleKeyDown = (event, idx) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const newTitle = event.target.innerText;
+      handleTitleEdit(idx, newTitle);
+    }
+
   };
- /*January 15 2024 */
-  
+
   return (
     <>
-      {/* 1/12/2024 UI development and Mobile responsiveness */}
-
       <div className="">
+
         {/* 1/15/2024 functions and buttons */}
         <div className="">
           
@@ -54,7 +64,26 @@ const CourseListCard = () => {
                    rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
                       {course.course_title}
                     </p>
+
+        <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[50%] lg:m-auto lg:mt-5 items-center gap-5">
+          {courses.map((course, idx) => {
+            return (
+              <div key={idx} className="w-full rounded-md shadow-md">
+                <div className="flex px-0 py-0 rounded-md">
+                  <div className="bg-[#BCE8B1] py-1 justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
+                    <p className="lg:font-medium">{course.description}</p>
+
                   </div>
+
+                  <p
+                    contentEditable="true"
+                    onKeyDown={(e) => handleKeyDown(e, idx)}
+                    className="text-white lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
+                   rounded-r-sm lg:rounded-r-md bg-[#126912]"
+                  >
+                    {course.courseTitle}
+                  </p>
+                </div>
                 </div>
               );
             })}
@@ -81,10 +110,9 @@ const CourseListCard = () => {
             </Link>
           </div>
         </div>
-      </div>
+  
     </>
   );
 };
 
 export default CourseListCard;
-/*January 10, 2024*/

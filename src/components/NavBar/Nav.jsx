@@ -11,7 +11,7 @@ const Nav = () => {
   const [show, setShow] = useState(false);
   return (
     <>
-      <nav className="sticky top-0">
+      <nav className="sticky top-0 z-[100]">
         <div className="flex justify-between lg:justify-normal bg-[#BCE8B1] py-3 lg:py-0">
           <img
             className="h-[3rem] lg:h-[5rem] pl-2"
