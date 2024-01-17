@@ -20,17 +20,17 @@ function App() {
     <div className="bg-[#EBFFE5] w-full min-h-fit">
       <Nav />
       <Routes>
-        {/* <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/courselist" element={<CourseList />} />
         <Route path="/addnewcourse" element={<AddNewCourse />} />
         <Route path="/courseoverview" element={<CourseOverview />} />
-  {/* <Route path="/" element={<Dashboard />} />
+  <Route path="/" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/courselist" element={<CourseList />} />
         <Route path="/addnewcourse" element={<AddNewCourse />} />
         <Route path="/courseoverview" element={<CourseOverview />} />
-        <Route path="/courseoverviewcard" element={<CourseOverviewCard/>}/> */}
+        <Route path="/courseoverviewcard" element={<CourseOverviewCard/>}/>
         <Route path="/addtopic" element={<AddTopicPage/>}/>
       </Routes>
 
