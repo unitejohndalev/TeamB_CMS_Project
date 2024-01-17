@@ -25,6 +25,7 @@ function App() {
         <Route path="/addnewcourse" element={<AddNewCourse />} />
         <Route path="/courseoverview" element={<CourseOverview />} />
         <Route path="/courseoverviewcard" element={<CourseOverviewCard/>}/>
+        <Route path="/courselistcard" element={<CourseListCard/>}/>
       </Routes>
 
       <Footer />
