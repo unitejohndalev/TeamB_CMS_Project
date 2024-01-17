@@ -12,30 +12,25 @@ const Nav = () => {
   return (
     <>
       <nav className="sticky top-0 z-[100]">
-        <div className="flex justify-between lg:justify-normal bg-[#BCE8B1] py-3 lg:py-0">
+        <div className="flex justify-between items-center lg:justify-normal bg-[#BCE8B1] h-[69px] ">
           <img
-            className="h-[3rem] lg:h-[5rem] pl-2"
+            className="  ml-10 xl:w-[171.67px] xl:h-[50px] lg:h-[5rem] xl:ml-[95px] py-3"
             src={logo}
             alt="tsukidenLogo"
+            width={171.67}
+            height={50}
           />
           <div className="hidden lg:flex lg:items-end lg:w-[30%] lg:pl-10 lg:justify-between">
             {/* 1/11/2024 */}
             <Link to="/">
-              <button>
-                <ul>Dashboard</ul>
-              </button>
+              <ul >Dashboard</ul>
             </Link>
             <Link to="/profile">
-              <button>
-                <ul>Profile</ul>
-              </button>
+              <ul>Profile</ul>
             </Link>
             <Link to="/courseoverview">
-              <button>
-                <ul>My Course</ul>
-              </button>
+              <ul>My Course</ul>
             </Link>
-            
           </div>
           <div className="relative flex items-center px-3 lg:hidden">
             <GiHamburgerMenu
@@ -45,6 +40,7 @@ const Nav = () => {
             {show && <NavSideBar />}
           </div>
         </div>
+    
       </nav>
     </>
   );
