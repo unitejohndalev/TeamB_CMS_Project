@@ -17,7 +17,7 @@ const CourseListCard = () => {
 
   const  [courses, setCourses] = useState([]);
 
- 
+/* january 172024*/
   useEffect(() => {
     loadCourses();
   }, []);
