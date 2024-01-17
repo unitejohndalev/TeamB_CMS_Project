@@ -1,39 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 import PersonalInfo from "./PersonalInfo";
 import AccDetails from "./AccDetails";
 
+//arrow back icon
+import { IoArrowBackCircle } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+
+
 const Profile = () => {
+  //use navigate to back
+  const navigate = useNavigate();
+  
+    const goBack = () => {
+      navigate(-1);
+    };
   // To make PersonalInfo appear when Personal Information is clicked use
   // React hook and a function
 
-
   // To make Personal Info or Acc detail component show and hide only when clicked create
   // A function that makes either of them show or hide when clicked at the same time
+  const [showPersonalInfo, setPersonalInfo] = useState(true)
+  const [showAccDetails, setShowAccDetails] = useState(false)
+
+  const showPInfo = () => {
+    setPersonalInfo(() => prev => !prev)
+    setShowAccDetails(false)
+  }
+    const showADetails = () => {
+      setShowAccDetails(() => (prev) => !prev);
+      setPersonalInfo(false);
+    };
   return (
     <>
-      <div>
+      <div className="h-[100vh]">
         <div>
-        {/* Use react icon instead of word back */}
-          <span>arrow back</span>
+          {/* Use react icon instead of word back */}
+          <div
+            className="flex items-center mt-3 cursor-pointer w-[10%]"
+            onClick={goBack}>
+            <span className="text-[2.5rem]">
+              <IoArrowBackCircle />
+            </span>
+            <span className="text-[1rem] pl-1">Back</span>
+          </div>
         </div>
         {/* 1/11/2024 fix nav */}
-        <div className="flex flex-col lg:flex-row lg:justify-center lg:items-center lg:gap-5 lg:mt-5">
-          <div className="lg:w-[30%] lg:h-[30vh] lg:shadow-lg">
-            <p>Account Details</p>
+        <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-5 lg:mt-1 ">
+          <div className="lg:w-[20%] xl:w-[449px] xl:h-[440px] lg:h-[35vh] lg:shadow-lg bg-[#BCE8B1] lg:flex lg:items-center lg:flex-col lg:rounded-md">
+            <p className="lg:p-5 lg:text-[1.2rem] xl:text-[32px] font-bold text-[#4D4141] opacity-[80%]">
+              Profile Management
+            </p>
+            <div className="hidden lg:flex lg:border-b-2 lg:border-black w-[90%]"></div>
             {/* Make Personal Information & Acc Details clickable */}
             {/* When element Personal Info clicked, must navigate to Personal Info Component same as Acc Details */}
             {/* Use react icon instead of plain text for better UI in mobile and desktop */}
             {/* In desktop mode when hovered a text Personal Information must show, same as Account Details */}
-            <p>Personal Information</p>
-            <p>Account Details</p>
+            <p
+              className="cursor-pointer lg:mt-2 lg:p-2 lg:text-[1.2rem] xl:text-[32px] text-[#4D4141] opacity-[53%] hover:bg-[#126912] lg:w-[100%] lg:text-center hover:bg-opacity-[25%] "
+              onClick={showPInfo}>
+              Personal Information
+            </p>
+            <p
+              className="cursor-pointer lg:text-[1.2rem] xl:text-[32px] lg:p-2 text-[#4D4141] opacity-[53%] hover:bg-[#126912] lg:w-[100%] lg:text-center hover:bg-opacity-[25%]"
+              onClick={showADetails}>
+              Account Details
+            </p>
           </div>
-      <div>
-      {/* Place your Component here */}
-         <PersonalInfo/>
-         <AccDetails/>
-        {/* /* Place AccDetails Component here */}
-        {/* <AccDetails/> */}
-      </div>
+          <div>
+            {/* Place your Component here */}
+            {showPersonalInfo && 
+            <PersonalInfo />
+            }
+            {
+              showAccDetails &&
+            <AccDetails />
+            }
+            {/* /* Place AccDetails Component here */}
+            {/* <AccDetails/> */}
+          </div>
         </div>
       </div>
     </>
@@ -41,3 +85,5 @@ const Profile = () => {
 };
 
 export default Profile;
+
+//1/17/2024
