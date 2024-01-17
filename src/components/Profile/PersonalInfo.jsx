@@ -50,7 +50,7 @@ const PersonalInfo = () => {
                 <img
                   src={profilePic}
                   alt=""
-                  className="hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
+                  className="cursor-pointer hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
                 />
               </div>
               <div className="lg:flex lg:flex-col lg:w-[70%] xl:gap-y-10 lg:gap-y-5">
