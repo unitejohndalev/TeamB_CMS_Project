@@ -33,7 +33,8 @@ const DashboardCard = () => {
     <div className="w-full h-full">
       {/* change bg color to provided img */}
 
-      <div className="relative flex flex-col items-center justify-center w-full py-10 mt-3 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-15">
+{/* 1/18/204 bg height 323px */}
+      <div className="xl:h-[323px] relative flex flex-col items-center justify-center w-full py-10 mt-3 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-15">
         <p className="text-[1.8rem] font-bold text-white w-[80%] text-center">
           月伝で自分のやり方を学びましょう。
         </p>
