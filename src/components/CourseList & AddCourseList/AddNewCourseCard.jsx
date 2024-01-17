@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { IoAdd } from "react-icons/io5";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+import { IoArrowBackCircle } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+
+/*January 17 2024 API for creating courses from frontend directly to the database  */
 const AddNewCourseCard = () => {
   const [courses, setCourses] = useState([]);
   const [course, setCourse] = useState({
@@ -39,6 +42,15 @@ const AddNewCourseCard = () => {
   //   console.log(courses);
   // }
 
+  //january 18 2024
+  //navigate to back course list
+  const navigate = useNavigate();
+  
+  const goBack = () => {
+    navigate(-1);
+  };
+/*January 17 2024 API for creating courses from frontend directly to the database  */
+
   console.log(courses);
 
   const { crs_title, chap_title, description } = course;
@@ -46,6 +58,19 @@ const AddNewCourseCard = () => {
   return (
     // 1/15/2024 functions, buttons, and routes
     <div>
+      {/*back button to course list page */}
+       <div>
+          {/* Use react icon instead of word back */}
+          <div
+            className="flex items-center mt-3 cursor-pointer w-[10%]"
+            onClick={goBack}>
+            <span className="text-[2.5rem]">
+              <IoArrowBackCircle />
+            </span>
+            <span className="text-[1rem] pl-1">Back</span>
+          </div>
+        </div>
+        {/*back button to course list page */}
       {/* Navigation Bar */}
       <Link to="/CourseOverview"/>
       <div className="flex justify-end items-center p-4 text-white">
