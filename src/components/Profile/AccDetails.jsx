@@ -12,7 +12,7 @@ const AccDetails = () => {
         <div className="absolute bottom-[-.3rem] flex flex-col h-full gap-y-5 w-[90%] lg:h-[350px]  lg:w-[680px]  xl:w-[948px] xl:h-[455px] bg-[#BCE8B1] lg:rounded-b-md lg:rounded-tr-md shadow-md">
           <div className="xl:w-[90%] flex flex-col m-auto lg:gap-y-[3rem] xl:gap-y-[5rem]">
             <p className="lg:w-[600px] lg:h-[50px] xl:w-[829px] xl:h-[70px] bg-[#D1DFCD] rounder-[5px]  text-[#4D4141] text-opacity-[53%] shadow-lg flex items-center pl-2 ">
-              email
+              Email
             </p>
             <p className=" lg:w-[600px] lg:h-[50px] xl:w-[829px] xl:h-[70px] bg-[#D1DFCD] rounder-[5px] text-[#4D4141] text-opacity-[53%] shadow-lg  flex items-center pl-2 ">
               Application Name
