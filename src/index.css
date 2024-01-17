@@ -262,6 +262,7 @@ ul {
 .CourseList-card-container {
   display: flex;
   justify-content: center;
+  
 }
 .CourseList-card {
   width: 1000px;

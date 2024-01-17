@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { IoAdd } from "react-icons/io5";
 
 const CourseOverviewCard = () => {
-  
+  /*January 17 2023 API connection from backend to front end displaying data */
   const [chapters, setChapters] = useState([]);
 
   useEffect(() => {
@@ -42,7 +41,7 @@ const CourseOverviewCard = () => {
                 </div>
               );
             })}
-
+{/*January 17 2023 API connection from backend to front end displaying data */}
                 
          
            
