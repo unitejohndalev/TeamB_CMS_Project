@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-
 //import mock data json file
 import data from "../../mockData/MockData.json";
 
-const DashboardCard = () => {
+const DashboardCardHover = () => {
   // *NOTE
   //if data is coming from db use useState hook to store the data
   //sample: const [courses, setCourses] = useState([])
@@ -33,22 +31,21 @@ const DashboardCard = () => {
     <div className="w-full h-full">
       {/* change bg color to provided img */}
 
-      <div className="relative flex flex-col items-center justify-center w-full py-10 mt-3 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-15">
+      <div className="flex flex-col items-center justify-center w-full py-10 mt-3 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-15">
         <p className="text-[1.8rem] font-bold text-white w-[80%] text-center">
           月伝で自分のやり方を学びましょう。
         </p>
 
-        <p className="italic lg:text-[1.7rem] font-bold text-[#67836B]  pb-10 lg:pb-15">
+        <p className="italic text-[1.5rem] font-bold text-[#67836B]  pb-10 lg:pb-15">
           Learn your way at Tsukiden.
         </p>
 
-        <button className="px-5 font-normal lg:absolute btn-style lg:rounded-lg lg:bottom-[-1.5rem]">View Courses</button>
+        <button className="px-5 font-normal btn-style jus">View Courses</button>
       </div>
-      <div className=" flex flex-col lg:flex-row lg:w-[90vw] lg:m-auto lg:justify-center lg:mt-[6rem] items-center gap-5 mt-2 ">
+      <div className="flex flex-col lg:flex-row lg:w-[90vw] lg:m-auto lg:justify-center lg:mt-5 items-center gap-5 mt-2 ">
         {courses.map((course, idx) => {
           return (
             // 1/11/2024
-
             <div
               key={idx}
               className="w-[95%] lg:w-[17vw] shadow-md rounded-sm ">
@@ -58,10 +55,8 @@ const DashboardCard = () => {
                   {course.courseTitle}
                 </p>
               </div>
-              <div className="bg-[#87D275] lg:h-full p-5 rounded-b-sm text-justify">
-                <p className=" line-clamp-4">
-                  {course.description}
-                </p>
+              <div className="bg-[#87D275] p-5 rounded-b-sm text-justify">
+                <p className="lg:truncate">{course.description}</p>
                 <button className="text-[#1E6C0B] pt-3 font-bold">
                   See more
                 </button>
@@ -74,5 +69,5 @@ const DashboardCard = () => {
   );
 };
 
-export default DashboardCard;
+export default DashboardCardHover;
 // 1/17/2024
