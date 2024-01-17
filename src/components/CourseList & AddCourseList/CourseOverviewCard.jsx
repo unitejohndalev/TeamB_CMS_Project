@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { IoAdd } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const CourseOverviewCard = () => {
-  // State to keep track of the topics
   const [topics, setTopics] = useState([
     { id: 1, title: "CHAPTER 1: TITLE OF THE CHAPTER" },
   ]);
 
-  // State to track whether titles are in edit mode
   const [editMode, setEditMode] = useState(false);
 
-  // Function to handle adding a new topic or chapter
   const handleAddTopic = () => {
     if (!editMode) {
       const newTopic = {
@@ -22,7 +20,6 @@ const CourseOverviewCard = () => {
     }
   };
 
-  // Function to handle editing a chapter title
   const handleEditTitle = (id, newTitle) => {
     setTopics((prevTopics) =>
       prevTopics.map((topic) =>
@@ -31,26 +28,19 @@ const CourseOverviewCard = () => {
     );
   };
 
-  // Function to toggle edit mode
   const toggleEditMode = () => {
     setEditMode(!editMode);
-  };
-
-  // Function to handle the back button click
-  const handleBackButtonClick = () => {
-    // Add your logic for navigating back
-    console.log("Back button clicked!");
   };
 
   return (
     <div className="mt-5">
       <div className="flex flex-col items-center justify-center w-[90%] lg:w-[50%] m-auto gap-5 relative">
-        {/* Back Button below the navigation bar */}
-        <button
-          onClick={handleBackButtonClick}
-          className="fixed top-16 left-0 mt-4 ml-4 cursor-pointer bg-[#87D275] text-white rounded-md px-4 py-2 z-10">
-          Back
-        </button>
+        {/* Use Link to navigate back */}
+        <Link to="/AddNewCourseCard">
+          <button className="fixed top-16 left-0 mt-4 ml-4 cursor-pointer bg-[#87D275] text-white rounded-md px-4 py-2 z-10">
+            Back
+          </button>
+        </Link>
 
         {topics.map((topic) => (
           <div key={topic.id} className={`flex items-center w-full space-x-3 lg:h- ${editMode && "opacity-50"}`}>
@@ -68,7 +58,6 @@ const CourseOverviewCard = () => {
         ))}
 
         <div className="flex items-center justify-center space-x-3 mt-3">
-          {/* Button 1 */}
           <button
             onClick={toggleEditMode}
             className="flex items-center cursor-pointer bg-[#87D275] text-white rounded-md px-7 py-2">
@@ -76,7 +65,6 @@ const CourseOverviewCard = () => {
             <span className="text-base">{editMode ? "Stop Editing" : "Edit Title"}</span>
           </button>
 
-          {/* Button 2 */}
           <button
             onClick={handleAddTopic}
             className={`flex items-center cursor-pointer bg-[#87D275] text-white rounded-md px-4 py-2 ${editMode && "opacity-50"}`}>
