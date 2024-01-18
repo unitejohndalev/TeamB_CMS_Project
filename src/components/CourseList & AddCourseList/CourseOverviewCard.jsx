@@ -29,6 +29,8 @@ const CourseOverviewCard = () => {
   };
   //mockdata chapter
   const { chapterlist } = data;
+
+  
   
   //back function
   const navigate = useNavigate();
@@ -49,7 +51,7 @@ const CourseOverviewCard = () => {
           </span>
           <span className="text-[1rem] pl-1">Back</span>
         </div>
-        <div className=" w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
+        <div className=" h-full w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
           <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
             <p className="lg:font-bold">Course Overview</p>
           </div>
@@ -81,17 +83,17 @@ const CourseOverviewCard = () => {
 
           {/*January 17 2023 API connection from backend to front end displaying data */}
 
-          <div className="lg:w-[60%] lg:flex lg:justify-center gap-5 ml-16">
+          <div className="lg:w-[65%] lg:flex lg:justify-center gap-5 ml-16">
             <Link
               to="/createnewchaptertitle"
-              className=" h-[10vh] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
-              <div className="bg-[#BCE8B1] w-[30%] flex items-center justify-center h-[5vh] lg:h-[50px] rounded-l-sm lg:rounded-l-[1rem]">
+              className="lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]">
+              <div className=" w-[30%] flex items-center justify-center ">
                 <span>
                   <FaEdit className="text-[2rem] lg:text-[2.5rem] text-white" />
                 </span>
               </div>
 
-              <div className="bg-[#BCE8B1] text-white lg:font-bold h-[5vh] lg:h-[50px] 2xl:h-[65px]  w-full flex items-center pl-5 rounded-r-sm  lg:rounded-r-[1rem]">
+              <div className=" text-white lg:font-bold  w-full flex items-center pl-5 ">
                 <span className=" lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                   Add Chapter Title
                 </span>
@@ -101,13 +103,13 @@ const CourseOverviewCard = () => {
 
             <Link
               to="/editchaptertitle"
-              className=" h-[10vh] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
-              <div className="bg-[#BCE8B1] w-[30%] flex items-center justify-center h-[5vh] lg:h-[50px] rounded-l-sm lg:rounded-l-[1rem]">
+              className=" lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]">
+              <div className=" w-[30%] flex items-center justify-center ">
                 <span>
                   <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
                 </span>
               </div>
-              <div className="bg-[#BCE8B1] text-white lg:font-bold h-[5vh] lg:h-[50px] 2xl:h-[65px]  w-full flex items-center pl-5 rounded-r-sm  lg:rounded-r-[1rem]">
+              <div className=" text-white lg:font-bold   w-full flex items-center pl-5 ">
                 <span className="lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                   Edit Chapter Title
                 </span>

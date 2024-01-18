@@ -26,7 +26,7 @@ const EditTopicPage = () => {
     <>
       <div className="flex h-[100vh]">
         {/* sidebar */}
-        <div className="h-full flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
+        <div className="relative h-full flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
           <div
             className="flex items-center mt-3 cursor-pointer "
             onClick={goBack}>
@@ -39,28 +39,32 @@ const EditTopicPage = () => {
           <div>
             <p className="text-white w-[3vw] text-center py-10">HTML & CSS</p>
           </div>
-          <div>
-            <p className="py-2 text-white">Topic 1: Title</p>
+          <div className="h-[50vh] overflow-auto">
+            <div>
+              <p className="py-2 text-white">Topic 1: Title</p>
+            </div>
+
+          
+            <div>
+              <p className="py-2 text-white">Topic 2: Title</p>
+            </div>
+            <div>
+              <p className="py-2 text-white">Topic 3: Title</p>
+            </div>
+            <div>
+              <p className="py-2 text-white">Topic 4: Title</p>
+            </div>
+            <div>
+              <p className="py-2 text-white">Topic 5: Title</p>
+            </div>
+            <div>
+              <p className="py-2 text-white">Topic 6: Title</p>
+            </div>
+            <div>
+              <p className="py-2 text-white">Topic 7: Title</p>
+            </div>
           </div>
-          <div>
-            <p className="py-2 text-white">Topic 2: Title</p>
-          </div>
-          <div>
-            <p className="py-2 text-white">Topic 3: Title</p>
-          </div>
-          <div>
-            <p className="py-2 text-white">Topic 4: Title</p>
-          </div>
-          <div>
-            <p className="py-2 text-white">Topic 5: Title</p>
-          </div>
-          <div>
-            <p className="py-2 text-white">Topic 6: Title</p>
-          </div>
-          <div>
-            <p className="py-2 text-white">Topic 7: Title</p>
-          </div>
-          <div className="flex items-center justify-center py-32 cursor-pointer">
+          <div className="flex items-center justify-center absolute cursor-pointer bottom-5">
             <div className="text-white text-[2rem] pr-2">
               <IoIosAddCircle />
             </div>
@@ -70,15 +74,14 @@ const EditTopicPage = () => {
         {/* add topic title */}
         <div className="w-full mt-2">
           <div className="flex items-center justify-end w-full ">
-          <Link to="/displaytopic">
-            
-            <div className="flex items-center gap-2 pr-5 cursor-pointer">
-              <div className="text-[#126912] text-[1.5rem]">
-                <FaEdit />
+            <Link to="/displaytopic">
+              <div className="flex items-center gap-2 pr-5 cursor-pointer">
+                <div className="text-[#126912] text-[1.5rem]">
+                  <FaEdit />
+                </div>
+                <span className="text-[#126912] font-semibold">Save</span>
               </div>
-              <span className="text-[#126912] font-semibold">Save</span>
-            </div>
-          </Link>
+            </Link>
           </div>
           <div className="w-[90%] m-auto">
             <span className="lg:text-[2rem] 2xl:text-[48px] font-semibold ">

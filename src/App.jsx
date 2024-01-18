@@ -22,7 +22,7 @@ import CreateNewChapterTitle from "./components/CourseList & AddCourseList/Creat
 
 function App() {
   return (
-    <div className="bg-[#EBFFE5] w-full min-h-fit">
+    <div className="bg-[#EBFFE5]">
       <Nav />
       <Routes>
         <Route path="/" element={<Dashboard />} />
