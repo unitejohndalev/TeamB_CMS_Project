@@ -14,6 +14,7 @@ import { FaEdit } from "react-icons/fa";
 //import img for vid link and file link
 import vidUpload from "../../assets/vidUpload.svg";
 import fileUpload from "../../assets/fileUpload.svg";
+import Footer from "../Footer";
 
 const EditTopicPage = () => {
   //use navigate to back
@@ -24,9 +25,9 @@ const EditTopicPage = () => {
   };
   return (
     <>
-      <div className="flex h-[100vh]">
+      <div className="flex">
         {/* sidebar */}
-        <div className="relative h-full flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
+        <div className=" h-[100vh] flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
           <div
             className="flex items-center mt-3 cursor-pointer "
             onClick={goBack}>
@@ -39,12 +40,11 @@ const EditTopicPage = () => {
           <div>
             <p className="text-white w-[3vw] text-center py-10">HTML & CSS</p>
           </div>
-          <div className="h-[50vh] overflow-auto">
+          <div className="h-[40vh] overflow-auto">
             <div>
               <p className="py-2 text-white">Topic 1: Title</p>
             </div>
 
-          
             <div>
               <p className="py-2 text-white">Topic 2: Title</p>
             </div>
@@ -57,14 +57,9 @@ const EditTopicPage = () => {
             <div>
               <p className="py-2 text-white">Topic 5: Title</p>
             </div>
-            <div>
-              <p className="py-2 text-white">Topic 6: Title</p>
-            </div>
-            <div>
-              <p className="py-2 text-white">Topic 7: Title</p>
-            </div>
+           
           </div>
-          <div className="flex items-center justify-center absolute cursor-pointer bottom-5">
+          <div className="flex items-center justify-center mt-10 cursor-pointer ">
             <div className="text-white text-[2rem] pr-2">
               <IoIosAddCircle />
             </div>
@@ -72,11 +67,11 @@ const EditTopicPage = () => {
           </div>
         </div>
         {/* add topic title */}
-        <div className="w-full mt-2">
+        <div className="h-[100vh] w-full pt-2">
           <div className="flex items-center justify-end w-full ">
             <Link to="/displaytopic">
               <div className="flex items-center gap-2 pr-5 cursor-pointer">
-                <div className="text-[#126912] text-[1.5rem]">
+                <div className="text-[#4c604c] text-[1.5rem]">
                   <FaEdit />
                 </div>
                 <span className="text-[#126912] font-semibold">Save</span>
@@ -105,7 +100,7 @@ const EditTopicPage = () => {
               cols="30"
               rows="10"
               placeholder=" Lorem ipsum dolor sit amet. Ut labore facere aut dolorem deleniti cum repudiandae delectus aut quam beatae aut aliquam omnis sed harum odio. Eos consectetur placeat sit itaque ipsum qui laudantium autem. Et voluptatum optio At odio amet cum enim dicta sed deleniti adipisci ut maiores perspiciatis. Aut dicta soluta qui sapiente quibusdam ut tempore facilis et ducimus provident. Hic voluptates incidunt aut quaerat quam id maiores voluptatem et architecto nobis non mollitia eius non magnam neque id voluptatum quasi. Quo nemo officiis qui repellendus voluptatem quo atque consequuntur sit inventore dolorum ut obcaecati ratione sed quibusdam ipsam et quasi inventore."
-              className="bg-[#BCE8B1] resize-none 2xl:w-[1342px] lg:w-[100%] 2xl:h-[264px] lg:h-[25vh] placeholder:font-medium placeholder:text-center placeholder:p-6
+              className="bg-[#BCE8B1] resize-none lg:min-w-[100%] 2xl:h-[264px] lg:h-[25vh] placeholder:font-medium placeholder:text-center placeholder:p-6
               outline-none rounded-lg placeholder:text-[#070101] placeholder:text-opacity-[55%] mt-5 pl-5"
             />
           </div>
@@ -130,6 +125,9 @@ const EditTopicPage = () => {
               {/* <div className="lg:rotate-[25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div>
               <div className="lg:rotate-[-25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div> */}
             </div>
+          </div>
+          <div className="mt-5">
+            <Footer />
           </div>
         </div>
       </div>
