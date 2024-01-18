@@ -65,7 +65,7 @@ const CourseListCard = () => {
             <Link to="/AddNewCourse">
               <div
                 type="add"
-                className=" h-[10vh] mb-10  flex  w-[50%] lg:w-full cursor-pointer">
+                className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer">
                 <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
                     <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
