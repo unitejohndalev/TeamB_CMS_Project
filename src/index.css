@@ -12,7 +12,7 @@
     @apply bg-[#126912] rounded-sm py-2 lg:px-[2rem] lg:py-[.8rem] text-white font-bold;
   }
   .input-style {
-    @apply drop-shadow-md px-4 py-3 placeholder:font-thin placeholder:text-[.9rem] w-full
+    @apply drop-shadow-md px-4 pt-4 pb-2 placeholder:font-thin placeholder:text-[.9rem] w-full
     outline-none rounded-md;
   }
 }
