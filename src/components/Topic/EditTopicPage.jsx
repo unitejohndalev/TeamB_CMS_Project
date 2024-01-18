@@ -40,7 +40,7 @@ const EditTopicPage = () => {
           <div>
             <p className="text-white w-[3vw] text-center py-10">HTML & CSS</p>
           </div>
-          <div className="h-[40vh] overflow-auto">
+          <div className="">
             <div>
               <p className="py-2 text-white">Topic 1: Title</p>
             </div>
