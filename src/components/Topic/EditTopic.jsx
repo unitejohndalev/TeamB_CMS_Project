@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const DisplayTopic = () => {
+const EditTopic = () => {
   const [topic, setTopic] = useState({
     title: "",
     description: "",
     videoLink: "",  // Add the videoLink field to the state
   });
 
-  const [isDescriptionFocused, setIsDescriptionFocused] = useState(false);
   const [topics, setTopics] = useState([
     { title: "Chapter 1: Title 1", description: "" },
   ]);
@@ -33,7 +32,6 @@ const DisplayTopic = () => {
               className={`mb-2 cursor-pointer text-white ${
                 editableTopicIndex === index ? "font-bold" : ""
               }`}
-              onClick={() => setEditableTopicIndex(index)}
               style={{ pointerEvents: "none" }}
             >
               {t.title}
@@ -151,4 +149,4 @@ const DisplayTopic = () => {
   );
 };
 
-export default DisplayTopic;
+export default EditTopic;

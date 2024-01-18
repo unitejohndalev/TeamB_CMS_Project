@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const AddTopicPage = () => {
+const EditTopicPage = () => {
   const [topic, setTopic] = useState({
     title: "",
     description: "",
@@ -104,7 +104,7 @@ const AddTopicPage = () => {
             onClick={handleSave}
             className="bg-blue-500 text-white px-4 py-2 rounded-md"
           >
-            Save
+            Edit
           </button>
         </div>
         {/* Center content */}
@@ -196,4 +196,4 @@ const AddTopicPage = () => {
   );
 };
 
-export default AddTopicPage;
+export default EditTopicPage;

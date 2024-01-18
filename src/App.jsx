@@ -13,6 +13,10 @@ import AddNewCourse from "./components/CourseList & AddCourseList/AddNewCourse";
 import CourseOverview from "./components/CourseList & AddCourseList/CourseOverview";
 import CourseOverviewCard from "./components/CourseList & AddCourseList/CourseOverviewCard";
 import AddTopicPage from "./components/Topic/AddTopicPage";
+import EditTopicPage from "./components/Topic/EditTopicPage";
+import SaveTopicPage from "./components/Topic/SaveTopicPage";
+import DisplayTopic from "./components/Topic/DisplayTopic";
+import EditTopic from "./components/Topic/EditTopic";
 
 function App() {
   return (
@@ -32,6 +36,10 @@ function App() {
         <Route path="/courseoverview" element={<CourseOverview />} />
         <Route path="/courseoverviewcard" element={<CourseOverviewCard/>}/>
         <Route path="/addtopic" element={<AddTopicPage/>}/>
+        <Route path="/edittopic" element={<EditTopicPage/>}/>
+        <Route path="/savetopic" element={<SaveTopicPage/>}/>
+        <Route path="/displaytopic" element={<DisplayTopic/>}/>
+        <Route path="/edittopic" element={<EditTopic/>}/>
       </Routes>
 
       <Footer />
