@@ -137,7 +137,7 @@ const EditTopic = () => {
                   id="file"
                   name="file"
                   onChange={() => {}}
-                  className="p-2 border border-gray-300 rounded-md w-full"
+                  className="p-2 border border-gray-301 rounded-md w-full"
                   style={{ pointerEvents: "none" }}
                 />
               </div>
