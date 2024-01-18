@@ -87,6 +87,7 @@ const AddNewCourseCard = () => {
           </div>
 
           <div className="lg:w-[100%] lg:flex lg:justify-center grid gap-4 grid-cols-2">
+           <Link to ="/courseoverview">
             <button className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full cursor-pointer">
               <div className="mr-1">
                 <span>
@@ -95,6 +96,7 @@ const AddNewCourseCard = () => {
               </div>
               <div>Save</div>
             </button>
+            </Link>
             <div className="lg:flex lg:justify-space-between"></div>
             <Link to="/courselist">
               <button className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">

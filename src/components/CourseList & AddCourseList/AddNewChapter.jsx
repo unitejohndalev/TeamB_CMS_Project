@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { IoAdd } from "react-icons/io5";
 
+
 const AddNewChapter = () => {
 
   // State to keep track of the topics

@@ -1,8 +1,5 @@
 import React from 'react'
-import AddNewChapter from './AddNewChapter'
 import CourseOverviewCard from './CourseOverviewCard'
-import CourseListCard from './CourseListCard'
-import AddNewCourseCard from './AddNewCourseCard'
 import { useNavigate } from "react-router-dom";
 import { IoArrowBackCircle } from "react-icons/io5";
 
@@ -10,7 +7,7 @@ const CourseOverview = () => {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate("/");
+    navigate("/courselist");
   };
 
   return (
@@ -26,7 +23,7 @@ const CourseOverview = () => {
       <span className="text-[1rem] pl-1">Back</span>
     </div>
   </div>
-      <CourseListCard/>
+      <CourseOverviewCard/>
     
     </div>
   )
