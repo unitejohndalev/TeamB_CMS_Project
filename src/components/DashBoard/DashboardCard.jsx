@@ -34,7 +34,7 @@ const DashboardCard = () => {
       {/* change bg color to provided img */}
 
       {/* 1/18/204 bg height 323px */}
-      <div className="xl:h-[323px] relative flex flex-col items-center justify-center w-full py-10 mt-3 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-15">
+      <div className="xl:h-[323px] relative flex flex-col items-center justify-center w-full py-10 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-15">
         <p className="text-[1.8rem] font-bold text-white w-[80%] text-center xl:text-[64px] ">
           月伝で自分のやり方を学びましょう。
         </p>
@@ -78,4 +78,4 @@ const DashboardCard = () => {
 };
 
 export default DashboardCard;
-// 1/17/2024
+// 1/18/2024
