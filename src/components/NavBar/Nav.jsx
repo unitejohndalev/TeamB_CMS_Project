@@ -16,17 +16,17 @@ const Nav = () => {
   const [courseListShow, setCourseListShow] = useState(false)
 
   const showDashBoard = () => {
-    setDashBoardShow(prev => !prev)
+    setDashBoardShow(true)
     setProfileShow(false)
     setCourseListShow(false)
   }
   const showProfile = () => {
-    setProfileShow((prev) => !prev);
+    setProfileShow(true);
     setDashBoardShow(false);
     setCourseListShow(false);
   };
   const showCourseList = () => {
-    setCourseListShow((prev) => !prev);
+    setCourseListShow(true);
     setProfileShow(false);
     setDashBoardShow(false);
   };
