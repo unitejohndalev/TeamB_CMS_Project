@@ -65,7 +65,7 @@ const Nav = () => {
                 Profile
               </ul>
             </Link>
-            <Link to="/courseoverview" onClick={showCourseList}>
+            <Link to="/courselist" onClick={showCourseList}>
               <ul
                 className={
                   courseListShow ? "font-bold text-[#126912]" : "font-light"
