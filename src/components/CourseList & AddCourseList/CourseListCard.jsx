@@ -1,31 +1,31 @@
 /*January 10, 2024*/
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { IoAdd } from "react-icons/io5";
 
-import axios from 'axios';
+import axios from "axios";
 
 import { Link } from "react-router-dom";
 
+<<<<<<< HEAD
 //import mock data
 import data from '../../mockData/CourselistCard.json'
 
 
+=======
+>>>>>>> fa2f12c174b91adca2545b3d2dd3d1c94751a6c8
 const CourseListCard = () => {
-
-  
   // *NOTE
   //if data is coming from db use useState hook to store the data
   //sample: const [courses, setCourses] = useState([])
 
+  const [courses, setCourses] = useState([]);
 
-  const  [courses, setCourses] = useState([]);
-
-/* january 172024*/
+  /* january 172024*/
   useEffect(() => {
     loadCourses();
   }, []);
-  
-    const loadCourses = async () => {
+
+  const loadCourses = async () => {
     const result = await axios.get("http://localhost:8080/getCourse");
     setCourses(result.data);
   };

@@ -50,6 +50,7 @@ const Profile = () => {
             <p className="lg:p-5 lg:text-[1.2rem] xl:text-[32px] font-bold text-[#4D4141] opacity-[80%]">
               Profile Management
             </p>
+           
             <div className="hidden lg:flex lg:border-b-2 lg:border-black w-[90%]"></div>
             {/* Make Personal Information & Acc Details clickable */}
             {/* When element Personal Info clicked, must navigate to Personal Info Component same as Acc Details */}

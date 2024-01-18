@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const AddTopicPage = () => {
+const SaveTopicPage = () => {
   const [topic, setTopic] = useState({
     title: "",
     description: "",
@@ -196,4 +196,4 @@ const AddTopicPage = () => {
   );
 };
 
-export default AddTopicPage;
+export default SaveTopicPage;
