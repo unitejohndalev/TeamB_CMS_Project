@@ -5,7 +5,7 @@ const AddTopicPage = () => {
   const [topic, setTopic] = useState({
     title: "",
     description: "",
-    videoLink: "",  // Add the videoLink field to the state
+    videoLink: "", // Add the videoLink field to the state
   });
 
   const [isDescriptionFocused, setIsDescriptionFocused] = useState(false);
@@ -50,7 +50,7 @@ const AddTopicPage = () => {
     const newTopic = {
       title: `Chapter ${topics.length + 1}: Title ${topics.length + 1}`,
       description: "",
-      videoLink: "",  // Add videoLink for the new topic
+      videoLink: "", // Add videoLink for the new topic
     };
 
     // Add the new topic to the list of topics
@@ -71,7 +71,7 @@ const AddTopicPage = () => {
               <Link to="/">Back</Link>
             </button>
           </li>
-          <li className="flex-grow text-white mb-4 font-bold">Topics:</li>
+          <li className="flex-grow mb-4 font-bold text-white">Topics:</li>
           {/* Display the list of topics */}
           {topics.map((t, index) => (
             <li
@@ -79,8 +79,7 @@ const AddTopicPage = () => {
               className={`mb-2 cursor-pointer text-white ${
                 editableTopicIndex === index ? "font-bold" : ""
               }`}
-              onClick={() => setEditableTopicIndex(index)}
-            >
+              onClick={() => setEditableTopicIndex(index)}>
               {t.title}
             </li>
           ))}
@@ -88,8 +87,7 @@ const AddTopicPage = () => {
           <li className="mt-auto">
             <button
               onClick={handleAddNewTopic}
-              className="flex items-center text-blue-500"
-            >
+              className="flex items-center text-blue-500">
               Add New Topic
             </button>
           </li>
@@ -97,28 +95,26 @@ const AddTopicPage = () => {
       </nav>
 
       {/* Content Area */}
-      <div className="flex-grow p-4 flex flex-col items-center">
-         {/* Save button added on the right top corner below the navigation bar */}
-         <div className="mb-4 flex items-center justify-end w-full">
+      <div className="flex flex-col items-center flex-grow p-4">
+        {/* Save button added on the right top corner below the navigation bar */}
+        <div className="flex items-center justify-end w-full mb-4">
           <button
             onClick={handleSave}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md"
-          >
+            className="px-4 py-2 text-white bg-blue-500 rounded-md">
             Save
           </button>
         </div>
         {/* Center content */}
-        <div className="mb-5 flex items-center">
-          <h1 className="text-2xl font-bold mb-2 mr-4">Course Title</h1>
+        <div className="flex items-center mb-5">
+          <h1 className="mb-2 mr-4 text-2xl font-bold">Course Title</h1>
         </div>
-       
+
         <form onSubmit={handleSubmit} className="flex flex-col w-full">
           {/* Center form */}
-          <div className="mb-4 flex items-center">
+          <div className="flex items-center mb-4">
             <label
               htmlFor="title"
-              className="block text-sm font-medium text-gray-600 mr-2"
-            >
+              className="block mr-2 text-sm font-medium text-gray-600">
               Chapter Title:
             </label>
             <input
@@ -127,16 +123,17 @@ const AddTopicPage = () => {
               name="title"
               value={topic.title}
               onChange={handleInputChange}
-              className="p-2 border border-gray-300 rounded-md flex-grow"
+              className="flex-grow p-2 border border-gray-300 rounded-md"
               placeholder="Add Topic Title"
               required
             />
           </div>
-          <div className="mb-4 w-full"> {/* Set width to full */}
+          <div className="w-full mb-4">
+            {" "}
+            {/* Set width to full */}
             <label
               htmlFor="description"
-              className="block text-sm font-medium text-gray-600"
-            ></label>
+              className="block text-sm font-medium text-gray-600"></label>
             <textarea
               id="description"
               name="description"
@@ -149,47 +146,50 @@ const AddTopicPage = () => {
                 isDescriptionFocused ? "" : "placeholder-opacity-50"
               }`}
               placeholder="Add Topic Description..."
-              required
-            ></textarea>
+              required></textarea>
           </div>
- {/* Additional input for video link and file */}
-<div className="mb-4 flex flex-col items-center w-full">
-  {/* Center additional inputs */}
-  <div className="mb-2 w-full flex justify-center"> {/* Set width to full and center content */}
-    <div className="w-1/2 mr-2"> {/* Set width to half */}
-      <label
-        htmlFor="videoLink"
-        className="block text-sm font-medium text-gray-600"
-      >
-        Video Link:
-      </label>
-      <input
-        type="text"
-        id="videoLink"
-        name="videoLink"
-        value={topic.videoLink}
-        onChange={handleInputChange}
-        className="p-2 border border-gray-300 rounded-md w-full"
-        placeholder="Add Video Link"
-      />
-    </div>
-    <div className="w-1/2"> {/* Set width to half */}
-      <label
-        htmlFor="file"
-        className="block text-sm font-medium text-gray-600"
-      >
-        File:
-      </label>
-      <input
-        type="file"
-        id="file"
-        name="file"
-        onChange={handleInputChange}
-        className="p-2 border border-gray-300 rounded-md w-full"
-      />
-    </div>
-  </div>
-</div>
+          {/* Additional input for video link and file */}
+          <div className="flex flex-col items-center w-full mb-4">
+            {/* Center additional inputs */}
+            <div className="flex justify-center w-full mb-2">
+              {" "}
+              {/* Set width to full and center content */}
+              <div className="w-1/2 mr-2">
+                {" "}
+                {/* Set width to half */}
+                <label
+                  htmlFor="videoLink"
+                  className="block text-sm font-medium text-gray-600">
+                  Video Link:
+                </label>
+                <input
+                  type="text"
+                  id="videoLink"
+                  name="videoLink"
+                  value={topic.videoLink}
+                  onChange={handleInputChange}
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                  placeholder="Add Video Link"
+                />
+              </div>
+              <div className="w-1/2">
+                {" "}
+                {/* Set width to half */}
+                <label
+                  htmlFor="file"
+                  className="block text-sm font-medium text-gray-600">
+                  File:
+                </label>
+                <input
+                  type="file"
+                  id="file"
+                  name="file"
+                  onChange={handleInputChange}
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                />
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </div>

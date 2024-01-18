@@ -34,7 +34,7 @@ const DashboardCard = () => {
       {/* change bg color to provided img */}
 
       {/* 1/18/204 bg height 323px */}
-      <div className="xl:h-[323px] relative flex flex-col items-center justify-center w-full py-10 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-15">
+      <div className="xl:h-[323px] relative flex flex-col items-center justify-center w-full py-10 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-5">
         <p className="text-[1.8rem] font-bold text-white w-[80%] text-center xl:text-[64px] ">
           月伝で自分のやり方を学びましょう。
         </p>
@@ -47,7 +47,8 @@ const DashboardCard = () => {
           View Courses
         </button>
       </div>
-      <div className=" xl:h-[330px] 2xl:w-[1519px] flex flex-col lg:flex-row lg:w-[90vw] lg:m-auto lg:justify-center lg:mt-[6rem] items-center gap-5 mt-2 ">
+      <div className=" xl:h-[330px] 2xl:w-[1519px] flex flex-col lg:flex-row lg:w-[90vw] 
+      lg:m-auto lg:justify-center lg:mt-[4rem] items-center gap-5 mt-2 ">
         {courses.map((course, idx) => {
           return (
             // 1/11/2024

@@ -18,7 +18,7 @@ const AccDetails = () => {
               Username
             </p>
             <p className=" lg:w-[600px] lg:h-[50px] xl:w-[829px] xl:h-[70px] bg-[#D1DFCD] rounder-[5px] text-[#4D4141] text-opacity-[53%] shadow-lg  flex items-center pl-2 ">
-              UPassword
+              Password
             </p>
           </div>
         </div>

@@ -16,17 +16,17 @@ const Nav = () => {
   const [courseListShow, setCourseListShow] = useState(false)
 
   const showDashBoard = () => {
-    setDashBoardShow(prev => !prev)
+    setDashBoardShow(true)
     setProfileShow(false)
     setCourseListShow(false)
   }
   const showProfile = () => {
-    setProfileShow((prev) => !prev);
+    setProfileShow(true);
     setDashBoardShow(false);
     setCourseListShow(false);
   };
   const showCourseList = () => {
-    setCourseListShow((prev) => !prev);
+    setCourseListShow(true);
     setProfileShow(false);
     setDashBoardShow(false);
   };
@@ -47,7 +47,7 @@ const Nav = () => {
             height={50}
           />
          </Link>
-          <div className="hidden lg:flex lg:items-end lg:w-[30%] xl:w-[20%] lg:pl-10 lg:justify-between">
+          <div className="hidden lg:flex lg:items-end xl:w-[32%] 2xl:w-[25%] lg:pl-10 lg:justify-between">
             {/* 1/11/2024 */}
             <Link to="/" onClick={showDashBoard}>
               <ul

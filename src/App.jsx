@@ -17,10 +17,10 @@ import EditTopicPage from "./components/Topic/EditTopicPage";
 import SaveTopicPage from "./components/Topic/SaveTopicPage";
 import DisplayTopic from "./components/Topic/DisplayTopic";
 import EditTopic from "./components/Topic/EditTopic";
+import AddTopicTitlePage from "./components/Topic/AddTopicTitlePage";
 
 function App() {
   return (
-
     <div className="bg-[#EBFFE5] w-full min-h-fit">
       <Nav />
       <Routes>
@@ -29,18 +29,19 @@ function App() {
         <Route path="/courselist" element={<CourseList />} />
         <Route path="/addnewcourse" element={<AddNewCourse />} />
         <Route path="/courseoverview" element={<CourseOverview />} />
-  <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/courselist" element={<CourseList />} />
         <Route path="/addnewcourse" element={<AddNewCourse />} />
         <Route path="/courseoverview" element={<CourseOverview />} />
-        <Route path="/courseoverviewcard" element={<CourseOverviewCard/>}/>
-        <Route path="/courseoverviewcard" element={<CourseOverviewCard/>}/>
-        <Route path="/addtopic" element={<AddTopicPage/>}/>
-        <Route path="/edittopic" element={<EditTopicPage/>}/>
-        <Route path="/savetopic" element={<SaveTopicPage/>}/>
-        <Route path="/displaytopic" element={<DisplayTopic/>}/>
-        <Route path="/edittopic" element={<EditTopic/>}/>
+        <Route path="/courseoverviewcard" element={<CourseOverviewCard />} />
+        <Route path="/courseoverviewcard" element={<CourseOverviewCard />} />
+        <Route path="/addtopic" element={<AddTopicPage />} />
+        <Route path="/edittopic" element={<EditTopicPage />} />
+        <Route path="/savetopic" element={<SaveTopicPage />} />
+        <Route path="/displaytopic" element={<DisplayTopic />} />
+        <Route path="/edittopic" element={<EditTopic />} />
+        <Route path="/addtopictitlepage" element={<AddTopicTitlePage/>} />
       </Routes>
 
       <Footer />

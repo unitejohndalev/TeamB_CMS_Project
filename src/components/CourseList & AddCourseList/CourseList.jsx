@@ -1,6 +1,7 @@
 import React from 'react';
 import CourseOverview from './CourseOverview';
 import CourseListCard from './CourseListCard';
+import AddTopicPage from '../Topic/AddTopicPage';
 
 const CourseList = () => {
 
@@ -11,6 +12,7 @@ const CourseList = () => {
 
      {/* {<CourseOverview/>} */}
      <CourseListCard/>
+     {/* <AddTopicPage/> */}
     </div>
   );
 };

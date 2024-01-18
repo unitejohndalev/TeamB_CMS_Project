@@ -47,7 +47,7 @@ const CourseListCard = () => {
                 <div key={idx} className="w-full rounded-md shadow-md ">
                   <div className="flex px-0 py-0 rounded-md xl:h-[115px]">
                     <div className="bg-[#BCE8B1] py-1 justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
-                      <p className="lg:font-medium">{course.id}</p>
+                      <p className="lg:font-medium">PL00{course.id}</p>
                     </div>
 
                     <p
@@ -65,7 +65,7 @@ const CourseListCard = () => {
             <Link to="/AddNewCourse">
               <div
                 type="add"
-                className=" h-[10vh] mb-10  flex  w-[50%] lg:w-full cursor-pointer">
+                className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer">
                 <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
                     <IoAdd className="lg:text-[2rem] text-white" />
