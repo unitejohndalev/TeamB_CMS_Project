@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 //import logo for profile pic
 import profilePic from "../../assets/Registration.svg";
+import Footer from "../Footer";
 
 const PersonalInfo = () => {
   const [instructors, setInstructors] = useState([]);
@@ -121,6 +122,9 @@ const PersonalInfo = () => {
           </div>
         </form>
       </div>
+        <div className="mt-5">
+          <Footer />
+        </div>
     </>
   );
 };

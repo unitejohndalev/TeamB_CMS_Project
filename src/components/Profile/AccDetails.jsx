@@ -1,3 +1,4 @@
+import Footer from "../Footer";
 
 
 const AccDetails = () => {
@@ -22,6 +23,9 @@ const AccDetails = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="mt-10">
+        <Footer />
       </div>
     </>
   );

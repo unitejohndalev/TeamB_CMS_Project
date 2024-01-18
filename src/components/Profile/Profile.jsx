@@ -5,6 +5,7 @@ import AccDetails from "./AccDetails";
 //arrow back icon
 import { IoArrowBackCircle } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer";
 
 
 const Profile = () => {
