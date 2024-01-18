@@ -36,6 +36,9 @@ const Nav = () => {
     <>
       <nav className="sticky top-0 z-[100]">
         <div className="flex justify-between items-center lg:justify-normal bg-[#BCE8B1] h-[69px] ">
+         
+         <Link to="/">
+          
           <img
             className="  ml-10 xl:w-[171.67px] xl:h-[50px] lg:h-[5rem] xl:ml-[95px] py-3 xl:py-1"
             src={logo}
@@ -43,6 +46,7 @@ const Nav = () => {
             width={171.67}
             height={50}
           />
+         </Link>
           <div className="hidden lg:flex lg:items-end lg:w-[30%] xl:w-[20%] lg:pl-10 lg:justify-between">
             {/* 1/11/2024 */}
             <Link to="/" onClick={showDashBoard}>
