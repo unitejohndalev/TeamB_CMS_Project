@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
-import { IoArrowBackCircle } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { BiSave } from "react-icons/bi";
+import { ImCancelCircle } from "react-icons/im";
 
 /*January 17 2024 API for creating courses from frontend directly to the database  */
+
 const AddNewCourseCard = () => {
+  let navigate = useNavigate;
   const [courses, setCourses] = useState([]);
   const [course, setCourse] = useState({
     course_id: "",
@@ -30,26 +32,14 @@ const AddNewCourseCard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     await axios.post("http://localhost:8080/createCourse", course);
-    
-
-    
+    navigate("/");
   };
-
-  // const saveCourse =(e) =>{
-  //   e.preventDefault();
-  //   console.log(courses);
-  // }
 
   //january 18 2024
   //navigate to back course list
-  const navigate = useNavigate();
-  
-  const goBack = () => {
-    navigate(-1);
-  };
-/*January 17 2024 API for creating courses from frontend directly to the database  */
+
+  /*January 17 2024 API for creating courses from frontend directly to the database  */
 
   console.log(courses);
 
@@ -58,107 +48,64 @@ const AddNewCourseCard = () => {
   return (
     // 1/15/2024 functions, buttons, and routes
     <div>
-      {/*back button to course list page */}
-       <div>
-          {/* Use react icon instead of word back */}
-          <div
-            className="flex items-center mt-3 cursor-pointer w-[10%]"
-            onClick={goBack}>
-            <span className="text-[2.5rem]">
-              <IoArrowBackCircle />
-            </span>
-            <span className="text-[1rem] pl-1">Back</span>
-          </div>
-        </div>
-        {/*back button to course list page */}
-      {/* Navigation Bar */}
-      <Link to="/CourseOverview"/>
-      <div className="flex justify-end items-center p-4 text-white">
-        <div className="flex justify-end">
-          <button
-            type="button"
-            onClick={handleSubmit}
-            className="text-sm bg-white text-[#126912] px-3 py-1 rounded"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-
-
       {/* Content */}
-      <div className="mt-5">
+      <div className="mt-5 w-full h-[100vh] ">
+        <div className="m-5 text-black lg:font-bold lg:text-3xl py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center">
+          <p className="lg:font-bold">Create New Course</p>
+        </div>
+        <div className="mb-.5 hidden lg:flex lg:border-b-8 lg:rounded-lg lg:border-b-[#BCE8B1] lg:w-[70%] m-auto"></div>{" "}
+        {/* line under course title */}
+        <div className="mb-5 hidden lg:flex lg:border-b-8 lg:rounded-lg lg:border-b-[#126912] lg:w-[70%] m-auto"></div>{" "}
+        {/* line under course title */}
         <form onSubmit={(e) => handleSubmit(e)}>
-          <div className="flex flex-col items-center justify-center w-[90%] lg:w-[50%] m-auto gap-5">
+          <div className="flex flex-col items-center justify-center w-[90%] lg:w-[70%] m-auto gap-5">
             <input
               type="text"
-              className="bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center opacity-[50%] w-full"
+              className="bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center lg:rounded-lg opacity-[50%] w-full p-4"
               placeholder="Add course Title"
               name="course_title"
               value={crs_title}
               onChange={(e) => handleInputChange(e)}
             />
-
             <textarea
+              cols="5"
+              rows="5"
               name="course_description"
               value={description}
-              className="resize-none bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center opacity-[50%] w-full"
+              className="resize-none bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center lg:rounded-lg opacity-[50%] lg:w-full m-auto p-5 "
               placeholder="Add new brief description"
               onChange={(e) => handleInputChange(e)}
             />
-
             <input
               type="text"
-              className="bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center opacity-[50%] w-full"
+              className="bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center lg:rounded-lg opacity-[50%] w-full p-4"
               placeholder="Add Chapter Title"
               name="chapter_title"
               value={chap_title}
               onChange={(e) => handleInputChange(e)}
             />
+          </div>
 
-            <input
-              type="text"
-              className="bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center opacity-[50%] w-full"
-              placeholder="Add Chapter Title"
-              name="chapter_title"
-              value={chap_title}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <span>
-                {" "}
-                <Link to="/CourseOverview" />
-                <div className="flex justify-end items-center p-4 text-white">
-                  <div className="text-[.8rem] lg:text-[1.1rem] lg:w-[33vh] text-[#070101] opacity-[55%]">
-                    <button
-                      type="button"
-                      onClick={handleSubmit}
-                      
-                      className="text-sm bg-white text-[#126912] px-3 py-1 rounded"
-                    >   
-                      Save
-                    </button>
-                  </div>
-                </div>
-              </span>
-            {/* Repeat the input fields as needed */}
-
-            <div className="h-[10vh] mb-10 flex items-center justify-center w-[60%] lg:w-[50%] cursor-pointer">
-              
-              <div className="bg-[#126912] w-[50%] flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
+          <div className="lg:w-[100%] lg:flex lg:justify-center grid gap-4 grid-cols-2">
+            <button className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full cursor-pointer">
+              <div className="mr-1">
                 <span>
-                
+                  <BiSave className=" lg:text-[1.5rem] text-white " />
                 </span>
               </div>
-           
-                <button>
-                  <div className="bg-[#BCE8B1] text-white lg:font-bold lg:h-[10vh] pr-40 flex items-center justify-center rounded-r-sm lg:rounded-r-md">
-                    <span className="text-[.8rem] lg:text-[1.1rem] lg:w-[33vh] text-[#070101] opacity-[55%]">
-                      Add New Chapter Title
-                    </span>
-                  </div>
-                </button>
-
-            </div>
+              <div>Save</div>
+            </button>
+            <div className="lg:flex lg:justify-space-between"></div>
+            <Link to="/courselist">
+              <button className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
+                <div className="mr-1">
+                  <span>
+                    <ImCancelCircle className=" lg:text-[1.5rem] text-white " />
+                  </span>
+                </div>{" "}
+                Cancel
+              </button>
+            </Link>
           </div>
         </form>
       </div>
