@@ -8,13 +8,11 @@ import data from "../../mockData/CourseOverviewCard.json";
 //save icon
 import { TfiSave } from "react-icons/tfi";
 
-
 //back icon and back function
 import { IoArrowBackCircle } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 
-
-const EditChapterTitle = () => {
+const CreateNewChapterTitle = () => {
   /*January 17 2023 API connection from backend to front end displaying data */
   const [chapters, setChapters] = useState([]);
 
@@ -26,7 +24,7 @@ const EditChapterTitle = () => {
     const result = await axios.get("http://localhost:8080/getChapter");
     setChapters(result.data);
   };
-  //mockdata chapter
+  //mockdata chapter destructure
   const { chapterlist } = data;
 
   //back function
@@ -35,6 +33,9 @@ const EditChapterTitle = () => {
   const goBack = () => {
     navigate(-1);
   };
+
+  //limit map data into 4 instead of 5
+  const limitChapterList = chapterlist.slice(0, 4);
   return (
     <>
       <div className="relative mt-5 w-full h-[100vh] ">
@@ -46,9 +47,9 @@ const EditChapterTitle = () => {
           </span>
           <span className="text-[1rem] pl-1">Back</span>
         </div>
-        <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
+        <div className="w-[90%] mt-10 flex mx-auto flex-col lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
           <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
-            <p className="lg:font-bold">Edit Chapter Title</p>
+            <p className="lg:font-bold">Create New Chapter Title</p>
           </div>
           <div className="w-[100%] mt-10 flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto lg:mt-5 items-right">
             <p className="lg:font-bold">HTML And CSS</p>
@@ -60,7 +61,7 @@ const EditChapterTitle = () => {
             <p>Lessons</p>
           </div>
 
-          {chapterlist.map((chapter, idx) => {
+          {limitChapterList.map((chapter, idx) => {
             return (
               <div
                 key={idx}
@@ -69,15 +70,24 @@ const EditChapterTitle = () => {
                 <div
                   className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
-                  <input
-                    type="text"
-                    placeholder={`CHAPTER: ${chapter.chapiId} ${chapter.chapterTitle}`}
-                    className="bg-[#126912] placeholder:text-white w-[100vw] outline-none placeholder:text-opacity-[25%]"
-                  />
+                  <p>CHAPTER {chapter.chapiId}:</p>
+                  <p className="pl-2 lg:font-medium">{chapter.chapterTitle}</p>
                 </div>
               </div>
             );
           })}
+          <div className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
+            <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
+            <div
+              className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
+              lg:h-[50px] lg:rounded-[1rem]">
+              <input
+                type="text"
+                placeholder="Add New Chapter"
+                className="bg-[#126912] placeholder:text-white w-[100vw] outline-none placeholder:text-opacity-[25%]"
+              />
+            </div>
+          </div>
           {/*January 17 2023 API connection from backend to front end displaying data */}
 
           <div className="2xl:w-[297px] 2xl:h-[65px] lg:w-[20%] lg:flex lg:justify-center lg:items-center gap-5 ml-16">
@@ -102,4 +112,4 @@ const EditChapterTitle = () => {
   );
 };
 
-export default EditChapterTitle;
+export default CreateNewChapterTitle;

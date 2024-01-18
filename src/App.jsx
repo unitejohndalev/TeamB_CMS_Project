@@ -16,8 +16,9 @@ import AddTopicPage from "./components/Topic/AddTopicPage";
 import EditTopicPage from "./components/Topic/EditTopicPage";
 import SaveTopicPage from "./components/Topic/SaveTopicPage";
 import DisplayTopic from "./components/Topic/DisplayTopic";
-import EditTopic from "./components/Topic/EditTopic";
 import AddTopicTitlePage from "./components/Topic/AddTopicTitlePage";
+import EditChapterTitle from "./components/CourseList & AddCourseList/EditChapterTitle";
+import CreateNewChapterTitle from "./components/CourseList & AddCourseList/CreateNewChapterTitle";
 
 function App() {
   return (
@@ -29,19 +30,11 @@ function App() {
         <Route path="/courselist" element={<CourseList />} />
         <Route path="/addnewcourse" element={<AddNewCourse />} />
         <Route path="/courseoverview" element={<CourseOverview />} />
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/courselist" element={<CourseList />} />
-        <Route path="/addnewcourse" element={<AddNewCourse />} />
-        <Route path="/courseoverview" element={<CourseOverview />} />
-        <Route path="/courseoverviewcard" element={<CourseOverviewCard />} />
-        <Route path="/courseoverviewcard" element={<CourseOverviewCard />} />
-        <Route path="/addtopic" element={<AddTopicPage />} />
-        <Route path="/edittopic" element={<EditTopicPage />} />
-        <Route path="/savetopic" element={<SaveTopicPage />} />
+        <Route path="/editchaptertitle" element={<EditChapterTitle />} />
+        <Route path="/createnewchaptertitle" element={<CreateNewChapterTitle/> } />
+        <Route path="/addtopictitlepage" element={<AddTopicTitlePage />} />
         <Route path="/displaytopic" element={<DisplayTopic />} />
-        <Route path="/edittopic" element={<EditTopic />} />
-        <Route path="/addtopictitlepage" element={<AddTopicTitlePage/>} />
+        <Route path="/edittopic" element={<EditTopicPage />} />
       </Routes>
 
       <Footer />

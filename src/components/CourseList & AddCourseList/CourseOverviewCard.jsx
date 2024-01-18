@@ -5,7 +5,17 @@ import { IoAdd } from "react-icons/io5";
 //import mockdata
 import data from "../../mockData/CourseOverviewCard.json";
 
+//edit icon
+//edit icon
+import { FaEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+//back icon and back function
+import { IoArrowBackCircle } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+
 const CourseOverviewCard = () => {
+  
   /*January 17 2023 API connection from backend to front end displaying data */
   const [chapters, setChapters] = useState([]);
 
@@ -19,63 +29,91 @@ const CourseOverviewCard = () => {
   };
   //mockdata chapter
   const { chapterlist } = data;
+  
+  //back function
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  };
+
+
   return (
     <>
-      <div className="mt-5 w-full h-[100vh] ">
-        <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
+      <div className=" relative mt-5 w-full h-[100vh] ">
+        <div
+          className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
+          onClick={goBack}>
+          <span className="text-[2.5rem]">
+            <IoArrowBackCircle />
+          </span>
+          <span className="text-[1rem] pl-1">Back</span>
+        </div>
+        <div className=" w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
           <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
             <p className="lg:font-bold">Course Overview</p>
           </div>
           <div className="w-[100%] mt-10 flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto lg:mt-5 items-right">
             <p className="lg:font-bold">HTML And CSS</p>
           </div>
-            <div className="w-[69vw] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
-              <div className="w-[20vw] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
-            </div>
-         
+          <div className="w-[69vw] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
+            <div className="w-[20vw] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
+          </div>
+          <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px]">
+            <p>Lessons</p>
+          </div>
           {chapterlist.map((chapter, idx) => {
             return (
-              
-              <div key={idx} className="w-[80%] bg-[#126912] lg:rounded-lg py-1 text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[50%] lg:p-5 rounded-l-sm lg:rounded-l-md ">
-                    <p className="lg:font-medium">{chapter.chapter_title}</p>
-                  </div>
-              
+              <Link
+                to="/addtopictitlepage"
+                key={idx}
+                className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
+                <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
+                <div
+                  className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
+              lg:h-[50px] lg:rounded-[1rem]">
+                  <p>CHAPTER {chapter.chapiId}:</p>
+                  <p className="pl-2 lg:font-medium">{chapter.chapterTitle}</p>
+                </div>
+              </Link>
             );
           })}
+
           {/*January 17 2023 API connection from backend to front end displaying data */}
-          <div className="lg:w-[20%] lg:flex lg:justify-center grid gap-2 grid-cols-2 ">
-          <button className=" h-[10vh] m-10  flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
-          
-              <div className="bg-[#87D275] w-[30%]  flex items-center justify-center items-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
+
+          <div className="lg:w-[60%] lg:flex lg:justify-center gap-5 ml-16">
+            <Link
+              to="/createnewchaptertitle"
+              className=" h-[10vh] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
+              <div className="bg-[#BCE8B1] w-[30%] flex items-center justify-center h-[5vh] lg:h-[50px] rounded-l-sm lg:rounded-l-[1rem]">
                 <span>
-                  <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
+                  <FaEdit className="text-[2rem] lg:text-[2.5rem] text-white" />
                 </span>
               </div>
-              <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh] lg:w-[100vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                <span className="text-[.8rem] lg:text-[1.3rem]">
+
+              <div className="bg-[#BCE8B1] text-white lg:font-bold h-[5vh] lg:h-[50px] 2xl:h-[65px]  w-full flex items-center pl-5 rounded-r-sm  lg:rounded-r-[1rem]">
+                <span className=" lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                   Add Chapter Title
                 </span>
               </div>
-            
-          </button>
-          <div className="lg:flex lg:justify-space-between"></div>
+            </Link>
+            <div className="lg:flex lg:justify-space-between"></div>
 
-          <button className=" h-[10vh] m-10  flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
-          
-          <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
-            <span>
-              <IoAdd className="text-[2rem] lg:text-[3rem] text-white" />
-            </span>
+            <Link
+              to="/editchaptertitle"
+              className=" h-[10vh] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
+              <div className="bg-[#BCE8B1] w-[30%] flex items-center justify-center h-[5vh] lg:h-[50px] rounded-l-sm lg:rounded-l-[1rem]">
+                <span>
+                  <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
+                </span>
+              </div>
+              <div className="bg-[#BCE8B1] text-white lg:font-bold h-[5vh] lg:h-[50px] 2xl:h-[65px]  w-full flex items-center pl-5 rounded-r-sm  lg:rounded-r-[1rem]">
+                <span className="lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+                  Edit Chapter Title
+                </span>
+              </div>
+            </Link>
           </div>
-          <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh] lg:w-[100vh] w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-            <span className="text-[.8rem] lg:text-[1.3rem]">
-              Edit Chapter Title
-            </span>
-          </div>
-        
-      </button>
-          </div>
-          
         </div>
       </div>
     </>

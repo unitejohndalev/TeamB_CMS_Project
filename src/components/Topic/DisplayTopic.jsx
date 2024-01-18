@@ -1,153 +1,130 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+
+//arrow back icon
+import { IoArrowBackCircle } from "react-icons/io5";
+
+//add icon
+import { IoIosAddCircle } from "react-icons/io";
+
+//edit icon
+import { FaEdit } from "react-icons/fa";
+
+
+//import img for vid link and file link
+import vidUpload from "../../assets/vidUpload.svg";
+import fileUpload from "../../assets/fileUpload.svg";
 
 const DisplayTopic = () => {
-  const [topic, setTopic] = useState({
-    title: "",
-    description: "",
-    videoLink: "",  // Add the videoLink field to the state
-  });
+  //use navigate to back
+  const navigate = useNavigate();
 
-  const [isDescriptionFocused, setIsDescriptionFocused] = useState(false);
-  const [topics, setTopics] = useState([
-    { title: "Chapter 1: Title 1", description: "" },
-  ]);
-  const [editableTopicIndex, setEditableTopicIndex] = useState(0);
-
+  const goBack = () => {
+    navigate(-1);
+  };
   return (
-    <div className="flex h-[100vh]">
-      {/* Side Navigation Bar */}
-      <nav className="w-1/4 bg-[#1E6C0B] p-4">
-        <ul className="bg-[#1E6C0B] flex flex-col h-full">
-          <li className="mb-2">
-            {/* Apply styling to the back button */}
-            <button className="text-white hover:underline" style={{ pointerEvents: "none" }}>
-              <Link to="/">Back</Link>
-            </button>
-          </li>
-          <li className="flex-grow text-white mb-4 font-bold">Topics:</li>
-          {/* Display the list of topics */}
-          {topics.map((t, index) => (
-            <li
-              key={index}
-              className={`mb-2 cursor-pointer text-white ${
-                editableTopicIndex === index ? "font-bold" : ""
-              }`}
-              onClick={() => setEditableTopicIndex(index)}
-              style={{ pointerEvents: "none" }}
-            >
-              {t.title}
-            </li>
-          ))}
-          {/* Add a button to add a new topic */}
-          <li className="mt-auto">
-            <button className="flex items-center text-blue-500" style={{ pointerEvents: "none" }}>
-              Add New Topic
-            </button>
-          </li>
-        </ul>
-      </nav>
-
-      {/* Content Area */}
-      <div className="flex-grow p-4 flex flex-col items-center">
-        {/* Save button added on the right top corner below the navigation bar */}
-        <div className="mb-4 flex items-center justify-end w-full">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md" style={{ pointerEvents: "none" }}>
-            Save
-          </button>
+    <>
+      <div className="flex h-[100vh]">
+        {/* sidebar */}
+        <div className="h-full flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
+          <div
+            className="flex items-center mt-3 cursor-pointer "
+            onClick={goBack}>
+            <span className="text-[2.5rem] text-white">
+              <IoArrowBackCircle />
+            </span>
+            <span className="text-[1rem] pl-1 text-white">Back</span>
+          </div>
+          <div className="hidden lg:flex lg:border-b lg:border-white w-[90%] "></div>
+          <div>
+            <p className="text-white w-[3vw] text-center py-10">HTML & CSS</p>
+          </div>
+          <div>
+            <p className="py-2 text-white">Topic 1: Title</p>
+          </div>
+          <div>
+            <p className="py-2 text-white">Topic 2: Title</p>
+          </div>
+          <div>
+            <p className="py-2 text-white">Topic 3: Title</p>
+          </div>
+          <div>
+            <p className="py-2 text-white">Topic 4: Title</p>
+          </div>
+          <div>
+            <p className="py-2 text-white">Topic 5: Title</p>
+          </div>
+          <div>
+            <p className="py-2 text-white">Topic 6: Title</p>
+          </div>
+          <div>
+            <p className="py-2 text-white">Topic 7: Title</p>
+          </div>
+          <div className="flex items-center justify-center py-32 cursor-pointer">
+            <div className="text-white text-[2rem] pr-2">
+              <IoIosAddCircle />
+            </div>
+            <span className="text-white">Add New Topic</span>
+          </div>
         </div>
-        {/* Center content */}
-        <div className="mb-5 flex items-center">
-          <h1 className="text-2xl font-bold mb-2 mr-4">Course Title</h1>
-        </div>
-
-        <form className="flex flex-col w-full">
-          {/* Center form */}
-          <div className="mb-4 flex items-center">
-            <label
-              htmlFor="title"
-              className="block text-sm font-medium text-gray-600 mr-2"
-              style={{ pointerEvents: "none" }}
-            >
-              Chapter Title:
-            </label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value={topic.title}
-              onChange={() => {}}
-              className="p-2 border border-gray-300 rounded-md flex-grow"
-              placeholder="Add Topic Title"
-              required
-              style={{ pointerEvents: "none" }}
+        {/* add topic title */}
+        <div className="w-full mt-2">
+          <div className="flex items-center justify-end w-full ">
+            <Link to="/edittopic">
+              <div className="flex items-center gap-2 pr-5 cursor-pointer">
+                <div className="text-[#126912] text-[1.5rem]">
+                  <FaEdit />
+                </div>
+                <span className="text-[#126912] font-semibold">Edit</span>
+              </div>
+            </Link>
+          </div>
+          <div className="w-[90%] m-auto">
+            <span className="lg:text-[2rem] 2xl:text-[48px] font-semibold">
+              Course Title
+            </span>
+            <div className="flex items-center ">
+              <span className="lg:text-[1.5rem] 2xl:text-[36px] pr-2">
+                Chapter Title:
+              </span>
+              <p className="pl-2 lg:text-[1.5rem] 2xl:text-[36px] ">
+                Topic Title
+              </p>
+            </div>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              disabled
+              placeholder=" Lorem ipsum dolor sit amet. Ut labore facere aut dolorem deleniti cum repudiandae delectus aut quam beatae aut aliquam omnis sed harum odio. Eos consectetur placeat sit itaque ipsum qui laudantium autem. Et voluptatum optio At odio amet cum enim dicta sed deleniti adipisci ut maiores perspiciatis. Aut dicta soluta qui sapiente quibusdam ut tempore facilis et ducimus provident. Hic voluptates incidunt aut quaerat quam id maiores voluptatem et architecto nobis non mollitia eius non magnam neque id voluptatum quasi. Quo nemo officiis qui repellendus voluptatem quo atque consequuntur sit inventore dolorum ut obcaecati ratione sed quibusdam ipsam et quasi inventore."
+              className="bg-[#BCE8B1] resize-none 2xl:w-[1342px] lg:w-[100%] 2xl:h-[264px] lg:h-[25vh] placeholder:font-medium placeholder:text-center placeholder:p-6
+              outline-none rounded-lg placeholder:text-[#070101] placeholder:text-opacity-[55%] mt-5"
             />
           </div>
-          <div className="mb-4 w-full"> {/* Set width to full */}
-            <label
-              htmlFor="description"
-              className="block text-sm font-medium text-gray-600"
-              style={{ pointerEvents: "none" }}
-            ></label>
-            <textarea
-              id="description"
-              name="description"
-              value={topic.description}
-              onChange={() => {}}
-              onFocus={() => {}}
-              onBlur={() => {}}
-              rows="6"
-              className={`mt-1 p-2 border border-gray-300 rounded-md w-full lg:w-100 resize-none`}
-              placeholder="Add Topic Description..."
-              required
-              style={{ pointerEvents: "none" }}
-            ></textarea>
-          </div>
-          {/* Additional input for video link and file */}
-          <div className="mb-4 flex flex-col items-center w-full">
-            {/* Center additional inputs */}
-            <div className="mb-2 w-full flex justify-center"> {/* Set width to full and center content */}
-              <div className="w-1/2 mr-2"> {/* Set width to half */}
-                <label
-                  htmlFor="videoLink"
-                  className="block text-sm font-medium text-gray-600"
-                  style={{ pointerEvents: "none" }}
-                >
-                  Video Link:
-                </label>
-                <input
-                  type="text"
-                  id="videoLink"
-                  name="videoLink"
-                  value={topic.videoLink}
-                  onChange={() => {}}
-                  className="p-2 border border-gray-300 rounded-md w-full"
-                  placeholder="Add Video Link"
-                  style={{ pointerEvents: "none" }}
-                />
-              </div>
-              <div className="w-1/2"> {/* Set width to half */}
-                <label
-                  htmlFor="file"
-                  className="block text-sm font-medium text-gray-600"
-                  style={{ pointerEvents: "none" }}
-                >
-                  File:
-                </label>
-                <input
-                  type="file"
-                  id="file"
-                  name="file"
-                  onChange={() => {}}
-                  className="p-2 border border-gray-300 rounded-md w-full"
-                  style={{ pointerEvents: "none" }}
-                />
-              </div>
+          <div className="flex w-[90%] m-auto items-center justify-center lg:gap-x-[5rem] lg:mt-[3rem]">
+            <div className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
+              <img
+                src={vidUpload}
+                alt=""
+                className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
+              />
+              {/* <div className="hidden xl:flex xl:rotate-[25.9deg] 2xl:rotate-[29.34deg] xl:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div>
+              <div className="hidden xl:flex xl:rotate-[-25.9deg] 2xl:rotate-[29.34deg] xl:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div> */}
+            </div>
+            <div className=" relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
+              <img
+                src={fileUpload}
+                alt=""
+                className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
+              />
+              {/* <div className="lg:rotate-[25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div>
+              <div className="lg:rotate-[-25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div> */}
             </div>
           </div>
-        </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

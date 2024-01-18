@@ -3,28 +3,24 @@
     "chapterlist" : [
        {
            "chapiId": 1,
-           "chapterTitle" : "Introduction to Programming",
-           "chapteDateCreated": "Course 1"
+           "chapterTitle" : "TITLE OF THE CHAPTER"
        },
        {
             "chapiId": 2,
-           "chapterTitle" : "Cloud Computing",
-           "chapteDateCreated": " Course 2"
+           "chapterTitle" : "TITLE OF THE CHAPTER"
        },
        {
             "chapiId": 3,
-           "chapterTitle" : "Java Programming",
-           "chapteDateCreated": "Course 3"
+           "chapterTitle" : "TITLE OF THE CHAPTER"
        },
        {
             "chapiId": 4,
-           "chapterTitle" : "HTML, CSS, and Bootstrap",
-           "chapteDateCreated": " Course 4"
+           "chapterTitle" : "TITLE OF THE CHAPTER"
        },
        {
             "chapiId": 5,
-           "chapterTitle" : "Network Admin Security",
-           "chapteDateCreated": "Course 5"
+           "chapterTitle" : "TITLE OF THE CHAPTER"
+          
        }
  
    ]

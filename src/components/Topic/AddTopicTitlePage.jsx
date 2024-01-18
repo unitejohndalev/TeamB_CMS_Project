@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //arrow back icon
 import { IoArrowBackCircle } from "react-icons/io5";
@@ -9,6 +9,12 @@ import { IoIosAddCircle } from "react-icons/io";
 
 //save icon
 import { TfiSave } from "react-icons/tfi";
+
+
+
+//import img for vid link and file link
+import vidUpload from '../../assets/vidUpload.svg'
+import fileUpload from '../../assets/fileUpload.svg'
 
 const AddTopicTitlePage = () => {
   //use navigate to back
@@ -32,19 +38,19 @@ const AddTopicTitlePage = () => {
           </div>
           <div className="hidden lg:flex lg:border-b lg:border-white w-[90%] "></div>
           <div>
-            <p className="text-white w-[3vw] text-center py-5">HTML & CSS</p>
+            <p className="text-white w-[3vw] text-center py-10">HTML & CSS</p>
           </div>
           <div>
-            <p className="text-white">Topic 1: Title</p>
+            <p className="py-2 text-white">Topic 1: Title</p>
           </div>
           <div>
-            <p className="text-white">Topic 2: Title</p>
+            <p className="py-2 text-white">Topic 2: Title</p>
           </div>
           <div>
-            <p className="text-white">Topic 3: Title</p>
+            <p className="py-2 text-white">Topic 3: Title</p>
           </div>
-          <div className="flex items-center justify-center py-10">
-            <div className="text-white text-[2rem]">
+          <div className="flex items-center justify-center py-32 cursor-pointer">
+            <div className="text-white text-[2rem] pr-2">
               <IoIosAddCircle />
             </div>
             <span className="text-white">Add New Topic</span>
@@ -53,19 +59,21 @@ const AddTopicTitlePage = () => {
         {/* add topic title */}
         <div className="w-full mt-2">
           <div className="flex items-center justify-end w-full ">
-            <div className="flex items-center gap-2 pr-5">
-              <div className="text-[#126912] text-[1.5rem]">
-                <TfiSave />
+            <Link to="/displaytopic">
+              <div className="flex items-center gap-2 pr-5 cursor-pointer">
+                <div className="text-[#126912] text-[1.5rem]">
+                  <TfiSave />
+                </div>
+                <span className="text-[#126912] font-semibold">Save</span>
               </div>
-              <span className="text-[#126912] font-semibold">Save</span>
-            </div>
+            </Link>
           </div>
-          <div>
-            <span className="lg:text-[2rem] xl:text-[48px] font-semibold">
+          <div className="w-[90%] m-auto">
+            <span className="lg:text-[2rem] 2xl:text-[48px] font-semibold">
               Course Title
             </span>
             <div className="flex items-center ">
-              <span className="lg:text-[1.5rem] xl:text-[36px] ">
+              <span className="lg:text-[1.5rem] 2xl:text-[36px] pr-2">
                 Chapter Title:
               </span>
               <input
@@ -82,11 +90,31 @@ const AddTopicTitlePage = () => {
               cols="30"
               rows="10"
               placeholder="Add Topic Description"
+              className="bg-[#BCE8B1] resize-none 2xl:w-[1342px] lg:w-[100%] 2xl:h-[264px] lg:h-[25vh] placeholder:font-bold placeholder:text-center placeholder:py-16
+              outline-none pl-3 pt-3 rounded-lg placeholder:text-[#070101] placeholder:text-opacity-[55%] mt-5"
             />
           </div>
-          <div>
-            <span>vid link</span>
-            <span>file link</span>
+          <div className="flex w-[90%] m-auto items-center justify-center lg:gap-x-[5rem] lg:mt-[3rem]">
+            <div className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
+              <img
+                src={vidUpload}
+                alt=""
+                className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
+              />
+              {/* rotation line not responsive */}
+              {/* <div className="lg:rotate-[25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div>
+              <div className="lg:rotate-[-25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div> */}
+            </div>
+            <div className=" relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
+              <img
+                src={fileUpload}
+                alt=""
+                className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
+              />
+              {/* rotation line not responsive */}
+              {/* <div className="lg:rotate-[25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div>
+              <div className="lg:rotate-[-25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div> */}
+            </div>
           </div>
         </div>
       </div>
