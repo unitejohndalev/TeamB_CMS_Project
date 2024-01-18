@@ -56,25 +56,28 @@ const Profile = () => {
             {/* Use react icon instead of plain text for better UI in mobile and desktop */}
             {/* In desktop mode when hovered a text Personal Information must show, same as Account Details */}
             <p
-              className="cursor-pointer lg:mt-2 lg:p-2 lg:text-[1.2rem] xl:text-[32px] text-[#4D4141] opacity-[53%] hover:bg-[#126912] lg:w-[100%] lg:text-center hover:bg-opacity-[25%] "
+              className={
+                showPersonalInfo
+                  ? "cursor-pointer lg:mt-2 lg:p-2 lg:text-[1.2rem] xl:text-[32px] text-[#000000] opacity-[53%] bg-[#126912] lg:w-[100%] lg:text-center bg-opacity-[25%] "
+                  : "cursor-pointer lg:mt-2 lg:p-2 lg:text-[1.2rem] xl:text-[32px] text-[#4D4141] hover:text-[#000000] opacity-[53%] lg:w-[100%] lg:text-center "
+              }
               onClick={showPInfo}>
               Personal Information
             </p>
             <p
-              className="cursor-pointer lg:text-[1.2rem] xl:text-[32px] lg:p-2 text-[#4D4141] opacity-[53%] hover:bg-[#126912] lg:w-[100%] lg:text-center hover:bg-opacity-[25%]"
+              className={
+                showAccDetails
+                  ? "cursor-pointer lg:text-[1.2rem] xl:text-[32px] lg:p-2 text-[#000] opacity-[53%] bg-[#126912] lg:w-[100%] lg:text-center bg-opacity-[25%]"
+                  : "cursor-pointer lg:text-[1.2rem] xl:text-[32px] lg:p-2 text-[#4D4141] hover:text-[#000] opacity-[53%]  lg:w-[100%] lg:text-center "
+              }
               onClick={showADetails}>
               Account Details
             </p>
           </div>
           <div>
             {/* Place your Component here */}
-            {showPersonalInfo && 
-            <PersonalInfo />
-            }
-            {
-              showAccDetails &&
-            <AccDetails />
-            }
+            {showPersonalInfo && <PersonalInfo />}
+            {showAccDetails && <AccDetails />}
             {/* /* Place AccDetails Component here */}
             {/* <AccDetails/> */}
           </div>

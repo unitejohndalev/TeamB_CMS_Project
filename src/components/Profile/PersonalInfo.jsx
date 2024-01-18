@@ -53,19 +53,28 @@ const PersonalInfo = () => {
                   className="cursor-pointer hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
                 />
               </div>
-              <div className="lg:flex lg:flex-col lg:w-[70%] xl:gap-y-10 lg:gap-y-5">
+              <div className="relative lg:flex lg:flex-col lg:w-[70%] xl:gap-y-10 lg:gap-y-5">
+                <label
+                  htmlFor="firstName"
+                  className="absolute z-10 top-10 left-2 text-[.8rem] xl:text-[16px]  xl:top-[5rem]">
+                  First Name *
+                </label>
                 <input
-                  className="input-style lg:w-full lg:mt-10 xl:mt-20"
-                  placeholder="First Name * "
+                  className="relative input-style lg:w-full lg:mt-10 xl:mt-20 "
+                  id="firstName"
                   type="text"
                   name="instructor_first_name" //should be edited
                   value={first_name}
                   onChange={(e) => handleInputChange(e)}
                 />
-
+                <label
+                  htmlFor="lastName"
+                  className="absolute z-10 top-[6.7rem] left-2 text-[.8rem] xl:text-[16px] xl:top-[10.5rem] ">
+                  Last Name *
+                </label>
                 <input
                   className="input-style lg:w-full"
-                  placeholder="Last Name * "
+                  id="lastName"
                   type="text"
                   name="instructor_last_name" //edit
                   value={last_name}
@@ -74,18 +83,31 @@ const PersonalInfo = () => {
               </div>
             </div>
             <div className="lg:flex lg:gap-y-5 lg:flex-col xl:gap-y-10">
+              <label
+                htmlFor="Email"
+                className="absolute xl:top-[20.9rem] xl:left-[3.5rem] z-10 top-[13.2rem] left-[2.7rem] text-[.8rem] xl:text-[16px]">
+                Email Address
+              </label>
               <input
                 className=" input-style lg:mt-5"
-                placeholder="Username * "
+                id="Email"
                 type="text"
                 name="instructor_username" //edit
                 value={username}
+                disabled
                 onChange={(e) => handleInputChange(e)}
               />
+              <label
+                htmlFor="Username"
+                className="absolute z-10 top-[17.4rem] left-[2.7rem] text-[.8rem] xl:text-[16px] xl:top-[26.5rem] xl:left-[3.5rem]">
+                Contact Number *
+              </label>
+
               <input
                 className=" input-style"
-                placeholder="Email Address * "
+                placeholder="+63"
                 type="text"
+                id="Username"
                 name="instructor_email" //edit
                 value={email}
                 onChange={(e) => handleInputChange(e)}
@@ -105,4 +127,4 @@ const PersonalInfo = () => {
 
 export default PersonalInfo;
 
-//january 12 2024
+//1/18/2024
