@@ -6,13 +6,10 @@ import axios from "axios";
 
 import { Link } from "react-router-dom";
 
-<<<<<<< HEAD
 //import mock data
 import data from '../../mockData/CourselistCard.json'
 
 
-=======
->>>>>>> fa2f12c174b91adca2545b3d2dd3d1c94751a6c8
 const CourseListCard = () => {
   // *NOTE
   //if data is coming from db use useState hook to store the data
