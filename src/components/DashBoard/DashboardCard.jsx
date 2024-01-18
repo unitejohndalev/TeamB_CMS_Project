@@ -47,7 +47,7 @@ const DashboardCard = () => {
           View Courses
         </button>
       </div>
-      <div className=" xl:h-[330px] xl:w-[1519px] flex flex-col lg:flex-row lg:w-[90vw] lg:m-auto lg:justify-center lg:mt-[6rem] items-center gap-5 mt-2 ">
+      <div className=" xl:h-[330px] 2xl:w-[1519px] flex flex-col lg:flex-row lg:w-[90vw] lg:m-auto lg:justify-center lg:mt-[6rem] items-center gap-5 mt-2 ">
         {courses.map((course, idx) => {
           return (
             // 1/11/2024
