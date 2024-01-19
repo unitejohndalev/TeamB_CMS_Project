@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 //import mock data json file
 import data from "../../mockData/MockData.json";
+import Footer from "../Footer";
 
 const DashboardCard = () => {
   // *NOTE
@@ -47,7 +48,8 @@ const DashboardCard = () => {
           View Courses
         </button>
       </div>
-      <div className=" xl:h-[330px] 2xl:w-[1519px] flex flex-col lg:flex-row lg:w-[90vw] 
+      <div
+        className=" xl:h-[330px] 2xl:w-[1519px] flex flex-col lg:flex-row lg:w-[90vw] 
       lg:m-auto lg:justify-center lg:mt-[4rem] items-center gap-5 mt-2 ">
         {courses.map((course, idx) => {
           return (
@@ -73,6 +75,9 @@ const DashboardCard = () => {
             </div>
           );
         })}
+      </div>
+      <div className="mt-10">
+        <Footer />
       </div>
     </div>
   );
