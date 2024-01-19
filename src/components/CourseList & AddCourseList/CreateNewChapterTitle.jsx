@@ -1,3 +1,5 @@
+//display chapter title
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { IoAdd } from "react-icons/io5";
@@ -38,7 +40,7 @@ const CreateNewChapterTitle = () => {
   const limitChapterList = chapterlist.slice(0, 4);
   return (
     <>
-      <div className="relative mt-5 w-full h-[100vh] ">
+      <div className="relative mt-5 w-full h-full ">
         <div
           className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
           onClick={goBack}>
@@ -47,7 +49,7 @@ const CreateNewChapterTitle = () => {
           </span>
           <span className="text-[1rem] pl-1">Back</span>
         </div>
-        <div className="w-[90%] mt-10 flex mx-auto flex-col lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
+        <div className="h-full w-[90%] mt-10 flex mx-auto flex-col lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
           <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
             <p className="lg:font-bold">Create New Chapter Title</p>
           </div>
@@ -94,18 +96,23 @@ const CreateNewChapterTitle = () => {
             <Link
               to="/courseoverview"
               className=" h-[10vh] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
-              <div className="bg-[#BCE8B1] w-[100%] flex items-center pr-2 justify-end h-[5vh] lg:h-[50px] rounded-l-sm lg:rounded-l-[1rem]">
-                <span>
+              <div className="bg-[#BCE8B1] w-[100%] flex justify-center items-center pr-2 justify-end h-[5vh] lg:h-[50px] rounded-sm lg:rounded-[1rem]">
+                <span className="pr-3">
                   <TfiSave className="text-[2rem] text-white" />
                 </span>
-              </div>
-              <div className="bg-[#BCE8B1] text-white lg:font-bold h-[5vh] lg:h-[50px] 2xl:h-[65px]  w-[100%] flex items-center  rounded-r-sm  lg:rounded-r-[1rem]">
-                <span className=" lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+                <span className="lg:font-bold lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                   Save
                 </span>
               </div>
             </Link>
           </div>
+          <div>
+      <footer className="flex justify-center p-10">
+        <div>
+          <p className="text-[#4D9349] font-medium">All Rights Reserved | Copyright 2024</p>
+        </div>
+      </footer>
+    </div>
         </div>
       </div>
     </>

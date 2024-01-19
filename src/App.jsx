@@ -37,7 +37,7 @@ function App() {
         <Route path="/edittopic" element={<EditTopicPage />} />
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -42,7 +42,7 @@ const CourseOverviewCard = () => {
 
   return (
     <>
-      <div className=" relative mt-5 w-full h-[100vh] ">
+      <div className=" relative mt-5 w-full h-full ">
         <div
           className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
           onClick={goBack}>
@@ -51,7 +51,7 @@ const CourseOverviewCard = () => {
           </span>
           <span className="text-[1rem] pl-1">Back</span>
         </div>
-        <div className=" h-full w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
+        <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-8">
           <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
             <p className="lg:font-bold">Course Overview</p>
           </div>
@@ -87,14 +87,11 @@ const CourseOverviewCard = () => {
             <Link
               to="/createnewchaptertitle"
               className="lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]">
-              <div className=" w-[30%] flex items-center justify-center ">
-                <span>
+              <div className=" w-[30%] flex items-center justify-center w-full">
+                <span className="pr-4">
                   <FaEdit className="text-[2rem] lg:text-[2.5rem] text-white" />
                 </span>
-              </div>
-
-              <div className=" text-white lg:font-bold  w-full flex items-center pl-5 ">
-                <span className=" lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+                <span className=" lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                   Add Chapter Title
                 </span>
               </div>
@@ -104,18 +101,24 @@ const CourseOverviewCard = () => {
             <Link
               to="/editchaptertitle"
               className=" lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]">
-              <div className=" w-[30%] flex items-center justify-center ">
-                <span>
-                  <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
+              <div className=" w-[30%] flex items-center justify-center  w-full">
+                <span className="pr-4 ">
+                  <IoAdd className="lg:font-bold text-[2rem] lg:text-[2.5rem] text-white" />
                 </span>
-              </div>
-              <div className=" text-white lg:font-bold   w-full flex items-center pl-5 ">
-                <span className="lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+             
+                <span className="lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                   Edit Chapter Title
                 </span>
               </div>
             </Link>
           </div>
+          <div>
+      <footer className="flex justify-center p-10">
+        <div>
+          <p className="text-[#4D9349] font-medium">All Rights Reserved | Copyright 2024</p>
+        </div>
+      </footer>
+    </div>
         </div>
       </div>
     </>
