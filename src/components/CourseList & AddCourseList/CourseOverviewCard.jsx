@@ -129,6 +129,7 @@ const CourseOverviewCard = () => {
 
         </div>
       </div>
+      </div>
     </>
   );
 };

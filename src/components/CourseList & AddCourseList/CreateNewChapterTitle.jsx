@@ -122,6 +122,7 @@ const CreateNewChapterTitle = () => {
 
         </div>
       </div>
+      </div>
     </>
   );
 };
