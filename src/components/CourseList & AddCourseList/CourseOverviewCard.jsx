@@ -45,6 +45,7 @@ const CourseOverviewCard = () => {
       {/*January 19 2024 -gem modify responsiveness*/}
 
       <div className=" relative mt-5 w-full h-full ">
+     <div className="relative w-full h-full mt-5 ">
         <div
           className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
           onClick={goBack}>
@@ -133,3 +134,4 @@ const CourseOverviewCard = () => {
 };
 
 export default CourseOverviewCard;
+// 1/19/2024
