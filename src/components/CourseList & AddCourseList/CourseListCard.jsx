@@ -79,6 +79,11 @@ const CourseListCard = () => {
               </div>
             </Link>
           </div>
+          <footer className="flex justify-center py-20">
+        <div>
+          <p className="text-[#4D9349] font-medium">All Rights Reserved | Copyright 2024</p>
+        </div>
+      </footer>
         </div>
       </div>
     </>

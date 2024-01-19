@@ -110,6 +110,11 @@ const AddNewCourseCard = () => {
             </Link>
           </div>
         </form>
+        <footer className="flex justify-center pt-20">
+        <div>
+          <p className="text-[#4D9349] font-medium">All Rights Reserved | Copyright 2024</p>
+        </div>
+      </footer>
       </div>
     </div>
   );
