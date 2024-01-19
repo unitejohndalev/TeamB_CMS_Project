@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 //import logo for profile pic
-import profilePic from "../../assets/Registration.svg";
+import profilePic from "../../assets/Registration.png";
 import Footer from "../Footer";
 
 const PersonalInfo = () => {
@@ -57,11 +57,11 @@ const PersonalInfo = () => {
               <div className="relative lg:flex lg:flex-col lg:w-[70%] xl:gap-y-10 lg:gap-y-5">
                 <label
                   htmlFor="firstName"
-                  className="absolute z-10 top-10 left-2 text-[.8rem] xl:text-[16px]  xl:top-[5rem]">
-                  First Name *
+                  className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-10 left-2 text-[.8rem] xl:text-[16px]  xl:top-[5rem]">
+                  First Name <span className="text-[#FF2626]">*</span>
                 </label>
                 <input
-                  className="relative input-style lg:w-full lg:mt-10 xl:mt-20 "
+                  className="relative input-style lg:w-full lg:mt-10 xl:mt-20 bg-[#EBFFE5]"
                   id="firstName"
                   type="text"
                   name="instructor_first_name" //should be edited
@@ -70,11 +70,11 @@ const PersonalInfo = () => {
                 />
                 <label
                   htmlFor="lastName"
-                  className="absolute z-10 top-[6.7rem] left-2 text-[.8rem] xl:text-[16px] xl:top-[10.5rem] ">
-                  Last Name *
+                  className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-[6.7rem] left-2 text-[.8rem] xl:text-[16px] xl:top-[10.5rem] ">
+                  Last Name <span className="text-[#FF2626]">*</span>
                 </label>
                 <input
-                  className="input-style lg:w-full"
+                  className="input-style lg:w-full bg-[#EBFFE5]"
                   id="lastName"
                   type="text"
                   name="instructor_last_name" //edit
@@ -86,7 +86,7 @@ const PersonalInfo = () => {
             <div className="lg:flex lg:gap-y-5 lg:flex-col xl:gap-y-10">
               <label
                 htmlFor="Email"
-                className="absolute xl:top-[20.9rem] xl:left-[3.5rem] z-10 top-[13.2rem] left-[2.7rem] text-[.8rem] xl:text-[16px]">
+                className=" text-[#4D4141] text-opacity-[53%] absolute xl:top-[20.9rem] xl:left-[3.5rem] z-10 top-[13.2rem] left-[2.7rem] text-[.8rem] xl:text-[16px]">
                 Email Address
               </label>
               <input
@@ -100,12 +100,12 @@ const PersonalInfo = () => {
               />
               <label
                 htmlFor="Username"
-                className="absolute z-10 top-[17.4rem] left-[2.7rem] text-[.8rem] xl:text-[16px] xl:top-[26.5rem] xl:left-[3.5rem]">
-                Contact Number *
+                className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-[17.4rem] left-[2.7rem] text-[.8rem] xl:text-[16px] xl:top-[26.5rem] xl:left-[3.5rem]">
+                Contact Number <span className="text-[#FF2626]">*</span>
               </label>
 
               <input
-                className=" input-style"
+                className=" input-style bg-[#EBFFE5] placeholder:text-[#4D4141] placeholder:text-opacity-[53%]"
                 placeholder="+63"
                 type="text"
                 id="Username"
@@ -122,9 +122,6 @@ const PersonalInfo = () => {
           </div>
         </form>
       </div>
-        <div className="mt-5">
-          <Footer />
-        </div>
     </>
   );
 };

@@ -84,7 +84,9 @@ const Profile = () => {
             {/* <AccDetails/> */}
           </div>
         </div>
-        
+        <div className="pt-5">
+          <Footer />
+        </div>
       </div>
     </>
   );

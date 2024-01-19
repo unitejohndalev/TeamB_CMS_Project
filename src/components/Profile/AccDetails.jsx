@@ -6,7 +6,7 @@ const AccDetails = () => {
     <>
       {/* 1/11/2024 Created Account Details UI Ouline */}
       {/* Note: Change UI according to UI Designed */}
-      <div className="relative w-[90%] flex flex-col justify-end items-start h-full  lg:w-[700px] lg:h-[350px] xl:w-[979px] xl:h-[512px] bg-[#126912] lg:rounded-md shadow-md ">
+      <div className="mb-10 relative w-[90%] flex flex-col justify-end items-start h-full  lg:w-[700px] lg:h-[350px] xl:w-[979px] xl:h-[512px] bg-[#126912] lg:rounded-md shadow-md ">
         <p className="absolute top-0  text-white lg:text-[1.5rem] xl:text-[32px] lg:italic lg:pl-5">
           Account Details
         </p>
@@ -24,9 +24,7 @@ const AccDetails = () => {
           </div>
         </div>
       </div>
-      <div className="mt-10">
-        <Footer />
-      </div>
+    
     </>
   );
 };
