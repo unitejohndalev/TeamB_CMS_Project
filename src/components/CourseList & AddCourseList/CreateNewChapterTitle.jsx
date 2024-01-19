@@ -40,6 +40,8 @@ const CreateNewChapterTitle = () => {
   const limitChapterList = chapterlist.slice(0, 4);
   return (
     <>
+      {/*January 19 2024 -gem modify responsiveness*/}
+      <div className="relative mt-5 w-full h-full ">
       <div className="relative w-full h-full mt-5 ">
         <div
           className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
@@ -90,7 +92,10 @@ const CreateNewChapterTitle = () => {
               />
             </div>
           </div>
+                {/*January 19 2024 -gem modify responsiveness*/}
+
           {/*January 17 2023 API connection from backend to front end displaying data */}
+      {/*January 19 2024 -gem modify buttonUI and add footer*/}
 
           <div className="2xl:w-[297px] 2xl:h-[65px] lg:w-[20%] lg:flex lg:justify-center lg:items-center gap-5 ml-16">
             <Link
@@ -113,7 +118,10 @@ const CreateNewChapterTitle = () => {
         </div>
       </footer>
     </div>
+          {/*January 19 2024 -gem modify buttonUI and add footer*/}
+
         </div>
+      </div>
       </div>
     </>
   );

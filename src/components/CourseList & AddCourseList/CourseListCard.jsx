@@ -7,8 +7,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 //import mock data
-import data from '../../mockData/CourselistCard.json'
-
+import data from "../../mockData/CourselistCard.json";
 
 const CourseListCard = () => {
   // *NOTE
@@ -26,10 +25,10 @@ const CourseListCard = () => {
     const result = await axios.get("http://localhost:8080/getCourse");
     setCourses(result.data);
   };
- /*January 15 2024 */
-  
- //course list mock data
- const {courselist} = data
+  /*January 15 2024 */
+
+  //course list mock data
+  const { courselist } = data;
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
@@ -52,7 +51,8 @@ const CourseListCard = () => {
 
                     <p
                       className="text-white lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
-                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
+                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
+                    >
                       {course.courseTitle}
                     </p>
                   </div>
@@ -61,30 +61,34 @@ const CourseListCard = () => {
             })}
 
             {/*January 15 2024*/}
+            {/*January 19 2024 -gem modify buttons add footer*/}
 
             <Link to="/AddNewCourse">
               <div
                 type="add"
-                className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer">
+                className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer"
+              >
                 <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
                     <IoAdd className="lg:text-[2rem] text-white" />
                   </span>
                 </div>
                 <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]  w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className="lg:text-[.8rem]">
-                    Add New Course
-                  </span>
+                  <span className="lg:text-[.8rem]">Add New Course</span>
                 </div>
               </div>
             </Link>
           </div>
           <footer className="flex justify-center py-20">
-        <div>
-          <p className="text-[#4D9349] font-medium">All Rights Reserved | Copyright 2024</p>
+            <div>
+              <p className="text-[#4D9349] font-medium">
+                All Rights Reserved | Copyright 2024
+              </p>
+            </div>
+          </footer>
         </div>
-      </footer>
-        </div>
+          {/*January 19 2024 -gem modify buttons add footer*/}
+
       </div>
     </>
   );
