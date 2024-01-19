@@ -36,8 +36,7 @@ const AddNewCourseCard = () => {
     navigate("/");
   };
 
-  //january 18 2024
-  //navigate to back course list
+  
 
   /*January 17 2024 API for creating courses from frontend directly to the database  */
 
@@ -48,6 +47,8 @@ const AddNewCourseCard = () => {
   return (
     // 1/15/2024 functions, buttons, and routes
     <div>
+    {/* //january 18 2024
+  //navigate to back course list */}
       {/* Content */}
       <div className="mt-5 w-full h-[100vh] ">
         <div className="m-5 text-black lg:font-bold lg:text-3xl py-1 lg:py-0 lg:text-[1.2rem] lg:w-[98%] flex justify-center items-center">
@@ -85,7 +86,9 @@ const AddNewCourseCard = () => {
               onChange={(e) => handleInputChange(e)}
             />
           </div>
-
+{/* //january 18 2024
+  //navigate to back course list */}
+  {/*January 19 2024 -gem */}
           <div className="lg:w-[100%] lg:flex lg:justify-center grid gap-4 grid-cols-2">
            <Link to ="/courseoverview">
             <button className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full cursor-pointer">
@@ -116,6 +119,8 @@ const AddNewCourseCard = () => {
         </div>
       </footer>
       </div>
+        {/*January 19 2024 -gem */}
+
     </div>
   );
 };

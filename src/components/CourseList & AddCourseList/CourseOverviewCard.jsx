@@ -42,6 +42,8 @@ const CourseOverviewCard = () => {
 
   return (
     <>
+      {/*January 19 2024 -gem modify responsiveness*/}
+
       <div className=" relative mt-5 w-full h-full ">
         <div
           className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
@@ -80,8 +82,11 @@ const CourseOverviewCard = () => {
               </Link>
             );
           })}
+                {/*January 19 2024 -gem modify responsiveness*/}
+
 
           {/*January 17 2023 API connection from backend to front end displaying data */}
+            {/*January 19 2024 -gem modify buttons add footer*/}
 
           <div className="lg:w-[65%] lg:flex lg:justify-center gap-5 ml-16">
             <Link
@@ -119,6 +124,8 @@ const CourseOverviewCard = () => {
         </div>
       </footer>
     </div>
+      {/*January 19 2024 -gem modify buttons add footer*/}
+
         </div>
       </div>
     </>

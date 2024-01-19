@@ -37,6 +37,8 @@ const EditChapterTitle = () => {
   };
   return (
     <>
+                    {/*January 19 2024 -gem modify responsiveness*/}
+
       <div className="relative mt-5 w-full h-full ">
         <div
           className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
@@ -78,7 +80,10 @@ const EditChapterTitle = () => {
               </div>
             );
           })}
+          {/*January 19 2024 -gem modify responsiveness*/}
+
           {/*January 17 2023 API connection from backend to front end displaying data */}
+                {/*January 19 2024 -gem modify button UI and add footer*/}
 
           <div className="2xl:w-[297px] 2xl:h-[65px] lg:w-[20%] lg:flex lg:justify-center lg:items-center gap-5 ml-16">
             <Link
@@ -103,6 +108,8 @@ const EditChapterTitle = () => {
       </footer>
     </div>
         </div>
+                        {/*January 19 2024 -gem modify button UI and add footer*/}
+
       </div>
     </>
   );
