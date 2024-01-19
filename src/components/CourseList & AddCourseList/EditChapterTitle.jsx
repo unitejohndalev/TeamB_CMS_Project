@@ -109,6 +109,7 @@ const EditChapterTitle = () => {
       </footer>
     </div>
         </div>
+        </div>
                         {/*January 19 2024 -gem modify button UI and add footer*/}
 
       </div>
