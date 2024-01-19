@@ -56,7 +56,7 @@ const DisplayTopic = () => {
               <p className="py-2 text-white">Topic 5: Title</p>
             </div>
           </div>
-          <div className="mt-10 flex items-center justify-center cursor-pointer">
+          <div className="flex items-center justify-center mt-10 cursor-pointer">
             <div className="text-white text-[2rem] pr-2">
               <IoIosAddCircle />
             </div>
@@ -129,3 +129,4 @@ const DisplayTopic = () => {
 };
 
 export default DisplayTopic;
+// 1/19/2024
