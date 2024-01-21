@@ -11,42 +11,51 @@ const Nav = () => {
   const [show, setShow] = useState(false);
 
   //nav active focus when clicking elements
-  const [dashBoardShow, setDashBoardShow] = useState(false)
-  const [profileShow, setProfileShow] = useState(false)
-  const [courseListShow, setCourseListShow] = useState(false)
+  const [logoShow, setLogoShow] = useState(false);
+  const [dashBoardShow, setDashBoardShow] = useState(false);
+  const [profileShow, setProfileShow] = useState(false);
+  const [courseListShow, setCourseListShow] = useState(false);
+
+  const showLogo = () => {
+    setLogoShow(true);
+    setDashBoardShow(false);
+    setProfileShow(false);
+    setCourseListShow(false);
+  };
 
   const showDashBoard = () => {
-    setDashBoardShow(true)
-    setProfileShow(false)
-    setCourseListShow(false)
-  }
+    setDashBoardShow(true);
+    setProfileShow(false);
+    setCourseListShow(false);
+        setLogoShow(false);
+  };
   const showProfile = () => {
     setProfileShow(true);
     setDashBoardShow(false);
     setCourseListShow(false);
+     setLogoShow(false);
   };
   const showCourseList = () => {
     setCourseListShow(true);
     setProfileShow(false);
     setDashBoardShow(false);
+     setLogoShow(false);
   };
 
-  
   return (
     <>
       <nav className="sticky top-0 z-[100]">
         <div className="flex justify-between items-center lg:justify-normal bg-[#BCE8B1] h-[69px] ">
-         
-         <Link to="/">
-          
-          <img
-            className="  ml-10 xl:w-[171.67px] xl:h-[50px] lg:h-[5rem] xl:ml-[95px] py-3 xl:py-1"
-            src={logo}
-            alt="tsukidenLogo"
-            width={171.67}
-            height={50}
-          />
-         </Link>
+          <Link to="/">
+            <img
+              className="  ml-10 xl:w-[171.67px] xl:h-[50px] lg:h-[5rem] xl:ml-[95px] py-3 xl:py-1"
+              src={logo}
+              alt="tsukidenLogo"
+              width={171.67}
+              height={50}
+              onClick={showLogo}
+            />
+          </Link>
           <div className="hidden lg:flex lg:items-end xl:w-[32%] 2xl:w-[25%] lg:pl-10 lg:justify-between">
             {/* 1/11/2024 */}
             <Link to="/" onClick={showDashBoard}>
@@ -88,4 +97,4 @@ const Nav = () => {
 };
 
 export default Nav;
-//1/18/2024
+//1/22/2024
