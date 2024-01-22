@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PersonalInfo from "./PersonalInfo";
 import AccDetails from "./AccDetails";
 
@@ -6,11 +6,15 @@ import AccDetails from "./AccDetails";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
+import { DashBoardContext } from "../context/DashBoardContext";
 
 
 const Profile = () => {
   //use navigate to back
   const navigate = useNavigate();
+  
+  //use context for dropdown
+  const { showDropDown, setShowDropDown } = useContext(DashBoardContext);
   
     const goBack = () => {
       navigate(-1);
@@ -26,10 +30,12 @@ const Profile = () => {
   const showPInfo = () => {
     setPersonalInfo(() => prev => !prev)
     setShowAccDetails(false)
+    setShowDropDown(false)
   }
     const showADetails = () => {
       setShowAccDetails(() => (prev) => !prev);
       setPersonalInfo(false);
+      setShowDropDown(false)
     };
   return (
     <>
