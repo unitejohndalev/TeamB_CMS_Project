@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 //import mock data json file
 import data from "../../mockData/MockData.json";
 import Footer from "../Footer";
+import DashboardCardHover from "./DashBoardCardHover";
+import { DashBoardContext } from "../context/DashBoardContext";
 
 const DashboardCard = () => {
   // *NOTE
@@ -30,17 +32,21 @@ const DashboardCard = () => {
   //for now I'll be displaying a data coming from a json format file
   //destructure the data
   const { courses } = data;
+
+  //react hook for dashboardhover
+  const { dashBoardHover, setDashBoardHover } = useContext(DashBoardContext);
+
   return (
-    <div className="w-full h-[100vh]">
+    <div className="w-full h-[100vh] relative">
       {/* change bg color to provided img */}
 
       {/* 1/18/204 bg height 323px */}
       <div className="xl:h-[323px] relative flex flex-col items-center justify-center w-full py-10 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-5">
-        <p className="text-[1.8rem] font-bold text-white w-[80%] text-center xl:text-[64px] ">
+        <p className="text-[1.8rem] lg:text-[2rem] font-bold text-white w-[80%] text-center xl:text-[3.5rem] 2xl:text-[64px] ">
           月伝で自分のやり方を学びましょう。
         </p>
 
-        <p className="xl:text-[64px] italic lg:text-[1.7rem] font-bold text-[#67836B]  pb-10 lg:pb-15">
+        <p className="xl:text-[3rem] 2xl:text-[64px] italic lg:text-[1.7rem] font-bold text-[#67836B]  pb-10 lg:pb-15">
           Learn your way at Tsukiden.
         </p>
 
@@ -68,7 +74,9 @@ const DashboardCard = () => {
                 <p className=" line-clamp-4 xl:line-clamp-6">
                   {course.description}
                 </p>
-                <button className="text-[#1E6C0B] pt-3 font-bold">
+                <button
+                  className="text-[#1E6C0B] pt-3 font-bold"
+                  onClick={() => setDashBoardHover((prev) => !prev)}>
                   See more
                 </button>
               </div>
@@ -79,9 +87,13 @@ const DashboardCard = () => {
       <div className="mt-10">
         <Footer />
       </div>
+
+      <div className="absolute transform -translate-x-1/2 -translate-y-1/2 top-[45%] left-1/2">
+        {dashBoardHover && <DashboardCardHover />}
+      </div>
     </div>
   );
 };
 
 export default DashboardCard;
-// 1/18/2024
+// 1/12/2024
