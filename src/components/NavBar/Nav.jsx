@@ -110,7 +110,7 @@ const Nav = () => {
                     className={
                       profileShow
                         ? "font-semibold text-[#fff] bg-[#116211] text-center p-1"
-                        : "font-light text-[#000000] text-center p-1"
+                        : "font-light text-[#000000] text-center p-1 bg-white"
                     }>
                     PROFILE
                   </p>
@@ -120,7 +120,7 @@ const Nav = () => {
                     className={
                       logoShow
                         ? "font-semibold text-[#fff] bg-[#116211] text-center p-1"
-                        : "font-light text-[#000000] text-center p-1"
+                        : "font-light text-[#000000] text-center p-1 bg-white"
                     }>
                     LOGOUT
                   </p>
