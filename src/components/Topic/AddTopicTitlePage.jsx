@@ -12,7 +12,7 @@ import { TfiSave } from "react-icons/tfi";
 
 //import img for vid link and file link
 import vidUpload from "../../assets/vidUpload.svg";
-import fileUpload from "../../assets/fileUpload.svg";
+import quizLink from "../../assets/quizLink.svg";
 import Footer from "../Footer";
 
 const AddTopicTitlePage = () => {
@@ -106,7 +106,7 @@ const AddTopicTitlePage = () => {
             </div>
             <div className=" relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
               <img
-                src={fileUpload}
+                src={quizLink}
                 alt=""
                 className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
               />

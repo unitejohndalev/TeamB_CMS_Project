@@ -46,7 +46,7 @@ const Nav = () => {
     setDashBoardShow(false);
     setCourseListShow(false);
     setLogoShow(false);
-       setShowDropDown(false);
+     
   };
   const showCourseList = () => {
     setCourseListShow(true);
