@@ -85,7 +85,7 @@ const Nav = () => {
                 className={
                   courseListShow ? "font-bold text-[#126912]" : "font-light"
                 }>
-                Course List
+                My Course
               </ul>
             </Link>
           </div>
