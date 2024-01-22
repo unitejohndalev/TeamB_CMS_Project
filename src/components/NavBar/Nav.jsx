@@ -31,6 +31,7 @@ const Nav = () => {
     setDashBoardShow(false);
     setProfileShow(false);
     setCourseListShow(false);
+    setShowDropDown(false)
   };
 
   const showDashBoard = () => {
@@ -38,18 +39,21 @@ const Nav = () => {
     setProfileShow(false);
     setCourseListShow(false);
     setLogoShow(false);
+       setShowDropDown(false);
   };
   const showProfile = () => {
     setProfileShow(true);
     setDashBoardShow(false);
     setCourseListShow(false);
     setLogoShow(false);
+       setShowDropDown(false);
   };
   const showCourseList = () => {
     setCourseListShow(true);
     setProfileShow(false);
     setDashBoardShow(false);
     setLogoShow(false);
+       setShowDropDown(false);
   };
 
   return (
