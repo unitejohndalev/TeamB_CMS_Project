@@ -36,16 +36,18 @@ const CourseListCard = () => {
       <div className="">
         {/* 1/15/2024 functions and buttons */}
         <div className="">
+       
           <div className=" xl:w-[1244px] w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[50%] lg:m-auto lg:mt-5 items-center gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
-            <div className="text-black lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center ">
+            <Link to ="/courseoverview">
+            <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center m-5">
               <p className="lg:font-bold">Course List</p>
             </div>
             {courselist.map((course, idx) => {
               return (
-                <div key={idx} className="w-full rounded-md shadow-md ">
+                <div key={idx} className="w-full mb-5  rounded-md shadow-md">
                   <div className="flex px-0 py-0 rounded-md xl:h-[115px]">
-                    <div className="bg-[#BCE8B1] py-1 justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
+                    <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
                       <p className="lg:font-medium">PL00{course.id}</p>
                     </div>
 
@@ -59,13 +61,14 @@ const CourseListCard = () => {
                 </div>
               );
             })}
+            </Link>
+      
 
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
 
             <Link to="/AddNewCourse">
               <div
-                type="add"
                 className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer"
               >
                 <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
@@ -95,4 +98,4 @@ const CourseListCard = () => {
 };
 
 export default CourseListCard;
-/*January 10, 2024*/
+// /*January 10, 2024*/
