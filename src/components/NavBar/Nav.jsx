@@ -96,9 +96,14 @@ const Nav = () => {
             />
             {show && <NavSideBar />}
           </div>
-          <div className="bg-[#EBE9E9] w-[12vw] h-[7vh] rounded-md absolute right-5 flex justify-between items-center p-1 text-[#126912]">
-            <img src={profileLogo} alt="" className="h-[7vh] p-1" />
-            <p>Hi, Judes!</p>
+          <div className="bg-[#EBE9E9] cursor-pointer w-[12vw] h-[7vh] rounded-md absolute right-5 flex justify-between items-center p-1 text-[#126912]">
+            <img
+              src={profileLogo}
+              alt=""
+              className="h-[7vh] p-1"
+              onClick={() => setShowDropDown((prev) => !prev)}
+            />
+            <p onClick={() => setShowDropDown((prev) => !prev)}>Hi, Judes!</p>
             <span
               onClick={() => setShowDropDown((prev) => !prev)}
               className="cursor-pointer">
