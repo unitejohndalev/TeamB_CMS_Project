@@ -51,8 +51,8 @@ const AddNewCourseCard = () => {
   //navigate to back course list */}
       {/* Content */}
       <div className="mt-5 w-full h-[100vh] ">
-        <div className="m-5 text-black lg:font-bold lg:text-3xl py-1 lg:py-0 lg:text-[1.2rem] lg:w-[98%] flex justify-center items-center">
-          <p className="lg:font-bold">Create New Course</p>
+        <div className="m-5 text-black lg:font-bold lg:text-3xl py-1 lg:py-0 lg:text-[2rem] lg:w-[98%] flex justify-center items-center">
+          <p className="lg:font-bold text-shadow">Create New Course</p>
         </div>
         <div className="mb-.5 hidden lg:flex lg:border-b-8 lg:rounded-lg lg:border-b-[#BCE8B1] lg:w-[70%] m-auto"></div>{" "}
         {/* line under course title */}

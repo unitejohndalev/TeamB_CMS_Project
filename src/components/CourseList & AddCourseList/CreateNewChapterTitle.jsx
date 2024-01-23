@@ -41,7 +41,7 @@ const CreateNewChapterTitle = () => {
   return (
     <>
       {/*January 19 2024 -gem modify responsiveness*/}
-      <div className="relative mt-5 w-full h-full ">
+      <div className="relative w-full h-full mt-5 ">
         <div className="relative w-full h-full mt-5 ">
           <div
             className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
@@ -57,14 +57,16 @@ const CreateNewChapterTitle = () => {
                 Create New Chapter Title
               </p>
             </div>
-            <div className="w-[100%] mt-10 flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto lg:mt-5 items-right">
-              <p className="lg:font-bold text-shadow">HTML And CSS</p>
-            </div>
-            <div className="w-[69vw] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
-              <div className="w-[20vw] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
-            </div>
-            <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px]">
-              <p className="text-shadow">Lessons</p>
+            <div>
+              <div className="pb-2 w-[100%] mt-10 flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto lg:mt-5 items-right">
+                <p className="lg:font-bold text-shadow">HTML And CSS</p>
+              </div>
+              <div className="w-[69vw] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
+                <div className="w-[20vw] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
+              </div>
+              <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px] m-auto pt-2">
+                <span className=" text-shadow">Lessons</span>
+              </div>
             </div>
 
             {limitChapterList.map((chapter, idx) => {

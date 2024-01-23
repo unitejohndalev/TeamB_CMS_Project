@@ -15,7 +15,6 @@ import { IoArrowBackCircle } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
 const CourseOverviewCard = () => {
-  
   /*January 17 2023 API connection from backend to front end displaying data */
   const [chapters, setChapters] = useState([]);
 
@@ -30,8 +29,6 @@ const CourseOverviewCard = () => {
   //mockdata chapter
   const { chapterlist } = data;
 
-  
-  
   //back function
   const navigate = useNavigate();
 
@@ -39,12 +36,11 @@ const CourseOverviewCard = () => {
     navigate(-1);
   };
 
-
   return (
     <>
       {/*January 19 2024 -gem modify responsiveness*/}
 
-      <div className=" relative mt-5 w-full h-full ">
+      <div className="relative w-full h-full mt-5 ">
         <div className="relative w-full h-full mt-5 ">
           <div
             className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
@@ -58,14 +54,16 @@ const CourseOverviewCard = () => {
             <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
               <p className="lg:font-bold text-shadow">Course Overview</p>
             </div>
-            <div className="w-[100%] mt-10 flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto lg:mt-5 items-right">
-              <p className="lg:font-bold text-shadow">HTML And CSS</p>
-            </div>
-            <div className="w-[69vw] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
-              <div className="w-[20vw] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
-            </div>
-            <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px]">
-              <p className="text-shadow">Lessons</p>
+            <div>
+              <div className="pb-2 w-[100%] mt-10 flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto lg:mt-5 items-right">
+                <p className="lg:font-bold text-shadow">HTML And CSS</p>
+              </div>
+              <div className="w-[69vw] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
+                <div className="w-[20vw] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
+              </div>
+              <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px] m-auto pt-2">
+                <span className=" text-shadow">Lessons</span>
+              </div>
             </div>
             {chapterlist.map((chapter, idx) => {
               return (
@@ -108,7 +106,7 @@ const CourseOverviewCard = () => {
               <Link
                 to="/editchaptertitle"
                 className=" lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]">
-                <div className="  flex items-center justify-center  w-full">
+                <div className="flex items-center justify-center w-full ">
                   <span className="pr-4 ">
                     <IoAdd className="lg:font-bold text-[2rem] lg:text-[2.5rem] text-white" />
                   </span>

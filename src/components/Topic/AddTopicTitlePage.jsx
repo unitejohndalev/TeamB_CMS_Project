@@ -48,6 +48,12 @@ const AddTopicTitlePage = () => {
           <div>
             <p className="py-2 text-white">Topic 3: Title</p>
           </div>
+          <div>
+            <p className="py-2 text-white">Topic 3: Title</p>
+          </div>
+          <div>
+            <p className="py-2 text-white">Topic 3: Title</p>
+          </div>
           <div className="flex items-center justify-center mt-10 cursor-pointer">
             <div className="text-white text-[2rem] pr-2">
               <IoIosAddCircle />
