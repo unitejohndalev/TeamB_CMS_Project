@@ -87,7 +87,7 @@ const Nav = () => {
               onClick={showLogo}
             />
           </Link>
-          <div className="hidden lg:flex lg:items-end xl:w-[32%] 2xl:w-[25%] lg:pl-10 lg:justify-between">
+          <div className="hidden lg:flex lg:items-end xl:w-[300px] lg:pl-10 lg:min-w-[280px] lg:justify-between">
             {/* 1/11/2024 */}
             <Link to="/" onClick={showDashBoard}>
               <ul
