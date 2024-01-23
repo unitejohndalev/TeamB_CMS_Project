@@ -22,16 +22,29 @@ const Nav = () => {
   const [dashBoardShow, setDashBoardShow] = useState(false);
   const [profileShow, setProfileShow] = useState(false);
   const [courseListShow, setCourseListShow] = useState(false);
+  const [logout, setLogout] = useState(false)
 
   //use context for dropdown
   const { showDropDown, setShowDropDown } = useContext(DashBoardContext);
 
+   const showLogout = () => {
+    setLogout(true);
+    setLogoShow(false);
+    setDashBoardShow(false);
+    setProfileShow(false);
+    setCourseListShow(false);
+    setShowDropDown(false);
+  
+  };
   const showLogo = () => {
     setLogoShow(true);
     setDashBoardShow(false);
     setProfileShow(false);
     setCourseListShow(false);
     setShowDropDown(false);
+    setLogout(false);
+
+  
   };
 
   const showDashBoard = () => {
@@ -40,6 +53,8 @@ const Nav = () => {
     setCourseListShow(false);
     setLogoShow(false);
     setShowDropDown(false);
+    setLogout(false);
+
   };
   const showProfile = () => {
     setProfileShow(true);
@@ -47,6 +62,8 @@ const Nav = () => {
     setCourseListShow(false);
     setLogoShow(false);
     setShowDropDown(false);
+    setLogout(false);
+
   };
   const showCourseList = () => {
     setCourseListShow(true);
@@ -54,6 +71,8 @@ const Nav = () => {
     setDashBoardShow(false);
     setLogoShow(false);
     setShowDropDown(false);
+    setLogout(false);
+
   };
 
   const [header, setHeader] = useState(false)
@@ -143,18 +162,21 @@ const Nav = () => {
                   <p
                     className={
                       profileShow
-                        ? "font-semibold text-[#fff] bg-[#116211] text-center p-1 text-shadow"
-                        : "font-light text-[#000000] text-center p-1 bg-white text-shadow"
+                        ? "font-semibold text-[#fff] bg-[#116211] text-center p-1 text-shadow "
+                        : "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
                     }>
                     PROFILE
                   </p>
                 </Link>
-                <Link to="/" onClick={showLogo} className="w-full text-center ">
+                <Link
+                  to="/"
+                  onClick={showLogout}
+                  className="w-full text-center ">
                   <p
                     className={
-                      logoShow
+                      logout
                         ? "font-semibold text-[#fff] bg-[#116211] text-center p-1 text-shadow"
-                        : "font-light text-[#000000] text-center p-1 bg-white text-shadow"
+                        : "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
                     }>
                     LOGOUT
                   </p>
