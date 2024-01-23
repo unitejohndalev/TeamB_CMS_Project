@@ -38,11 +38,11 @@ const DashboardCard = () => {
   const { dashBoardHover, setDashBoardHover } = useContext(DashBoardContext);
 
   return (
-    <div className="w-full h-[100vh] relative">
+    <div className="w-full h-[150vh] relative">
       {/* change bg color to provided img */}
 
       {/* 1/18/204 bg height 323px */}
-      <div className="xl:h-[323px] relative flex flex-col items-center justify-center w-full py-10 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-5">
+      <div className=" xl:h-[323px] relative flex flex-col items-center justify-center w-full py-10 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-5">
         <p className="text-shadow text-[1.8rem] lg:text-[2rem] font-bold text-white w-[80%] text-center xl:text-[3.5rem] 2xl:text-[64px] ">
           月伝で自分のやり方を学びましょう。
         </p>

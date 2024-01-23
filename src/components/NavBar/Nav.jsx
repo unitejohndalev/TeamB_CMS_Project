@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/companyLogo.png";
 
 //import react icon
@@ -56,10 +56,27 @@ const Nav = () => {
     setShowDropDown(false);
   };
 
+  const [header, setHeader] = useState(false)
+  //scroll event
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      () => {
+        window.scrollY > 80 ? setHeader(true) : setHeader(false);
+      },
+      []
+    );
+  });
+
   return (
     <>
-      <nav className="sticky top-0 z-[100]">
-        <div className="relative flex justify-between items-center lg:justify-normal bg-[#BCE8B1] h-[69px] ">
+      <nav className="sticky top-0 z-[100] ">
+        <div
+          className={
+            header
+              ? "relative flex justify-between items-center lg:justify-normal bg-[#BCE8B1] h-[69px] transition-all "
+              : "relative flex justify-between items-center lg:justify-normal bg-transparent h-[69px] transition-all "
+          }>
           <Link to="/">
             <img
               className="  ml-10 xl:w-[171.67px] xl:h-[50px] lg:h-[5rem] xl:ml-[95px] py-3 xl:py-1"
