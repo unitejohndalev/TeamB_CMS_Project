@@ -40,7 +40,7 @@ const CourseOverviewCard = () => {
     <>
       {/*January 19 2024 -gem modify responsiveness*/}
 
-      <div className="relative w-full h-full mt-[100px] ">
+      <div className="relative w-full h-full mt-[70px] ">
         <div className="relative w-full h-full mt-5 ">
           <div
             className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
@@ -52,7 +52,7 @@ const CourseOverviewCard = () => {
           </div>
           <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-8">
             <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
-              <p className="lg:font-bold text-shadow">Course Overview</p>
+              <p className="mb-2 lg:font-bold text-shadow">Course Overview</p>
             </div>
             <div>
               <div className="pb-2 w-[100%] mt-10 flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto lg:mt-5 items-right">

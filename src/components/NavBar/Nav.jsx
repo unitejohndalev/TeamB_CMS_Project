@@ -62,7 +62,7 @@ const Nav = () => {
     window.addEventListener(
       "scroll",
       () => {
-        window.scrollY > 80 ? setHeader(true) : setHeader(false);
+        window.scrollY > 20 ? setHeader(true) : setHeader(false);
       },
       []
     );

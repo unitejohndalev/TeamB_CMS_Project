@@ -33,14 +33,14 @@ const CourseListCard = () => {
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
 
-      <div className="mt-[100px]">
+      <div className="mt-[70px]">
         {/* 1/15/2024 functions and buttons */}
         <div className="">
-          <div className=" xl:w-[1244px] w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center gap-5">
+          <div className=" xl:w-[1244px] w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
             <Link to="/courseoverview">
               <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center ">
-                <p className="pb-5 2xl:text-[48px] lg:font-bold text-shadow">Course List</p>
+                <p className="pb-5 2xl:text-[48px] lg:font-bold text-shadow mb-5">Course List</p>
               </div>
               {courselist.map((course, idx) => {
                 return (
