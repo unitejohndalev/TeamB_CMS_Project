@@ -75,7 +75,9 @@ const Nav = () => {
             <Link to="/" onClick={showDashBoard}>
               <ul
                 className={
-                  dashBoardShow ? "font-bold text-[#126912]" : "font-light"
+                  dashBoardShow
+                    ? "font-bold text-[#126912] text-shadow"
+                    : "font-light text-shadow"
                 }>
                 DASHBOARD
               </ul>
@@ -83,7 +85,9 @@ const Nav = () => {
             <Link to="/courselist" onClick={showCourseList}>
               <ul
                 className={
-                  courseListShow ? "font-bold text-[#126912]" : "font-light"
+                  courseListShow
+                    ? "font-bold text-[#126912] text-shadow"
+                    : "font-light text-shadow"
                 }>
                 COURSE LIST
               </ul>
@@ -105,7 +109,7 @@ const Nav = () => {
             />
             <p
               onClick={() => setShowDropDown((prev) => !prev)}
-              className=" ">
+              className=" text-shadow">
               Hi, Judes!
             </p>
             <span
@@ -122,8 +126,8 @@ const Nav = () => {
                   <p
                     className={
                       profileShow
-                        ? "font-semibold text-[#fff] bg-[#116211] text-center p-1"
-                        : "font-light text-[#000000] text-center p-1 bg-white"
+                        ? "font-semibold text-[#fff] bg-[#116211] text-center p-1 text-shadow"
+                        : "font-light text-[#000000] text-center p-1 bg-white text-shadow"
                     }>
                     PROFILE
                   </p>
@@ -132,8 +136,8 @@ const Nav = () => {
                   <p
                     className={
                       logoShow
-                        ? "font-semibold text-[#fff] bg-[#116211] text-center p-1"
-                        : "font-light text-[#000000] text-center p-1 bg-white"
+                        ? "font-semibold text-[#fff] bg-[#116211] text-center p-1 text-shadow"
+                        : "font-light text-[#000000] text-center p-1 bg-white text-shadow"
                     }>
                     LOGOUT
                   </p>

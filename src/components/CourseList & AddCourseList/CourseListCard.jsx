@@ -36,48 +36,47 @@ const CourseListCard = () => {
       <div className="">
         {/* 1/15/2024 functions and buttons */}
         <div className="">
-       
           <div className=" xl:w-[1244px] w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[50%] lg:m-auto lg:mt-5 items-center gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
-            <Link to ="/courseoverview">
-            <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center ">
-              <p className="lg:font-bold py-5">Course List</p>
-            </div>
-            {courselist.map((course, idx) => {
-              return (
-                <div key={idx} className="w-full mb-5  rounded-md shadow-md">
-                  <div className="flex px-0 py-0 rounded-md xl:h-[115px]">
-                    <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
-                      <p className="lg:font-medium">PL00{course.id}</p>
-                    </div>
+            <Link to="/courseoverview">
+              <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center ">
+                <p className="lg:font-bold py-5 text-shadow">Course List</p>
+              </div>
+              {courselist.map((course, idx) => {
+                return (
+                  <div key={idx} className="w-full mb-5  rounded-md shadow-md">
+                    <div className="flex px-0 py-0 rounded-md xl:h-[115px]">
+                      <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
+                        <p className="lg:font-medium text-shadow">
+                          PL00{course.id}
+                        </p>
+                      </div>
 
-                    <p
-                      className="text-white lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
-                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
-                    >
-                      {course.courseTitle}
-                    </p>
+                      <p
+                        className="text-white text-shadow lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
+                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
+                        {course.courseTitle}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
             </Link>
-      
 
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
 
             <Link to="/AddNewCourse">
-              <div
-                className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer items-center justify-center"
-              >
+              <div className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer items-center justify-center">
                 <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
                     <IoAdd className="lg:text-[2rem] text-white" />
                   </span>
                 </div>
                 <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]  w-[30%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className="lg:text-[.8rem]">Add New Course</span>
+                  <span className="lg:text-[.8rem] text-shadow">
+                    Add New Course
+                  </span>
                 </div>
               </div>
             </Link>
@@ -90,8 +89,7 @@ const CourseListCard = () => {
             </div>
           </footer>
         </div>
-          {/*January 19 2024 -gem modify buttons add footer*/}
-
+        {/*January 19 2024 -gem modify buttons add footer*/}
       </div>
     </>
   );
