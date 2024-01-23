@@ -31,7 +31,7 @@ const Nav = () => {
     setDashBoardShow(false);
     setProfileShow(false);
     setCourseListShow(false);
-    setShowDropDown(false)
+    setShowDropDown(false);
   };
 
   const showDashBoard = () => {
@@ -39,21 +39,21 @@ const Nav = () => {
     setProfileShow(false);
     setCourseListShow(false);
     setLogoShow(false);
-       setShowDropDown(false);
+    setShowDropDown(false);
   };
   const showProfile = () => {
     setProfileShow(true);
     setDashBoardShow(false);
     setCourseListShow(false);
     setLogoShow(false);
-     
+    setShowDropDown(false);
   };
   const showCourseList = () => {
     setCourseListShow(true);
     setProfileShow(false);
     setDashBoardShow(false);
     setLogoShow(false);
-       setShowDropDown(false);
+    setShowDropDown(false);
   };
 
   return (
@@ -96,7 +96,7 @@ const Nav = () => {
             />
             {show && <NavSideBar />}
           </div>
-          <div className="bg-[#EBE9E9] cursor-pointer w-[12vw] h-[7vh] rounded-md absolute right-5 flex justify-between items-center p-1 text-[#126912]">
+          <div className="bg-[#EBE9E9] cursor-pointer lg:text-[.9rem] lg:w-[160px] 2xl:w-[193px] h-[7vh] rounded-md absolute right-5 hidden lg:flex justify-between items-center p-1 text-[#126912]">
             <img
               src={profileLogo}
               alt=""
