@@ -63,19 +63,19 @@ const DashboardCard = () => {
 
             <div
               key={idx}
-              className="w-[95%] lg:w-[17vw] shadow-md rounded-sm xl:w-[271px] xl:h-[330px] bg-[#87D275] ">
-              <div className="bg-[#BCE8B1] flex flex-col rounded-t-sm p-5 lg:h-[35%] justify-center">
-                <p className="text-[#278510]">{course.courseNum}:</p>
-                <p className="text-[#278510] font-bold xl:text-[1.1rem]  line-clamp-1">
+              className="w-[95%] lg:w-[17vw] shadow-sm rounded-[2rem] xl:w-[271px] xl:h-[330px]  bg-[#BCE8B1] ">
+              <div className="flex flex-col rounded-t-[2rem] p-5 lg:h-[35%] justify-center ">
+                <p className="text-[#278510] ">{course.courseNum}:</p>
+                <p className="text-[#278510]  font-bold xl:text-[1.1rem]  line-clamp-1">
                   {course.courseTitle}
                 </p>
               </div>
-              <div className="p-5 text-justify rounded-b-sm ">
-                <p className=" line-clamp-4 xl:line-clamp-6">
+              <div className="p-5 text-justify rounded-b-[2rem] rounded-t-[1rem] bg-[#87D275]  ">
+                <p className=" line-clamp-4 xl:line-clamp-6 ">
                   {course.description}
                 </p>
                 <button
-                  className="text-[#1E6C0B] pt-3 font-bold"
+                  className="text-[#1E6C0B] pt-3 font-bold  "
                   onClick={() => setDashBoardHover((prev) => !prev)}>
                   See more
                 </button>
@@ -96,4 +96,4 @@ const DashboardCard = () => {
 };
 
 export default DashboardCard;
-// 1/12/2024
+// 1/23/2024

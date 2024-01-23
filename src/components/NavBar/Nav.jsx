@@ -77,7 +77,7 @@ const Nav = () => {
                 className={
                   dashBoardShow ? "font-bold text-[#126912]" : "font-light"
                 }>
-                Dashboard
+                DASHBOARD
               </ul>
             </Link>
             <Link to="/courselist" onClick={showCourseList}>
@@ -85,7 +85,7 @@ const Nav = () => {
                 className={
                   courseListShow ? "font-bold text-[#126912]" : "font-light"
                 }>
-                My Course
+                COURSE LIST
               </ul>
             </Link>
           </div>
@@ -96,21 +96,25 @@ const Nav = () => {
             />
             {show && <NavSideBar />}
           </div>
-          <div className="bg-[#EBE9E9] cursor-pointer lg:text-[.9rem] lg:w-[160px] 2xl:w-[193px] h-[7vh] rounded-md absolute right-5 hidden lg:flex justify-between items-center p-1 text-[#126912]">
+          <div className="drop-shadow-lg shadow-lg  bg-[#EBE9E9] cursor-pointer lg:text-[.9rem] lg:w-[160px] 2xl:w-[193px] h-[7vh] rounded-md absolute right-5 hidden lg:flex justify-between items-center p-1 text-[#126912]">
             <img
               src={profileLogo}
               alt=""
               className="h-[7vh] p-1"
               onClick={() => setShowDropDown((prev) => !prev)}
             />
-            <p onClick={() => setShowDropDown((prev) => !prev)}>Hi, Judes!</p>
+            <p
+              onClick={() => setShowDropDown((prev) => !prev)}
+              className=" ">
+              Hi, Judes!
+            </p>
             <span
               onClick={() => setShowDropDown((prev) => !prev)}
               className="cursor-pointer">
               {showDropDown ? <FaChevronUp /> : <FaChevronDown />}
             </span>
             {showDropDown && (
-              <div className="absolute right-0 top-12 w-[8vw] flex flex-col justify-center items-center border-solid border-2 border-[#116211]">
+              <div className=" absolute right-0 top-12 w-[8vw] flex flex-col justify-center items-center border-solid border-2 border-[#116211]">
                 <Link
                   to="/profile"
                   onClick={showProfile}
@@ -144,4 +148,4 @@ const Nav = () => {
 };
 
 export default Nav;
-//1/22/2024
+//1/23/2024

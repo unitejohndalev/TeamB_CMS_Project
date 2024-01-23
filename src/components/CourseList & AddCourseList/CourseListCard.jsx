@@ -40,8 +40,8 @@ const CourseListCard = () => {
           <div className=" xl:w-[1244px] w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[50%] lg:m-auto lg:mt-5 items-center gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
             <Link to ="/courseoverview">
-            <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center m-5">
-              <p className="lg:font-bold">Course List</p>
+            <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center ">
+              <p className="lg:font-bold py-5">Course List</p>
             </div>
             {courselist.map((course, idx) => {
               return (
@@ -69,14 +69,14 @@ const CourseListCard = () => {
 
             <Link to="/AddNewCourse">
               <div
-                className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer"
+                className=" h-[10vh] mb-10 flex w-[50%] lg:w-[30vw] cursor-pointer items-center justify-center"
               >
-                <div className="bg-[#87D275] w-[30%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
+                <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
                     <IoAdd className="lg:text-[2rem] text-white" />
                   </span>
                 </div>
-                <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]  w-full flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
+                <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]  w-[30%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
                   <span className="lg:text-[.8rem]">Add New Course</span>
                 </div>
               </div>
@@ -98,4 +98,4 @@ const CourseListCard = () => {
 };
 
 export default CourseListCard;
-// /*January 10, 2024*/
+// /*January 23, 2024*/
