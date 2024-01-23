@@ -10,8 +10,8 @@ const DashBoardCardHover = () => {
 
   return (
     <div className="">
-      <div className="flex items-center justify-center w-[95vw]  backdrop-blur-sm">
-        <div className="h-[85vh] w-[60vw] bg-[#BCE8B1] rounded-lg">
+      <div className="flex items-center justify-center w-[98vw] pt-[50vh] backdrop-blur-sm">
+        <div className="h-[85vh] w-[60vw]  bg-[#BCE8B1] rounded-lg">
           <div
             className="w-[100%] flex items-end justify-end relative"
             onClick={() => setDashBoardHover((prev) => !prev)}>

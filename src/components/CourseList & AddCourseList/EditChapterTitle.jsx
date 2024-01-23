@@ -39,7 +39,7 @@ const EditChapterTitle = () => {
     <>
       {/*January 19 2024 -gem modify responsiveness*/}
 
-      <div className="relative w-full h-full mt-5 ">
+      <div className="relative w-full h-full mt-[100px] ">
         <div className="relative w-full h-full mt-5 ">
           <div
             className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"

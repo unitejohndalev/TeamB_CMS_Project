@@ -70,7 +70,7 @@ const Nav = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-[100] ">
+      <nav className="fixed w-full top-0 z-[100] ">
         <div
           className={
             header

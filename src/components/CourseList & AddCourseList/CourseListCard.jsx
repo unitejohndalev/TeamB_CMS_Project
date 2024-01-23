@@ -33,7 +33,7 @@ const CourseListCard = () => {
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
 
-      <div className="">
+      <div className="mt-[100px]">
         {/* 1/15/2024 functions and buttons */}
         <div className="">
           <div className=" xl:w-[1244px] w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center gap-5">

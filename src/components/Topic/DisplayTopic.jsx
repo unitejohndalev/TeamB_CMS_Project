@@ -24,7 +24,7 @@ const DisplayTopic = () => {
   };
   return (
     <>
-      <div className="flex">
+      <div className="flex mt-[100px]">
         {/* sidebar */}
         <div className="h-[100vh] flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
           <div
