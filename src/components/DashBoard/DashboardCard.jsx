@@ -5,6 +5,7 @@ import data from "../../mockData/MockData.json";
 import Footer from "../Footer";
 import DashboardCardHover from "./DashBoardCardHover";
 import { DashBoardContext } from "../context/DashBoardContext";
+import { Link } from "react-router-dom";
 
 const DashboardCard = () => {
   // *NOTE
@@ -49,10 +50,11 @@ const DashboardCard = () => {
         <p className="text-shadow xl:text-[3rem] 2xl:text-[64px] italic lg:text-[1.7rem] font-bold text-[#67836B]  pb-10 lg:pb-15">
           Learn your way at Tsukiden.
         </p>
-
-        <button className="text-shadow px-5 font-normal lg:absolute btn-style lg:rounded-lg lg:bottom-[-1.5rem] xl:h-[86px] xl:w-[280px] xl:text-[32px] xl:text-[rgba(255, 255, 255, 1)] ">
-          View Courses
-        </button>
+        <Link to="/courselist">
+          <button className="text-shadow px-5 font-normal lg:absolute btn-style lg:rounded-lg lg:bottom-[-1.5rem] xl:h-[86px] xl:w-[280px] xl:text-[32px] xl:text-[rgba(255, 255, 255, 1)] ">
+            View Courses
+          </button>
+        </Link>
       </div>
       <div
         className=" xl:h-[330px] 2xl:w-[1519px] flex flex-col lg:flex-row lg:w-[90vw] 
