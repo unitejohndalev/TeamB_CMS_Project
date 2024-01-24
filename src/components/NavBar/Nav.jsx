@@ -59,8 +59,8 @@ const Nav = () => {
               <ul
                 className={
                   dashBoardShow
-                    ? "font-semibold text-[#116211] text-center p-1 text-shadow"
-                    : "font-light text-shadow p-1  hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff] "
+                    ? "font-semibold text-[#116211] text-center p-1 text-shadow transition-all"
+                    : "font-light text-shadow p-1  hover:text-[#116211] transition-all hover:bg-opacity-[50%] hover:font-semibold "
                 }>
                 DASHBOARD
               </ul>
@@ -69,8 +69,8 @@ const Nav = () => {
               <ul
                 className={
                   courseListShow
-                    ? "font-semibold text-[#116211]  text-center p-1 text-shadow"
-                    : "font-light text-shadow p-1  hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff] "
+                    ? "font-semibold text-[#116211]  text-center p-1 text-shadow transition-all"
+                    : "font-light text-shadow p-1  hover:text-[#116211] hover:bg-opacity-[50%] hover:font-semibold transition-all"
                 }>
                 COURSE LIST
               </ul>
@@ -109,8 +109,12 @@ const Nav = () => {
                   <p
                     className={
                       profileShow
-                        ? "font-semibold text-[#fff] bg-[#116211] text-center p-1 text-shadow "
-                        : "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                        ? showDropDown
+                          ? "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                          : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                        : showDropDown
+                        ? "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                        : "font-semibold text-[#fff]  text-center p-1 text-shadow "
                     }>
                     PROFILE
                   </p>
@@ -121,9 +125,13 @@ const Nav = () => {
                   className="w-full text-center ">
                   <p
                     className={
-                      logout
-                        ? "font-semibold text-[#fff] bg-[#116211] text-center p-1 text-shadow"
-                        : "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                      profileShow
+                        ? showDropDown
+                          ? "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                          : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                        : showDropDown
+                        ? "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                        : "font-semibold text-[#fff]  text-center p-1 text-shadow "
                     }>
                     LOGOUT
                   </p>

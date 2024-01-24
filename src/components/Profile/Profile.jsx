@@ -6,15 +6,17 @@ import AccDetails from "./AccDetails";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
-import { DashBoardContext } from "../context/DashBoardContext";
+
+import { NavBarContext } from "../context/NavBarContext";
 
 
 const Profile = () => {
   //use navigate to back
   const navigate = useNavigate();
   
-  //use context for dropdown
-  const { showDropDown, setShowDropDown } = useContext(DashBoardContext);
+ 
+  
+  const { showDropDown, setShowDropDown } = useContext(NavBarContext);
   
     const goBack = () => {
       navigate(-1);
