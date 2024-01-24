@@ -38,10 +38,10 @@ const CourseListCard = () => {
         <div className="">
           <div className=" xl:w-[1244px] w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
-            <Link to="/courseoverview">
               <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center ">
                 <p className="pb-5 2xl:text-[48px] lg:font-bold text-shadow mb-5">Course List</p>
               </div>
+            <Link to="/courseoverview">
               {courselist.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
@@ -67,7 +67,7 @@ const CourseListCard = () => {
             {/*January 19 2024 -gem modify buttons add footer*/}
 
             <Link to="/AddNewCourse">
-              <div className=" h-[10vh] mb-10 flex w-[50%] lg:w-[80vw] cursor-pointer items-center justify-center">
+              <div className=" h-[10vh] mb-10 flex w-[50%] lg:w-[80vw]  items-center justify-center">
                 <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
                     <IoAdd className="lg:text-[2rem] text-white" />
