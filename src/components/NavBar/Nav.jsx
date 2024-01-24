@@ -21,7 +21,6 @@ const Nav = () => {
     dashBoardShow,
     profileShow,
     courseListShow,
-    logout,
     showDropDown,
     setShowDropDown,
     showLogout,

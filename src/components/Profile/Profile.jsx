@@ -13,7 +13,6 @@ import { NavBarContext } from "../context/NavBarContext";
 const Profile = () => {
   //use navigate to back
   const navigate = useNavigate();
-  
  
   
   const { showDropDown, setShowDropDown } = useContext(NavBarContext);

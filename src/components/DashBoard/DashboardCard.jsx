@@ -39,7 +39,7 @@ const DashboardCard = () => {
   const { dashBoardHover, setDashBoardHover } = useContext(DashBoardContext);
 
   return (
-    <div className="w-full h-[150vh] relative">
+    <div className="w-full h-[100vh] relative">
       {/* change bg color to provided img */}
 
       {/* 1/18/204 bg height 323px */}
