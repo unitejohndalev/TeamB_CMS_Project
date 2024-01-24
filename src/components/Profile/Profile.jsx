@@ -7,37 +7,25 @@ import { IoArrowBackCircle } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
 
-import { NavBarContext } from "../context/NavBarContext";
-
+import { ProfileContext } from "../context/ProfileContext";
 
 const Profile = () => {
   //use navigate to back
   const navigate = useNavigate();
- 
-  
-  const { showDropDown, setShowDropDown } = useContext(NavBarContext);
-  
-    const goBack = () => {
-      navigate(-1);
-    };
-  // To make PersonalInfo appear when Personal Information is clicked use
-  // React hook and a function
 
-  // To make Personal Info or Acc detail component show and hide only when clicked create
-  // A function that makes either of them show or hide when clicked at the same time
-  const [showPersonalInfo, setPersonalInfo] = useState(true)
-  const [showAccDetails, setShowAccDetails] = useState(false)
+  const goBack = () => {
+    navigate(-1);
+  };
+  
+  //destructure profile context
+  const {
+    showPersonalInfo,
+    showAccDetails,
+    showPInfo,
+    showADetails,
+  } = useContext(ProfileContext);
 
-  const showPInfo = () => {
-    setPersonalInfo(() => prev => !prev)
-    setShowAccDetails(false)
-    setShowDropDown(false)
-  }
-    const showADetails = () => {
-      setShowAccDetails(() => (prev) => !prev);
-      setPersonalInfo(false);
-      setShowDropDown(false)
-    };
+
   return (
     <>
       <div className="h-[100vh] mt-[100px]">

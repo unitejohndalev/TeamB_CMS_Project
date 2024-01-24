@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
-import React, { createContext, useState } from "react";
+
+import React, { createContext, useContext, useState } from "react";
+import { NavBarContext } from "./NavBarContext";
 
 export const ProfileContext = createContext();
 
@@ -7,6 +9,8 @@ const ProfileProvider = ({ children }) => {
   const [showPersonalInfo, setPersonalInfo] = useState(true);
   const [showAccDetails, setShowAccDetails] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
+  
+ 
 
   const showPInfo = () => {
     setPersonalInfo(() => (prev) => !prev);
@@ -18,15 +22,14 @@ const ProfileProvider = ({ children }) => {
     setPersonalInfo(false);
     setShowDropDown(false);
   };
+
   return (
     <ProfileContext.Provider
-      values={{
+      value={{
         showPersonalInfo,
         setPersonalInfo,
         showAccDetails,
         setShowAccDetails,
-        showDropDown,
-        setShowDropDown,
         showPInfo,
         showADetails,
       }}>

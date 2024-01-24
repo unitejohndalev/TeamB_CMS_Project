@@ -14,14 +14,14 @@ import NavBarProvider from "./components/context/NavBarContext.jsx";
 import ProfileProvider from "./components/context/ProfileContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
-    <NavBarProvider>
-      <ProfileProvider>
+    <ProfileProvider>
+      <NavBarProvider>
         <DashBoardProvider>
           <React.StrictMode>
             <App />
           </React.StrictMode>
         </DashBoardProvider>
-      </ProfileProvider>
-    </NavBarProvider>
+      </NavBarProvider>
+    </ProfileProvider>
   </Router>
 );

@@ -13,6 +13,7 @@ const NavBarProvider = ({children}) => {
     const [ courseListShow, setCourseListShow ] = useState(false);
     const [ logout, setLogout ] = useState(false)
     const [ showDropDown, setShowDropDown ] = useState(false);
+    
 
     //function for specific showing & closing elements
     const showLogout = () => {
@@ -77,28 +78,27 @@ const NavBarProvider = ({children}) => {
     });
 
     return (
-        <NavBarContext.Provider
-            value = {{
-                header,
-                dashBoardShow,
-                profileShow,
-                courseListShow,
-                logout,
-                showDropDown,
-                setShowDropDown,
-                showLogout,
-                show,
-                setShow,
-                showLogo,
-                showDashBoard,
-                showProfile,
-                showCourseList,
-
-            }}
-        >
-            {children}
-        </NavBarContext.Provider>
-    )
+      <NavBarContext.Provider
+        value={{
+          header,
+          dashBoardShow,
+          profileShow,
+          courseListShow,
+          logout,
+          showDropDown,
+          setShowDropDown,
+          showLogout,
+          show,
+          setShow,
+          showLogo,
+          showDashBoard,
+          showProfile,
+          showCourseList,
+       
+        }}>
+        {children}
+      </NavBarContext.Provider>
+    );
 }
 
 export default NavBarProvider
