@@ -7,12 +7,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 //import dashboardprovider
 import DashBoardProvider from "./components/context/DashBoardContext.jsx";
 
+//import NavBarProvider
+import NavBarProvider from "./components/context/NavBarContext.jsx";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
-    <DashBoardProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </DashBoardProvider>
+    <NavBarProvider>
+      <DashBoardProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </DashBoardProvider>
+    </NavBarProvider>
   </Router>
 );

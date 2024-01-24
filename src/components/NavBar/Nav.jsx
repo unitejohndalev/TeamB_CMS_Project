@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext,  } from "react";
 import logo from "../../assets/companyLogo.png";
 
 //import react icon
@@ -11,82 +11,29 @@ import profileLogo from "../../assets/profile.svg";
 
 //import react icon
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { DashBoardContext } from "../context/DashBoardContext";
+
+import { NavBarContext } from "../context/NavBarContext";
 
 const Nav = () => {
-  //react hook for showing and hiding element
-  const [show, setShow] = useState(false);
-
-  //nav active focus when clicking elements
-  const [logoShow, setLogoShow] = useState(false);
-  const [dashBoardShow, setDashBoardShow] = useState(false);
-  const [profileShow, setProfileShow] = useState(false);
-  const [courseListShow, setCourseListShow] = useState(false);
-  const [logout, setLogout] = useState(false)
-
-  //use context for dropdown
-  const { showDropDown, setShowDropDown } = useContext(DashBoardContext);
-
-   const showLogout = () => {
-    setLogout(true);
-    setLogoShow(false);
-    setDashBoardShow(false);
-    setProfileShow(false);
-    setCourseListShow(false);
-    setShowDropDown(false);
   
-  };
-  const showLogo = () => {
-    setLogoShow(true);
-    setDashBoardShow(false);
-    setProfileShow(false);
-    setCourseListShow(false);
-    setShowDropDown(false);
-    setLogout(false);
+  const {
+    header,
+    dashBoardShow,
+    profileShow,
+    courseListShow,
+    logout,
+    showDropDown,
+    setShowDropDown,
+    showLogout,
+    show,
+    setShow,
+    showLogo,
+    showDashBoard,
+    showProfile,
+    showCourseList,
+  } = useContext(NavBarContext);
 
-  
-  };
-
-  const showDashBoard = () => {
-    setDashBoardShow(true);
-    setProfileShow(false);
-    setCourseListShow(false);
-    setLogoShow(false);
-    setShowDropDown(false);
-    setLogout(false);
-
-  };
-  const showProfile = () => {
-    setProfileShow(true);
-    setDashBoardShow(false);
-    setCourseListShow(false);
-    setLogoShow(false);
-    setShowDropDown(false);
-    setLogout(false);
-
-  };
-  const showCourseList = () => {
-    setCourseListShow(true);
-    setProfileShow(false);
-    setDashBoardShow(false);
-    setLogoShow(false);
-    setShowDropDown(false);
-    setLogout(false);
-
-  };
-
-  const [header, setHeader] = useState(false)
-  //scroll event
-  useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      () => {
-        window.scrollY > 20 ? setHeader(true) : setHeader(false);
-      },
-      []
-    );
-  });
-
+   
   return (
     <>
       <nav className="fixed w-full top-0 z-[100] ">
@@ -112,8 +59,8 @@ const Nav = () => {
               <ul
                 className={
                   dashBoardShow
-                    ? "font-bold text-[#126912] text-shadow"
-                    : "font-light text-shadow"
+                    ? "font-semibold text-[#116211] text-center p-1 text-shadow"
+                    : "font-light text-shadow p-1  hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff] "
                 }>
                 DASHBOARD
               </ul>
@@ -122,8 +69,8 @@ const Nav = () => {
               <ul
                 className={
                   courseListShow
-                    ? "font-bold text-[#126912] text-shadow"
-                    : "font-light text-shadow"
+                    ? "font-semibold text-[#116211]  text-center p-1 text-shadow"
+                    : "font-light text-shadow p-1  hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff] "
                 }>
                 COURSE LIST
               </ul>
