@@ -1,126 +1,138 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-
-import { Link, useNavigate } from "react-router-dom";
-import { BiSave } from "react-icons/bi";
-import { ImCancelCircle } from "react-icons/im";
-
-/*January 17 2024 API for creating courses from frontend directly to the database  */
+import React, { useState } from 'react';
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
+import { BiSave } from 'react-icons/bi';
+import { ImCancelCircle } from 'react-icons/im';
 
 const AddNewCourseCard = () => {
-  let navigate = useNavigate;
-  const [courses, setCourses] = useState([]);
+  const navigate = useNavigate();
+
   const [course, setCourse] = useState({
-    course_id: "",
-    course_description: "",
-    course_title: "",
-    chapter_title: "",
+    course_id: '',
+    course_description: '',
+    course_title: '',
+    chapter_title: '',
   });
 
-  useEffect(() => {
-    const loadCourses = async () => {
-      const result = await axios.get("http://localhost:8080/getCourse");
-      setCourses(result.data);
-    };
+  const [characterLimits, setCharacterLimits] = useState({
+    course_title: false,
+    course_description: false,
+    chapter_title: false,
+  });
 
-    loadCourses();
-  }, []);
+  const handleInputChange = (e, limit, name) => {
+    const { value } = e.target;
+    setCourse((prevCourse) => ({
+      ...prevCourse,
+      [name]: value,
+    }));
 
-  const handleInputChange = (e) => {
-    setCourse({ ...course, [e.target.name]: e.target.value });
+    if (name.length > 0 && value.length === limit) {
+      setCharacterLimits((prevLimits) => ({ ...prevLimits, [name]: true }));
+    } else {
+      setCharacterLimits((prevLimits) => ({ ...prevLimits, [name]: false }));
+    }
+  };
+
+  const renderPopup = (name, label, limit) => {
+    const isLimitReached = characterLimits[name];
+
+    return (
+      <>
+        {isLimitReached && (
+          <div className="absolute bg-gray-800 text-white text-center rounded-md py-1 px-2 text-xs transform -translate-x-1/2 left-1/2 top-[-1.5rem] z-50">
+            {label} limit reached! (Limit: {limit} characters)
+          </div>
+        )}
+      </>
+    );
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/createCourse", course);
-    navigate("/");
+    console.log('Form submitted:', course);
+    await axios.post('http://localhost:8080/createCourse', course);
+    navigate('/');
   };
 
-  
-
-  /*January 17 2024 API for creating courses from frontend directly to the database  */
-
-  console.log(courses);
-
-  const { crs_title, chap_title, description } = course;
+  const { course_title, description, chapter_title } = course;
 
   return (
-    // 1/15/2024 functions, buttons, and routes
-    <div>
-    {/* //january 18 2024
-  //navigate to back course list */}
-      {/* Content */}
-      <div className="mt-[70px] w-full h-[100vh] ">
-        <div className="m-5 text-black lg:font-bold lg:text-3xl py-1 lg:py-0 lg:text-[2rem] lg:w-[98%] flex justify-center items-center">
-          <p className="mb-10 lg:font-bold text-shadow">Create New Course</p>
+    <div className="mt-[70px] w-full h-[100vh] flex flex-col items-center justify-center">
+      <div className="m-5 text-black lg:font-bold lg:text-3xl py-1 lg:py-0 lg:text-[2rem] lg:w-[98%] flex justify-center items-center">
+        <p className="mb-10 lg:font-bold text-shadow">Create New Course</p>
+      </div>
+
+      <form onSubmit={handleSubmit} className="lg:w-[70%] m-auto">
+        <div className="mb-5 w-full relative">
+          <input
+            maxLength={70}
+            type="text"
+            className="bg-[#BCE8B1] placeholder-[#070101] placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
+            placeholder="Add course Title"
+            name="course_title"
+            value={course_title}
+            onChange={(e) => handleInputChange(e, 70, 'course_title')}
+          />
+          {renderPopup('course_title', 'Course title', 70)}
         </div>
-        <div className="mb-.5 hidden lg:flex lg:border-b-8 lg:rounded-lg lg:border-b-[#BCE8B1] lg:w-[70%] m-auto"></div>{" "}
-        {/* line under course title */}
-        <div className="mb-5 hidden lg:flex lg:border-b-8 lg:rounded-lg lg:border-b-[#126912] lg:w-[70%] m-auto"></div>{" "}
-        {/* line under course title */}
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <div className="flex flex-col items-center justify-center w-[90%] lg:w-[70%] m-auto gap-5">
-            <input
-              type="text"
-              className="bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center lg:rounded-lg opacity-[50%] w-full p-4"
-              placeholder="Add course Title"
-              name="course_title"
-              value={crs_title}
-              onChange={(e) => handleInputChange(e)}
-            />
-            <textarea
-              cols="5"
-              rows="5"
-              name="course_description"
-              value={description}
-              className="resize-none bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center lg:rounded-lg opacity-[50%] lg:w-full m-auto p-5 "
-              placeholder="Add new brief description"
-              onChange={(e) => handleInputChange(e)}
-            />
-            <input
-              type="text"
-              className="bg-[#BCE8B1] placeholder:text-[#070101] placeholder:text-center lg:rounded-lg opacity-[50%] w-full p-4"
-              placeholder="Add Chapter Title"
-              name="chapter_title"
-              value={chap_title}
-              onChange={(e) => handleInputChange(e)}
-            />
-          </div>
-{/* //january 18 2024
-  //navigate to back course list */}
-  {/*January 19 2024 -gem */}
-          <div className="lg:w-[100%] lg:flex lg:justify-center grid gap-4 grid-cols-2">
-           <Link to ="/courseoverview">
-            <button className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full cursor-pointer">
+
+        <div className="mb-5 w-full relative">
+          <textarea
+            maxLength={250}
+            rows="5"
+            name="course_description"
+            value={description}
+            className="resize-none bg-[#BCE8B1] placeholder-[#070101] placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
+            placeholder="Add new brief description"
+            onChange={(e) => handleInputChange(e, 250, 'course_description')}
+          />
+          {renderPopup('course_description', 'Description', 250)}
+        </div>
+
+        <div className="mb-5 w-full relative">
+          <input
+            maxLength={70}
+            type="text"
+            className="bg-[#BCE8B1] placeholder-[#070101] placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
+            placeholder="Add Chapter Title"
+            name="chapter_title"
+            value={chapter_title}
+            onChange={(e) => handleInputChange(e, 70, 'chapter_title')}
+          />
+          {renderPopup('chapter_title', 'Chapter title', 70)}
+        </div>
+
+        <div className="lg:w-full lg:flex lg:justify-center grid gap-4 grid-cols-2 mt-5">
+          <Link to="/courseoverview">
+            <button className="w-full btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full cursor-pointer">
               <div className="mr-1">
                 <span>
-                  <BiSave className=" lg:text-[1.5rem] text-white " />
+                  <BiSave className="lg:text-[1.5rem] text-white" />
                 </span>
               </div>
               <div>Save</div>
             </button>
-            </Link>
-            <div className="lg:flex lg:justify-space-between"></div>
-            <Link to="/courselist">
-              <button className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
-                <div className="mr-1">
-                  <span>
-                    <ImCancelCircle className=" lg:text-[1.5rem] text-white " />
-                  </span>
-                </div>{" "}
-                Cancel
-              </button>
-            </Link>
-          </div>
-        </form>
-        <footer className="flex justify-center pt-20">
+          </Link>
+
+          <Link to="/courselist">
+            <button className="w-full btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full">
+              <div className="mr-1">
+                <span>
+                  <ImCancelCircle className="lg:text-[1.5rem] text-white" />
+                </span>
+              </div>
+              Cancel
+            </button>
+          </Link>
+        </div>
+      </form>
+
+      <footer className="flex justify-center pt-20">
         <div>
           <p className="text-[#4D9349] font-medium">All Rights Reserved | Copyright 2024</p>
         </div>
       </footer>
-      </div>
-        {/*January 19 2024 -gem */}
-
     </div>
   );
 };
