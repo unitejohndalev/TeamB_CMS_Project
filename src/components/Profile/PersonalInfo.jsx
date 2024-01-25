@@ -108,20 +108,20 @@ const PersonalInfo = () => {
                     htmlFor="firstName"
                     className={
                       editPersonalInfo
-                        ? " text-[#4D4141] text-opacity-[53%] absolute xl:top-[20.9rem] xl:left-[3.5rem] z-10 top-0 left-2 text-[.8rem] xl:text-[16px]"
+                        ? " text-[#4D4141] text-opacity-[53%] absolute  xl:left-[3.5rem] z-10 top-0 left-2 text-[.8rem] xl:text-[16px]"
                         : showTooltipLastName
-                        ? " text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px]  xl:top-[5rem] blur-lg"
-                        : " text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px]  xl:top-[5rem]"
+                        ? " text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px]   blur-lg"
+                        : " text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px]  "
                     }>
                     First Name <span className="text-[#FF2626]">*</span>
                   </label>
                   <input
                     className={
                       editPersonalInfo
-                        ? "input-style"
+                        ? "input-style px-2"
                         : showTooltipLastName
-                        ? " relative input-style lg:w-full  bg-[#EBFFE5] blur-[.1rem]"
-                        : " relative input-style lg:w-full  bg-[#EBFFE5] "
+                        ? " relative input-style px-2 lg:w-full  bg-[#EBFFE5] blur-[.1rem]"
+                        : " relative input-style px-2 lg:w-full  bg-[#EBFFE5] "
                     }
                     id="firstName"
                     type="text"
@@ -154,14 +154,14 @@ const PersonalInfo = () => {
                 <div className="relative">
                   <label
                     htmlFor="lastName"
-                    className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px] xl:top-[10.5rem] ">
+                    className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px] ">
                     Last Name <span className="text-[#FF2626]">*</span>
                   </label>
                   <input
                     className={
                       editPersonalInfo
-                        ? "input-style "
-                        : "relative input-style lg:w-full bg-[#EBFFE5]"
+                        ? "input-style px-2 "
+                        : "relative input-style px-2 lg:w-full bg-[#EBFFE5]"
                     }
                     id="lastName"
                     type="text"
@@ -183,7 +183,7 @@ const PersonalInfo = () => {
                     disabled={editPersonalInfo}
                   />
                   {showTooltipLastName && editPersonalInfo === false && (
-                    <div className="absolute top-[-3.5rem] left-10 bg-[#fff] w-[60%] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
+                    <div className="absolute top-[-3.5rem] 2xl:top-[-2.5rem] left-10 bg-[#fff] w-[60%] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
                       <p className="text-[.8rem] text-[#4D4141] text-opacity-[53%]">
                         Maximum of 50 letters, only alphabets and spaces are
                         allowed.
@@ -208,8 +208,8 @@ const PersonalInfo = () => {
               <input
                 className={
                   showTooltipContactNo
-                    ? " input-style lg:mt-5 blur-[.01rem]"
-                    : " input-style lg:mt-5"
+                    ? " input-style px-2 lg:mt-5 blur-[.01rem]"
+                    : " input-style px-2 lg:mt-5"
                 }
                 id="Email"
                 type="number"
@@ -228,8 +228,8 @@ const PersonalInfo = () => {
                 <input
                   className={
                     editPersonalInfo
-                      ? "input-style "
-                      : " input-style bg-[#EBFFE5] placeholder:text-[#4D4141] placeholder:text-opacity-[53%]"
+                      ? "input-style px-2 "
+                      : " input-style px-2 bg-[#EBFFE5] placeholder:text-[#4D4141] placeholder:text-opacity-[53%]"
                   }
                   placeholder="+63"
                   type="text"
