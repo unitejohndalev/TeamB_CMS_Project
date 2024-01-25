@@ -67,6 +67,14 @@ const PersonalInfo = () => {
                   name="instructor_first_name" //should be edited
                   value={first_name}
                   onChange={(e) => handleInputChange(e)}
+                  maxLength={50}
+                  onKeyPress={(e) => {
+                    // Allow only alphabets and some special characters like space
+                    const regex = /^[a-zA-Z\s]*$/;
+                    if (!regex.test(e.key)) {
+                      e.preventDefault();
+                    }
+                  }}
                 />
                 <label
                   htmlFor="lastName"
@@ -80,6 +88,14 @@ const PersonalInfo = () => {
                   name="instructor_last_name" //edit
                   value={last_name}
                   onChange={(e) => handleInputChange(e)}
+                  maxLength={50}
+                  onKeyPress={(e) => {
+                    // Allow only alphabets and some special characters like space
+                    const regex = /^[a-zA-Z\s]*$/;
+                    if (!regex.test(e.key)) {
+                      e.preventDefault();
+                    }
+                  }}
                 />
               </div>
             </div>
@@ -109,9 +125,17 @@ const PersonalInfo = () => {
                 placeholder="+63"
                 type="text"
                 id="Username"
-                name="instructor_email" //edit
+                name="instructor_number" //edit
                 value={email}
                 onChange={(e) => handleInputChange(e)}
+                maxLength={11}
+                onKeyPress={(e) => {
+                  // Allow only numeric input
+                  const isNumeric = /^[0-9\b]+$/;
+                  if (!isNumeric.test(e.key)) {
+                    e.preventDefault();
+                  }
+                }}
               />
               <div className="lg:w-[100%] lg:flex lg:justify-end">
                 <button className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
