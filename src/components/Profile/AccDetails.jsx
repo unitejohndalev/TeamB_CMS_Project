@@ -18,7 +18,7 @@ const AccDetails = () => {
               <span className="absolute top-1 text-shadow">Username</span>
             </p>
             <p
-              className="cursor-pointer mr-auto lg:w-[150px] text-center lg:h-[30px] font-semibold xl:w-[159px] xl:h-[36px] 2xl:w-[829px] 2xl:h-[70px] bg-[#D1DFCD] lg:text-[.8rem] 2xl:text-[16px] lg:rounded-lg 2xl:rounder-[5px] text-[#4D4141] text-opacity-[53%] shadow-lg  flex justify-center items-center text-shadow ">
+              className="cursor-pointer mr-auto lg:w-[130px] xl:ml-3 text-center lg:h-[30px] font-semibold xl:w-[159px] xl:h-[36px]   bg-[#D1DFCD] lg:text-[.8rem] 2xl:text-[16px] lg:rounded-lg 2xl:rounder-[5px] text-[#4D4141] text-opacity-[53%] shadow-lg  flex justify-center items-center text-shadow ">
               <span className="">Change Password</span>
             </p>
           </div>
