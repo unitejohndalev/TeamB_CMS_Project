@@ -95,11 +95,11 @@ const PersonalInfo = () => {
           className="absolute bottom-[-.3rem] flex flex-col h-full gap-y-5 w-[90%] lg:h-[450px]  lg:w-[680px]  xl:h-[655px] xl:w-[948px] bg-[#BCE8B1] lg:rounded-b-md lg:rounded-tr-md shadow-md">
           <div className="lg:w-[90%] lg:m-auto">
             <div className="lg:flex lg:w-[100%] lg:gap-x-5">
-              <div className="lg:w-[30%]">
+              <div className="lg:w-[30%] ">
                 <img
                   src={profilePic}
                   alt=""
-                  className="cursor-pointer hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
+                  className="cursor-pointer pb-4 hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
                 />
               </div>
               <div className="relative lg:flex lg:flex-col lg:w-[70%] xl:gap-y-10 lg:gap-y-5">
