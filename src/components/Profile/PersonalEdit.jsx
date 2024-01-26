@@ -273,7 +273,7 @@ const PersonalEdit = () => {
                   font-bold lg:h-[30px]  xl:w-[159px] xl:h-[36px]   bg-[#D1DFCD] lg:text-[.8rem] 2xl:text-[16px] lg:rounded-lg 2xl:rounder-[5px] text-[#4D4141] text-opacity-[53%] shadow-lg  flex justify-center items-center  "
                   onMouseOver={() => setShowTooltipUploadSignature(true)}
                   onMouseLeave={() => setShowTooltipUploadSignature(false)}>
-                  Upload File
+                  Choose File
                 </label>
                 {showTooltipUploadSignature && (
                   <div className="absolute w-[40%] left-10 bg-[#fff] top-[-3rem] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
