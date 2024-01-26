@@ -4,61 +4,36 @@ import { Link, useNavigate } from 'react-router-dom';
 import { BiSave } from 'react-icons/bi';
 import { ImCancelCircle } from 'react-icons/im';
 
-const AddNewCourseCard = () => {
-  const navigate = useNavigate();
+const CreateNewCourse = () => {
+
+
+  let navigate=useNavigate()
 
   const [course, setCourse] = useState({
     course_id: '',
     course_title: '',
     course_description: '',
+    chapter_id:'',
     chapter_title: '',
   });
 
-  const [characterLimits, setCharacterLimits] = useState({
-    course_title: false,
-    course_description: false,
-    chapter_title: false,
-  });
+  const {courseTitle, description, chapTitle} = course;
 
-  const handleInputChange = (e, limit, name) => {
-    const { value } = e.target;
-    setCourse((prevCourse) => ({
-      ...prevCourse,
-      [name]: value,
-    }));
-
-    if (name.length > 0 && value.length === limit) {
-      setCharacterLimits((prevLimits) => ({ ...prevLimits, [name]: true }));
-    } else {
-      setCharacterLimits((prevLimits) => ({ ...prevLimits, [name]: false }));
-    }
-  };
-
-  const renderPopup = (name, label, limit) => {
-    const isLimitReached = characterLimits[name];
-
-    return (
-      <>
-        {isLimitReached && (
-          <div className="absolute bg-gray-800 text-white text-center rounded-md py-1 px-2 text-xs transform -translate-x-1/2 left-1/2 top-[-1.5rem] z-50">
-            {label} limit reached! (Limit: {limit} characters)
-          </div>
-        )}
-      </>
-    );
+  const handleInputChange = (e) => {
+    setCourse({...course,[e.target.name]:e.target.value});
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted:', course);
     await axios.post('http://localhost:8080/api/courses', course);
-    navigate();
+    navigate("/courselist");
   };
 
  
   console.log(course);
 
-  const {courseTitle, description, chapTitle} = course;
+  
   return (
     <div className="mt-[70px] w-full h-[100vh] flex flex-col items-center justify-center">
       <div className="m-5 text-black lg:font-bold lg:text-3xl py-1 lg:py-0 lg:text-[2rem] lg:w-[98%] flex justify-center items-center">
@@ -74,9 +49,8 @@ const AddNewCourseCard = () => {
             placeholder="Add course Title"
             name="course_title"
             value={courseTitle}
-            onChange={(e) => handleInputChange(e, 70, 'course_title')}
+            onChange={(e) => handleInputChange(e)}
           />
-          {renderPopup('course_title', 'Course title', 70)}
         </div>
 
         <div className="mb-5 w-full relative">
@@ -87,9 +61,8 @@ const AddNewCourseCard = () => {
             value={description}
             className="resize-none bg-[#BCE8B1] placeholder-[#070101] placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
             placeholder="Add new brief description"
-            onChange={(e) => handleInputChange(e, 250, 'course_description')}
+            onChange={(e) => handleInputChange(e)}
           />
-          {renderPopup('course_description', 'Description', 250)}
         </div>
 
         <div className="mb-5 w-full relative">
@@ -100,9 +73,8 @@ const AddNewCourseCard = () => {
             placeholder="Add Chapter Title"
             name="chapter_title"
             value={chapTitle}
-            onChange={(e) => handleInputChange(e, 70, 'chapter_title')}
+            onChange={(e) => handleInputChange(e)}
           />
-          {renderPopup('chapter_title', 'Chapter title', 70)}
         </div>
 
         <div className="lg:w-full lg:flex lg:justify-center grid gap-4 grid-cols-2 mt-5">
@@ -139,4 +111,4 @@ const AddNewCourseCard = () => {
   );
 };
 
-export default AddNewCourseCard;
+export default CreateNewCourse;
