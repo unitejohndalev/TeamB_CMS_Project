@@ -116,7 +116,7 @@ const PersonalInfo = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-3 lg:flex lg:gap-y-7 lg:flex-col xl:gap-y-10 ">
+              <div className="mt-3 lg:flex lg:gap-y-7 lg:flex-col xl:gap-y-10">
                 <div className="relative">
                   <label
                     htmlFor="Email"
@@ -136,7 +136,7 @@ const PersonalInfo = () => {
                     disabled
                   />
                 </div>
-                <div className="relative ">
+                <div className="relative">
                   <label
                     htmlFor="ContactNumber"
                     className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px] xl:top-[26.5rem] xl:left-[3.5rem]">
@@ -146,7 +146,7 @@ const PersonalInfo = () => {
                   {/* CONTACT NUMBER INPUT */}
 
                   <input
-                    className=" input-style px-2 "
+                    className=" input-style px-2 mb-7"
                     placeholder="+63"
                     type="text"
                     id="ContactNumber"
@@ -159,7 +159,7 @@ const PersonalInfo = () => {
                   <div className="lg:w-[100%] lg:flex lg:justify-end">
                     <button
                       onClick={showUpdate}
-                      className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
+                      className="w-full  btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
                       Edit
                     </button>
                   </div>

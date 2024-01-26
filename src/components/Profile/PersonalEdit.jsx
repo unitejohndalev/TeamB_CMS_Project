@@ -69,6 +69,8 @@ const PersonalEdit = () => {
   const [showTooltipLastName, setShowTooltipLastName] = useState(false);
   // const [showTooltipEmail, setShowTooltipEmail] = useState(false);
   const [showTooltipContactNo, setShowTooltipContactNo] = useState(false);
+  const [showTooltipUploadSignature, setShowTooltipUploadSignature] =
+    useState(false);
 
   //set react hook for all text field
   const [errorFirstName, setErrorFirstName] = useState(false);
@@ -88,8 +90,7 @@ const PersonalEdit = () => {
           className="absolute bottom-[-.3rem] flex flex-col h-full gap-y-5 w-[90%] lg:h-[450px]  lg:w-[680px]  xl:h-[655px] xl:w-[948px] bg-[#BCE8B1] lg:rounded-b-md lg:rounded-tr-md shadow-md">
           <div className="lg:w-[90%] lg:m-auto">
             <div className="lg:flex lg:w-[100%] lg:gap-x-5">
-
-            {/* IMAGE */}
+              {/* IMAGE */}
 
               <div className="lg:w-[30%] ">
                 <img
@@ -99,7 +100,7 @@ const PersonalEdit = () => {
                 />
               </div>
 
-            {/*FORM  */}
+              {/*FORM  */}
 
               <div className="mt-3 relative lg:flex lg:flex-col lg:w-[70%] xl:gap-y-10 lg:gap-y-7">
                 <div className="relative">
@@ -113,7 +114,7 @@ const PersonalEdit = () => {
                     First Name <span className="text-[#FF2626]">*</span>
                   </label>
 
-                    {/* FIRSTNAME INPUT */}
+                  {/* FIRSTNAME INPUT */}
 
                   <input
                     className={
@@ -155,7 +156,7 @@ const PersonalEdit = () => {
                     Last Name <span className="text-[#FF2626]">*</span>
                   </label>
 
-                    {/* LASTNAME INPUT */}
+                  {/* LASTNAME INPUT */}
 
                   <input
                     className="relative input-style px-2 lg:w-full bg-[#EBFFE5]"
@@ -200,8 +201,8 @@ const PersonalEdit = () => {
                   Email Address
                 </label>
 
-                  {/* EMAIL INPUT */}
-                  
+                {/* EMAIL INPUT */}
+
                 <input
                   className=" input-style px-2 "
                   disabled
@@ -215,14 +216,22 @@ const PersonalEdit = () => {
               <div className="relative ">
                 <label
                   htmlFor="ContactNumber"
-                  className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px] xl:top-[26.5rem] xl:left-[3.5rem]">
+                  className={
+                    showTooltipUploadSignature
+                      ? " text-[#4D4141] text-opacity-[53%] absolute  z-10 top-0 left-2 text-[.8rem] xl:text-[16px] blur-lg"
+                      : " text-[#4D4141] text-opacity-[53%] absolute  z-10 top-0 left-2 text-[.8rem] xl:text-[16px]"
+                  }>
                   Contact Number <span className="text-[#FF2626]">*</span>
                 </label>
 
-                  {/* CONTACT NUMBER INPUT */}
+                {/* CONTACT NUMBER INPUT */}
 
                 <input
-                  className=" input-style px-2 bg-[#EBFFE5] placeholder:text-[#4D4141] placeholder:text-opacity-[53%]"
+                  className={
+                    showTooltipUploadSignature
+                      ? " relative input-style px-2 lg:w-full  bg-[#EBFFE5] blur-[.1rem]"
+                      : " relative input-style px-2 lg:w-full  bg-[#EBFFE5] "
+                  }
                   placeholder="+63"
                   type="text"
                   id="ContactNumber"
@@ -250,11 +259,32 @@ const PersonalEdit = () => {
                   </div>
                 )}
               </div>
-              <div className="lg:w-[100%] lg:flex lg:justify-end">
-              
+              <div className=" relative lg:w-[100%] lg:flex lg:justify-end items-center">
+                {/* UPLOAD SIGNATURE */}
+
+                <input id="uploadSignature" type="file" className="hidden" />
+                <label
+                  for="uploadSignature"
+                  className=" cursor-pointer mr-auto lg:w-[130px] xl:ml-3 text-center
+                  font-bold lg:h-[30px]  xl:w-[159px] xl:h-[36px]   bg-[#D1DFCD] lg:text-[.8rem] 2xl:text-[16px] lg:rounded-lg 2xl:rounder-[5px] text-[#4D4141] text-opacity-[53%] shadow-lg  flex justify-center items-center  "
+                  onMouseOver={() => setShowTooltipUploadSignature(true)}
+                  onMouseLeave={() => setShowTooltipUploadSignature(false)}>
+                  Upload File
+                </label>
+                {showTooltipUploadSignature && (
+                  <div className="absolute w-[40%] left-10 bg-[#fff] top-[-3rem] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
+                    <p className="text-[.8rem] text-[#4D4141] text-opacity-[53%]">
+                      Upload Signature, no background and must be in svg or webp
+                      file format.
+                    </p>
+                  </div>
+                )}
+
+                {/* UPDATE BUTTON*/}
+
                 <button
                   type="submit"
-                  className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
+                  className="w-full  btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
                   Update
                 </button>
               </div>
