@@ -47,7 +47,7 @@ const AddTopicTitlePage = () => {
     return (
       <>
         {isLimitReached && (
-          <div className="absolute bg-gray-800 text-white text-center rounded-md py-1 px-2 text-xs top-50 mb-20 z-50">
+          <div className="absolute bg-gray-800 text-white text-center rounded-md py-1 px-2 text-xs top-52 mb-20 z-50">
             {label} limit reached! (Limit: {limit} characters)
           </div>
         )}
