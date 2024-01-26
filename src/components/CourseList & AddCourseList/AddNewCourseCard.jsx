@@ -26,14 +26,13 @@ const AddNewCourseCard = () => {
       ...prevCourse,
       [name]: value,
     }));
-
-    if (name.length > 0 && value.length === limit) {
+  
+    if (value.length > 0 && value.length === limit) {
       setCharacterLimits((prevLimits) => ({ ...prevLimits, [name]: true }));
     } else {
       setCharacterLimits((prevLimits) => ({ ...prevLimits, [name]: false }));
     }
   };
-
   const renderPopup = (name, label, limit) => {
     const isLimitReached = characterLimits[name];
 

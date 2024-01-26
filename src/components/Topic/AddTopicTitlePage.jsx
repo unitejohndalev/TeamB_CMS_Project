@@ -1,27 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
-//arrow back icon
 import { IoArrowBackCircle } from "react-icons/io5";
-
-//add icon
 import { IoIosAddCircle } from "react-icons/io";
-
-//save icon
 import { TfiSave } from "react-icons/tfi";
-
-//import img for vid link and file link
 import vidUpload from "../../assets/vidUpload.svg";
 import quizLink from "../../assets/quizLink.svg";
 import Footer from "../Footer";
 
 const AddTopicTitlePage = () => {
-  //use navigate to back
+  // use navigate to back
   const navigate = useNavigate();
 
   const goBack = () => {
     navigate(-1);
   };
+
+  const [course, setCourse] = useState({
+    course_title: "",
+    course_description:"",
+    chapter_title: "",
+  });
+
+  const [characterLimits, setCharacterLimits] = useState({
+    course_title: false,
+    course_description: false,
+    chapter_title: false,
+  });
+
+  const handleInputChange = (e, limit, name) => {
+    const { value } = e.target;
+    setCourse((prevCourse) => ({
+      ...prevCourse,
+      [name]: value,
+    }));
+
+    if (value.length === limit) {
+      setCharacterLimits((prevLimits) => ({ ...prevLimits, [name]: true }));
+    } else {
+      setCharacterLimits((prevLimits) => ({ ...prevLimits, [name]: false }));
+    }
+  };
+
+  const renderPopup = (name, label, limit) => {
+    const isLimitReached = characterLimits[name];
+    
+    return (
+      <>
+        {isLimitReached && (
+          <div className="absolute bg-gray-800 text-white text-center rounded-md py-1 px-2 text-xs top-50 mb-20 z-50">
+            {label} limit reached! (Limit: {limit} characters)
+          </div>
+        )}
+      </>
+    );
+  };
+
+  const { course_title, description } = course;
+
   return (
     <>
       <div className="flex mt-[100px]">
@@ -29,7 +64,8 @@ const AddTopicTitlePage = () => {
         <div className="h-[100vh] flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
           <div
             className="flex items-center mt-3 cursor-pointer "
-            onClick={goBack}>
+            onClick={goBack}
+          >
             <span className="text-[2.5rem] text-white">
               <IoArrowBackCircle />
             </span>
@@ -86,8 +122,12 @@ const AddTopicTitlePage = () => {
                 name=""
                 id=""
                 placeholder="Add Topic Title"
+                maxLength={"70"}
                 className="bg-[#BCE8B1] rounded-lg placeholder:text-[#626262] placeholder:pl-2 outline-none pl-2"
+                value={course_title}
+                onChange={(e) => handleInputChange(e, 70, 'course_title')}
               />
+              {renderPopup('course_title', 'Text character', 70)}
             </div>
             <textarea
               name=""
@@ -95,9 +135,15 @@ const AddTopicTitlePage = () => {
               cols="30"
               rows="10"
               placeholder="Add Topic Description"
+              maxLength={"500"}
+              value={course.course_description}
               className="bg-[#BCE8B1] resize-none  lg:min-w-[100%] 2xl:h-[264px] lg:h-[25vh] placeholder:font-bold placeholder:text-center placeholder:py-16
               outline-none pl-3 pt-3 rounded-lg placeholder:text-[#070101] placeholder:text-opacity-[55%] mt-5"
+              onChange={(e) =>
+                handleInputChange(e, 500, 'course_description')
+              }
             />
+            {renderPopup('course_description', 'Text character', 500)}
           </div>
           <div className="flex w-[90%] m-auto items-center justify-center lg:gap-x-[5rem] lg:mt-[3rem]">
             <div className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
@@ -106,9 +152,6 @@ const AddTopicTitlePage = () => {
                 alt=""
                 className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
               />
-              {/* rotation line not responsive */}
-              {/* <div className="lg:rotate-[25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div>
-              <div className="lg:rotate-[-25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div> */}
             </div>
             <div className=" relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
               <img
@@ -116,9 +159,6 @@ const AddTopicTitlePage = () => {
                 alt=""
                 className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
               />
-              {/* rotation line not responsive */}
-              {/* <div className="lg:rotate-[25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div>
-              <div className="lg:rotate-[-25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div> */}
             </div>
           </div>
           <div className="mt-5">
@@ -131,4 +171,3 @@ const AddTopicTitlePage = () => {
 };
 
 export default AddTopicTitlePage;
-// 1/19/204

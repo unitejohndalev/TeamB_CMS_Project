@@ -1,14 +1,10 @@
 /*January 10, 2024*/
 import React, { useState, useEffect } from "react";
 import { IoAdd } from "react-icons/io5";
-
 import axios from "axios";
-
 import { Link } from "react-router-dom";
-
 //import mock data
 import data from "../../mockData/CourselistCard.json";
-
 const CourseListCard = () => {
   // *NOTE
   //if data is coming from db use useState hook to store the data
@@ -41,9 +37,11 @@ const CourseListCard = () => {
         <div className="">
           <div className=" xl:w-[1244px] w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
-              <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center ">
-                <p className="pb-5 2xl:text-[48px] lg:font-bold text-shadow mb-5">Course List</p>
-              </div>
+            <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center ">
+              <p className="pb-5 2xl:text-[48px] lg:font-bold text-shadow mb-5">
+                Course List
+              </p>
+            </div>
             <Link to="/courseoverview">
               {courses.map((course, idx) => {
                 return (
@@ -57,8 +55,11 @@ const CourseListCard = () => {
 
                       <p
                         className="text-white text-shadow lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
+
+
                    rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
                         {course.course_title}
+
                       </p>
                     </div>
                   </div>
