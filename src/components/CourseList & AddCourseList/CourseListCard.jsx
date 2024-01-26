@@ -11,6 +11,8 @@ const CourseListCard = () => {
   //sample: const [courses, setCourses] = useState([])
 
   const [courses, setCourses] = useState([]);
+  
+ 
 
   /* january 172024*/
   useEffect(() => {
@@ -18,13 +20,14 @@ const CourseListCard = () => {
   }, []);
 
   const loadCourses = async () => {
-    const result = await axios.get("http://localhost:8080/getCourse");
+    const result = await axios.get("http://localhost:8080/course/chapter");
     setCourses(result.data);
   };
   /*January 15 2024 */
 
   //course list mock data
-  const { courselist } = data;
+  console.log(courses);
+
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
@@ -40,21 +43,23 @@ const CourseListCard = () => {
               </p>
             </div>
             <Link to="/courseoverview">
-              {courselist.map((course, idx) => {
+              {courses.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
                     <div className="flex px-0 py-0 rounded-md xl:h-[115px]">
                       <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
                         <p className="lg:font-medium text-shadow">
-                          PL00{course.id}
+                          PL00{course.course_id}
                         </p>
                       </div>
 
                       <p
                         className="text-white text-shadow lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
-                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
-                      >
-                        {course.courseTitle}
+
+
+                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
+                        {course.course_title}
+
                       </p>
                     </div>
                   </div>

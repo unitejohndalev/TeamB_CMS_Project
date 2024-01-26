@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
 
 import { ProfileContext } from "../context/ProfileContext";
+import PersonalEdit from "./PersonalEdit";
 
 const Profile = () => {
   //use navigate to back
@@ -73,7 +74,7 @@ const Profile = () => {
           </div>
           <div>
             {/* Place your Component here */}
-            {showPersonalInfo && <PersonalInfo />}
+            {showPersonalInfo && <PersonalInfo/>}
             {showAccDetails && <AccDetails />}
             {/* /* Place AccDetails Component here */}
             {/* <AccDetails/> */}

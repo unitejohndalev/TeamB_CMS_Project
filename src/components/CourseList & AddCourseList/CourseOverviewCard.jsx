@@ -23,18 +23,18 @@ const CourseOverviewCard = () => {
   }, []);
 
   const loadChapters = async () => {
-    const result = await axios.get("http://localhost:8080/getChapter");
+    const result = await axios.get("http://localhost:8080/api/chapters");
     setChapters(result.data);
   };
   //mockdata chapter
-  const { chapterlist } = data;
-
+  
   //back function
   const navigate = useNavigate();
 
   const goBack = () => {
     navigate(-1);
   };
+  console.log(chapters);
 
   return (
     <>
@@ -65,7 +65,7 @@ const CourseOverviewCard = () => {
                 <span className=" text-shadow">Lessons</span>
               </div>
             </div>
-            {chapterlist.map((chapter, idx) => {
+            {chapters.map((chapter, idx) => {
               return (
                 <Link
                   to="/addtopictitlepage"
@@ -75,9 +75,9 @@ const CourseOverviewCard = () => {
                   <div
                     className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
-                    <p className="text-shadow">CHAPTER {chapter.chapiId}:</p>
+                    <p className="text-shadow">CHAPTER {chapter.chapter_id}:</p>
                     <p className="pl-2 lg:font-medium text-shadow">
-                      {chapter.chapterTitle}
+                      {chapter.chapter_title}
                     </p>
                   </div>
                 </Link>

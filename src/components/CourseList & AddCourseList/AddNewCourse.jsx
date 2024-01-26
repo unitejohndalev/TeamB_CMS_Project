@@ -1,10 +1,11 @@
 import React from 'react';
-import AddNewCourseCard from './AddNewCourseCard'
+// import AddNewCourseCard from './AddNewCourseCard'
+import CreateNewCourse from './CreateNewCourse';
 
 const AddNewCourse = () => {
   return (
     <div>
-     <AddNewCourseCard/>
+     <CreateNewCourse/>
     </div>
   );
 };

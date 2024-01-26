@@ -107,7 +107,7 @@ const CreateNewChapterTitle = () => {
               <Link
                 to="/courseoverview"
                 className=" h-[10vh] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
-                <div className="bg-[#BCE8B1] w-[100%] flex justify-center items-center pr-2 justify-end h-[5vh] lg:h-[50px] rounded-sm lg:rounded-[1rem]">
+                <div className="bg-[#BCE8B1] w-[100%] flex justify-center items-center pr-2 h-[5vh] lg:h-[50px] rounded-sm lg:rounded-[1rem]">
                   <span className="pr-3">
                     <TfiSave className="text-[2rem] text-white" />
                   </span>
