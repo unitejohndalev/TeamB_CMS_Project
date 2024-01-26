@@ -71,7 +71,7 @@ const PersonalInfo = () => {
                   <img
                     src={profilePic}
                     alt=""
-                    className="cursor-pointer pb-4 hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
+                    className=" pb-4 hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
                   />
                 </div>
                 <div className="mt-3 relative lg:flex lg:flex-col lg:w-[70%] xl:gap-y-10 lg:gap-y-7">
@@ -85,7 +85,7 @@ const PersonalInfo = () => {
                     {/* FIRSTNAME INPUT */}
 
                     <input
-                      className="input-style px-2 "
+                      className="px-2 input-style "
                       id="firstName"
                       type="text"
                       name="instructor_first_name" //should be edited
@@ -105,7 +105,7 @@ const PersonalInfo = () => {
                     {/* LASTNAME INPUT */}
 
                     <input
-                      className="input-style px-2 "
+                      className="px-2 input-style "
                       id="lastName"
                       type="text"
                       name="instructor_last_name" //edit
@@ -127,7 +127,7 @@ const PersonalInfo = () => {
                   {/* EMAIL INPUT */}
 
                   <input
-                    className=" input-style px-2 "
+                    className="px-2  input-style"
                     id="Email"
                     type="number"
                     name="instructor_username" //edit
@@ -146,7 +146,7 @@ const PersonalInfo = () => {
                   {/* CONTACT NUMBER INPUT */}
 
                   <input
-                    className=" input-style px-2 mb-7"
+                    className="px-2  input-style mb-7"
                     placeholder="+63"
                     type="text"
                     id="ContactNumber"

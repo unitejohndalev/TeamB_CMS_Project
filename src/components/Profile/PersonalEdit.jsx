@@ -93,11 +93,15 @@ const PersonalEdit = () => {
               {/* IMAGE */}
 
               <div className="lg:w-[30%] ">
-                <img
-                  src={profilePic}
-                  alt=""
-                  className="cursor-pointer pb-4 hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
-                />
+                <label
+                  for="uploadProfile">
+                  <img
+                    src={profilePic}
+                    alt=""
+                    className="cursor-pointer pb-4 hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
+                  />
+                </label>
+                <input id="uploadProfile" type="file" className="hidden" />
               </div>
 
               {/*FORM  */}
@@ -204,7 +208,7 @@ const PersonalEdit = () => {
                 {/* EMAIL INPUT */}
 
                 <input
-                  className=" input-style px-2 "
+                  className="px-2 input-style"
                   disabled
                   id="Email"
                   type="number"
