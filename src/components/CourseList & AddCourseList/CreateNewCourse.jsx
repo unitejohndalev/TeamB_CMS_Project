@@ -43,7 +43,6 @@ const CreateNewCourse = () => {
       <form onSubmit={handleSubmit} className="lg:w-[70%] m-auto">
         <div className="mb-5 w-full relative">
           <input
-            maxLength={70}
             type="text"
             className="bg-[#BCE8B1] placeholder-[#070101] placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
             placeholder="Add course Title"
@@ -55,7 +54,6 @@ const CreateNewCourse = () => {
 
         <div className="mb-5 w-full relative">
           <textarea
-            maxLength={250}
             rows="5"
             name="course_description"
             value={description}
@@ -67,7 +65,6 @@ const CreateNewCourse = () => {
 
         <div className="mb-5 w-full relative">
           <input
-            maxLength={70}
             type="text"
             className="bg-[#BCE8B1] placeholder-[#070101] placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
             placeholder="Add Chapter Title"
