@@ -159,7 +159,7 @@ const PersonalInfo = () => {
                   <div className="lg:w-[100%] lg:flex lg:justify-end">
                     <button
                       onClick={showUpdate}
-                      className="w-full mb-5 lg:mb-0 lg:mt-5 btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
+                      className="w-full  btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
                       Edit
                     </button>
                   </div>
