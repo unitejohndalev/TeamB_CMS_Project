@@ -66,6 +66,7 @@ const CourseOverviewCard = () => {
               </div>
             </div>
             {chapters.map((chapter, idx) => {
+              const {chapters} = chapter
               return (
                 <Link
                   to="/addtopictitlepage"
@@ -79,6 +80,17 @@ const CourseOverviewCard = () => {
                     <p className="pl-2 lg:font-medium text-shadow">
                       {chapter.chapter_title}
                     </p>
+                    {/* <div>
+                      {chapters.map((c, idx) => {
+                        const {chapter_title} = c
+                        return (
+                          <div key={idx}>
+                            <p>{chapter_title}</p>
+                          </div>
+                        )
+                      })}
+                    </div> */}
+                   
                   </div>
                 </Link>
               );

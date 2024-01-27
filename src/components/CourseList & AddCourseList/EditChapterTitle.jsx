@@ -18,16 +18,33 @@ const EditChapterTitle = () => {
   /*January 17 2023 API connection from backend to front end displaying data */
   const [chapters, setChapters] = useState([]);
 
+  const [chapter, setChapter] = useState({
+    chapter_id: '',
+    chapter_title: '',
+  });
+
+  const handleInputChange = (e) => {
+    setChapter({...chapter,[e.target.name]:e.target.value});
+  };
+
   useEffect(() => {
     loadChapters();
   }, []);
 
   const loadChapters = async () => {
-    const result = await axios.get("http://localhost:8080/getChapter");
+    const result = await axios.get("http://localhost:8080/api/chapters");
     setChapters(result.data);
   };
   //mockdata chapter
-  const { chapterlist } = data;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', chapter);
+    await axios.post('http://localhost:8080/api/chapters', chapter);
+    navigate("/courseoverview");
+  };
+
+  const { chapter_title} = chapter;
+
 
   //back function
   const navigate = useNavigate();
@@ -65,21 +82,24 @@ const EditChapterTitle = () => {
               </div>
             </div>
 
-            {chapterlist.map((chapter, idx) => {
+            {chapters.map((chapter, idx) => {
               return (
                 <div
                   key={idx}
                   className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
                   <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
-                  <div
+                  <form
                     className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
                     <input
                       type="text"
-                      placeholder={`CHAPTER: ${chapter.chapiId} ${chapter.chapterTitle}`}
+                      placeholder={`CHAPTER:${chapter_title}`}
+                      name="chapter_title"
+                      value={chapter_title}
+                      onChange={handleInputChange}
                       className="bg-[#126912] placeholder:text-white w-[100vw] outline-none placeholder:text-opacity-[25%]"
                     />
-                  </div>
+                  </form>
                 </div>
               );
             })}

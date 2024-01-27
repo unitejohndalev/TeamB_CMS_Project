@@ -26,7 +26,7 @@ const CreateNewCourse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted:', course);
-    await axios.post('http://localhost:8080/api/courses', course);
+    await axios.post('http://localhost:8080/course/chapter', course);
     navigate("/courselist");
   };
 

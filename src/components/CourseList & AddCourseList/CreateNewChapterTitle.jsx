@@ -16,6 +16,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 const CreateNewChapterTitle = () => {
   /*January 17 2023 API connection from backend to front end displaying data */
+
+  const [chapter, setChapter] = useState({
+    chapter_id: '',
+    chapter_title: '',
+  });
+
+  
   const [chapters, setChapters] = useState([]);
 
   useEffect(() => {
@@ -23,11 +30,23 @@ const CreateNewChapterTitle = () => {
   }, []);
 
   const loadChapters = async () => {
-    const result = await axios.get("http://localhost:8080/getChapter");
+    const result = await axios.get("http://localhost:8080/api/chapters");
     setChapters(result.data);
   };
+
+
+  const handleInputChange = (e) => {
+    setChapter({...chapter,[e.target.name]:e.target.value});
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', chapter);
+    await axios.post('http://localhost:8080/api/chapters', chapter);
+    navigate("/courseoverview");
+  };
   //mockdata chapter destructure
-  const { chapterlist } = data;
+  const { chapter_title } = chapter;
 
   //back function
   const navigate = useNavigate();
@@ -36,8 +55,8 @@ const CreateNewChapterTitle = () => {
     navigate(-1);
   };
 
-  //limit map data into 4 instead of 5
-  const limitChapterList = chapterlist.slice(0, 4);
+  console.log(chapters);
+
   return (
     <>
       {/*January 19 2024 -gem modify responsiveness*/}
@@ -69,7 +88,7 @@ const CreateNewChapterTitle = () => {
               </div>
             </div>
 
-            {limitChapterList.map((chapter, idx) => {
+            {chapters.map((chapter, idx) => {
               return (
                 <div
                   key={idx}
@@ -78,9 +97,9 @@ const CreateNewChapterTitle = () => {
                   <div
                     className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
-                    <p className="text-shadow">CHAPTER {chapter.chapiId}:</p>
+                    <p className="text-shadow">CHAPTER {chapter.chapter_id}:</p>
                     <p className="pl-2 lg:font-medium text-shadow">
-                      {chapter.chapterTitle}
+                      {chapter.chapter_title}
                     </p>
                   </div>
                 </div>
@@ -88,35 +107,42 @@ const CreateNewChapterTitle = () => {
             })}
             <div className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
               <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
-              <div
+              <form onSubmit={handleSubmit} 
                 className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
-                <input
+               <input
                   type="text"
                   placeholder="Add New Chapter"
                   className="bg-[#126912] placeholder:text-white w-[100vw] outline-none placeholder:text-opacity-[25%]"
+                  name="chapter_title"
+                  value={chapter_title}
+                  onChange={(e) => handleInputChange(e)}
                 />
-              </div>
-            </div>
+             
+         
             {/*January 19 2024 -gem modify responsiveness*/}
 
             {/*January 17 2023 API connection from backend to front end displaying data */}
             {/*January 19 2024 -gem modify buttonUI and add footer*/}
 
             <div className="2xl:w-[297px] 2xl:h-[65px] lg:w-[20%] lg:flex lg:justify-center lg:items-center gap-5 ml-16">
-              <Link
-                to="/courseoverview"
+              <div
                 className=" h-[10vh] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer">
                 <div className="bg-[#BCE8B1] w-[100%] flex justify-center items-center pr-2 justify-end h-[5vh] lg:h-[50px] rounded-sm lg:rounded-[1rem]">
                   <span className="pr-3">
                     <TfiSave className="text-[2rem] text-white" />
                   </span>
-                  <span className="text-shadow lg:font-bold lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+                  <button className="text-shadow lg:font-bold lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                     Save
-                  </span>
+                  </button>
                 </div>
-              </Link>
+              </div>
+              
             </div>
+            </form>
+            </div>
+            
+            {/*footer */}
             <div>
               <footer className="flex justify-center p-10">
                 <div>
