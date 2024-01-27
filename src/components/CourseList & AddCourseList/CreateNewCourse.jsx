@@ -41,10 +41,11 @@ const CreateNewCourse = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="lg:w-[70%] m-auto">
-        <div className="mb-5 w-full relative">
+        <div className="relative w-full mb-5">
           <input
+            maxLength={70}
             type="text"
-            className="bg-[#BCE8B1] placeholder-[#070101] placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
+            className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
             placeholder="Add course Title"
             name="course_title"
             value={courseTitle}
@@ -52,21 +53,23 @@ const CreateNewCourse = () => {
           />
         </div>
 
-        <div className="mb-5 w-full relative">
+        <div className="relative w-full mb-5">
           <textarea
+            maxLength={250}
             rows="5"
             name="course_description"
             value={description}
-            className="resize-none bg-[#BCE8B1] placeholder-[#070101] placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
+            className="resize-none bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
             placeholder="Add new brief description"
             onChange={(e) => handleInputChange(e)}
           />
         </div>
 
-        <div className="mb-5 w-full relative">
+        <div className="relative w-full mb-5">
           <input
+            maxLength={70}
             type="text"
-            className="bg-[#BCE8B1] placeholder-[#070101] placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
+            className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
             placeholder="Add Chapter Title"
             name="chapter_title"
             value={chapTitle}
@@ -74,17 +77,15 @@ const CreateNewCourse = () => {
           />
         </div>
 
-        <div className="lg:w-full lg:flex lg:justify-center grid gap-4 grid-cols-2 mt-5">
-          
-            <button className="w-full btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full cursor-pointer">
-              <div className="mr-1">
-                <span>
-                  <BiSave className="lg:text-[1.5rem] text-white" />
-                </span>
-              </div>
-              <div>Save</div>
-            </button>
-          
+        <div className="grid grid-cols-2 gap-4 mt-5 lg:h-[40px] 2xl:h-[65px] lg:w-full lg:flex lg:justify-center">
+          <button className="w-full btn-style lg:w-[160px]  lg:flex lg:justify-center xl:w-[170px] rounded-full cursor-pointer">
+            <div className="mr-1">
+              <span>
+                <BiSave className="lg:text-[1.5rem] text-white" />
+              </span>
+            </div>
+            <div>Save</div>
+          </button>
 
           <Link to="/courselist">
             <button className="w-full btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full">
@@ -101,7 +102,9 @@ const CreateNewCourse = () => {
 
       <footer className="flex justify-center pt-20">
         <div>
-          <p className="text-[#4D9349] font-medium">All Rights Reserved | Copyright 2024</p>
+          <p className="text-[#4D9349] font-medium">
+            All Rights Reserved | Copyright 2024
+          </p>
         </div>
       </footer>
     </div>

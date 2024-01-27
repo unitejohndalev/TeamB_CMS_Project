@@ -93,8 +93,7 @@ const PersonalEdit = () => {
               {/* IMAGE */}
 
               <div className="lg:w-[30%] ">
-                <label
-                  for="uploadProfile">
+                <label for="uploadProfile">
                   <img
                     src={profilePic}
                     alt=""
@@ -242,7 +241,7 @@ const PersonalEdit = () => {
                   name="instructor_contact_number" //edit
                   value={instructor_contact_number}
                   onChange={(e) => handleInputChange(e)}
-                  maxLength={11}
+                  maxLength={10}
                   required={true}
                   onError={errorContactNo}
                   onKeyPress={(e) => {
@@ -258,7 +257,7 @@ const PersonalEdit = () => {
                 {showTooltipContactNo && (
                   <div className="absolute top-[-3.5rem] left-10 bg-[#fff] w-[40%] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
                     <p className="text-[.8rem] text-[#4D4141] text-opacity-[53%]">
-                      Maximum of 10 numbers, only numbers are allowed.
+                      Maximum of 10 numbers, only digits are allowed.
                     </p>
                   </div>
                 )}
