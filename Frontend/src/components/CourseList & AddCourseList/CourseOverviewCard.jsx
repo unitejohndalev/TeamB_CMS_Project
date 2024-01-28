@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { IoAdd } from "react-icons/io5";
+
 import { TfiSave } from "react-icons/tfi";
 
 //import mockdata
@@ -9,24 +9,17 @@ import data from "../../mockData/CourseOverviewCard.json";
 //edit icon
 //edit icon
 import { FaEdit } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 //back icon and back function
 import { IoArrowBackCircle } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import EditChapterTitle from "./EditChapterTitle";
+import CourseOverviewById from "./CourseOverviewById";
 
 const CourseOverviewCard = () => {
   /*January 17 2023 API connection from backend to front end displaying data */
-  const [chapters, setChapters] = useState([]);
 
-  useEffect(() => {
-    loadChapters();
-  }, []);
-
-  const loadChapters = async () => {
-    const result = await axios.get("http://localhost:8080/api/chapters");
-    setChapters(result.data);
-  };
   //mockdata chapter
 
   //back function
@@ -35,7 +28,6 @@ const CourseOverviewCard = () => {
   const goBack = () => {
     navigate(-1);
   };
-  console.log(chapters);
 
   //react hook for edit and save chapter title
   const [showSave, setShowSave] = useState(false);
@@ -49,6 +41,7 @@ const CourseOverviewCard = () => {
     setShowEdit(true);
     setShowSave(false);
   };
+ 
 
   return (
     <>
@@ -58,8 +51,7 @@ const CourseOverviewCard = () => {
         <div className="relative w-full h-full mt-5 ">
           <div
             className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
-            onClick={goBack}
-          >
+            onClick={goBack}>
             <span className="text-[2.5rem]">
               <IoArrowBackCircle />
             </span>
@@ -79,83 +71,19 @@ const CourseOverviewCard = () => {
               <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px] m-auto pt-2">
                 <span className=" text-shadow">Lessons</span>
               </div>
+              <div>
+             <CourseOverviewById/>
+              </div>
             </div>
-            {chapters.map((chapter, idx) => {
-              const { chapters } = chapter;
-              return (
-                <div
-               
-                  key={idx}
-                  className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center"
-                >
-                  {/* <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div> */}
-                 {showEdit && <Link
-                     to="/addtopictitlepage"
-                    className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
-              lg:h-[50px] lg:rounded-[1rem]"
-                  >
-                    <p className="text-shadow">CHAPTER {chapter.chapter_id}:</p>
-                    <p className="pl-2 lg:font-medium text-shadow">
-                      {chapter.chapter_title}
-                    </p>
-                    {/* <div>
-                      {chapters.map((c, idx) => {
-                        const {chapter_title} = c
-                        return (
-                          <div key={idx}>
-                            <p>{chapter_title}</p>
-                          </div>
-                        )
-                      })}
-                    </div> */}
-                  </Link>}
-                  {showEdit &&<div
-                 
-                    className=" lg:rounded-[1rem]  flex items-center justify-center  cursor-pointer "
-                  >
-                    <div
-                      className="flex items-center justify-center w-full "
-                      onClick={handleEdit}
-                    >
-                      <span className="pr-5 ">
-                        <FaEdit className="lg:font-bold text-[2rem] text-[#126912] lg:text-[1.5rem] " />
-                      </span>
-                    </div>
-                  </div>}
-                  {showSave && (
-                    <div className="lg:w-full flex justify-between">
-                      <input type="text" className="input-style w-[90%] rounded-[1rem]" />
-                      <div onClick={handleSave} className="flex items-center justify-center pr-5">
-                        <TfiSave  className="lg:font-bold text-[2rem] text-[#126912] lg:text-[1.2rem] "/>
-                      </div>
-                    </div>
-                  )}
 
-                  
-                </div>
-              );
-            })}
+            {/* <div>
+              <EditChapterTitle/>
+            </div> */}
             {/*January 19 2024 -gem modify responsiveness*/}
-
             {/*January 17 2023 API connection from backend to front end displaying data */}
             {/*January 19 2024 -gem modify buttons add footer*/}
 
-            <div className="lg:w-[65%] lg:flex lg:justify-center gap-5 ml-16">
-              <Link
-                to="/createnewchaptertitle"
-                className="lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]"
-              >
-                <div className="flex items-center justify-center w-full">
-                  <span className="pr-4">
-                    <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
-                  </span>
-                  <span className="text-shadow lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
-                    Add Chapter Title
-                  </span>
-                </div>
-              </Link>
-              <div className="lg:flex lg:justify-space-between"></div>
-            </div>
+          
             <div>
               <footer className="flex justify-center p-10">
                 <div>

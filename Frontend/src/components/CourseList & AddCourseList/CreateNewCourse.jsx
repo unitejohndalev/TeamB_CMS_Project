@@ -13,23 +13,43 @@ const CreateNewCourse = () => {
     course_id: '',
     course_title: '',
     course_description: '',
-    chapter_id:'',
-    chapter_title: '',
+    chapters: [
+      {
+        chapter_id:'',
+        chapter_title:''
+      }
+    ],
   });
 
-  const {courseTitle, description, chapTitle} = course;
+  const { course_title, course_description, chapters } = course;
 
-  const handleInputChange = (e) => {
-    setCourse({...course,[e.target.name]:e.target.value});
-  };
+   const handleInputChange = (e, chapterIndex) => {
+     const { name, value } = e.target;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', course);
-    await axios.post('http://localhost:8080/course/chapter', course);
-    navigate("/courselist");
-  };
+     if (name.startsWith("chapter_title")) {
+       const updatedChapters = [...chapters];
+       updatedChapters[chapterIndex] = {
+         ...updatedChapters[chapterIndex],
+         chapter_title: value,
+       };
+       setCourse((prevCourse) => ({
+         ...prevCourse,
+         chapters: updatedChapters,
+       }));
+     } else {
+       setCourse((prevCourse) => ({
+         ...prevCourse,
+         [name]: value,
+       }));
+     }
+   };
 
+ const handleSubmit = async (e) => {
+   e.preventDefault();
+   console.log("Form submitted:", course);
+   await axios.post("http://localhost:8080/api/courses", course);
+   navigate("/courselist");
+ };
  
   console.log(course);
 
@@ -48,7 +68,7 @@ const CreateNewCourse = () => {
             className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
             placeholder="Add course Title"
             name="course_title"
-            value={courseTitle}
+            value={course_title}
             onChange={(e) => handleInputChange(e)}
           />
         </div>
@@ -58,24 +78,26 @@ const CreateNewCourse = () => {
             maxLength={250}
             rows="5"
             name="course_description"
-            value={description}
+            value={course_description}
             className="resize-none bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
             placeholder="Add new brief description"
             onChange={(e) => handleInputChange(e)}
           />
         </div>
 
-        <div className="relative w-full mb-5">
-          <input
-            maxLength={70}
-            type="text"
-            className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
-            placeholder="Add Chapter Title"
-            name="chapter_title"
-            value={chapTitle}
-            onChange={(e) => handleInputChange(e)}
-          />
-        </div>
+        {chapters.map((chapter, index) => (
+          <div key={index} className="relative w-full mb-5">
+            <input
+              maxLength={70}
+              type="text"
+              className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
+              placeholder={`Add Chapter ${index + 1} Title`}
+              name={`chapter_title_${index}`}
+              value={chapter.chapter_title}
+              onChange={(e) => handleInputChange(e, index)}
+            />
+          </div>
+        ))}
 
         <div className="grid grid-cols-2 gap-4 mt-5 lg:h-[40px] 2xl:h-[65px] lg:w-full lg:flex lg:justify-center">
           <button className="w-full btn-style lg:w-[160px]  lg:flex lg:justify-center xl:w-[170px] rounded-full cursor-pointer">

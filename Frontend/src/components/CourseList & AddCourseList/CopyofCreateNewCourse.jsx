@@ -11,14 +11,35 @@ const CopyofCreateNewCourse = () => {
     course_id: "",
     course_title: "",
     course_description: "",
-    chapter_id: "",
-    chapter_title: "",
+    chapters: [
+      {
+        chapter_id: "",
+        chapter_title: "",
+      },
+    ],
   });
 
-  const { courseTitle, description, chapTitle } = course;
+  const { course_title, course_description, chapters } = course;
 
-  const handleInputChange = (e) => {
-    setCourse({ ...course, [e.target.name]: e.target.value });
+  const handleInputChange = (e, chapterIndex) => {
+    const { name, value } = e.target;
+
+    if (name.startsWith("chapter_title")) {
+      const updatedChapters = [...chapters];
+      updatedChapters[chapterIndex] = {
+        ...updatedChapters[chapterIndex],
+        chapter_title: value,
+      };
+      setCourse((prevCourse) => ({
+        ...prevCourse,
+        chapters: updatedChapters,
+      }));
+    } else {
+      setCourse((prevCourse) => ({
+        ...prevCourse,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -29,7 +50,6 @@ const CopyofCreateNewCourse = () => {
   };
 
   console.log(course);
-
   //react hook for tooltip
   const [showTooltipCourseTitle, setShowTooltipCourseTitle] = useState(false);
   const [showTooltipCourseDescription, setShowTooltipCourseDescription] =
@@ -56,7 +76,7 @@ const CopyofCreateNewCourse = () => {
             }
             placeholder="Add course Title"
             name="course_title"
-            value={courseTitle}
+            value={course_title}
             onChange={(e) => handleInputChange(e)}
             onMouseOver={() => setShowTooltipCourseTitle(true)}
             onMouseLeave={() => setShowTooltipCourseTitle(false)}
@@ -77,7 +97,7 @@ const CopyofCreateNewCourse = () => {
             maxLength={250}
             rows="5"
             name="course_description"
-            value={description}
+            value={course_description}
             className={
               showTooltipChapterTitle
                 ? "resize-none bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border blur-sm"
@@ -99,26 +119,28 @@ const CopyofCreateNewCourse = () => {
 
         {/* CHAPTER TITLE TEXTAREA */}
 
-        <div className="relative w-full mb-5">
-          <input
-            maxLength={70}
-            type="text"
-            className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
-            placeholder="Add Chapter Title"
-            name="chapter_title"
-            value={chapTitle}
-            onChange={(e) => handleInputChange(e)}
-            onMouseOver={() => setShowTooltipChapterTitle(true)}
-            onMouseLeave={() => setShowTooltipChapterTitle(false)}
-          />
-          {showTooltipChapterTitle && (
-            <div className="absolute top-[-3.5rem] left-10 bg-[#fff]  w-[25%] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
-              <p className="text-[.8rem] text-[#4D4141] text-opacity-[53%]">
-                Maximum of 70 alphanumeric and special characters.
-              </p>
-            </div>
-          )}
-        </div>
+        {chapters.map((chapter, index) => (
+          <div className="relative w-full mb-5" key={index}>
+            <input
+              maxLength={70}
+              type="text"
+              className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
+              placeholder="Add Chapter Title"
+              name={`chapter_title_${index}`}
+              value={chapter.chapter_title}
+              onChange={(e) => handleInputChange(e, index)}
+              onMouseOver={() => setShowTooltipChapterTitle(true)}
+              onMouseLeave={() => setShowTooltipChapterTitle(false)}
+            />
+            {showTooltipChapterTitle && (
+              <div className="absolute top-[-3.5rem] left-10 bg-[#fff]  w-[25%] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
+                <p className="text-[.8rem] text-[#4D4141] text-opacity-[53%]">
+                  Maximum of 70 alphanumeric and special characters.
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
 
         <div className="grid grid-cols-2 lg:mt-10 lg:gap-x-20 lg:w-full lg:flex lg:justify-center">
           <button className=" rounded-[15px] 2xl:rounded-[20px] w-full btn-style lg:w-[180px] lg:h-[40px] 2xl:h-[65px] lg:flex lg:justify-center lg:items-center xl:w-[170px]  cursor-pointer">

@@ -25,10 +25,10 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/courselist" element={<CourseList />} />
         <Route path="/addnewcourse" element={<AddNewCourse />} />
-        <Route path="/courseoverview" element={<CourseOverview />} />
-        <Route path="/editchaptertitle" element={<EditChapterTitle />} />
+        <Route path="/courseoverview/:id" element={<CourseOverview />} />
+        <Route path="/editchaptertitle/:id" element={<EditChapterTitle />} />
         <Route
-          path="/createnewchaptertitle"
+          path="/createnewchaptertitle/:id"
           element={<CreateNewChapterTitle />}
         />
         <Route path="/addtopictitlepage" element={<AddTopicTitlePage />} />
