@@ -43,7 +43,7 @@ const CreateNewChapterTitle = () => {
     e.preventDefault();
     console.log('Form submitted:', chapter);
     await axios.post('http://localhost:8080/api/chapters', chapter);
-    navigate("/courseoverview");
+    navigate(-1);
   };
   //mockdata chapter destructure
   const { chapter_title } = chapter;
