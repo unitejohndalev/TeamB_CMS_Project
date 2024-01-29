@@ -55,7 +55,7 @@ const CourseListCard = () => {
                 Course List
               </p>
             </div>
-            <div className=" lg:h-[350px] 2xl:h-[500px] overflow-auto">
+            <div className=" lg:h-[320px] 2xl:h-[500px] overflow-auto">
               {courses.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
