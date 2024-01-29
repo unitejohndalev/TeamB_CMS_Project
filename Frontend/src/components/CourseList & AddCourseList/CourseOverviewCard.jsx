@@ -47,8 +47,8 @@ const CourseOverviewCard = () => {
     <>
       {/*January 19 2024 -gem modify responsiveness*/}
 
-      <div className="relative w-full h-full mt-[70px]  ">
-        <div className="relative w-full h-full ">
+      <div className="relative m-auto h-full mt-[70px]  ">
+        <div className="relative w-full h-full m-auto ">
           {/* <div
             className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
             onClick={goBack}>
@@ -61,18 +61,18 @@ const CourseOverviewCard = () => {
             <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
               <p className="lg:font-bold text-shadow">Course Overview</p>
             </div>
-            <div>
-              <div className="pb-2 w-[100%] flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto  items-right">
+            <div className="w-full lg:max-w-[800px]">
+              <div className="pb-2 w-full flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto  items-right">
                 <p className="lg:font-bold text-shadow">HTML And CSS</p>
               </div>
-              <div className="w-[69vw] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
-                <div className="w-[20vw] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
+              <div className="lg:max-w-[1000px] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
+                <div className="max-w-[30%] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
               </div>
               <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px] m-auto pt-2">
                 <span className=" text-shadow">Lessons</span>
               </div>
               <div>
-             <CourseOverviewById/>
+                <CourseOverviewById />
               </div>
             </div>
 
@@ -83,7 +83,6 @@ const CourseOverviewCard = () => {
             {/*January 17 2023 API connection from backend to front end displaying data */}
             {/*January 19 2024 -gem modify buttons add footer*/}
 
-          
             <div>
               <footer className="flex justify-center p-10">
                 <div>

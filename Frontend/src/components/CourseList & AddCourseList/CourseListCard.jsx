@@ -106,7 +106,7 @@ const CourseListCard = () => {
                 );
               })}
             </div>
-            {courses.length === 0 ? (
+            {courses.length < 5 ? (
               <></>
             ) : (
               <Stack spacing={2} className="">
@@ -137,7 +137,7 @@ const CourseListCard = () => {
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
           </div>
-          <footer className="absolute bottom-0 flex justify-center w-[100%]">
+          <footer className="absolute bottom-10 flex justify-center w-[100%]">
             <div className="">
               <p className="text-[#4D9349] font-medium">
                 All Rights Reserved | Copyright 2024

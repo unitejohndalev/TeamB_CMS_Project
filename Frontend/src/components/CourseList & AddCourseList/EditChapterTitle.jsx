@@ -1,88 +1,89 @@
-/* eslint-disable react/prop-types */
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { CourseContext } from "../context/CourseContext";
 import axios from "axios";
-import { IoAdd } from "react-icons/io5";
-
-//import mockdata
-import data from "../../mockData/CourseOverviewCard.json";
-
-//save icon
-import { TfiSave } from "react-icons/tfi";
-
-//back icon and back function
-import { IoArrowBackCircle } from "react-icons/io5";
-import { Link, useNavigate, useParams } from "react-router-dom";
 
 const EditChapterTitle = ({ chapterId, onClose, onSaved }) => {
-  /*January 17 2023 API connection from backend to front end displaying data */
-  const [chapters, setChapters] = useState([]);
-
-  //user params to navigate specific id
-  let { id } = useParams();
-
+  const { courses, setCourses } = useContext(CourseContext);
   const [chapter, setChapter] = useState({
     chapter_id: "",
     chapter_title: "",
   });
 
+  useEffect(() => {
+    loadChapter();
+  }, [chapterId]);
+
+  const loadChapter = () => {
+    // Find the specific chapter within the courses context
+    const selectedChapter = courses.find((course) =>
+      course.chapters.find((ch) => ch.chapter_id === chapterId)
+    );
+
+    // Set the chapter state
+    if (selectedChapter) {
+      const foundChapter = selectedChapter.chapters.find(
+        (ch) => ch.chapter_id === chapterId
+      );
+      setChapter(foundChapter);
+    }
+  };
+
   const handleInputChange = (e) => {
     setChapter({ ...chapter, [e.target.name]: e.target.value });
   };
 
- useEffect(() => {
-   if (chapterId) {
-     loadChapter();
-   }
- }, [chapterId]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", chapter);
-    await axios.put(`http://localhost:8080/api/chapters/${chapterId}`, chapter);
-    onSaved()
-    
-  };
-    const loadChapter = async () => {
-      try {
-        const result = await axios.get(
-          `http://localhost:8080/api/chapters/${chapterId}`
-        );
-        setChapter(result.data);
-      } catch (error) {
-        console.error("Error loading chapter:", error);
+
+    // Update the chapter in the courses context
+    const updatedCourses = courses.map((course) => {
+      if (course.chapters.some((ch) => ch.chapter_id === chapterId)) {
+        return {
+          ...course,
+          chapters: course.chapters.map((ch) =>
+            ch.chapter_id === chapterId ? chapter : ch
+          ),
+        };
       }
-    };
+      return course;
+    });
 
-  const { chapter_title } = chapter;
-  console.log(chapter);
+    try {
+      // Make an API call to update the chapter in your backend
+      await axios.put(
+        `http://localhost:8080/api/chapters/${chapterId}`,
+        chapter
+      );
 
-  //back function
-  const navigate = useNavigate();
+      // Update the courses context with the updated chapters
+      setCourses(updatedCourses);
 
-  const goBack = () => {
-    navigate(-1);
+      // Trigger the parent component's callback
+      onSaved();
+      onClose();
+    } catch (error) {
+      console.error("Error updating chapter:", error);
+    }
   };
-  return (
-    <>
-      {/*January 19 2024 -gem modify responsiveness*/}
 
-      <div className="mt-[200px] absolute">
-        <form action="" onSubmit={handleSubmit}>
-          <label htmlFor="">Edit Title</label>
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <form onSubmit={handleSubmit}>
+          {/* Your form and UI for editing chapter title */}
+          <label>Edit Title</label>
           <input
             type="text"
             name="chapter_title"
-            value={chapter_title}
+            value={chapter.chapter_title}
             onChange={handleInputChange}
-            id=""
           />
-          <button>Save</button>
-          <button onClick={onClose}>Close</button>
+          <button type="submit">Save</button>
         </form>
+        <button onClick={onClose}>Close</button>
       </div>
-    </>
+    </div>
   );
 };
 
 export default EditChapterTitle;
-// 1/19/2024
