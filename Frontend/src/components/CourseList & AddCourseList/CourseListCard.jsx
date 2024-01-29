@@ -76,26 +76,41 @@ const CourseListCard = () => {
                         </p>
                       </div>
                     </Link>
-
                   </div>
                 );
               })}
             </div>
-            <Link className=" w-[100%]" to="/AddNewCourse">
-              <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto abslolute items-center justify-center">
-                <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
-                  <span>
-                    <IoAdd className="lg:text-[2rem] text-white" />
-                  </span>
-                </div>
-                <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]
+            {courses.length === 0 ? (
+              <Link
+                className=" w-[100%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                to="/AddNewCourse">
+                <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto abslolute items-center justify-center">
+                  <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
+                    <span>
+                      <IoAdd className="lg:text-[2rem] text-white" />
+                    </span>
+                  </div>
+                  <div
+                    className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]
                   w-[30%] 2xl:w-[50%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className=" 2xl:text-[2rem] text-shadow">
-                    Add New Course
-                  </span>
+                    <span className=" 2xl:text-[2rem] text-shadow">
+                      Add New Course
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            ) : (
+              <Link className="w-[100%]" to="/AddNewCourse">
+                <div className=" h-[10vh] absolute top-0 right-[10rem] ">
+                  <div className="bg-[#87D275] w-[50px] h-[50px]  flex items-center justify-center rounded-[50%]">
+                    <span>
+                      <IoAdd className="lg:text-[2rem] text-white" />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            )}
+
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
           </div>

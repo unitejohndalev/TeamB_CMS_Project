@@ -1,42 +1,66 @@
 import { Route, Routes } from "react-router-dom";
+import React, { Suspense, lazy } from "react";
 import Nav from "./components/NavBar/Nav";
+import Fallbackloading from "./components/FallbackLoading";
 
-import Profile from "./components/Profile/Profile";
-import Dashboard from "./components/DashBoard/Dashboard";
+const Profile = lazy(() =>
+  import("./components/Profile/Profile")
+);
 
-import CourseList from "./components/CourseList & AddCourseList/CourseList";
+const Dashboard = lazy(() => import("./components/DashBoard/Dashboard"));
 
-import AddNewCourse from "./components/CourseList & AddCourseList/AddNewCourse";
-import CourseOverview from "./components/CourseList & AddCourseList/CourseOverview";
+const CourseList = lazy(() =>
+  import("./components/CourseList & AddCourseList/CourseList")
+);
 
-import EditTopicPage from "./components/Topic/EditTopicPage";
+const AddNewCourse = lazy(() =>
+  import("./components/CourseList & AddCourseList/AddNewCourse")
+);
 
-import DisplayTopic from "./components/Topic/DisplayTopic";
-import AddTopicTitlePage from "./components/Topic/AddTopicTitlePage";
-import EditChapterTitle from "./components/CourseList & AddCourseList/EditChapterTitle";
-import CreateNewChapterTitle from "./components/CourseList & AddCourseList/CreateNewChapterTitle";
+const CourseOverview = lazy(() =>
+  import("./components/CourseList & AddCourseList/CourseOverview")
+);
+
+const EditTopicPage = lazy(() =>
+  import("./components/Topic/EditTopicPage")
+);
+
+const DisplayTopic = lazy(() => import("./components/Topic/DisplayTopic"));
+const AddTopicTitlePage = lazy(() =>
+  import("./components/Topic/AddTopicTitlePage")
+);
+
+const EditChapterTitle = lazy(() =>
+  import("./components/CourseList & AddCourseList/EditChapterTitle")
+);
+const CreateNewChapterTitle = lazy(() =>
+  import("./components/CourseList & AddCourseList/CreateNewChapterTitle")
+);
+
 
 function App() {
   return (
     <div className="bg-[#EBFFE5]">
       <Nav />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/courselist" element={<CourseList />} />
-        <Route path="/addnewcourse" element={<AddNewCourse />} />
-        <Route path="/courseoverview/:id" element={<CourseOverview />} />
-        <Route path="/editchaptertitle/:id" element={<EditChapterTitle />} />
-        <Route
-          path="/createnewchaptertitle/:id"
-          element={<CreateNewChapterTitle />}
-        />
-        <Route path="/addtopictitlepage" element={<AddTopicTitlePage />} />
-        <Route path="/displaytopic" element={<DisplayTopic />} />
-        <Route path="/edittopic" element={<EditTopicPage />} />
-      </Routes>
+      <Suspense fallback={<Fallbackloading />}>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/courselist" element={<CourseList />} />
+          <Route path="/addnewcourse" element={<AddNewCourse />} />
+          <Route path="/courseoverview/:id" element={<CourseOverview />} />
+          <Route path="/editchaptertitle/:id" element={<EditChapterTitle />} />
+          <Route
+            path="/createnewchaptertitle/:id"
+            element={<CreateNewChapterTitle />}
+          />
+          <Route path="/addtopictitlepage" element={<AddTopicTitlePage />} />
+          <Route path="/displaytopic" element={<DisplayTopic />} />
+          <Route path="/edittopic" element={<EditTopicPage />} />
+        </Routes>
 
-      {/* <Footer /> */}
+        {/* <Footer /> */}
+      </Suspense>
     </div>
   );
 }
