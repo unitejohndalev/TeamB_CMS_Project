@@ -3,9 +3,7 @@ import React, { Suspense, lazy } from "react";
 import Nav from "./components/NavBar/Nav";
 import Fallbackloading from "./components/FallbackLoading";
 
-const Profile = lazy(() =>
-  import("./components/Profile/Profile")
-);
+const Profile = lazy(() => import("./components/Profile/Profile"));
 
 const Dashboard = lazy(() => import("./components/DashBoard/Dashboard"));
 
@@ -21,9 +19,7 @@ const CourseOverview = lazy(() =>
   import("./components/CourseList & AddCourseList/CourseOverview")
 );
 
-const EditTopicPage = lazy(() =>
-  import("./components/Topic/EditTopicPage")
-);
+const EditTopicPage = lazy(() => import("./components/Topic/EditTopicPage"));
 
 const DisplayTopic = lazy(() => import("./components/Topic/DisplayTopic"));
 const AddTopicTitlePage = lazy(() =>
@@ -36,7 +32,6 @@ const EditChapterTitle = lazy(() =>
 const CreateNewChapterTitle = lazy(() =>
   import("./components/CourseList & AddCourseList/CreateNewChapterTitle")
 );
-
 
 function App() {
   return (

@@ -1,10 +1,18 @@
 /*January 10, 2024*/
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { IoAdd } from "react-icons/io5";
 import axios from "axios";
 import { Link } from "react-router-dom";
 //import mock data
 import data from "../../mockData/CourselistCard.json";
+
+
+
+
+
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
+
 const CourseListCard = () => {
   // *NOTE
   //if data is coming from db use useState hook to store the data
@@ -41,22 +49,40 @@ const CourseListCard = () => {
   //   return f.course_id === f.chapter_id
   // })
   console.log(courses);
+
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const coursePerPage = 4;
+
+    const indexOfLastCourse = currentPage * coursePerPage;
+    const indexOfFirstCourse = indexOfLastCourse - coursePerPage;
+      const currentCourse = courses.slice(
+        indexOfFirstCourse,
+        indexOfLastCourse
+      );
+
+        const npage = Math.ceil(courses.length / coursePerPage);
+          const pageTopRef = useRef(null);
+          const handleChange = (event, value) => {
+            setCurrentPage(value);
+            pageTopRef.current.scrollIntoView();
+          };
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
 
-      <div className="mt-[70px]">
+      <div className="mt-[70px] h-[120vh] relative">
         {/* 1/15/2024 functions and buttons */}
-        <div className="">
+        <div className="" ref={pageTopRef}>
           <div className="  xl:w-[1244px]  w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center lg:h-full relative gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
             <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center ">
-              <p className="pb-5 2xl:text-[48px] lg:font-bold text-shadow mb-5">
+              <p className=" 2xl:text-[48px] lg:font-bold text-shadow ">
                 Course List
               </p>
             </div>
-            <div className=" lg:h-[320px] 2xl:h-[500px] overflow-auto">
-              {courses.map((course, idx) => {
+            <div className="h-full">
+              {currentCourse.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
                     <Link to={`/courseoverview/${course.course_id}`}>
@@ -81,41 +107,38 @@ const CourseListCard = () => {
               })}
             </div>
             {courses.length === 0 ? (
-              <Link
-                className=" w-[100%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                to="/AddNewCourse">
-                <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto abslolute items-center justify-center">
-                  <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
-                    <span>
-                      <IoAdd className="lg:text-[2rem] text-white" />
-                    </span>
-                  </div>
-                  <div
-                    className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]
-                  w-[30%] 2xl:w-[50%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                    <span className=" 2xl:text-[2rem] text-shadow">
-                      Add New Course
-                    </span>
-                  </div>
-                </div>
-              </Link>
+              <></>
             ) : (
-              <Link className="w-[100%]" to="/AddNewCourse">
-                <div className=" h-[10vh] absolute top-0 right-[10rem] ">
-                  <div className="bg-[#87D275] w-[50px] h-[50px]  flex items-center justify-center rounded-[50%]">
-                    <span>
-                      <IoAdd className="lg:text-[2rem] text-white" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
+              <Stack spacing={2} className="">
+                <Pagination
+                  count={npage}
+                  page={currentPage}
+                  onChange={handleChange}
+                />
+              </Stack>
             )}
+            <Link className=" w-[100%]" to="/AddNewCourse">
+              <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto  items-center justify-center">
+                <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
+                  <span>
+                    <IoAdd className="lg:text-[2rem] text-white" />
+                  </span>
+                </div>
+                <div
+                  className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]
+                  w-[30%] 2xl:w-[50%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
+                  <span className=" 2xl:text-[2rem] text-shadow">
+                    Add New Course
+                  </span>
+                </div>
+              </div>
+            </Link>
 
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
           </div>
-          <footer className="flex justify-center mt-10">
-            <div>
+          <footer className="absolute bottom-0 flex justify-center w-[100%]">
+            <div className="">
               <p className="text-[#4D9349] font-medium">
                 All Rights Reserved | Copyright 2024
               </p>
