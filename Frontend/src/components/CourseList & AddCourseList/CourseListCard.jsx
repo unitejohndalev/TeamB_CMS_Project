@@ -48,14 +48,14 @@ const CourseListCard = () => {
       <div className="mt-[70px]">
         {/* 1/15/2024 functions and buttons */}
         <div className="">
-          <div className=" xl:w-[1244px] w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center h-[90vh] relative gap-5">
+          <div className="  xl:w-[1244px]  w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center lg:h-full relative gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
             <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center ">
               <p className="pb-5 2xl:text-[48px] lg:font-bold text-shadow mb-5">
                 Course List
               </p>
             </div>
-            <div className="h-[55vh] overflow-auto">
+            <div className=" lg:h-[350px] 2xl:h-[500px] overflow-auto">
               {courses.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
@@ -76,29 +76,30 @@ const CourseListCard = () => {
                         </p>
                       </div>
                     </Link>
+
                   </div>
                 );
               })}
             </div>
-            {/*January 15 2024*/}
-            {/*January 19 2024 -gem modify buttons add footer*/}
-
-            <Link className="absolute bottom-0" to="/AddNewCourse">
-              <div className=" h-[10vh] mb-5 flex w-[50%] lg:w-[80vw] overflow-auto abslolute items-center justify-center">
+            <Link className=" w-[100%]" to="/AddNewCourse">
+              <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto abslolute items-center justify-center">
                 <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
                     <IoAdd className="lg:text-[2rem] text-white" />
                   </span>
                 </div>
-                <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]  w-[30%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className=" 2xl:text-[40px] text-shadow">
+                <div className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]
+                  w-[30%] 2xl:w-[50%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
+                  <span className=" 2xl:text-[2rem] text-shadow">
                     Add New Course
                   </span>
                 </div>
               </div>
             </Link>
+            {/*January 15 2024*/}
+            {/*January 19 2024 -gem modify buttons add footer*/}
           </div>
-          <footer className="flex justify-center py-20">
+          <footer className="flex justify-center mt-10">
             <div>
               <p className="text-[#4D9349] font-medium">
                 All Rights Reserved | Copyright 2024

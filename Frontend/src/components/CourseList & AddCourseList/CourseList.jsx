@@ -7,7 +7,7 @@ const CourseList = () => {
 
   
   return (
-    <div>    {/* place the component you want to test here */}
+    <div className=''>    {/* place the component you want to test here */}
     {/* 1/15/2024 functions buttons and routes */}
 
      {/* {<CourseOverview/>} */}
