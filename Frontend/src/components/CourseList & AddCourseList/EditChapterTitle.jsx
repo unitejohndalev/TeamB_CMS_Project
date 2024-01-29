@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { IoAdd } from "react-icons/io5";
@@ -12,7 +13,7 @@ import { TfiSave } from "react-icons/tfi";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-const EditChapterTitle = () => {
+const EditChapterTitle = ({ chapterId, onClose, onSaved }) => {
   /*January 17 2023 API connection from backend to front end displaying data */
   const [chapters, setChapters] = useState([]);
 
@@ -28,24 +29,32 @@ const EditChapterTitle = () => {
     setChapter({ ...chapter, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
-    loadChapters();
-  }, []);
+ useEffect(() => {
+   if (chapterId) {
+     loadChapter();
+   }
+ }, [chapterId]);
 
-  //mockdata chapter
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", chapter);
-    await axios.put(`http://localhost:8080/api/chapters/${id}`, chapter);
-    navigate(-1);
+    await axios.put(`http://localhost:8080/api/chapters/${chapterId}`, chapter);
+    onSaved()
+    
   };
+    const loadChapter = async () => {
+      try {
+        const result = await axios.get(
+          `http://localhost:8080/api/chapters/${chapterId}`
+        );
+        setChapter(result.data);
+      } catch (error) {
+        console.error("Error loading chapter:", error);
+      }
+    };
 
-  const loadChapters = async () => {
-    const result = await axios.get(`http://localhost:8080/api/chapters/${id}`);
-    setChapter(result.data);
-  };
   const { chapter_title } = chapter;
-  console.log(chapter)
+  console.log(chapter);
 
   //back function
   const navigate = useNavigate();
@@ -68,6 +77,7 @@ const EditChapterTitle = () => {
             id=""
           />
           <button>Save</button>
+          <button onClick={onClose}>Close</button>
         </form>
       </div>
     </>

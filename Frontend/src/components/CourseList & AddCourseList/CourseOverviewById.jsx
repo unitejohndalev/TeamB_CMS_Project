@@ -1,13 +1,15 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { IoAdd } from "react-icons/io5";
 //edit icon
 import { FaEdit } from "react-icons/fa";
+import EditChapterTitle from "./EditChapterTitle";
+import { CourseContext } from "../context/CourseContext";
 
 const CourseOverviewById = () => {
-  const [courses, setCourses] = useState([]);
+ const { courses, setCourses } = useContext(CourseContext);
 
   //user params to navigate specific id
   let { id } = useParams();
@@ -29,6 +31,18 @@ const CourseOverviewById = () => {
     }
   };
   console.log(courses);
+
+  const [editModalVisible, setEditModalVisible] = useState(false);
+  const [selectedChapterId, setSelectedChapterId] = useState(null);
+
+
+  const handleEditClick = (chapterId) => {
+    setSelectedChapterId(chapterId);
+    setEditModalVisible(true);
+   
+  };
+
+ 
   return (
     <div className="relative h-full">
       <div className="h-[50vh] lg:max-w-[1080px] lg:flex lg:justify-center">
@@ -53,8 +67,10 @@ const CourseOverviewById = () => {
                         </p>
                       </div>
                     </div>
-                    <Link to={`/editchaptertitle/${chapter.chapter_id}`} className="flex ml-auto">
-                      <div className="flex items-center gap-2 pr-5 cursor-pointer">
+                    <Link className="flex ml-auto">
+                      <div
+                        onClick={() => handleEditClick(chapter.chapter_id)}
+                        className="flex items-center gap-2 pr-5 cursor-pointer">
                         <div className="text-[#4c604c] text-[1.5rem]">
                           <FaEdit />
                         </div>
@@ -68,6 +84,13 @@ const CourseOverviewById = () => {
               ))}
           </div>
         ))}
+        {editModalVisible && (
+          <EditChapterTitle
+            chapterId={selectedChapterId}
+            onClose={() => setEditModalVisible(false)}
+            onSaved={() => setEditModalVisible(false)}
+          />
+        )}
       </div>
       <div className="absolute w-full ">
         <div className="gap-5 lg:w-[20rem] m-auto lg:flex lg:justify-center lg:items-center ">
