@@ -26,8 +26,24 @@ const CreateNewCourse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted:', course);
-    await axios.post('http://localhost:8080/course/chapter', course);
-    navigate("/courselist");
+  
+    // Destructure the course object to extract the necessary properties
+    const { course_title, course_description, chapter_title } = course;
+  
+    try {
+      // Make an HTTP POST request to save the course and chapter details
+      await axios.post('http://localhost:8080/api/courses', {
+        course_title,
+        course_description,
+        chapter_title, // Include chapter title in the request payload
+      });
+  
+      // Redirect to the course list page upon successful creation
+      navigate("/courselist");
+    } catch (error) {
+      console.error('Error occurred while saving course:', error);
+      // Handle error (e.g., display error message)
+    }
   };
 
  

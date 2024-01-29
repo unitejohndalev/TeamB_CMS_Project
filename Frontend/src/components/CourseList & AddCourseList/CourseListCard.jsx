@@ -20,7 +20,7 @@ const CourseListCard = () => {
   }, []);
 
   const loadCourses = async () => {
-    const result = await axios.get("http://localhost:8080/course/chapter");
+    const result = await axios.get("http://localhost:8080/api/courses");
     setCourses(result.data);
   };
   /*January 15 2024 */
