@@ -39,11 +39,11 @@ const DashboardCard = () => {
   const { dashBoardHover, setDashBoardHover } = useContext(DashBoardContext);
 
   return (
-    <div className="w-full h-[100vh] relative">
+    <div className="w-full h-[100vh] relative xl:w-[1920px]  ">
       {/* change bg color to provided img */}
 
       {/* 1/18/204 bg height 323px */}
-      <div className=" xl:h-[323px] lg:h-[50vh] relative flex flex-col items-center justify-center w-full py-10 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-5">
+      <div className="  lg:h-[50vh] xl:w-[1920px] xl:h-[486px] 2xl:w-full relative flex flex-col items-center justify-center w-full py-10 bg-[url('https://img.freepik.com/fotos-premium/acuarela-abstracta-verde-textura-papel-blanco_7190-1311.jpg?w=996')] bg-cover shadow-lg lg:py-5">
         <p className="text-shadow text-[1.8rem] lg:text-[2rem] font-bold text-white w-[80%] text-center xl:text-[3.5rem] 2xl:text-[64px] ">
           月伝で自分のやり方を学びましょう。
         </p>
@@ -53,7 +53,7 @@ const DashboardCard = () => {
         </p>
       </div>
       <div
-        className=" xl:h-[330px] 2xl:w-[1519px] flex flex-col lg:flex-row lg:w-[90vw] 
+        className=" xl:h-[330px]   2xl:w-[1519px]  flex flex-col lg:flex-row lg:w-[90vw] 
       lg:m-auto lg:justify-center lg:mt-[4rem] items-center gap-5 mt-2 ">
         {courses.map((course, idx) => {
           return (
