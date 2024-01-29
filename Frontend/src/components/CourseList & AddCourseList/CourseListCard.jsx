@@ -6,12 +6,9 @@ import { Link } from "react-router-dom";
 //import mock data
 import data from "../../mockData/CourselistCard.json";
 
-
-
-
-
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import CopyofCreateNewCourse from "./CopyofCreateNewCourse";
 
 const CourseListCard = () => {
   // *NOTE
@@ -19,7 +16,6 @@ const CourseListCard = () => {
   //sample: const [courses, setCourses] = useState([])
 
   const [courses, setCourses] = useState([]);
-  const [chapters, setChapters] = useState([]);
 
   /* january 172024*/
   useEffect(() => {
@@ -33,40 +29,24 @@ const CourseListCard = () => {
     setCourses(result.data);
   };
 
-  // //CHAPTER
-  // const loadChapter = async() => {
-  //   const result = await axios.get("http://localhost:8080/api/chapters");
-  //   setChapters(result.data)
-  // }
-
-  // //MERGE API
-  // const mergeCourseChapters = [...courses, ...chapters]
-  // /*January 15 2024 */
-
-  // //course list mock data
-
-  // const filteredAPI = mergeCourseChapters.filter((f) => {
-  //   return f.course_id === f.chapter_id
-  // })
   console.log(courses);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const coursePerPage = 4;
 
-    const [currentPage, setCurrentPage] = useState(1);
-    const coursePerPage = 4;
+  const indexOfLastCourse = currentPage * coursePerPage;
+  const indexOfFirstCourse = indexOfLastCourse - coursePerPage;
+  const currentCourse = courses.slice(indexOfFirstCourse, indexOfLastCourse);
 
-    const indexOfLastCourse = currentPage * coursePerPage;
-    const indexOfFirstCourse = indexOfLastCourse - coursePerPage;
-      const currentCourse = courses.slice(
-        indexOfFirstCourse,
-        indexOfLastCourse
-      );
+  const npage = Math.ceil(courses.length / coursePerPage);
+  const pageTopRef = useRef(null);
+  const handleChange = (event, value) => {
+    setCurrentPage(value);
+    pageTopRef.current.scrollIntoView();
+  };
 
-        const npage = Math.ceil(courses.length / coursePerPage);
-          const pageTopRef = useRef(null);
-          const handleChange = (event, value) => {
-            setCurrentPage(value);
-            pageTopRef.current.scrollIntoView();
-          };
+  //hide and show create new course
+  const [showCreateCourse, setShowCreateCourse] = useState(false);
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
@@ -117,7 +97,9 @@ const CourseListCard = () => {
                 />
               </Stack>
             )}
-            <Link className=" w-[100%]" to="/AddNewCourse">
+            <button
+              className=" w-[100%]"
+              onClick={() => setShowCreateCourse((prev) => !prev)}>
               <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto  items-center justify-center">
                 <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
@@ -132,7 +114,12 @@ const CourseListCard = () => {
                   </span>
                 </div>
               </div>
-            </Link>
+            </button>
+            <div className="absolute w-[100%] ">
+              <div className="lg:w-[1080px] ">
+                {showCreateCourse && <CopyofCreateNewCourse />}
+              </div>
+            </div>
 
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
