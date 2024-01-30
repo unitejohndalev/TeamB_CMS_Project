@@ -9,12 +9,16 @@ const CourseProvider = ({children}) => {
   //react state for course api
   const [courses, setCourses] = useState([]);
 
-  
+  //hide and show create new course
+  const [showCreateCourse, setShowCreateCourse] = useState(false);
+
   return (
     <CourseContext.Provider
       value={{
         courses,
         setCourses,
+        showCreateCourse,
+        setShowCreateCourse,
       }}>
       {children}
     </CourseContext.Provider>

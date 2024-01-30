@@ -1,5 +1,7 @@
 /*January 10, 2024*/
-import React, { useState, useEffect, useRef } from "react";
+//1/30/2024 junite, created modal show and hide UI and Functionalities for CourseList
+
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { IoAdd } from "react-icons/io5";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -10,12 +12,18 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import CopyofCreateNewCourse from "./CopyofCreateNewCourse";
 
+
+//import course context
+import { CourseContext } from "../context/CourseContext";
+
 const CourseListCard = () => {
   // *NOTE
   //if data is coming from db use useState hook to store the data
   //sample: const [courses, setCourses] = useState([])
 
   const [courses, setCourses] = useState([]);
+
+  const { showCreateCourse, setShowCreateCourse } = useContext(CourseContext);
 
   /* january 172024*/
   useEffect(() => {
@@ -45,8 +53,7 @@ const CourseListCard = () => {
     pageTopRef.current.scrollIntoView();
   };
 
-  //hide and show create new course
-  const [showCreateCourse, setShowCreateCourse] = useState(false);
+ 
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
@@ -98,7 +105,9 @@ const CourseListCard = () => {
               </Stack>
             )}
             {/* onClick={() => setShowCreateCourse((prev) => !prev)} */}
-            <Link to="/createnewcoursecopy" className=" w-[100%]">
+            <button
+              className=" w-[100%]"
+              onClick={() => setShowCreateCourse((prev) => !prev)}>
               <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto  items-center justify-center">
                 <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
@@ -113,8 +122,8 @@ const CourseListCard = () => {
                   </span>
                 </div>
               </div>
-            </Link>
-            <div className="absolute w-[100%] ">
+            </button>
+            <div className="absolute ">
               <div className="lg:w-[1080px] ">
                 {showCreateCourse && <CopyofCreateNewCourse />}
               </div>
