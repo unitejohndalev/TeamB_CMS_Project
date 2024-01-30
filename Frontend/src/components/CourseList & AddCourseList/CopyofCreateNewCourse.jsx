@@ -125,16 +125,16 @@ const CopyofCreateNewCourse = () => {
                 )}
               </div>
 
-              <div className="grid grid-cols-2 lg:w-full lg:flex lg:justify-end ">
+              <div className="pt-8 lg:w-full lg:flex lg:justify-end">
                 <div className="flex gap-x-5">
                   <button
-                    className="xl:text-[24px]  lg:text-[1.2rem]"
+                    className="xl:text-[24px]  lg:text-[1rem]"
                     onClick={() => setShowCreateCourse((prev) => !prev)}>
                     Cancel
                   </button>
 
                   <button
-                    className="drop-shadow-md text-shadow lg:w-[90px] lg:h-[45px] lg:rounded-[80px] lg:text-[1.2rem] xl:w-[114px] xl:h-[58px] xl:rounded-[100px] bg-[#126912] xl:text-[24px] text-[#FFFFFF]  font-bold"
+                    className="drop-shadow-md text-shadow lg:w-[90px] lg:h-[40px] lg:rounded-[80px] lg:text-[1rem] xl:w-[114px] xl:h-[58px] xl:rounded-[100px] bg-[#126912] xl:text-[24px] text-[#FFFFFF]  font-bold"
                     type="submit">
                     <p>Create</p>
                   </button>
