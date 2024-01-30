@@ -17,9 +17,15 @@ const CreateNewCourse = () => {
 
   const { courseTitle, description, chapTitle } = course;
 
-  const handleInputChange = (e) => {
-    setCourse({ ...course, [e.target.name]: e.target.value });
-  };
+const handleInputChange = (e) => {
+  const { name, value } = e.target;
+  const capitalizedValue =
+    name === "course_title" || name === "chapter_title"
+      ? value.charAt(0).toUpperCase() + value.slice(1)
+      : value;
+
+  setCourse({ ...course, [name]: capitalizedValue });
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();

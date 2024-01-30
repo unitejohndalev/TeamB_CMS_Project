@@ -97,9 +97,8 @@ const CourseListCard = () => {
                 />
               </Stack>
             )}
-            <button
-              className=" w-[100%]"
-              onClick={() => setShowCreateCourse((prev) => !prev)}>
+            {/* onClick={() => setShowCreateCourse((prev) => !prev)} */}
+            <Link to="/createnewcoursecopy" className=" w-[100%]">
               <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto  items-center justify-center">
                 <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
                   <span>
@@ -114,13 +113,12 @@ const CourseListCard = () => {
                   </span>
                 </div>
               </div>
-            </button>
+            </Link>
             <div className="absolute w-[100%] ">
               <div className="lg:w-[1080px] ">
                 {showCreateCourse && <CopyofCreateNewCourse />}
               </div>
             </div>
-
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
           </div>
