@@ -1,3 +1,5 @@
+//  1/30/2024 fix margin top for profile container
+
 import React, { useContext, useState } from "react";
 import PersonalInfo from "./PersonalInfo";
 import AccDetails from "./AccDetails";
@@ -29,8 +31,12 @@ const Profile = () => {
 
   return (
     <>
+
     
-      <div className="h-[100vh] mt-[100px]">
+  
+
+      <div className="h-[100vh] mt-[65px]">
+
         <div>
           {/* Use react icon instead of word back */}
           <div

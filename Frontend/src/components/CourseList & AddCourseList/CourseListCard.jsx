@@ -1,5 +1,7 @@
 /*January 10, 2024*/
-import React, { useState, useEffect, useRef } from "react";
+//1/30/2024 junite, created modal show and hide UI and Functionalities for CourseList
+
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { IoAdd } from "react-icons/io5";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -10,12 +12,18 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import CopyofCreateNewCourse from "./CopyofCreateNewCourse";
 
+
+//import course context
+import { CourseContext } from "../context/CourseContext";
+
 const CourseListCard = () => {
   // *NOTE
   //if data is coming from db use useState hook to store the data
   //sample: const [courses, setCourses] = useState([])
 
   const [courses, setCourses] = useState([]);
+
+  const { showCreateCourse, setShowCreateCourse } = useContext(CourseContext);
 
   /* january 172024*/
   useEffect(() => {
@@ -45,8 +53,7 @@ const CourseListCard = () => {
     pageTopRef.current.scrollIntoView();
   };
 
-  //hide and show create new course
-  const [showCreateCourse, setShowCreateCourse] = useState(false);
+ 
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
@@ -97,6 +104,7 @@ const CourseListCard = () => {
                 />
               </Stack>
             )}
+            {/* onClick={() => setShowCreateCourse((prev) => !prev)} */}
             <button
               className=" w-[100%]"
               onClick={() => setShowCreateCourse((prev) => !prev)}>
@@ -115,12 +123,11 @@ const CourseListCard = () => {
                 </div>
               </div>
             </button>
-            <div className="absolute w-[100%] ">
+            <div className="absolute ">
               <div className="lg:w-[1080px] ">
                 {showCreateCourse && <CopyofCreateNewCourse />}
               </div>
             </div>
-
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
           </div>

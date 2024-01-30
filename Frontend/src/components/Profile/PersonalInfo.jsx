@@ -127,7 +127,7 @@ const PersonalInfo = () => {
                   {/* EMAIL INPUT */}
 
                   <input
-                    className="px-2  input-style"
+                    className="px-2 input-style"
                     id="Email"
                     type="number"
                     name="instructor_username" //edit
@@ -137,16 +137,12 @@ const PersonalInfo = () => {
                   />
                 </div>
                 <div className="relative">
-                  <label
-                    htmlFor="ContactNumber"
-                    className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px] xl:top-[26.5rem] xl:left-[3.5rem]">
-                    Contact Number <span className="text-[#FF2626]">*</span>
-                  </label>
+              
 
                   {/* CONTACT NUMBER INPUT */}
 
                   <input
-                    className="px-2  input-style mb-7"
+                    className="px-2 input-style mb-7"
                     placeholder="+63"
                     type="text"
                     id="ContactNumber"

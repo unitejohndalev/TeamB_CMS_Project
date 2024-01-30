@@ -34,6 +34,10 @@ const EditChapterTitle = lazy(() =>
 const CreateNewChapterTitle = lazy(() =>
   import("./components/CourseList & AddCourseList/CreateNewChapterTitle")
 );
+const CreateNewCourseCopy = lazy(() =>
+  import("./components/CourseList & AddCourseList/CreateCourse/CreateNewCourse")
+);
+
 
 function App() {
   return (
@@ -55,6 +59,7 @@ function App() {
           <Route path="/addtopictitlepage" element={<AddTopicTitlePage />} />
           <Route path="/displaytopic" element={<DisplayTopic />} />
           <Route path="/edittopic" element={<EditTopicPage />} />
+          <Route path="createnewcoursecopy" element={<CreateNewCourseCopy/>}/>
         </Routes>
 
         {/* <Footer /> */}
