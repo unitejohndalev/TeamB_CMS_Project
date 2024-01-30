@@ -1,17 +1,13 @@
 //1/30/2024 junite, UI modal and functionalities for create course page
 
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import { BiSave } from "react-icons/bi";
-import { ImCancelCircle } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
 
 //import course context
 import { CourseContext } from "../context/CourseContext";
 
 const CopyofCreateNewCourse = () => {
-  let navigate = useNavigate();
-
   //state for handling course data
   const [course, setCourse] = useState({
     course_id: "",
@@ -52,7 +48,6 @@ const CopyofCreateNewCourse = () => {
     }
   };
 
-
   const handleSubmit = async (e) => {
     console.log("Form submitted:", course);
 
@@ -87,6 +82,7 @@ const CopyofCreateNewCourse = () => {
 
                 <input
                   maxLength={70}
+                  required
                   type="text"
                   className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:xl:text-[24px] rounded-lg opacity-50 w-full p-4 box-border"
                   placeholder="Course Title"
@@ -110,6 +106,7 @@ const CopyofCreateNewCourse = () => {
               <div className="relative w-full mb-5 ">
                 <textarea
                   maxLength={250}
+                  required
                   rows="5"
                   name="course_description"
                   value={course_description}
@@ -127,31 +124,6 @@ const CopyofCreateNewCourse = () => {
                   </div>
                 )}
               </div>
-
-              {/* CHAPTER TITLE TEXTAREA */}
-
-              {/* {chapters.map((chapter, index) => (
-          <div className="relative w-full mb-5" key={index}>
-            <input
-              maxLength={70}
-              type="text"
-              className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
-              placeholder="Add Chapter Title"
-              name={`chapter_title_${index}`}
-              value={chapter.chapter_title}
-              onChange={(e) => handleInputChange(e, index)}
-              onMouseOver={() => setShowTooltipChapterTitle(true)}
-              onMouseLeave={() => setShowTooltipChapterTitle(false)}
-            />
-            {showTooltipChapterTitle && (
-              <div className="absolute top-[-3.5rem] left-10 bg-[#fff]  w-[25%] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
-                <p className="text-[.8rem] text-[#4D4141] text-opacity-[53%]">
-                  Maximum of 70 alphanumeric and special characters.
-                </p>
-              </div>
-            )}
-          </div>
-        ))} */}
 
               <div className="grid grid-cols-2 lg:w-full lg:flex lg:justify-end ">
                 <div className="flex gap-x-5">
