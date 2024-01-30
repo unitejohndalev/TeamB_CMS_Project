@@ -7,26 +7,27 @@ import { ImCancelCircle } from "react-icons/im";
 const CreateNewCourse = () => {
   let navigate = useNavigate();
 
-  const [course, setCourse] = useState({
-    course_id: "",
-    course_title: "",
-    course_description: "",
-    chapter_id: "",
-    chapter_title: "",
-  });
+ const [course, setCourse] = useState({
+   course_title: "", // Update to match the state variable
+   course_description: "",
+   chapter_title: "", // Update to match the state variable
+ });
 
-  const { courseTitle, description, chapTitle } = course;
+ const { course_title, course_description, chapter_title } = course; // Update to match the state variable
 
-const handleInputChange = (e) => {
-  const { name, value } = e.target;
-  const capitalizedValue =
-    name === "course_title" || name === "chapter_title"
-      ? value.charAt(0).toUpperCase() + value.slice(1)
-      : value;
+   const handleInputChange = (e) => {
+     const { name, value } = e.target;
+     let capitalizedValue = value;
 
-  setCourse({ ...course, [name]: capitalizedValue });
-};
+     if (name === "course_title" || name === "chapter_title") {
+       capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
+     } else if (name === "course_description") {
+       capitalizedValue =
+         value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+     }
 
+     setCourse({ ...course, [name]: capitalizedValue });
+   };
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", course);
@@ -62,7 +63,7 @@ const handleInputChange = (e) => {
             }
             placeholder="Add course Title"
             name="course_title"
-            value={courseTitle}
+            value={course_title}
             onChange={(e) => handleInputChange(e)}
             onMouseOver={() => setShowTooltipCourseTitle(true)}
             onMouseLeave={() => setShowTooltipCourseTitle(false)}
@@ -83,7 +84,7 @@ const handleInputChange = (e) => {
             maxLength={250}
             rows="5"
             name="course_description"
-            value={description}
+            value={course_description}
             className={
               showTooltipChapterTitle
                 ? "resize-none bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border blur-sm"
@@ -112,7 +113,7 @@ const handleInputChange = (e) => {
             className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
             placeholder="Add Chapter Title"
             name="chapter_title"
-            value={chapTitle}
+            value={chapter_title}
             onChange={(e) => handleInputChange(e)}
             onMouseOver={() => setShowTooltipChapterTitle(true)}
             onMouseLeave={() => setShowTooltipChapterTitle(false)}
