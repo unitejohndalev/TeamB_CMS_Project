@@ -89,13 +89,18 @@ const Nav = () => {
             <img
               src={profileLogo}
               alt=""
-              className="h-[6vh] p-1"
+              className="h-[5vh] p-1"
               onClick={() => setShowDropDown((prev) => !prev)}
             />
             <p
               onClick={() => setShowDropDown((prev) => !prev)}
-              className=" TeamB_text-shadow  ">
+<<<<<<< HEAD
+              className=" TeamB_text-shadow">
               Hi, Judes!
+=======
+              className=" text-shadow text-[2.5vh]">
+              Hi, JMacaballes!
+>>>>>>> 30c131f423a7e9242411bc407fea9b799fe82c69
             </p>
             <span
               onClick={() => setShowDropDown((prev) => !prev)}
@@ -112,11 +117,19 @@ const Nav = () => {
                     className={
                       profileShow
                         ? showDropDown
+<<<<<<< HEAD
                           ? "font-light bg-[#D9FFCF] text-[#000000] text-center p-1 bg-white TeamB_text-shadow   hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
                           : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow   "
                         : showDropDown
                         ? "font-light text-[#000000] text-start p-1 TeamB_text-shadow   hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
                         : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow   "
+=======
+                        ? "font-semibold text-[#116211] text-center p-1 text-shadow transition-all bg-[#D9FFCF] text-[#000000] text-center p-1-shadow  hover:font-semibold"
+                        : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                      : showDropDown
+                      ? "font-semibold text-[#000000] text-start p-1 text-shadow hover:font-semibold hover:text-[#116211]"
+                      : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+>>>>>>> 30c131f423a7e9242411bc407fea9b799fe82c69
                     }>
                     <CgProfile className="text-[4vh] inline-block align-middle mr-3 " />
                     PROFILE
@@ -131,13 +144,13 @@ const Nav = () => {
                     className={
                       profileShow
                         ? showDropDown
-                          ? "font-light text-[#000000] text-center p-1 bg-[#D9FFCF] TeamB_text-shadow   hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
-                          : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow   "
+                          ? "font-semibold text-[#116211] text-center p-1 text-shadow transition-all text-center p-1  text-shadow  hover:bg-opacity-[50%] "
+                          : "font-semibold text-[#fff]  text-center p-1 text-shadow "
                         : showDropDown
-                        ? "font-light text-red-600 text-start p-1 bg-[#D9FFCF] TeamB_text-shadow   hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
-                        : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow   "
+                        ? "font-semibold text-red-600 text-start p-1 bg-[#D9FFCF] text-shadow hover:text-red-500"
+                        : "font-semibold text-[#fff]  text-center p-1 text-shadow "
                     }>
-                    <MdOutlineLogout className=" text-[4vh] inline-block align-middle mr-3 text-red-600 " />
+                      <MdOutlineLogout className=" text-[4vh] inline-block align-middle mr-3 " />
                     LOGOUT
                   </p>
                 </Link>
