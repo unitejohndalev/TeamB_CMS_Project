@@ -1,4 +1,7 @@
-import React, { useContext,  } from "react";
+// 1/31/2024 from junite, to ced. TODO
+//Only show
+
+import React, { useContext } from "react";
 import logo from "../../assets/companyLogo.png";
 
 //import react icon
@@ -16,7 +19,6 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { NavBarContext } from "../context/NavBarContext";
 
 const Nav = () => {
-  
   const {
     header,
     dashBoardShow,
@@ -33,7 +35,6 @@ const Nav = () => {
     showCourseList,
   } = useContext(NavBarContext);
 
-   
   return (
     <>
       <nav className="fixed w-full top-0 z-[100] ">
@@ -60,8 +61,8 @@ const Nav = () => {
               <ul
                 className={
                   dashBoardShow
-                    ? "font-semibold text-[#116211] text-center p-1 text-shadow transition-all"
-                    : "font-bold text-shadow p-1  hover:text-[#116211] transition-all hover:bg-opacity-[50%] font-bold hover:font-semibold "
+                    ? "font-semibold text-[#116211] text-center p-1 TeamB_text-shadow   transition-all"
+                    : "font-bold TeamB_text-shadow   p-1  hover:text-[#116211] transition-all hover:bg-opacity-[50%] hover:font-semibold "
                 }>
                 Dashboard
               </ul>
@@ -70,8 +71,8 @@ const Nav = () => {
               <ul
                 className={
                   courseListShow
-                    ? "font-semibold text-[#116211]  text-center p-1 text-shadow transition-all"
-                    : "font-bold text-shadow p-1  hover:text-[#116211] hover:bg-opacity-[50%] hover:font-semibold transition-all"
+                    ? "font-semibold text-[#116211]  text-center p-1 TeamB_text-shadow   transition-all"
+                    : "font-bold TeamB_text-shadow   p-1  hover:text-[#116211] hover:bg-opacity-[50%] hover:font-semibold transition-all"
                 }>
                 Course List
               </ul>
@@ -93,7 +94,7 @@ const Nav = () => {
             />
             <p
               onClick={() => setShowDropDown((prev) => !prev)}
-              className=" text-shadow">
+              className=" TeamB_text-shadow  ">
               Hi, Judes!
             </p>
             <span
@@ -103,21 +104,21 @@ const Nav = () => {
             </span>
             {showDropDown && (
               <div className="absolute bg-[#D9FFCF] right-0 top-12 w-[18vw] flex flex-col justify-center items-center border-solid border-2 border-[#116211]">
-              <Link
-                to="/profile"
-                onClick={showProfile}
-                className="w-full text-center ">
+                <Link
+                  to="/profile"
+                  onClick={showProfile}
+                  className="w-full text-center ">
                   <p
-                    className={ 
+                    className={
                       profileShow
                         ? showDropDown
-                        ? "font-light bg-[#D9FFCF] text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
-                        : "font-semibold text-[#fff]  text-center p-1 text-shadow "
-                      : showDropDown
-                      ? "font-light text-[#000000] text-start p-1 text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
-                      : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                          ? "font-light bg-[#D9FFCF] text-[#000000] text-center p-1 bg-white TeamB_text-shadow   hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                          : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow   "
+                        : showDropDown
+                        ? "font-light text-[#000000] text-start p-1 TeamB_text-shadow   hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                        : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow   "
                     }>
-                      <CgProfile className="text-[4vh] inline-block align-middle mr-3 "/>
+                    <CgProfile className="text-[4vh] inline-block align-middle mr-3 " />
                     PROFILE
                   </p>
                 </Link>
@@ -130,13 +131,13 @@ const Nav = () => {
                     className={
                       profileShow
                         ? showDropDown
-                          ? "font-light text-[#000000] text-center p-1 bg-[#D9FFCF] text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
-                          : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                          ? "font-light text-[#000000] text-center p-1 bg-[#D9FFCF] TeamB_text-shadow   hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                          : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow   "
                         : showDropDown
-                        ? "font-light text-red-600 text-start p-1 bg-[#D9FFCF] text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
-                        : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                        ? "font-light text-red-600 text-start p-1 bg-[#D9FFCF] TeamB_text-shadow   hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                        : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow   "
                     }>
-                      <MdOutlineLogout className=" text-[4vh] inline-block align-middle mr-3 text-red-600 " />
+                    <MdOutlineLogout className=" text-[4vh] inline-block align-middle mr-3 text-red-600 " />
                     LOGOUT
                   </p>
                 </Link>

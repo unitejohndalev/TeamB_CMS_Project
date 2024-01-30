@@ -9,7 +9,7 @@ import EditChapterTitle from "./EditChapterTitle";
 import { CourseContext } from "../context/CourseContext";
 
 const CourseOverviewById = () => {
- const { courses, setCourses } = useContext(CourseContext);
+  const { courses, setCourses } = useContext(CourseContext);
 
   //user params to navigate specific id
   let { id } = useParams();
@@ -35,14 +35,11 @@ const CourseOverviewById = () => {
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
 
-
   const handleEditClick = (chapterId) => {
     setSelectedChapterId(chapterId);
     setEditModalVisible(true);
-   
   };
 
- 
   return (
     <div className="relative h-full">
       <div className="h-[50vh] lg:max-w-[1080px] lg:flex lg:justify-center">
@@ -59,10 +56,10 @@ const CourseOverviewById = () => {
                       <div
                         className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
-                        <p className="text-shadow">
+                        <p className="TeamB_text-shadow  ">
                           CHAPTER {chapter.chapter_id}:
                         </p>
-                        <p className="pl-2 lg:font-medium text-shadow">
+                        <p className="pl-2 lg:font-medium TeamB_text-shadow  ">
                           {chapter.chapter_title}
                         </p>
                       </div>
@@ -101,7 +98,7 @@ const CourseOverviewById = () => {
               <span className="pr-4">
                 <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
               </span>
-              <span className="text-shadow lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+              <span className="TeamB_text-shadow   lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                 Add Chapter Title
               </span>
             </div>

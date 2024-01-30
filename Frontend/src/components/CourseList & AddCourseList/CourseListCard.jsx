@@ -12,7 +12,6 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import CopyofCreateNewCourse from "./CopyofCreateNewCourse";
 
-
 //import course context
 import { CourseContext } from "../context/CourseContext";
 
@@ -53,7 +52,6 @@ const CourseListCard = () => {
     pageTopRef.current.scrollIntoView();
   };
 
- 
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
@@ -64,7 +62,7 @@ const CourseListCard = () => {
           <div className="  xl:w-[1244px]  w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center lg:h-full relative gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
             <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center ">
-              <p className=" 2xl:text-[48px] lg:font-bold text-shadow ">
+              <p className=" 2xl:text-[48px] lg:font-bold TeamB_text-shadow   ">
                 Course List
               </p>
             </div>
@@ -75,13 +73,13 @@ const CourseListCard = () => {
                     <Link to={`/courseoverview/${course.course_id}`}>
                       <div className="flex px-0 py-0 rounded-md xl:h-[115px]">
                         <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
-                          <p className="lg:font-medium text-shadow">
+                          <p className="lg:font-medium TeamB_text-shadow  ">
                             PL00{course.course_id}
                           </p>
                         </div>
 
                         <p
-                          className="text-white text-shadow lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
+                          className="text-white TeamB_text-shadow   lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
 
 
                    rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
@@ -117,7 +115,7 @@ const CourseListCard = () => {
                 <div
                   className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]
                   w-[30%] 2xl:w-[50%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className=" 2xl:text-[2rem] text-shadow">
+                  <span className=" 2xl:text-[2rem] TeamB_text-shadow  ">
                     Add New Course
                   </span>
                 </div>

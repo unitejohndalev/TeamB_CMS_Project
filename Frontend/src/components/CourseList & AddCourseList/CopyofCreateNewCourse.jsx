@@ -1,8 +1,8 @@
 //1/30/2024 junite, UI modal and functionalities for create course page
+// 1/31/2024 junite, UI modifications
 
 import { useContext, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 //import course context
 import { CourseContext } from "../context/CourseContext";
@@ -73,7 +73,7 @@ const CopyofCreateNewCourse = () => {
           <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] lg:h-[450px] 2xl:h-[672px] 2xl:max-w-[724px] ">
             <form onSubmit={handleSubmit} className="w-[80%] h-full m-auto">
               <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
-                <p className="mb-10 lg:font-bold text-shadow text-[24px] mt-5">
+                <p className="mb-10 lg:font-bold TeamB_text-shadow   text-[24px] mt-5">
                   Create Course
                 </p>
               </div>
@@ -84,7 +84,7 @@ const CopyofCreateNewCourse = () => {
                   maxLength={70}
                   required
                   type="text"
-                  className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:xl:text-[24px] rounded-lg opacity-50 w-full p-4 box-border"
+                  className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:TeamB_text-shadow   placeholder:xl:text-[24px] rounded-lg opacity-50 w-full p-4 box-border"
                   placeholder="Course Title"
                   name="course_title"
                   value={course_title}
@@ -110,7 +110,7 @@ const CopyofCreateNewCourse = () => {
                   rows="5"
                   name="course_description"
                   value={course_description}
-                  className="resize-none bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:xl:text-[24px] rounded-lg opacity-50 w-full h-[156px] p-4 box-border "
+                  className="resize-none bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:TeamB_text-shadow   placeholder:xl:text-[24px] rounded-lg opacity-50 w-full h-[156px] p-4 box-border "
                   placeholder="Course Description"
                   onChange={(e) => handleInputChange(e)}
                   onMouseOver={() => setShowTooltipCourseDescription(true)}
@@ -134,7 +134,7 @@ const CopyofCreateNewCourse = () => {
                   </button>
 
                   <button
-                    className="drop-shadow-md text-shadow lg:w-[90px] lg:h-[40px] lg:rounded-[80px] lg:text-[1rem] xl:w-[114px] xl:h-[58px] xl:rounded-[100px] bg-[#126912] xl:text-[24px] text-[#FFFFFF]  font-bold"
+                    className="drop-shadow-md TeamB_text-shadow   lg:w-[90px] lg:h-[40px] lg:rounded-[80px] lg:text-[1rem] xl:w-[114px] xl:h-[58px] xl:rounded-[100px] bg-[#126912] xl:text-[24px] text-[#FFFFFF]  font-bold"
                     type="submit">
                     <p>Create</p>
                   </button>
