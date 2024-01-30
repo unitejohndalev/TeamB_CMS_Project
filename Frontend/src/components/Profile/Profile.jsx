@@ -31,7 +31,12 @@ const Profile = () => {
 
   return (
     <>
+
+    
+  
+
       <div className="h-[100vh] mt-[65px]">
+
         <div>
           {/* Use react icon instead of word back */}
           <div

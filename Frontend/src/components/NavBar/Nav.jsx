@@ -5,7 +5,8 @@ import logo from "../../assets/companyLogo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import NavSideBar from "./NavSideBar";
 import { Link } from "react-router-dom";
-
+import { CgProfile } from "react-icons/cg";
+import { MdOutlineLogout } from "react-icons/md";
 //import profile logo
 import profileLogo from "../../assets/profile.svg";
 
@@ -39,7 +40,7 @@ const Nav = () => {
         <div
           className={
             header
-              ? "relative flex justify-between items-center lg:justify-normal bg-[#BCE8B1] h-[69px] transition-all "
+              ? "relative flex justify-between items-center lg:justify-normal bg-[#D9FFCF] h-[69px] transition-all "
               : "relative flex justify-between items-center lg:justify-normal bg-transparent h-[69px] transition-all "
           }>
           <Link to="/">
@@ -51,6 +52,7 @@ const Nav = () => {
               height={50}
               onClick={showLogo}
             />
+            {/* January 30, 2024 - Cedrick */}
           </Link>
           <div className="hidden lg:flex lg:items-end xl:w-[300px] lg:pl-10 lg:min-w-[280px] lg:justify-between">
             {/* 1/11/2024 */}
@@ -59,9 +61,9 @@ const Nav = () => {
                 className={
                   dashBoardShow
                     ? "font-semibold text-[#116211] text-center p-1 text-shadow transition-all"
-                    : "font-light text-shadow p-1  hover:text-[#116211] transition-all hover:bg-opacity-[50%] hover:font-semibold "
+                    : "font-bold text-shadow p-1  hover:text-[#116211] transition-all hover:bg-opacity-[50%] font-bold hover:font-semibold "
                 }>
-                DASHBOARD
+                Dashboard
               </ul>
             </Link>
             <Link to="/courselist" onClick={showCourseList}>
@@ -69,9 +71,9 @@ const Nav = () => {
                 className={
                   courseListShow
                     ? "font-semibold text-[#116211]  text-center p-1 text-shadow transition-all"
-                    : "font-light text-shadow p-1  hover:text-[#116211] hover:bg-opacity-[50%] hover:font-semibold transition-all"
+                    : "font-bold text-shadow p-1  hover:text-[#116211] hover:bg-opacity-[50%] hover:font-semibold transition-all"
                 }>
-                COURSE LIST
+                Course List
               </ul>
             </Link>
           </div>
@@ -82,11 +84,11 @@ const Nav = () => {
             />
             {show && <NavSideBar />}
           </div>
-          <div className="drop-shadow-lg shadow-lg  bg-[#EBE9E9] cursor-pointer lg:text-[.9rem] lg:w-[160px] 2xl:w-[193px] h-[7vh] rounded-md absolute right-5 hidden lg:flex justify-between items-center p-1 text-[#126912]">
+          <div className="drop-shadow-lg shadow-lg  bg-[#ffffff] cursor-pointer lg:text-[1rem] lg:w-[18vw] 2xl:w-[193px] h-[7vh] rounded-md absolute right-5 hidden border-lime-900 border-[.1rem] lg:flex justify-between items-center p-1 text-[#126912]">
             <img
               src={profileLogo}
               alt=""
-              className="h-[7vh] p-1"
+              className="h-[6vh] p-1"
               onClick={() => setShowDropDown((prev) => !prev)}
             />
             <p
@@ -100,38 +102,41 @@ const Nav = () => {
               {showDropDown ? <FaChevronUp /> : <FaChevronDown />}
             </span>
             {showDropDown && (
-              <div className=" absolute right-0 top-12 w-[8vw] flex flex-col justify-center items-center border-solid border-2 border-[#116211]">
-                <Link
-                  to="/profile"
-                  onClick={showProfile}
-                  className="w-full text-center ">
+              <div className="absolute bg-[#D9FFCF] right-0 top-12 w-[18vw] flex flex-col justify-center items-center border-solid border-2 border-[#116211]">
+              <Link
+                to="/profile"
+                onClick={showProfile}
+                className="w-full text-center ">
                   <p
-                    className={
+                    className={ 
                       profileShow
                         ? showDropDown
-                          ? "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
-                          : "font-semibold text-[#fff]  text-center p-1 text-shadow "
-                        : showDropDown
-                        ? "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                        ? "font-light bg-[#D9FFCF] text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
                         : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                      : showDropDown
+                      ? "font-light text-[#000000] text-start p-1 text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                      : "font-semibold text-[#fff]  text-center p-1 text-shadow "
                     }>
+                      <CgProfile className="text-[4vh] inline-block align-middle mr-3 "/>
                     PROFILE
                   </p>
                 </Link>
                 <Link
                   to="/"
+                  src="CgProfile"
                   onClick={showLogout}
                   className="w-full text-center ">
                   <p
                     className={
                       profileShow
                         ? showDropDown
-                          ? "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                          ? "font-light text-[#000000] text-center p-1 bg-[#D9FFCF] text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
                           : "font-semibold text-[#fff]  text-center p-1 text-shadow "
                         : showDropDown
-                        ? "font-light text-[#000000] text-center p-1 bg-white text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
+                        ? "font-light text-red-600 text-start p-1 bg-[#D9FFCF] text-shadow hover:bg-[#116211] hover:bg-opacity-[50%] hover:font-semibold hover:text-[#fff]"
                         : "font-semibold text-[#fff]  text-center p-1 text-shadow "
                     }>
+                      <MdOutlineLogout className=" text-[4vh] inline-block align-middle mr-3 text-red-600 " />
                     LOGOUT
                   </p>
                 </Link>
