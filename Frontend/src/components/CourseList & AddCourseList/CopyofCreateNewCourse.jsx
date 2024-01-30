@@ -11,12 +11,7 @@ const CopyofCreateNewCourse = () => {
     course_id: "",
     course_title: "",
     course_description: "",
-    chapters: [
-      {
-        chapter_id: "",
-        chapter_title: "",
-      },
-    ],
+    
   });
 
   const { course_title, course_description, chapters } = course;
@@ -57,20 +52,21 @@ const CopyofCreateNewCourse = () => {
   const [showTooltipChapterTitle, setShowTooltipChapterTitle] = useState(false);
 
   return (
-    <div className=" flex flex-col items-center  m-auto bg-white lg:max-w-[672px] lg:h-[500px] 2xl:h-[672px] 2xl:max-w-[724px] ">
-      <div className="m-5 text-black lg:font-bold lg:text-3xl py-1 lg:py-0 lg:text-[2rem] lg:w-[98%] flex justify-center items-center">
-        <p className="mb-10 lg:font-bold text-shadow">Create New Course</p>
-      </div>
-
-      <form onSubmit={handleSubmit} className="lg:w-[70%] m-auto">
+    <div className=" flex   m-auto bg-white lg:max-w-[550px] lg:h-[450px] 2xl:h-[672px] 2xl:max-w-[724px] ">
+      <form onSubmit={handleSubmit} className="w-[80%] h-full m-auto">
+        <div className=" text-black lg:font-bold lg:text-3xl py-1 lg:py-0  flex  items-center">
+          <p className="mb-10 lg:font-bold text-shadow text-[24px] mt-5">
+            Create Course
+          </p>
+        </div>
         <div className="relative w-full mb-5">
           {/* COURSE TITLE INPUT */}
 
           <input
             maxLength={70}
             type="text"
-            className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border"
-            placeholder="Add course Title"
+            className="bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:xl:text-[24px] rounded-lg opacity-50 w-full p-4 box-border"
+            placeholder="Course Title"
             name="course_title"
             value={course_title}
             onChange={(e) => handleInputChange(e)}
@@ -88,14 +84,14 @@ const CopyofCreateNewCourse = () => {
 
         {/* COURSE BRIEF DESCRIPTION TEXTAREA */}
 
-        <div className="relative w-full mb-5">
+        <div className="relative w-full mb-5 ">
           <textarea
             maxLength={250}
             rows="5"
             name="course_description"
             value={course_description}
-            className="resize-none bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:text-center rounded-lg opacity-50 w-full p-4 box-border "
-            placeholder="Add new brief description"
+            className="resize-none bg-[#BCE8B1] placeholder-[#070101] shadow-lg placeholder:text-shadow placeholder:xl:text-[24px] rounded-lg opacity-50 w-full h-[156px] p-4 box-border "
+            placeholder="Course Description"
             onChange={(e) => handleInputChange(e)}
             onMouseOver={() => setShowTooltipCourseDescription(true)}
             onMouseLeave={() => setShowTooltipCourseDescription(false)}
@@ -135,15 +131,11 @@ const CopyofCreateNewCourse = () => {
         ))} */}
 
         <div className="grid grid-cols-2 lg:w-full lg:flex lg:justify-center">
-          <button className="">
-            <p>Cancel</p>
-          </button>
+          <p>Cancel</p>
 
-          <Link to="/courselist">
-            <button className="">
-              <p>Create</p>
-            </button>
-          </Link>
+          <button className="" type="submit">
+            <p>Create</p>
+          </button>
         </div>
       </form>
     </div>
