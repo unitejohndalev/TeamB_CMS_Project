@@ -31,23 +31,27 @@ const CopyofCreateNewCourse = () => {
   const handleInputChange = (e, chapterIndex) => {
     const { name, value } = e.target;
 
+    let capitalizedValue = value;
+
     if (name.startsWith("chapter_title")) {
       const updatedChapters = [...chapters];
       updatedChapters[chapterIndex] = {
         ...updatedChapters[chapterIndex],
-        chapter_title: value,
+        chapter_title: value.charAt(0).toUpperCase() + value.slice(1),
       };
       setCourse((prevCourse) => ({
         ...prevCourse,
         chapters: updatedChapters,
       }));
     } else {
+      capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1);
       setCourse((prevCourse) => ({
         ...prevCourse,
-        [name]: value,
+        [name]: capitalizedValue,
       }));
     }
   };
+
 
   const handleSubmit = async (e) => {
     console.log("Form submitted:", course);
@@ -71,7 +75,7 @@ const CopyofCreateNewCourse = () => {
     <>
       <div className="w-[100%] h-[100vh] backdrop-blur-sm ">
         {!formSubmitted && (
-          <div className=" flex   m-auto bg-white lg:max-w-[550px] lg:h-[450px] 2xl:h-[672px] 2xl:max-w-[724px] ">
+          <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] lg:h-[450px] 2xl:h-[672px] 2xl:max-w-[724px] ">
             <form onSubmit={handleSubmit} className="w-[80%] h-full m-auto">
               <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
                 <p className="mb-10 lg:font-bold text-shadow text-[24px] mt-5">
@@ -93,7 +97,7 @@ const CopyofCreateNewCourse = () => {
                   onMouseLeave={() => setShowTooltipCourseTitle(false)}
                 />
                 {showTooltipCourseTitle && (
-                  <div className="absolute top-[-3.5rem] left-10 bg-[#fff]  w-[25%] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
+                  <div className="absolute top-[-3.5rem] right-0 bg-[#fff]  w-[50%] p-1 rounded-lg border-[1px] border-[#126912]">
                     <p className="text-[.8rem] text-[#4D4141] text-opacity-[53%]">
                       Maximum of 70 alphanumeric and special characters.
                     </p>
@@ -116,7 +120,7 @@ const CopyofCreateNewCourse = () => {
                   onMouseLeave={() => setShowTooltipCourseDescription(false)}
                 />
                 {showTooltipCourseDescription && (
-                  <div className="absolute top-[-3.5rem] left-10 bg-[#fff]  w-[25%] p-1 rounded-lg border-[1px] border-[#EBFFE5]">
+                  <div className=" absolute top-[-3.5rem] right-0 bg-[#fff]  w-[50%] p-1 rounded-lg border-[1px] border-[#126912]">
                     <p className="text-[.8rem] text-[#4D4141] text-opacity-[53%]">
                       Maximum of 500 alphanumeric and special characters.
                     </p>
@@ -158,7 +162,7 @@ const CopyofCreateNewCourse = () => {
                   </button>
 
                   <button
-                    className="text-shadow lg:w-[90px] lg:h-[45px] lg:rounded-[80px] lg:text-[1.2rem] xl:w-[114px] xl:h-[58px] xl:rounded-[100px] bg-[#126912] xl:text-[24px] text-[#FFFFFF]  font-bold"
+                    className="drop-shadow-md text-shadow lg:w-[90px] lg:h-[45px] lg:rounded-[80px] lg:text-[1.2rem] xl:w-[114px] xl:h-[58px] xl:rounded-[100px] bg-[#126912] xl:text-[24px] text-[#FFFFFF]  font-bold"
                     type="submit">
                     <p>Create</p>
                   </button>
