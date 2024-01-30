@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import Nav from "./components/NavBar/Nav";
 import Fallbackloading from "./components/FallbackLoading";
+// import Team_A_HeaderV2 from "./components/NavBar/Team_A_HeaderV2";
+import dropdown from "./components/NavBar/dropdown";
 
 const Profile = lazy(() => import("./components/Profile/Profile"));
 
@@ -44,6 +46,7 @@ function App() {
           <Route path="/courselist" element={<CourseList />} />
           <Route path="/addnewcourse" element={<AddNewCourse />} />
           <Route path="/courseoverview/:id" element={<CourseOverview />} />
+          <Route path="/dropdown" element={<dropdown/>}/>
           <Route path="/editchaptertitle/:id" element={<EditChapterTitle />} />
           <Route
             path="/createnewchaptertitle/:id"
