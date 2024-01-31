@@ -52,7 +52,7 @@ const Nav = () => {
               height={50}
               onClick={showLogo}
             />
-            {/* January 30, 2024 - Cedrick */}
+            {/* January 30, 2024 - Cedrick - Fixed the style of the nav bar according to the design of team D */}
           </Link>
           <div className="hidden lg:flex lg:items-end xl:w-[300px] lg:pl-10 lg:min-w-[280px] lg:justify-between">
             {/* 1/11/2024 */}
