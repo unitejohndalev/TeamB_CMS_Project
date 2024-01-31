@@ -58,19 +58,19 @@ const CourseOverviewCard = () => {
           </div> */}
           <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto  items-center gap-8">
             <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
-              <p className="lg:font-bold TeamB_text-shadow  ">
+              <p className="lg:font-bold TeamB_text-shadow ">
                 Course Overview
               </p>
             </div>
             <div className="w-full lg:max-w-[800px]">
               <div className="pb-2 w-full flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto  items-right">
-                <p className="lg:font-bold TeamB_text-shadow  ">HTML And CSS</p>
+                <p className="lg:font-bold TeamB_text-shadow ">HTML And CSS</p>
               </div>
               <div className="lg:max-w-[1000px] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
                 <div className="max-w-[30%] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
               </div>
               <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px] m-auto pt-2">
-                <span className=" TeamB_text-shadow  ">Lessons</span>
+                <span className=" TeamB_text-shadow">Lessons</span>
               </div>
               <div>
                 <CourseOverviewById />
