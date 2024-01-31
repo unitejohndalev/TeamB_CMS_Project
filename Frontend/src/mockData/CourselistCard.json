@@ -20,11 +20,6 @@
            "id": 4,
            "courseTitle" : "HTML, CSS, and Bootstrap",
            "description": " Course 4"
-       },
-       {
-           "id": 5,
-           "courseTitle" : "Network Admin Security",
-           "description": "Course 5"
        }
  
    ]

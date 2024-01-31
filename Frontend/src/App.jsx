@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import Nav from "./components/NavBar/Nav";
 import Fallbackloading from "./components/FallbackLoading";
+import CourseTitleModal from "./components/CourseList & AddCourseList/CourseModal/CourseTitleModal";
 
 
 const Profile = lazy(() => import("./components/Profile/Profile"));
@@ -59,6 +60,7 @@ function App() {
           <Route path="/displaytopic" element={<DisplayTopic />} />
           <Route path="/edittopic" element={<EditTopicPage />} />
           <Route path="createnewcoursecopy" element={<CreateNewCourseCopy/>}/>
+          <Route path="/coursetitlemodal" element={<CourseTitleModal/>}/>
         </Routes>
 
         {/* <Footer /> */}

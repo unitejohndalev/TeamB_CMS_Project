@@ -66,6 +66,8 @@ const CopyofCreateNewCourse = () => {
   const [showTooltipCourseDescription, setShowTooltipCourseDescription] =
     useState(false);
 
+    
+
   return (
     <>
       <div className="w-[100%]  h-full pb-32 backdrop-blur-[.1rem] ">

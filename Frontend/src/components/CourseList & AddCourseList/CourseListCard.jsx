@@ -1,11 +1,13 @@
 /*January 10, 2024*/
 //1/30/2024 junite, created modal show and hide UI and Functionalities for CourseList
 //1/31/2024 junite, UI modifications
+//2/1/2024 junite, UI modifications, mockdata inserted and used for UI test
 
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { IoAdd } from "react-icons/io5";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 //import mock data
 import data from "../../mockData/CourselistCard.json";
 
@@ -18,6 +20,7 @@ import { CourseContext } from "../context/CourseContext";
 
 //edit icon
 import { FaEdit } from "react-icons/fa";
+import CourseTitleModal from "./CourseModal/CourseTitleModal";
 
 const CourseListCard = () => {
   // *NOTE
@@ -56,6 +59,15 @@ const CourseListCard = () => {
     pageTopRef.current.scrollIntoView();
   };
 
+  ///mock data for UI Testing
+  const { courselist } = data;
+
+  //state for show and hide course edit title component
+  const [showEditTitle, setShowEditTitle] = useState(false);
+
+  //state for modal by id
+  const [editCourseId, setEditCourseId] = useState(null);
+
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
@@ -71,13 +83,15 @@ const CourseListCard = () => {
               </p>
             </div>
             <div className="h-full">
-              {currentCourse.map((course, idx) => {
+              {/* change to currentCourse for API connection */}
+              {courselist.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
                     <div className="flex px-0 py-0 rounded-md xl:h-[115px] relative ">
                       <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
                         <p className="lg:font-medium TeamB_text-shadow ">
-                          PL00{course.course_id}
+                          {/* change to course_id for api connection */}
+                          PL00{course.id}
                         </p>
                       </div>
 
@@ -85,18 +99,34 @@ const CourseListCard = () => {
                         to={`/courseoverview/${course.course_id}`}
                         className="text-white TeamB_text-shadow  lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
                             rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
-                        {course.course_title}
+                        {/* change to course_title for api connection */}
+                        {course.courseTitle}
                       </Link>
-                      <Link >
-                        <span className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
-                          <FaEdit />
-                        </span>
-                      </Link>
+
+                      <span
+                        onClick={() => {
+                          setShowEditTitle((prev) => !prev);
+                          setEditCourseId(course.id);
+                        }}
+                        className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
+                        <FaEdit />
+                      </span>
+                      {showEditTitle && editCourseId === course.id && (
+                        <div className="absolute z-10">
+                          <div className="lg:w-[1080px] ">
+                            <CourseTitleModal
+                              courseId={editCourseId}
+                              courseTitle={course.courseTitle}
+                            />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 );
               })}
             </div>
+
             {courses.length < 5 ? (
               <></>
             ) : (
