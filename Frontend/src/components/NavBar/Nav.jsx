@@ -148,7 +148,7 @@ const Nav = () => {
                     }
                   >
                     <MdOutlineLogout className=" text-[4vh] inline-block align-middle mr-3 " />
-                    Logout
+                    Log out
                   </p>
                 </Link>
               </div>
