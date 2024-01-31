@@ -5,6 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import { IoAdd } from "react-icons/io5";
 //edit icon
 import { FaEdit } from "react-icons/fa";
+//delete icon
+import { RiDeleteBinLine } from "react-icons/ri";
 import EditChapterTitle from "./EditChapterTitle";
 import { CourseContext } from "../context/CourseContext";
 
@@ -48,12 +50,12 @@ const CourseOverviewById = () => {
         {courses.map((chapter, idx) => {
           console.log(chapter.chapter.chapter_title);
           return (
-            <div key={idx} className="lg:w-[80%]">
-              <div className="mt-5 w-[90%] m-auto">
+            <div key={idx} className="lg:w-full">
+              <div className="w-full m-auto mt-5">
                 <div className="flex">
                   <div
                     key={idx}
-                    className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
+                    className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[85%] justify-between items-center">
                     <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
                     <div
                       className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
@@ -68,12 +70,17 @@ const CourseOverviewById = () => {
                   </div>
                   <Link className="flex ml-auto">
                     <div
-                      onClick={() => handleEditClick(chapter.chapter.chapter_id)}
+                      onClick={() =>
+                        handleEditClick(chapter.chapter.chapter_id)
+                      }
                       className="flex items-center gap-2 pr-5 cursor-pointer">
-                      <div className="text-[#4c604c] text-[1.5rem]">
+                      <div className="text-[#000] text-[2rem]">
                         <FaEdit />
                       </div>
-                      <span className="text-[#126912] font-semibold">Edit</span>
+
+                      <div className="text-[#000] text-[2rem]">
+                        <RiDeleteBinLine />
+                      </div>
                     </div>
                   </Link>
                 </div>
