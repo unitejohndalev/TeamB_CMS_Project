@@ -89,7 +89,7 @@ const Nav = () => {
             {/* 01/31/2024 - Cedrick - Adjusted the design of nav bar and changed the picture in the profile */}
             {show && <NavSideBar />}
           </div>
-          <div className="drop-shadow-lg shadow-lg  bg-[#ffffff] cursor-pointer lg:text-[1rem] lg:w-[18vw] 2xl:w-[193px] h-[7vh] rounded-md ml-auto hidden border-lime-900 border-[.1rem] lg:flex justify-between items-center p-1 text-[#126912]">
+          <div className="drop-shadow-lg shadow-lg  bg-[#ffffff] cursor-pointer lg:text-[1rem] lg:w-[15vw] 2xl:w-[193px] h-[7vh] rounded-md ml-auto hidden border-lime-900 border-[.1rem] lg:flex justify-between items-center p-1 text-[#126912]">
             <img
               src={profileLogo}
               alt=""
@@ -119,14 +119,14 @@ const Nav = () => {
                     className={
                       profileShow
                         ? showDropDown
-                          ? " text-[#116211] rounded-md text-center p-1 transition-all bg-[#D9FFCF]  text-center p-1-shadow  "
+                          ? " text-[#116211] rounded-md text-start p-1 transition-all bg-[#D9FFCF]  text-center p-1-shadow  "
                           : ""
                         : showDropDown
                         ? " text-[#000000] rounded-md text-start p-1  hover:text-[#116211]"
                         : ""
                     }
                   >
-                    <CgProfile className="text-[4vh] inline-block align-middle mr-3 " />
+                    <CgProfile className="text-[4vh] inline-block align-start mr-3 " />
                     Profile
                   </p>
                 </Link>
@@ -140,7 +140,7 @@ const Nav = () => {
                     className={
                       profileShow
                         ? showDropDown
-                          ? "font-semibold text-[#116211] TeamB_text-shadow transition-all rounded-md text-center p-1  TeamB_text-shadow  hover:bg-opacity-[50%] "
+                          ? " text-red-600 hover:text-red-500 text-start transition-all rounded-md text-center p-1  hover:bg-opacity-[50%] "
                           : ""
                         : showDropDown
                         ? " text-red-600 rounded-md text-start p-1 bg-[#D9FFCF]  hover:text-red-500"
