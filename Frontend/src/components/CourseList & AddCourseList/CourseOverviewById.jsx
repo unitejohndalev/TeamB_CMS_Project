@@ -27,11 +27,6 @@ const CourseOverviewById = () => {
         `http://localhost:8080/api/courses/byChapter/${id}`
       );
 
-      const result = await axios.get(`http://localhost:8080/api/courses/byChapter/${id}`);
-
-      const result = await axios.get(
-        `http://localhost:8080/api/courses/byChapter/${id}`
-      );
 
       // Ensure that result.data is always an array by converting it
       const coursesArray = Array.isArray(result.data)
@@ -72,7 +67,7 @@ const CourseOverviewById = () => {
 
                   </div>
                 </div>
-                <Link className="flex ml-auto">
+                {/* <Link className="flex ml-auto"> */}
                   <div
                     onClick={() => handleEditClick(chapter.chapter_id)}
                     className="flex items-center gap-2 pr-5 cursor-pointer"
