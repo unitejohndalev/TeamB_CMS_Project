@@ -10,7 +10,7 @@ import { CourseContext } from "../context/CourseContext";
 const CopyofCreateNewCourse = () => {
   //state for handling course data
   const [course, setCourse] = useState({
-    course_id: "",
+    // course_id: "",
     course_title: "",
     course_description: "",
   });
