@@ -68,16 +68,16 @@ const CopyofCreateNewCourse = () => {
 
   return (
     <>
-      <div className="w-[100%] h-[100vh] backdrop-blur-sm ">
+      <div className="w-[100%]  h-full pb-32 backdrop-blur-[.1rem] ">
         {!formSubmitted && (
-          <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] lg:h-[450px] 2xl:h-[672px] 2xl:max-w-[724px] ">
-            <form onSubmit={handleSubmit} className="w-[80%] h-full m-auto">
+          <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
+            <form onSubmit={handleSubmit} className="w-[80%] m-auto py-2 ">
               <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
-                <p className="mb-10 lg:font-bold TeamB_text-shadow   text-[24px] mt-5">
+                <p className=" lg:font-bold TeamB_text-shadow   text-[24px] mt-5">
                   Create Course
                 </p>
               </div>
-              <div className="relative w-full mb-5">
+              <div className="relative w-full py-5 ">
                 {/* COURSE TITLE INPUT */}
 
                 <input
@@ -103,7 +103,7 @@ const CopyofCreateNewCourse = () => {
 
               {/* COURSE BRIEF DESCRIPTION TEXTAREA */}
 
-              <div className="relative w-full mb-5 ">
+              <div className="relative w-full py-5 ">
                 <textarea
                   maxLength={250}
                   required

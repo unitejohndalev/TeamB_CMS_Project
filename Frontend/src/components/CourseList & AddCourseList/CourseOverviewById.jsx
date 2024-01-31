@@ -20,7 +20,9 @@ const CourseOverviewById = () => {
 
   const loadChapters = async () => {
     try {
-      const result = await axios.get(`http://localhost:8080/api/courses/byChapter/${id}`);
+      const result = await axios.get(
+        `http://localhost:8080/api/courses/byChapter/${id}`
+      );
       // Ensure that result.data is always an array by converting it
       const coursesArray = Array.isArray(result.data)
         ? result.data
@@ -43,44 +45,43 @@ const CourseOverviewById = () => {
   return (
     <div className="relative h-full">
       <div className="h-[50vh] lg:max-w-[1080px] lg:flex lg:justify-center">
-
         {courses.map((chapter, idx) => {
-          console.log(chapter.chapter.chapter_title)
+          console.log(chapter.chapter.chapter_title);
           return (
             <div key={idx} className="lg:w-[80%]">
-            <div className="mt-5 w-[90%] m-auto">
-              <div className="flex">
-                <div
-                  key={idx}
-                  className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center"
-                >
-                  <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
+              <div className="mt-5 w-[90%] m-auto">
+                <div className="flex">
                   <div
-                    className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
-              lg:h-[50px] lg:rounded-[1rem]"
-                  >
-                    <p className="text-shadow">CHAPTER {chapter.chapter.chapter_id}:</p>
-                    <p className="pl-2 lg:font-medium text-shadow">{chapter.chapter.chapter_title}</p>
-
-      
-                  </div>
-                </div>
-                <Link className="flex ml-auto">
-                  <div
-                    onClick={() => handleEditClick(chapter.chapter_id)}
-                    className="flex items-center gap-2 pr-5 cursor-pointer"
-                  >
-                    <div className="text-[#4c604c] text-[1.5rem]">
-                      <FaEdit />
+                    key={idx}
+                    className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
+                    <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
+                    <div
+                      className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
+              lg:h-[50px] lg:rounded-[1rem]">
+                      <p className="text-shadow">
+                        CHAPTER {chapter.chapter.chapter_id}:
+                      </p>
+                      <p className="pl-2 lg:font-medium text-shadow">
+                        {chapter.chapter.chapter_title}
+                      </p>
                     </div>
-                    <span className="text-[#126912] font-semibold">Edit</span>
                   </div>
-                </Link>
+                  <Link className="flex ml-auto">
+                    <div
+                      onClick={() => handleEditClick(chapter.chapter.chapter_id)}
+                      className="flex items-center gap-2 pr-5 cursor-pointer">
+                      <div className="text-[#4c604c] text-[1.5rem]">
+                        <FaEdit />
+                      </div>
+                      <span className="text-[#126912] font-semibold">Edit</span>
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-          )
-        })  }      {editModalVisible && (
+          );
+        })}{" "}
+        {editModalVisible && (
           <EditChapterTitle
             chapterId={selectedChapterId}
             onClose={() => setEditModalVisible(false)}
@@ -92,8 +93,7 @@ const CourseOverviewById = () => {
         <div className="gap-5 lg:w-[20rem] m-auto lg:flex lg:justify-center lg:items-center ">
           <Link
             to={`/createnewchaptertitle/${courses.course_id}`}
-            className="lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]"
-          >
+            className="lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]">
             <div className="flex items-center justify-center w-full">
               <span className="pr-4">
                 <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
