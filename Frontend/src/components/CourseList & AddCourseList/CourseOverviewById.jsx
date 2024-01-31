@@ -20,9 +20,7 @@ const CourseOverviewById = () => {
 
   const loadChapters = async () => {
     try {
-      const result = await axios.get(
-        `http://localhost:8080/api/courses/byChapter/${id}`
-      );
+      const result = await axios.get(`http://localhost:8080/api/courses/byChapter/${id}`);
       // Ensure that result.data is always an array by converting it
       const coursesArray = Array.isArray(result.data)
         ? result.data

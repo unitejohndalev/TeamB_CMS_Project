@@ -1,3 +1,4 @@
+
 /*January 10, 2024*/
 //1/30/2024 junite, created modal show and hide UI and Functionalities for CourseList
 
