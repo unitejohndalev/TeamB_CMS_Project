@@ -1,23 +1,23 @@
-import { useState, useEffect } from 'react';
-import { IoIosArrowRoundForward } from 'react-icons/io';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import axios from "axios";
 
 function MyForm() {
   //january 11 2024
   //useState instructors used in useEffect(loadInstructors)
   const [instructors, setInstructors] = useState([]);
 
-//useState for creatingInstructor (post)
+  //useState for creatingInstructor (post)
   const [instructor, setInstructor] = useState({
-    instructor_name: '',
-    instructor_username: '',
-    instructor_email: '',
+    instructor_name: "",
+    instructor_username: "",
+    instructor_email: "",
   });
-  
-// get data from database using axios
+
+  // get data from database using axios
   useEffect(() => {
     const loadInstructors = async () => {
-      const result = await axios.get('http://localhost:8080/getInstructor');
+      const result = await axios.get("http://localhost:8080/getInstructor");
       setInstructors(result.data);
     };
     loadInstructors();
@@ -29,7 +29,7 @@ function MyForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:8080/createInstructor', instructor);
+    await axios.post("http://localhost:8080/createInstructor", instructor);
   };
 
   console.log(instructors);
@@ -54,7 +54,7 @@ function MyForm() {
           );
         })
       }
-       {/*january102024*/}
+      {/*january102024*/}
       <div className="flex flex-col items-center justify-center">
         <p className="text-[#4D4141] font-bold text-[1.5rem] lg:text-[2rem] text-center">
           Sign in to your account.
@@ -62,13 +62,13 @@ function MyForm() {
         <p className="text-[#4D4141] font-bold text-[1.5rem] lg:text-[2rem] text-center">
           Be part of the success.
         </p>
-       
+
         <form
-          onSubmit={(e) => handleSubmit(e)} 
+          onSubmit={(e) => handleSubmit(e)}
           className="flex flex-col w-[90%] min-h-[40vh] lg:mt-5 justify-between lg:flex lg:items-center">
           <div className="mt-10 h-[15vh] flex flex-col justify-between lg:w-[100%] lg:h-[17vh]">
             <input
-              className="input-style"
+              className="TeamB_input-style"
               placeholder="Email Address"
               type="email"
               name="instructor_email"
@@ -77,7 +77,7 @@ function MyForm() {
             />
 
             <input
-              className="input-style"
+              className="TeamB_input-style"
               placeholder="Password"
               type="password"
               name="instructor_password"
@@ -86,7 +86,9 @@ function MyForm() {
             />
           </div>
 
-          <button type="submit" className="btn-style mb-10 lg:max-w-[30%]">
+          <button
+            type="submit"
+            className="TeamB_btn-style  mb-10 lg:max-w-[30%]">
             <div className="flex items-center justify-center gap-3">
               <span className="text-[1.3rem]">Sign in</span>
               <span>
@@ -95,7 +97,7 @@ function MyForm() {
             </div>
           </button>
         </form>
-         {/*january102024*/}
+        {/*january102024*/}
       </div>
     </div>
   );

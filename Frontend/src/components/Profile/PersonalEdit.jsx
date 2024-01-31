@@ -122,8 +122,8 @@ const PersonalEdit = () => {
                   <input
                     className={
                       showTooltipLastName
-                        ? " relative input-style px-2 lg:w-full  bg-[#EBFFE5] blur-[.1rem]"
-                        : " relative input-style px-2 lg:w-full  bg-[#EBFFE5] "
+                        ? " relative TeamB_input-style px-2 lg:w-full  bg-[#EBFFE5] blur-[.1rem]"
+                        : " relative TeamB_input-style px-2 lg:w-full  bg-[#EBFFE5] "
                     }
                     id="firstName"
                     type="text"
@@ -162,7 +162,7 @@ const PersonalEdit = () => {
                   {/* LASTNAME INPUT */}
 
                   <input
-                    className="relative input-style px-2 lg:w-full bg-[#EBFFE5]"
+                    className="relative TeamB_input-style px-2 lg:w-full bg-[#EBFFE5]"
                     id="lastName"
                     type="text"
                     name="instructor_last_name" //edit
@@ -207,7 +207,7 @@ const PersonalEdit = () => {
                 {/* EMAIL INPUT */}
 
                 <input
-                  className="px-2 input-style"
+                  className="px-2 TeamB_input-style"
                   disabled
                   id="Email"
                   type="number"
@@ -232,8 +232,8 @@ const PersonalEdit = () => {
                 <input
                   className={
                     showTooltipUploadSignature
-                      ? " relative input-style px-2 lg:w-full  bg-[#EBFFE5] blur-[.1rem]"
-                      : " relative input-style px-2 lg:w-full  bg-[#EBFFE5] "
+                      ? " relative TeamB_input-style px-2 lg:w-full  bg-[#EBFFE5] blur-[.1rem]"
+                      : " relative TeamB_input-style px-2 lg:w-full  bg-[#EBFFE5] "
                   }
                   placeholder="+63"
                   type="text"
@@ -287,7 +287,7 @@ const PersonalEdit = () => {
 
                 <button
                   type="submit"
-                  className="w-full  btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
+                  className="w-full  TeamB_btn-style  lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
                   Update
                 </button>
               </div>
