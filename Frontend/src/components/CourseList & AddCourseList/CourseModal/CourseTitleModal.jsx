@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 
-const CourseTitleModal = ({ courseId, courseTitle }) => {
+const CourseTitleModal = ({  courseTitle }) => {
   return (
     <>
       <div className="w-[100%]  h-full pb-32 backdrop-blur-[.1rem] ">
