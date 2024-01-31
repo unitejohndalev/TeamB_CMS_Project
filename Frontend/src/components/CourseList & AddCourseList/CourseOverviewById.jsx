@@ -20,9 +20,13 @@ const CourseOverviewById = () => {
 
   const loadChapters = async () => {
     try {
+<<<<<<< HEAD
       const result = await axios.get(
         `http://localhost:8080/api/courses/byChapter/${id}`
       );
+=======
+      const result = await axios.get(`http://localhost:8080/api/courses/byChapter/${id}`);
+>>>>>>> afdfef6196d63c66d546bb80993d02ce907a1654
       // Ensure that result.data is always an array by converting it
       const coursesArray = Array.isArray(result.data)
         ? result.data
@@ -45,6 +49,10 @@ const CourseOverviewById = () => {
   return (
     <div className="relative h-full">
       <div className="h-[50vh] lg:max-w-[1080px] lg:flex lg:justify-center">
+<<<<<<< HEAD
+=======
+
+>>>>>>> afdfef6196d63c66d546bb80993d02ce907a1654
         {courses.map((chapter, idx) => {
           console.log(chapter.chapter.chapter_title)
           return (
@@ -62,6 +70,11 @@ const CourseOverviewById = () => {
                   >
                     <p className="text-shadow">CHAPTER {chapter.chapter.chapter_id}:</p>
                     <p className="pl-2 lg:font-medium text-shadow">{chapter.chapter.chapter_title}</p>
+<<<<<<< HEAD
+=======
+
+      
+>>>>>>> afdfef6196d63c66d546bb80993d02ce907a1654
                   </div>
                 </div>
                 <Link className="flex ml-auto">
