@@ -94,7 +94,7 @@ const Nav = () => {
             />
             <p
               onClick={() => setShowDropDown((prev) => !prev)}
-              className=" text-shadow text-[2.5vh]">
+              className=" TeamB_text-shadow text-[2.5vh]">
               Hi, JMacaballes!
             </p>
             <span
@@ -112,11 +112,11 @@ const Nav = () => {
                     className={
                       profileShow
                         ? showDropDown
-                        ? "font-semibold text-[#116211] text-center p-1 text-shadow transition-all bg-[#D9FFCF] text-[#000000] text-center p-1-shadow  hover:font-semibold"
-                        : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                        ? "font-semibold text-[#116211] text-center p-1 TeamB_text-shadow transition-all bg-[#D9FFCF] text-[#000000] text-center p-1-shadow  hover:font-semibold"
+                        : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow "
                       : showDropDown
-                      ? "font-semibold text-[#000000] text-start p-1 text-shadow hover:font-semibold hover:text-[#116211]"
-                      : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                      ? "font-semibold text-[#000000] text-start p-1 TeamB_text-shadow hover:font-semibold hover:text-[#116211]"
+                      : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow "
                     }>
                     <CgProfile className="text-[4vh] inline-block align-middle mr-3 " />
                     PROFILE
@@ -131,11 +131,11 @@ const Nav = () => {
                     className={
                       profileShow
                         ? showDropDown
-                          ? "font-semibold text-[#116211] text-center p-1 text-shadow transition-all text-center p-1  text-shadow  hover:bg-opacity-[50%] "
-                          : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                          ? "font-semibold text-[#116211] TeamB_text-shadow transition-all text-center p-1  TeamB_text-shadow  hover:bg-opacity-[50%] "
+                          : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow "
                         : showDropDown
-                        ? "font-semibold text-red-600 text-start p-1 bg-[#D9FFCF] text-shadow hover:text-red-500"
-                        : "font-semibold text-[#fff]  text-center p-1 text-shadow "
+                        ? "font-semibold text-red-600 text-start p-1 bg-[#D9FFCF] TeamB_text-shadow hover:text-red-500"
+                        : "font-semibold text-[#fff]  text-center p-1 TeamB_text-shadow "
                     }>
                       <MdOutlineLogout className=" text-[4vh] inline-block align-middle mr-3 " />
                     LOGOUT

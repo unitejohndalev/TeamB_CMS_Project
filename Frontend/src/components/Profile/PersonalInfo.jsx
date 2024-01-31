@@ -121,7 +121,7 @@ const PersonalInfo = () => {
                   {/* EMAIL INPUT */}
 
                   <input
-                    className="px-2 input-style"
+                    className="px-2 TeamB_input-style"
                     id="Email"
                     type="number"
                     name="instructor_username" //edit
@@ -134,7 +134,7 @@ const PersonalInfo = () => {
                   {/* CONTACT NUMBER INPUT */}
 
                   <input
-                    className="px-2 TeamB_input-stylemb-7"
+                    className="px-2 TeamB_input-style mb-7"
                     placeholder="+63"
                     type="text"
                     id="ContactNumber"

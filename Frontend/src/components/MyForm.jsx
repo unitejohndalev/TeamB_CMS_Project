@@ -68,7 +68,7 @@ function MyForm() {
           className="flex flex-col w-[90%] min-h-[40vh] lg:mt-5 justify-between lg:flex lg:items-center">
           <div className="mt-10 h-[15vh] flex flex-col justify-between lg:w-[100%] lg:h-[17vh]">
             <input
-              className="input-style"
+              className="TeamB_input-style"
               placeholder="Email Address"
               type="email"
               name="instructor_email"
@@ -77,7 +77,7 @@ function MyForm() {
             />
 
             <input
-              className="input-style"
+              className="TeamB_input-style"
               placeholder="Password"
               type="password"
               name="instructor_password"

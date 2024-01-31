@@ -6,10 +6,10 @@
 /* *BUTTON STYLE */
 
 @layer components {
-  .TeamB_TeamB_btn-style {
+  .TeamB_btn-style {
     @apply bg-[#126912] rounded-sm py-2 lg:px-[2rem] lg:py-[.8rem] text-white font-bold;
   }
-  .TeamB_TeamB_input-style {
+  .TeamB_input-style {
     @apply drop-shadow-md px-4 pt-4 pb-2 placeholder:font-thin placeholder:text-[.9rem] w-full
     outline-none rounded-md;
   }
