@@ -22,9 +22,17 @@ const CourseOverviewById = () => {
 
   const loadChapters = async () => {
     try {
+
       const result = await axios.get(
         `http://localhost:8080/api/courses/byChapter/${id}`
       );
+
+      const result = await axios.get(`http://localhost:8080/api/courses/byChapter/${id}`);
+
+      const result = await axios.get(
+        `http://localhost:8080/api/courses/byChapter/${id}`
+      );
+
       // Ensure that result.data is always an array by converting it
       const coursesArray = Array.isArray(result.data)
         ? result.data
@@ -47,6 +55,7 @@ const CourseOverviewById = () => {
   return (
     <div className="relative h-full">
       <div className="h-[50vh] lg:max-w-[1080px] lg:flex lg:justify-center">
+
         {courses.map((chapter, idx) => {
           console.log(chapter.chapter.chapter_title);
           return (
@@ -54,6 +63,23 @@ const CourseOverviewById = () => {
               <div className="w-full m-auto mt-5">
                 <div className="flex">
                   <div
+
+                    className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
+              lg:h-[50px] lg:rounded-[1rem]"
+                  >
+                    <p className="text-shadow">CHAPTER {chapter.chapter.chapter_id}:</p>
+                    <p className="pl-2 lg:font-medium text-shadow">{chapter.chapter.chapter_title}</p>
+
+                  </div>
+                </div>
+                <Link className="flex ml-auto">
+                  <div
+                    onClick={() => handleEditClick(chapter.chapter_id)}
+                    className="flex items-center gap-2 pr-5 cursor-pointer"
+                  >
+                    <div className="text-[#4c604c] text-[1.5rem]">
+                      <FaEdit />
+
                     key={idx}
                     className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[85%] justify-between items-center">
                     <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
@@ -66,6 +92,7 @@ const CourseOverviewById = () => {
                       <p className="pl-2 lg:font-medium text-shadow">
                         {chapter.chapter.chapter_title}
                       </p>
+
                     </div>
                   </div>
                   <Link className="flex ml-auto">
@@ -105,7 +132,7 @@ const CourseOverviewById = () => {
               <span className="pr-4">
                 <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
               </span>
-              <span className="TeamB_text-shadow   lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+              <span className="text-shadow lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                 Add Chapter Title
               </span>
             </div>

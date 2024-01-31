@@ -18,7 +18,7 @@ const CreateNewChapterTitle = () => {
   /*January 17 2023 API connection from backend to front end displaying data */
 
   const [chapter, setChapter] = useState({
-    chapter_id: "",
+    // chapter_id: "",
     chapter_title: "",
   });
 
@@ -29,7 +29,7 @@ const CreateNewChapterTitle = () => {
   }, []);
 
   const loadChapters = async () => {
-    const result = await axios.get("http://localhost:8080/api/chapters");
+    const result = await axios.get(`http://localhost:8080/api/courses`);
     setChapters(result.data);
   };
 
@@ -40,7 +40,7 @@ const CreateNewChapterTitle = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", chapter);
-    await axios.post("http://localhost:8080/api/chapters", chapter);
+    await axios.post(`http://localhost:8080/api/courses`, chapter);
     navigate(-1);
   };
   //mockdata chapter destructure
@@ -131,8 +131,8 @@ const CreateNewChapterTitle = () => {
                       <span className="pr-3">
                         <TfiSave className="text-[2rem] text-white" />
                       </span>
-                      <button className="TeamB_text-shadow   lg:font-bold lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
-                        Save
+                      <button type="submit" className="TeamB_text-shadow   lg:font-bold lg:text-[1rem] 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+                        Save  
                       </button>
                     </div>
                   </div>
