@@ -1,3 +1,5 @@
+// 1/31/2024 junite, UI Modifications (blur and mt)
+
 import React, { useContext } from "react";
 import { DashBoardContext } from "../context/DashBoardContext";
 
@@ -10,7 +12,7 @@ const DashBoardCardHover = () => {
 
   return (
     <div className="">
-      <div className="flex items-center justify-center w-[98vw] pt-[50vh] backdrop-blur-sm">
+      <div className="flex items-center justify-center w-[98vw] pt-[20vh] backdrop-blur-[.1rem]">
         <div className="h-[85vh] w-[60vw]  bg-[#BCE8B1] rounded-lg">
           <div
             className="w-[100%] flex items-end justify-end relative"
@@ -22,9 +24,7 @@ const DashBoardCardHover = () => {
               onClick={() => setHoverClose(false)}>
               <IoMdClose />
             </span>
-            {hoverClose && (
-              <div className="absolute top-[-1rem] right-0">Close</div>
-            )}
+         
           </div>
 
           <div className="flex flex-col items-center justify-center w-full">

@@ -43,6 +43,7 @@ const CourseOverviewById = () => {
   return (
     <div className="relative h-full">
       <div className="h-[50vh] lg:max-w-[1080px] lg:flex lg:justify-center">
+
         {courses.map((chapter, idx) => {
           console.log(chapter.chapter.chapter_title)
           return (
@@ -60,6 +61,8 @@ const CourseOverviewById = () => {
                   >
                     <p className="text-shadow">CHAPTER {chapter.chapter.chapter_id}:</p>
                     <p className="pl-2 lg:font-medium text-shadow">{chapter.chapter.chapter_title}</p>
+
+      
                   </div>
                 </div>
                 <Link className="flex ml-auto">
@@ -95,7 +98,7 @@ const CourseOverviewById = () => {
               <span className="pr-4">
                 <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
               </span>
-              <span className="text-shadow lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+              <span className="TeamB_text-shadow   lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
                 Add Chapter Title
               </span>
             </div>

@@ -29,12 +29,8 @@ const PersonalInfo = () => {
 
   const handleInputChange = (e) => {
     setInstructor({ ...instructor, [e.target.name]: e.target.value });
-  
   };
 
-  
-
- 
   const {
     instructor_first_name,
     instructor_last_name,
@@ -42,21 +38,19 @@ const PersonalInfo = () => {
     instructor_contact_number,
   } = instructor;
 
-
-
- //edit update personal info
- const [editPersonalInfo, setEditPersonalInfo] = useState(true)
-  const [updatePersonalInfo, setUpdatePersonalInfo] = useState(false)
+  //edit update personal info
+  const [editPersonalInfo, setEditPersonalInfo] = useState(true);
+  const [updatePersonalInfo, setUpdatePersonalInfo] = useState(false);
 
   const showEdit = () => {
-    setEditPersonalInfo(true)
-    setUpdatePersonalInfo(false)
-  }
+    setEditPersonalInfo(true);
+    setUpdatePersonalInfo(false);
+  };
 
-    const showUpdate = () => {
-      setEditPersonalInfo(false);
-      setUpdatePersonalInfo(true);
-    };
+  const showUpdate = () => {
+    setEditPersonalInfo(false);
+    setUpdatePersonalInfo(true);
+  };
   return (
     <>
       {editPersonalInfo && (
@@ -85,7 +79,7 @@ const PersonalInfo = () => {
                     {/* FIRSTNAME INPUT */}
 
                     <input
-                      className="px-2 input-style "
+                      className="px-2 TeamB_input-style"
                       id="firstName"
                       type="text"
                       name="instructor_first_name" //should be edited
@@ -105,7 +99,7 @@ const PersonalInfo = () => {
                     {/* LASTNAME INPUT */}
 
                     <input
-                      className="px-2 input-style "
+                      className="px-2 TeamB_input-style"
                       id="lastName"
                       type="text"
                       name="instructor_last_name" //edit
@@ -127,7 +121,7 @@ const PersonalInfo = () => {
                   {/* EMAIL INPUT */}
 
                   <input
-                    className="px-2 input-style"
+                    className="px-2 TeamB_input-style"
                     id="Email"
                     type="number"
                     name="instructor_username" //edit
@@ -137,12 +131,10 @@ const PersonalInfo = () => {
                   />
                 </div>
                 <div className="relative">
-              
-
                   {/* CONTACT NUMBER INPUT */}
 
                   <input
-                    className="px-2 input-style mb-7"
+                    className="px-2 TeamB_input-style mb-7"
                     placeholder="+63"
                     type="text"
                     id="ContactNumber"
@@ -155,7 +147,7 @@ const PersonalInfo = () => {
                   <div className="lg:w-[100%] lg:flex lg:justify-end">
                     <button
                       onClick={showUpdate}
-                      className="w-full  btn-style lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
+                      className="w-full  TeamB_btn-style  lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full ">
                       Edit
                     </button>
                   </div>
