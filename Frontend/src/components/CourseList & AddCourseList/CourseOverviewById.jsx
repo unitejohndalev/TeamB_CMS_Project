@@ -20,7 +20,9 @@ const CourseOverviewById = () => {
 
   const loadChapters = async () => {
     try {
-      const result = await axios.get(`http://localhost:8080/api/courses/${id}`);
+      const result = await axios.get(
+        `http://localhost:8080/api/courses/byChapter/${id}`
+      );
       // Ensure that result.data is always an array by converting it
       const coursesArray = Array.isArray(result.data)
         ? result.data
@@ -30,7 +32,7 @@ const CourseOverviewById = () => {
       console.error("Error loading chapters:", error);
     }
   };
-  console.log(courses);
+  // console.log(courses);
 
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
@@ -43,44 +45,42 @@ const CourseOverviewById = () => {
   return (
     <div className="relative h-full">
       <div className="h-[50vh] lg:max-w-[1080px] lg:flex lg:justify-center">
-        {courses.map((course, idx) => (
-          <div key={idx} className="lg:w-[80%]">
-            {Array.isArray(course.chapters) &&
-              course.chapters.map((chapter, idx) => (
-                <div key={idx} className="mt-5 w-[90%] m-auto">
-                  <div className="flex">
+        {courses.map((chapter, idx) => {
+          console.log(chapter.chapter.chapter_title);
+          return (
+            <div key={idx} className="lg:w-[80%]">
+              <div className="mt-5 w-[90%] m-auto">
+                <div className="flex">
+                  <div
+                    key={idx}
+                    className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
+                    <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
                     <div
-                      key={idx}
-                      className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[80%] justify-between items-center">
-                      <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
-                      <div
-                        className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
+                      className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
-                        <p className="TeamB_text-shadow  ">
-                          CHAPTER {chapter.chapter_id}:
-                        </p>
-                        <p className="pl-2 lg:font-medium TeamB_text-shadow  ">
-                          {chapter.chapter_title}
-                        </p>
-                      </div>
+                      <p className="text-shadow">
+                        CHAPTER {chapter.chapter.chapter_id}:
+                      </p>
+                      <p className="pl-2 lg:font-medium text-shadow">
+                        {chapter.chapter.chapter_title}
+                      </p>
                     </div>
-                    <Link className="flex ml-auto">
-                      <div
-                        onClick={() => handleEditClick(chapter.chapter_id)}
-                        className="flex items-center gap-2 pr-5 cursor-pointer">
-                        <div className="text-[#4c604c] text-[1.5rem]">
-                          <FaEdit />
-                        </div>
-                        <span className="text-[#126912] font-semibold">
-                          Edit
-                        </span>
-                      </div>
-                    </Link>
                   </div>
+                  <Link className="flex ml-auto">
+                    <div
+                      onClick={() => handleEditClick(chapter.chapter.chapter_id)}
+                      className="flex items-center gap-2 pr-5 cursor-pointer">
+                      <div className="text-[#4c604c] text-[1.5rem]">
+                        <FaEdit />
+                      </div>
+                      <span className="text-[#126912] font-semibold">Edit</span>
+                    </div>
+                  </Link>
                 </div>
-              ))}
-          </div>
-        ))}
+              </div>
+            </div>
+          );
+        })}{" "}
         {editModalVisible && (
           <EditChapterTitle
             chapterId={selectedChapterId}
