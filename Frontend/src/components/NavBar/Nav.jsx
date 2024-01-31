@@ -86,6 +86,7 @@ const Nav = () => {
               className="text-[2rem]"
               onClick={() => setShow((prev) => !prev)}
             />
+            {/* 01/31/2024 - Cedrick - Adjusted the design of nav bar and changed the picture in the profile */}
             {show && <NavSideBar />}
           </div>
           <div className="drop-shadow-lg shadow-lg  bg-[#ffffff] cursor-pointer lg:text-[1rem] lg:w-[18vw] 2xl:w-[193px] h-[7vh] rounded-md ml-auto hidden border-lime-900 border-[.1rem] lg:flex justify-between items-center p-1 text-[#126912]">
