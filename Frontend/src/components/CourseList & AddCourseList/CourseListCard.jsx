@@ -1,7 +1,7 @@
 /*January 10, 2024*/
 //1/30/2024 junite, created modal show and hide UI and Functionalities for CourseList
 //1/31/2024 junite, UI modifications
-//2/1/2024 junite, UI modifications, mockdata inserted and used for UI test
+//2/1/2024 junite, UI modifications and functionalities, mockdata inserted and used for UI test
 
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { IoAdd } from "react-icons/io5";
@@ -115,8 +115,8 @@ const CourseListCard = () => {
                       </span>
                       {/* used showEditTitle state and editCourseId state to strictly compare if course.id is strictly equal then it'll show just the current course to be edited and the rest to hide */}
                       {showEditTitle && editCourseId === course.id && (
-                        <div className="absolute z-10">
-                          <div className="lg:w-[1080px] ">
+                        <div className="absolute z-10 lg:w-full ">
+                          <div className="w-[100%] ">
                             <CourseTitleModal
                             //  past courseTitle as props to set the value of input in CourseTitleModal
                               courseTitle={course.courseTitle}

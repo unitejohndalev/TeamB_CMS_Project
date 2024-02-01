@@ -4,7 +4,7 @@ import React from 'react'
 const CourseTitleModal = ({  courseTitle }) => {
   return (
     <>
-      <div className="w-[100%]  h-full pb-32 backdrop-blur-[.1rem] ">
+      <div className="w-[100%] h-full pb-32 backdrop-blur-[.1rem] ">
         <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
           <form action="" className="w-[80%] m-auto py-2 ">
             <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
