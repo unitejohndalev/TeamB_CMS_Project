@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 //2/1/2024 junite, created UI Modal for course title edit, completed
-import React from 'react'
+import React from "react";
 
 const CourseTitleModal = ({ courseTitle }) => {
   return (
@@ -17,12 +17,11 @@ const CourseTitleModal = ({ courseTitle }) => {
               type="text"
               className="TeamB_input-style bg-[#BCE8B1] opacity-[50%] uppercase p-2"
               defaultValue={courseTitle}
+              required
             />
             <div className="pt-8 lg:w-full lg:flex lg:justify-end">
               <div className="flex gap-x-5">
-                <button
-                  className="xl:text-[24px]  lg:text-[1rem]"
-                  onClick="">
+                <button className="xl:text-[24px]  lg:text-[1rem]" onClick="">
                   Cancel
                 </button>
 
@@ -40,4 +39,4 @@ const CourseTitleModal = ({ courseTitle }) => {
   );
 };
 
-export default CourseTitleModal
+export default CourseTitleModal;
