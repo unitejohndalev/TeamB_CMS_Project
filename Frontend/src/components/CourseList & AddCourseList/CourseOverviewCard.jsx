@@ -46,8 +46,8 @@ const CourseOverviewCard = () => {
     <>
       {/*January 19 2024 -gem modify responsiveness*/}
 
-      <div className="relative m-auto h-full mt-[70px]  ">
-        <div className="relative w-full h-full m-auto ">
+      <div className="relative w-full m-auto h-[120vh] mt-[70px]  ">
+        <div className="relative w-full h-[120vh] m-auto ">
           {/* <div
             className="absolute left-2 top-0 flex items-center cursor-pointer w-[10%]"
             onClick={goBack}>
@@ -56,7 +56,7 @@ const CourseOverviewCard = () => {
             </span>
             <span className="text-[1rem] pl-1">Back</span>
           </div> */}
-          <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[70%] lg:m-auto  items-center gap-8">
+          <div className="w-[90%] mt-10 flex mx-auto flex-col lg:center-row lg:w-[90%] lg:m-auto  items-center gap-8">
             <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
               <p className="lg:font-bold TeamB_text-shadow ">
                 Course Overview
@@ -69,10 +69,11 @@ const CourseOverviewCard = () => {
               <div className="lg:max-w-[1000px] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
                 <div className="max-w-[30%] bg-[#126912] h-[2vh] lg:rounded-lg"></div>
               </div>
-              <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px] m-auto pt-2">
+              <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px] m-auto pt-4 mb-5">
                 <span className=" TeamB_text-shadow">Lessons</span>
               </div>
-              <div>
+              <div className="flex justify-center items-center">
+        
                 <CourseOverviewById />
               </div>
             </div>
@@ -85,7 +86,7 @@ const CourseOverviewCard = () => {
             {/*January 19 2024 -gem modify buttons add footer*/}
 
             <div>
-              <footer className="flex justify-center pt-20 pb-5">
+              <footer className="flex justify-center pb-5">
                 <div>
                   <p className="text-[#4D9349] font-medium">
                     All Rights Reserved | Copyright 2024

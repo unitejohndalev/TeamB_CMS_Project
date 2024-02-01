@@ -53,7 +53,7 @@ function App() {
           <Route path="/dropdown" element={<dropdown/>}/>
           <Route path="/editchaptertitle/:id" element={<EditChapterTitle />} />
           <Route
-            path="/createnewchaptertitle/:id"
+            path="/createnewchaptertitle" //path="/createnewchaptertitle/:id"
             element={<CreateNewChapterTitle />}
           />
           <Route path="/addtopictitlepage" element={<AddTopicTitlePage />} />

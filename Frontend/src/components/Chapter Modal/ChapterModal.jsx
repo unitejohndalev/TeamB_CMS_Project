@@ -1,7 +1,7 @@
 //Gem Ramirez February 2 2024
 import React from 'react'
 
-const ChapterModal = ({}) => {
+const ChapterModal = ({chapterTitle}) => {
   return (
     <div>
            <div className="w-[100%]  h-full pb-32 backdrop-blur-[.1rem] ">
@@ -12,7 +12,7 @@ const ChapterModal = ({}) => {
                 New Chapter Title
               </p>
             </div>
-            <input type="text" className="TeamB_input-style" defaultValue={courseTitle}/>
+            <input type="text" className="TeamB_input-style" defaultValue={chapterTitle}/>
             <div className="pt-8 lg:w-full lg:flex lg:justify-end">
               <div className="flex gap-x-5">
                 <button className="xl:text-[24px]  lg:text-[1rem]">
