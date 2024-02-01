@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 //import logo for profile pic
 import profilePic from "../../assets/Registration.png";
+import signature from "../../assets/signature.png"
 import Footer from "../Footer";
 import PersonalEdit from "./PersonalEdit";
 
@@ -54,11 +55,7 @@ const PersonalInfo = () => {
   return (
     <>
       {editPersonalInfo && (
-        <div className="relative w-[90%] flex flex-col justify-end items-start h-full lg:w-[700px] lg:h-[480px] xl:w-[979px] xl:h-[702px] bg-[#126912] lg:rounded-md shadow-md">
-          <p className="absolute top-0  text-white lg:text-[1.5rem] xl:text-[32px] lg:italic lg:pl-5">
-            Personal Information
-          </p>
-          <div className="absolute bottom-[-.3rem] flex flex-col h-full gap-y-5 w-[90%] lg:h-[450px]  lg:w-[680px]  xl:h-[655px] xl:w-[948px] bg-[#BCE8B1] lg:rounded-b-md lg:rounded-tr-md shadow-md">
+          <div className="static bottom-[-.3rem] flex flex-col h-full gap-y-5 w-[90%] lg:h-[450px]  lg:w-[680px]  xl:h-[655px] xl:w-[948px] bg-[#BCE8B1] rounded shadow-md">
             <div className="lg:w-[90%] lg:m-auto">
               <div className="lg:flex lg:w-[100%] lg:gap-x-5">
                 <div className="lg:w-[30%] ">
@@ -67,6 +64,7 @@ const PersonalInfo = () => {
                     alt=""
                     className=" pb-4 hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
                   />
+                  
                 </div>
                 <div className="mt-3 relative lg:flex lg:flex-col lg:w-[70%] xl:gap-y-10 lg:gap-y-7">
                   <div className="relative">
@@ -107,10 +105,7 @@ const PersonalInfo = () => {
                       onChange={(e) => handleInputChange(e)}
                       disabled
                     />
-                  </div>
-                </div>
-              </div>
-              <div className="mt-3 lg:flex lg:gap-y-7 lg:flex-col xl:gap-y-10">
+                     <div className="mt-3 lg:flex lg:gap-y-7 lg:flex-col xl:gap-y-10">
                 <div className="relative">
                   <label
                     htmlFor="Email"
@@ -144,6 +139,10 @@ const PersonalInfo = () => {
                     disabled
                   />
                   <div />
+                  </div>
+                </div>
+              </div>
+             
                   <div className="lg:w-[100%] lg:flex lg:justify-end">
                     <button
                       onClick={showUpdate}
@@ -155,7 +154,6 @@ const PersonalInfo = () => {
               </div>
             </div>
           </div>
-        </div>
       )}
       {updatePersonalInfo && <PersonalEdit />}
     </>
