@@ -1,5 +1,6 @@
 /*January 10, 2024*/
 //1/30/2024 junite, created modal show and hide UI and Functionalities for CourseList
+//1/31/2024 junite, UI modifications
 
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { IoAdd } from "react-icons/io5";
@@ -14,6 +15,9 @@ import CopyofCreateNewCourse from "./CopyofCreateNewCourse";
 
 //import course context
 import { CourseContext } from "../context/CourseContext";
+
+//edit icon
+import { FaEdit } from "react-icons/fa";
 
 const CourseListCard = () => {
   // *NOTE
@@ -70,23 +74,25 @@ const CourseListCard = () => {
               {currentCourse.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
-                    <Link to={`/courseoverview/${course.course_id}`}>
-                      <div className="flex px-0 py-0 rounded-md xl:h-[115px]">
-                        <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
-                          <p className="lg:font-medium TeamB_text-shadow  ">
-                            PL00{course.course_id}
-                          </p>
-                        </div>
-
-                        <p
-                          className="text-white TeamB_text-shadow   lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
-
-
-                   rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
-                          {course.course_title}
+                    <div className="flex px-0 py-0 rounded-md xl:h-[115px] relative ">
+                      <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
+                        <p className="lg:font-medium TeamB_text-shadow ">
+                          PL00{course.course_id}
                         </p>
                       </div>
-                    </Link>
+
+                      <Link
+                        to={`/courseoverview/${course.course_id}`}
+                        className="text-white TeamB_text-shadow  lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
+                            rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
+                        {course.course_title}
+                      </Link>
+                      <Link >
+                        <span className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
+                          <FaEdit />
+                        </span>
+                      </Link>
+                    </div>
                   </div>
                 );
               })}
