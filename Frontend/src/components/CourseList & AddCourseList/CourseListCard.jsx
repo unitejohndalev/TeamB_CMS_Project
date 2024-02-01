@@ -123,7 +123,7 @@ const CourseListCard = () => {
                         {/* change to course_title for api connection */}
                         {course.courseTitle}
                       </Link>
-
+                  
                       <span
                         onClick={() => {
                           // function to show and hide modal

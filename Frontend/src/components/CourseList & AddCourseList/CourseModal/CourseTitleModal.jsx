@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
+//2/1/2024 junite, created UI Modal, completed
 import React from 'react'
 
-const CourseTitleModal = ({ courseTitle,showEditTitle }) => {
+const CourseTitleModal = ({ courseTitle }) => {
   return (
     <>
       <div className="w-[100%] h-[100vh] pt-[150px] pb-32 backdrop-blur-[.1rem] ">
