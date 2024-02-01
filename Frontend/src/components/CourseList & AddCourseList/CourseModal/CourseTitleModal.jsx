@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 
-const CourseTitleModal = ({  courseTitle }) => {
+const CourseTitleModal = ({ courseTitle,showEditTitle }) => {
   return (
     <>
       <div className="w-[100%] h-[100vh] pt-[150px] pb-32 backdrop-blur-[.1rem] ">
@@ -19,7 +19,9 @@ const CourseTitleModal = ({  courseTitle }) => {
             />
             <div className="pt-8 lg:w-full lg:flex lg:justify-end">
               <div className="flex gap-x-5">
-                <button className="xl:text-[24px]  lg:text-[1rem]">
+                <button
+                  className="xl:text-[24px]  lg:text-[1rem]"
+                  onClick="">
                   Cancel
                 </button>
 
