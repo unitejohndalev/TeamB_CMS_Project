@@ -1,7 +1,7 @@
 /*January 10, 2024*/
 //1/30/2024 junite, created modal show and hide UI and Functionalities for CourseList
 //1/31/2024 junite, UI modifications
-//2/1/2024 junite, UI modifications, mockdata inserted and used for UI test
+//2/1/2024 junite, UI modifications and functionalities, mockdata inserted and used for UI test
 
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { IoAdd } from "react-icons/io5";
@@ -14,6 +14,9 @@ import data from "../../mockData/CourselistCard.json";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import CopyofCreateNewCourse from "./CopyofCreateNewCourse";
+
+//import search icon
+import { IoSearchSharp } from "react-icons/io5";
 
 //import course context
 import { CourseContext } from "../context/CourseContext";
@@ -68,6 +71,13 @@ const CourseListCard = () => {
   //state for modal by id
   const [editCourseId, setEditCourseId] = useState(null);
 
+  // Add a new state variable for modal visibility and position
+  const [modalPosition, setModalPosition] = useState({
+    visible: false,
+    top: "50%",
+    left: "50%",
+  });
+
   return (
     <>
       {/* 1/12/2024 UI development and Mobile responsiveness */}
@@ -77,17 +87,28 @@ const CourseListCard = () => {
         <div className="" ref={pageTopRef}>
           <div className="  xl:w-[1244px]  w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center lg:h-full relative gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
-            <div className="text-black lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center ">
+            <div className="text-black  w-[60vw] lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem]  flex justify-between items-center ">
               <p className=" 2xl:text-[48px] lg:font-bold TeamB_text-shadow   ">
                 Course List
               </p>
+              <div className="relative  flex items-center lg:w-[300px] 2xl:w-[544px] h-[35px] 2xl:h-[53px]  bg-white outline-none rounded-md border-b-[.1rem] border-black">
+                <input
+                  type="text"
+                  className="outline-none font-normal pl-2 text-[1.3rem] lg:w-[300px] 2xl:w-[544px] h-[35px] 2xl:h-[53px] rounded-md"
+                  name=""
+                  id=""
+                />
+                <div className="absolute top-1 right-2">
+                  <IoSearchSharp className="text-[1.5rem]" />
+                </div>
+              </div>
             </div>
             <div className="h-full">
               {/* change to currentCourse for API connection */}
               {courselist.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
-                    <div className="flex px-0 py-0 rounded-md xl:h-[115px] relative ">
+                    <div className=" relative flex px-0 py-0 rounded-md xl:h-[115px]  ">
                       <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
                         <p className="lg:font-medium TeamB_text-shadow ">
                           {/* change to course_id for api connection */}
@@ -102,7 +123,7 @@ const CourseListCard = () => {
                         {/* change to course_title for api connection */}
                         {course.courseTitle}
                       </Link>
-
+                  
                       <span
                         onClick={() => {
                           setShowEditTitle((prev) => !prev);
@@ -112,11 +133,17 @@ const CourseListCard = () => {
                         <FaEdit />
                       </span>
                       {showEditTitle && editCourseId === course.id && (
-                        <div className="absolute z-10">
-                          <div className="lg:w-[1080px] ">
+                        <div className=" lg:w-full h-full fixed top-0 left-0  z-10 ">
+                          <div className="w-[100%]">
                             <CourseTitleModal
+
                               courseId={editCourseId}
+
+                              //  past courseTitle as props to set the value of input in CourseTitleModal
+
                               courseTitle={course.courseTitle}
+                          
+
                             />
                           </div>
                         </div>

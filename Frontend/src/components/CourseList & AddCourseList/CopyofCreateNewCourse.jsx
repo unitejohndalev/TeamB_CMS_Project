@@ -1,5 +1,6 @@
 //1/30/2024 junite, UI modal and functionalities for create course page
 // 1/31/2024 junite, UI modifications
+//2/1/2024 junite, UI modifications and added success pop when submit form
 
 import { useContext, useState } from "react";
 import axios from "axios";
@@ -48,6 +49,8 @@ const CopyofCreateNewCourse = () => {
     }
   };
 
+
+
   const handleSubmit = async (e) => {
     console.log("Form submitted:", course);
 
@@ -55,18 +58,20 @@ const CopyofCreateNewCourse = () => {
     try {
       await axios.post("http://localhost:8080/api/courses", course);
       setFormSubmitted(true);
+     
     } catch (error) {
       console.error("Error submitting form:", error);
       // Handle error if the API call fails
+  
+
     }
+  
   };
   console.log(course);
   //react hook for tooltip
   const [showTooltipCourseTitle, setShowTooltipCourseTitle] = useState(false);
   const [showTooltipCourseDescription, setShowTooltipCourseDescription] =
     useState(false);
-
-    
 
   return (
     <>
@@ -137,7 +142,8 @@ const CopyofCreateNewCourse = () => {
 
                   <button
                     className="drop-shadow-md TeamB_text-shadow   lg:w-[90px] lg:h-[40px] lg:rounded-[80px] lg:text-[1rem] xl:w-[114px] xl:h-[58px] xl:rounded-[100px] bg-[#126912] xl:text-[24px] text-[#FFFFFF]  font-bold"
-                    type="submit">
+                    type="submit"
+                 >
                     <p>Create</p>
                   </button>
                 </div>
@@ -145,6 +151,7 @@ const CopyofCreateNewCourse = () => {
             </form>
           </div>
         )}
+   
       </div>
     </>
   );

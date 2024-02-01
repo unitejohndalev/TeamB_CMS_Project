@@ -18,7 +18,7 @@
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .TeamB_no-scrollbar::-webkit-scrollbar {
-  background-color: black;
+  background-color: transparent;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */

@@ -64,8 +64,7 @@ const AddTopicTitlePage = () => {
         <div className="h-[100vh] flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
           <div
             className="flex items-center mt-3 cursor-pointer "
-            onClick={goBack}
-          >
+            onClick={goBack}>
             <span className="text-[2.5rem] text-white">
               <IoArrowBackCircle />
             </span>
@@ -125,9 +124,9 @@ const AddTopicTitlePage = () => {
                 maxLength={"70"}
                 className="bg-[#BCE8B1] rounded-lg placeholder:text-[#626262] placeholder:pl-2 outline-none pl-2"
                 value={course_title}
-                onChange={(e) => handleInputChange(e, 70, 'course_title')}
+                onChange={(e) => handleInputChange(e, 70, "course_title")}
               />
-              {renderPopup('course_title', 'Text character', 70)}
+              {renderPopup("course_title", "Text character", 70)}
             </div>
             <textarea
               name=""
@@ -137,13 +136,11 @@ const AddTopicTitlePage = () => {
               placeholder="Add Topic Description"
               maxLength={"500"}
               value={course.course_description}
-              className="bg-[#BCE8B1] resize-none  lg:min-w-[100%] 2xl:h-[264px] lg:h-[25vh] placeholder:font-bold placeholder:text-center placeholder:py-16
+              className="bg-[#BCE8B1] resize-none  lg:min-w-[100%] 2xl:h-[264px] lg:h-[30vh] placeholder:font-bold placeholder:text-center placeholder:py-16
               outline-none pl-3 pt-3 rounded-lg placeholder:text-[#070101] placeholder:text-opacity-[55%] mt-5"
-              onChange={(e) =>
-                handleInputChange(e, 500, 'course_description')
-              }
+              onChange={(e) => handleInputChange(e, 500, "course_description")}
             />
-            {renderPopup('course_description', 'Text character', 500)}
+            {renderPopup("course_description", "Text character", 500)}
           </div>
           <div className="flex w-[90%] m-auto items-center justify-center lg:gap-x-[5rem] lg:mt-[3rem]">
             <div className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
