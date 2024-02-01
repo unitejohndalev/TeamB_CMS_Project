@@ -44,7 +44,7 @@ const CreateNewChapterTitle = () => {
   //   navigate(-1);
   // };
   //mockdata chapter destructure
-  const { chapter_title } = chapter;
+  const { chapterlist } = data;
 
   //back function
   const navigate = useNavigate();
@@ -57,7 +57,7 @@ const CreateNewChapterTitle = () => {
 
   return (
     <>
-      {/*January 19 2024 -gem modify responsiveness*/}
+      {/* January 19 2024 -gem modify responsiveness */}
       <div className="relative w-full h-full mt-[70px]  ">
         <div className="relative w-full h-full mt-5 ">
           <div
@@ -86,7 +86,7 @@ const CreateNewChapterTitle = () => {
               </div>
             </div>
 
-            {chapters.map((chapter, idx) => {
+            {chapterlist.map((chapter, idx) => {
               return (
                 <div
                   key={idx}
@@ -96,10 +96,10 @@ const CreateNewChapterTitle = () => {
                     className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
                     <p className="TeamB_text-shadow  ">
-                      CHAPTER {chapter.chapter_id}:
+                      CHAPTER {chapter.chapterId}:
                     </p>
                     <p className="pl-2 lg:font-medium TeamB_text-shadow  ">
-                      {chapter.chapter_title}
+                      {chapter.chapterTitle}
                     </p>
                   </div>
                 </div>

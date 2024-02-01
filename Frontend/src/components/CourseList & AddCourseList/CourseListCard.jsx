@@ -126,20 +126,21 @@ const CourseListCard = () => {
                   
                       <span
                         onClick={() => {
-                          // function to show and hide modal
                           setShowEditTitle((prev) => !prev);
-                          //store course.id in state and to use it to know what to show only
                           setEditCourseId(course.id);
                         }}
                         className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
                         <FaEdit />
                       </span>
-                      {/* used showEditTitle state and editCourseId state to strictly compare if course.id is strictly equal then it'll show just the current course to be edited and the rest to hide */}
                       {showEditTitle && editCourseId === course.id && (
                         <div className=" lg:w-full h-full fixed top-0 left-0  z-10 ">
                           <div className="w-[100%]">
                             <CourseTitleModal
+
+                              courseId={editCourseId}
+
                               //  past courseTitle as props to set the value of input in CourseTitleModal
+
                               courseTitle={course.courseTitle}
                           
 
