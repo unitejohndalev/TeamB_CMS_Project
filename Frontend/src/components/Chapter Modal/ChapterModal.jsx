@@ -1,37 +1,37 @@
 //Gem Ramirez February 2 2024
 import React from 'react'
 
-const ChapterModal = ({chapterTitle}) => {
+const ChapterModal = ({ chapterTitle, deleteChapter }) => {
   return (
-    <div>
-           <div className="w-[100%]  h-full pb-32 backdrop-blur-[.1rem] ">
-        <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
-          <form action="" className="w-[80%] m-auto py-2 ">
-            <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
-              <p className=" lg:font-bold TeamB_text-shadow lg:text-[1.3rem]  xl:text-[24px] mt-5">
-                New Chapter Title
-              </p>
-            </div>
-            <input type="text" className="TeamB_input-style" defaultValue={chapterTitle}/>
-            <div className="pt-8 lg:w-full lg:flex lg:justify-end">
-              <div className="flex gap-x-5">
-                <button className="xl:text-[24px]  lg:text-[1rem]">
-                  Cancel
-                </button>
-
-                <button
-                  className="drop-shadow-md TeamB_text-shadow   lg:w-[90px] lg:h-[40px] lg:rounded-[80px] lg:text-[1rem] xl:w-[114px] xl:h-[58px] xl:rounded-[100px] bg-[#126912] xl:text-[24px] text-[#FFFFFF]  font-bold"
-                  type="submit">
-                  <p>Create</p>
-                </button>
-              </div>
-            </div>
-          </form>
+    <>
+    <div className="w-[100%]  h-full pb-32 backdrop-blur-[.1rem] ">
+    <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
+      <form action="" className="w-[80%] m-auto py-2 ">
+        <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
+          <p className=" lg:font-bold TeamB_text-shadow lg:text-[1.3rem]  xl:text-[24px] mt-5">
+            Rename Chapter Title
+          </p>
         </div>
-      </div>
+        <input type="text" className="TeamB_input-style" defaultValue={chapterTitle}/>
+        <div className="pt-8 lg:w-full lg:flex lg:justify-end">
+          <div className="flex gap-x-5">
+            <button className="xl:text-[24px]  lg:text-[1rem]">
+              Cancel
+            </button>
+
+            <button
+              className="drop-shadow-md TeamB_text-shadow   lg:w-[90px] lg:h-[40px] lg:rounded-[80px] lg:text-[1rem] xl:w-[114px] xl:h-[58px] xl:rounded-[100px] bg-[#126912] xl:text-[24px] text-[#FFFFFF]  font-bold"
+              type="submit">
+              <p>Create</p>
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  )
-}
+  </div>
+  </>
+  );
+};
 
 export default ChapterModal
 //Gem Ramirez February 2 2024
