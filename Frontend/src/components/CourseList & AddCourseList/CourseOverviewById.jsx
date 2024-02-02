@@ -1,16 +1,19 @@
+//february 3 modification of ui and functionalities -gem
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { IoAdd } from "react-icons/io5";
 import ChapterModal from "../Chapter Modal/ChapterModal";
+import DeleteChapterModal from "../Chapter Modal/DeleteChapterModal";
 //edit icon
 import { FaEdit } from "react-icons/fa";
 //delete icon
 import { RiDeleteBinLine } from "react-icons/ri";
 import EditChapterTitle from "./EditChapterTitle";
-// import { CourseContext } from "../context/CourseContext";
-// import { ChapterContext } from "../context/ChapterContext";
+
+
+import { IoSearchSharp } from "react-icons/io5";
 
 import CopyofCreateChapterTitle from "./CopyofCreateChapterTitle";
 
@@ -52,6 +55,7 @@ const CourseOverviewById = () => {
 
   const [createModalVisible, setCreateModalVisible]= useState(false);
   const [editModalVisible, setEditModalVisible] = useState(false);
+  const [deleteModalVisible, setDeleteModalVisible] = useState(false);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
 
   const handleEditClick = (chapterId) => {
@@ -61,7 +65,8 @@ const CourseOverviewById = () => {
 
   const handleDeleteChapter = (chapterId) =>{
       //  await axios.delete(`http://localhost:8080/api/chapters/${chapterId}`);
-      setChapters(chapters.filter((chapter) => chapter.chapId !== chapterId));
+      setSelectedChapterId(chapterId);
+      setDeleteModalVisible(true);
     
   }
   console.log(data);
@@ -97,6 +102,7 @@ const CourseOverviewById = () => {
 
                     
                   </div>
+                  
                   <Link className="flex absolute right-2 ">
                       <div
                         
@@ -117,7 +123,7 @@ const CourseOverviewById = () => {
           );
         })}{" "}
         {editModalVisible && (
-           <div className="absolute z-10">
+           <div className="fixed top-9 left-20 pl-10 w-full h-full">
            <div className="lg:w-[1080px] ">
           <ChapterModal
             chapterId={selectedChapterId}
@@ -125,10 +131,19 @@ const CourseOverviewById = () => {
             onSaved={() => setEditModalVisible(false)}
           />
            </div>
-           <span> <div className="text-[1.3rem] 2xl:text-[2rem]  text-white" >
-                          <RiDeleteBinLine />
-                        </div></span>
+          
           </div>
+        )}
+        {deleteModalVisible && (
+          <div className="fixed top-9 left-20 pl-10 w-full h-full">
+             <div className="lg:w-[1080px] ">
+              <DeleteChapterModal
+               chapterId={selectedChapterId}
+               onClose={() => setDeleteModalVisible(false)}
+               onSaved={() => setDeleteModalVisible(false)}
+              />
+              </div>
+              </div>
         )}
 
       <div className="w-full lg:w-[12rem] m-auto lg:flex lg:justify-center lg:items-center">
@@ -165,3 +180,4 @@ const CourseOverviewById = () => {
 };
 
 export default CourseOverviewById;
+//february 3 modification of ui and functionalities -gem

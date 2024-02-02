@@ -6,7 +6,8 @@ import { TfiSave } from "react-icons/tfi";
 //import mockdata
 import data from "../../mockData/CourseOverviewCard.json";
 
-//edit icon
+//import search icon
+import { IoSearchSharp } from "react-icons/io5";
 //edit icon
 import { FaEdit } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
@@ -18,16 +19,20 @@ import EditChapterTitle from "./EditChapterTitle";
 import CourseOverviewById from "./CourseOverviewById";
 
 const CourseOverviewCard = () => {
+  const [chapter, setChapter] = useState({
+    // chapter_id: "",
+    chapter_title: "",
+  });
   /*January 17 2023 API connection from backend to front end displaying data */
 
   //mockdata chapter
 
-  //back function
-  const navigate = useNavigate();
+  // //back function
+  // const navigate = useNavigate();
 
-  const goBack = () => {
-    navigate(-1);
-  };
+  // const goBack = () => {
+  //   navigate(-1);
+  // };
 
   //react hook for edit and save chapter title
   const [showSave, setShowSave] = useState(false);
@@ -42,6 +47,11 @@ const CourseOverviewCard = () => {
     setShowSave(false);
   };
 
+  // const handleSearchChange = (e) => {
+  //   setSearchTerm(e.target.value);
+  // };
+
+  const {chapter_title} = chapter;
   return (
     <>
       {/*January 19 2024 -gem modify responsiveness*/}
@@ -63,8 +73,22 @@ const CourseOverviewCard = () => {
               </p>
             </div>
             <div className="w-full lg:max-w-[800px]">
-              <div className="pb-2 w-full flex mx-auto flex-col lg:text-[1.5rem] lg:right-row lg:w-[98%] lg:m-auto  items-right">
-                <p className="lg:font-bold TeamB_text-shadow ">HTML And CSS</p>
+              <div className="text-black  w-[60vw] lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem]  flex justify-between items-center">
+                <p className="lg:font-bold TeamB_text-shadow">HTML And CSS</p>
+                
+                <div className="relative  flex items-center lg:w-[300px] 2xl:w-[544px] h-[35px] 2xl:h-[53px]  bg-white outline-none rounded-md border-b-[.1rem] border-black">
+                <input
+                 type="text"
+                 className="outline-none font-normal pl-2 text-[1.3rem] w-full h-[35px] rounded-md"
+                 placeholder="Search"
+                 name="course_title"
+                id = ""
+              
+                />
+                <div className="absolute top-1 right-2">
+                  <IoSearchSharp className="text-[1.5rem]" />
+                </div>
+              </div>
               </div>
               <div className="lg:max-w-[1000px] bg-[#BCE8B1] h-[2vh] items-center lg:rounded-lg">
                 <div className="max-w-[30%] bg-[#126912] h-[2vh] lg:rounded-lg"></div>

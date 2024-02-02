@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 //import mock data
 import data from "../../mockData/CourselistCard.json";
 
+
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import CopyofCreateNewCourse from "./CopyofCreateNewCourse";
@@ -124,30 +125,30 @@ const CourseListCard = () => {
                         {course.courseTitle}
                       </Link>
                   
-                      <span
-                        onClick={() => {
-                          setShowEditTitle((prev) => !prev);
-                          setEditCourseId(course.id);
-                        }}
-                        className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
-                        <FaEdit />
-                      </span>
-                      {showEditTitle && editCourseId === course.id && (
-                        <div className=" lg:w-full h-full fixed top-0 left-0  z-10 ">
-                          <div className="w-[100%]">
-                            <CourseTitleModal
+                        <span
+                          onClick={() => {
+                            setShowEditTitle((prev) => !prev);
+                            setEditCourseId(course.id);
+                          }}
+                          className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
+                          <FaEdit />
+                        </span>
+                        {showEditTitle && editCourseId === course.id && (
+                          <div className=" lg:w-full h-full fixed top-0 left-0  z-10 ">
+                            <div className="w-[100%]">
+                              <CourseTitleModal
 
-                              courseId={editCourseId}
+                                courseId={editCourseId}
 
-                              //  past courseTitle as props to set the value of input in CourseTitleModal
+                                //  past courseTitle as props to set the value of input in CourseTitleModal
 
-                              courseTitle={course.courseTitle}
-                          
+                                courseTitle={course.courseTitle}
+                            
 
-                            />
+                              />
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
                     </div>
                   </div>
                 );

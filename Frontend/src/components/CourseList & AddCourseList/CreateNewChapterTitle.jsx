@@ -1,3 +1,6 @@
+//february 2 2024 creation of this page and UI -gem
+//february 3 modification of ui and functionalities -gem
+
 //display chapter title
 
 import React, { useState, useEffect } from "react";
@@ -117,7 +120,6 @@ const CreateNewChapterTitle = () => {
                 </div>
               </footer>
             </div>
-            {/*January 19 2024 -gem modify buttonUI and add footer*/}
           </div>
         </div>
       </div>
@@ -126,4 +128,6 @@ const CreateNewChapterTitle = () => {
 };
 
 export default CreateNewChapterTitle;
-// 1/19/2024
+
+//february 2 2024 creation of this page and UI -gem 
+//february 3 modification of ui and functionalities -gem
