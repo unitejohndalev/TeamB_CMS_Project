@@ -1,3 +1,6 @@
+//2/2/2024 junite, added edit topic component
+
+
 import { Route, Routes } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import Nav from "./components/NavBar/Nav";
@@ -36,7 +39,9 @@ const CreateNewChapterTitle = lazy(() =>
 );
 const CreateNewCourseCopy = lazy(() =>
   import("./components/CourseList & AddCourseList/CreateCourse/CreateNewCourse")
-);
+); 
+
+const EditTopic = lazy(() => import("./components/Topic/TopicPages/EditTopic"))
 
 
 function App() {
@@ -58,9 +63,12 @@ function App() {
           />
           <Route path="/addtopictitlepage" element={<AddTopicTitlePage />} />
           <Route path="/displaytopic" element={<DisplayTopic />} />
-          <Route path="/edittopic" element={<EditTopicPage />} />
+          <Route path="/edittopic" element={<EditTopic />} />
           <Route path="createnewcoursecopy" element={<CreateNewCourseCopy/>}/>
           <Route path="/coursetitlemodal" element={<CourseTitleModal/>}/>
+          
+
+
         </Routes>
 
         {/* <Footer /> */}
