@@ -5,9 +5,12 @@ import { MdDelete } from "react-icons/md";
 import Footer from "../Footer";
 import DeleteConfirmationDialog from "./DeleteConfirmationDialog";
 import { FaSave } from "react-icons/fa";
-import { AiOutlineFileText } from "react-icons/ai"; // Placeholder for description icon
+import { AiOutlineFileText } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const CourseDescription = () => {
+  const navigate = useNavigate();
+
   const [videoInputValue, setVideoInputValue] = useState("");
   const [quizInputValue, setQuizInputValue] = useState("");
   const [isVideoPopupOpen, setVideoPopupOpen] = useState(false);
@@ -79,49 +82,66 @@ const CourseDescription = () => {
     setSelectedTopicIndex(null);
   };
 
+  const handleDescriptionClick = () => {
+    // Use navigate instead of history.push
+    navigate("/course-description");
+  };
+
   return (
     <>
-      <div className="flex mt-[100px]">
+      <div className="flex mt-[100px] lg:h-[100vh] 2xl:h-[1011px] ">
         {/* sidebar */}
-        <div className="h-[100vh] flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
-          <div className="flex items-center mt-3 cursor-pointer">
-            <span className="text-[2.5rem] text-white">
+        <div className="h-full flex flex-col items-start lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
+          {/* Description section */}
+          <div
+            className="flex items-start mt-3 cursor-pointer"
+            onClick={handleDescriptionClick}
+          >
+            <span className="text-[2rem] mb-2 ml-1 text-white">
               <IoArrowBackCircle />
             </span>
-            <span className="text-[1rem] pl-1 text-white">Back</span>
+            <span className="text-[1rem] items-start pl-1 text-white"></span>
           </div>
           <div className="hidden lg:flex lg:border-b lg:border-white w-[90%] "></div>
           <div className="pt-10">
-          <div className="text-white text-[2rem] pr-2">
+            <div className="flex items-center justify-between">
+              <button
+                className="text-white text-[1rem] ml-2 pr-2 pb-2"
+                onClick={handleDescriptionClick}
+              >
+                Description
+              </button>
+              {/* Removed the delete icon beside the Description */}
             </div>
-            <button><span className="text-white">Description</span></button>
-            {[1, 2, 3, 4, 5].map((index) => (
-              <div key={index} className="flex items-center justify-between">
+            {[1, 2, 3].map((index) => (
+              <div key={index} className="ml-2 flex items-center justify-between">
                 <p className="py-2 text-white">Topic {index}: Title</p>
-                <div className="cursor-pointer ml-10" onClick={() => handleDeleteTopic(index)}>
+                <div
+                  className="cursor-pointer ml-10"
+                  onClick={() => handleDeleteTopic(index)}
+                >
                   <MdDelete size={20} color="#FFFFFF" />
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-center mt-5 cursor-pointer">
+          <div className="flex ml-1 items-center justify-center mt-5 cursor-pointer">
             <div className="text-white text-[2rem] pr-2">
               <IoIosAddCircle />
             </div>
-            <span className="text-white">Add New Topic</span>
-          </div>
-          {/* Added Description section */}
-          <div className="flex items-center justify-center mt-5 cursor-pointer">
+            <span className="text-white ml">Add New Topic</span>
           </div>
         </div>
         {/* add topic title */}
         <div className="h-[100vh] w-full pt-2">
           <div className="flex items-center justify-end w-full ">
-            <div className="flex items-center gap-2 pr-5 cursor-pointer" onClick={handleQuizClick}>
-              <span className="text-[#126912] font-semibold">
-                <FaSave />
-                Save
-              </span>
+            {/* Save icon is now here */}
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={handleQuizClick}
+            >
+              <FaSave size={20} color="#126912" />
+              <span className="text-[#126912] font-semibold ml">Save</span>
             </div>
           </div>
           <div className="w-[90%] m-auto">
