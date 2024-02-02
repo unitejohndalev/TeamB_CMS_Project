@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from "react";
 import Nav from "./components/NavBar/Nav";
 import Fallbackloading from "./components/FallbackLoading";
 import CourseTitleModal from "./components/CourseList & AddCourseList/CourseModal/CourseTitleModal";
+import CourseDescription from "./components/Topic/CourseDescription";
 
 
 const Profile = lazy(() => import("./components/Profile/Profile"));
@@ -52,6 +53,8 @@ function App() {
           <Route path="/courseoverview/:id" element={<CourseOverview />} />
           <Route path="/dropdown" element={<dropdown/>}/>
           <Route path="/editchaptertitle/:id" element={<EditChapterTitle />} />
+          <Route path="/coursedescription" element={<CourseDescription/>} />
+    
           <Route
             path="/createnewchaptertitle" //path="/createnewchaptertitle/:id"
             element={<CreateNewChapterTitle />}
