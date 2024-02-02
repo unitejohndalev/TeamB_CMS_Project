@@ -9,16 +9,21 @@ import { FaEdit } from "react-icons/fa";
 //delete icon
 import { RiDeleteBinLine } from "react-icons/ri";
 import EditChapterTitle from "./EditChapterTitle";
-import { CourseContext } from "../context/CourseContext";
-import { ChapterContext } from "../context/ChapterContext";
+// import { CourseContext } from "../context/CourseContext";
+// import { ChapterContext } from "../context/ChapterContext";
+
+import CopyofCreateChapterTitle from "./CopyofCreateChapterTitle";
 
 import data from "../../mockData/CourseOverviewCard.json";
 
 const CourseOverviewById = () => {
   // const { courses, setCourses } = useContext(CourseContext);
-  // const [chapters, setChapters]=useState([]);
 
-  const { showCreateChapter, setShowCreateChapter } = useContext(ChapterContext);
+  const[ showChapModal, setShowChapModal] = useState(false);
+
+  const [chapters, setChapters]=useState([]);
+
+  // const { showCreateChapter, setShowCreateChapter } = useContext(ChapterContext);
 
 
   //user params to navigate specific id
@@ -45,6 +50,7 @@ const CourseOverviewById = () => {
   };
   // console.log(courses);
 
+  const [createModalVisible, setCreateModalVisible]= useState(false);
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [selectedChapterId, setSelectedChapterId] = useState(null);
 
@@ -52,14 +58,21 @@ const CourseOverviewById = () => {
     setSelectedChapterId(chapterId);
     setEditModalVisible(true);
   };
+
+  const handleDeleteChapter = (chapterId) =>{
+      //  await axios.delete(`http://localhost:8080/api/chapters/${chapterId}`);
+      setChapters(chapters.filter((chapter) => chapter.chapId !== chapterId));
+    
+  }
   console.log(data);
   //mockdata chapter destructure
   const { chapterlist } = data;
   
-  const [createChapTitle, setcreateChapTitle] = useState(null);
+  // const [createChapTitle, setcreateChapTitle] = useState(null);
 
   
   return (
+    <>
     <div className=" h-full w-full">
       <div className=" m-0 lg:max-w-[1080px] lg:flex lg:flex-col  lg:justify-center">
         {chapterlist.map((chapter, idx) => {
@@ -82,95 +95,72 @@ const CourseOverviewById = () => {
                   {/* 
                   </div> */}
 
-                  {/* <Link className="flex ml-auto"> */}
-                  <div
-                    onClick={() => handleEditClick(chapter.chapiId)}
-                    className="flex items-end gap-2 pr-5 cursor-pointer"
-                  >
-                    {/* <div className="text-[#4c604c] text-[1.5rem]"> */}
-                    {/* <FaEdit /> */}
-
-                    {/* <div key={idx}
-                    className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[85%] justify-between items-center"></div>
-                  
-                    <div
-                      className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
-              lg:h-[50px] lg:rounded-[1rem]">
-                      <p className="text-shadow">
-                        CHAPTER {chapter.chapiId}:
-                      </p>
-                      <p className="pl-2 lg:font-medium text-shadow">
-                        {chapter.chapterTitle}
-                      </p>
-
-                    </div> */}
-                    {/* </div> */}
-
                     
                   </div>
                   <Link className="flex absolute right-2 ">
                       <div
-                        onClick={() => handleEditClick(chapter.chapId)}
+                        
                         className="flex items-center gap-2 pl-2- cursor-pointer "
                       >
-                        <div className="text-[1.3rem] 2xl:text-[2rem]  text-white" >
+                        <div className="text-[1.3rem] 2xl:text-[2rem]  text-white" onClick={() => handleEditClick(chapter.chapId)} >
                           <FaEdit />
                         </div>
 
-                        <div className="text-[1.3rem] 2xl:text-[2rem]  text-white" >
+                        <div className="text-[1.3rem] 2xl:text-[2rem]  text-white" onClick={() => handleDeleteChapter(chapter.chapiId)} >
                           <RiDeleteBinLine />
                         </div>
                       </div>
                     </Link>
                 </div>
               </div>
-            </div>
+      
           );
         })}{" "}
         {editModalVisible && (
-          <EditChapterTitle
+           <div className="absolute z-10">
+           <div className="lg:w-[1080px] ">
+          <ChapterModal
             chapterId={selectedChapterId}
             onClose={() => setEditModalVisible(false)}
             onSaved={() => setEditModalVisible(false)}
           />
+           </div>
+           <span> <div className="text-[1.3rem] 2xl:text-[2rem]  text-white" >
+                          <RiDeleteBinLine />
+                        </div></span>
+          </div>
         )}
-      </div>
-      <div className="w-full lg:w-[20rem] m-auto lg:flex lg:justify-center lg:items-center">
-        <div className="gap-5 lg:w-[20rem] m-auto lg:flex lg:justify-center lg:items-center m-8">
-          <Link
-            // to={`/createnewchaptertitle/${courses.course_id}`}
-            to={"/createnewchaptertitle"}
-            className="lg:rounded-[1rem] h-[5vh] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]"
-          >
-            
-          </Link>
-            <div className="flex items-center justify-center w-full">
-              <span 
-                onClick={() => {
-                          setShowEditTitle((prev) => !prev);
-                }}
-                className="pr-2">
+
+      <div className="w-full lg:w-[12rem] m-auto lg:flex lg:justify-center lg:items-center">
+       
+          
+      {/*add new chapter title */}
+          <div className="lg:rounded-[1rem] lg:h-[50px] 2xl:h-[65px] flex items-center justify-center w-[100%] lg:w-[100%] cursor-pointer bg-[#BCE8B1]">
+            <button className="flex items-center justify-center w-full" onClick={() => setShowChapModal((prev) => !prev)}>
+              <span className="pr-1">
                 <IoAdd className="text-[2rem] lg:text-[2.5rem] text-white" />
               </span>
-              <span className="text-shadow lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%]">
+              <span className="text-shadow lg:text-[1rem] lg:font-bold 2xl:text-[24px]  text-[#070101] text-opacity-[55%] pr-1">
                 Add Chapter Title
               </span>
-              {showcreateTitle == course.id && (
-                        <div className="absolute z-10">
-                          <div className="lg:w-[1080px] ">
-                            <CourseTitleModal
-                              courseId={editCourseId}
-                              courseTitle={course.courseTitle}
-                            />
-                          </div>
-                        </div>
-                      )}
-            </div>
-        
+           
+            </button>
          
+            </div>
+            <div className="absolute">
+              <div className="lg:w-[1080px] ">
+            {showChapModal && <CopyofCreateChapterTitle 
+             /> }
+            </div>
+            </div>
+      
+        
+            </div>
         </div>
-      </div>
+{/*       
+      </div> */}
     </div>
+    </>
   );
 };
 

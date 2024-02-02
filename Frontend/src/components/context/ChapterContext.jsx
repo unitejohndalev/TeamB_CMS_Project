@@ -9,7 +9,7 @@ const ChapterProvider = ({children}) => {
   const [chapters, setChapters] = useState([]);
 
   //hide and show create new course
-  const [showCreateChapter, setShowCreateChapter] = useState(false);
+  const [ showChapter, setShowCreateChapter ] = useState(false);
 
   return (
     <ChapterContext.Provider
