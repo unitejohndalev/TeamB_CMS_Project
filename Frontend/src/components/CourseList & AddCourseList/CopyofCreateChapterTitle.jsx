@@ -1,5 +1,5 @@
-//1/30/2024 junite, UI modal and functionalities for create course page
-// 1/31/2024 junite, UI modifications
+//february 2 2024 creation of this page and UI -gem 
+//february 3 modification of ui and functionalities -gem
 
 import { useContext, useState } from "react";
 import axios from "axios";
@@ -74,9 +74,11 @@ const CopyofCreateChapterTitle = () => {
 
   return (
     <>
-      <div className="w-[100%] h-[120vh] pb-40 backdrop-blur-[.1rem] ">
+     <div className="fixed top-20 left-20 pt-20 pl-10 w-full h-full backdrop-blur-[.1rem] ">
+      <div className="w-[100%] h-[100vh] pb-50 ">
+      <div className="lg:w-[1080px] ">
         {!formSubmitted && (
-          <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
+          <div className="flex \ border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
             <form onSubmit={handleSubmit} className="w-[80%] m-auto py-2 ">
               <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
                 <p className=" lg:font-bold TeamB_text-shadow   text-[24px] mt-5">
@@ -124,13 +126,19 @@ const CopyofCreateChapterTitle = () => {
                     <p>Create</p>
                   </button>
                 </div>
+                
               </div>
             </form>
           </div>
+
         )}
+      </div>
+      </div>
       </div>
     </>
   );
 };
 
 export default CopyofCreateChapterTitle;
+//february 2 2024 creation of this page and UI -gem 
+//february 3 modification of ui and functionalities -gem
