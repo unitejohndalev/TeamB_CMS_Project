@@ -1,9 +1,11 @@
+//2/2/2024 junite, added edit topic component
+
 import { Route, Routes } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
 import Nav from "./components/NavBar/Nav";
 import Fallbackloading from "./components/FallbackLoading";
 import CourseTitleModal from "./components/CourseList & AddCourseList/CourseModal/CourseTitleModal";
-
+import CourseDescription from "./components/Topic/CourseDescription";
 
 const Profile = lazy(() => import("./components/Profile/Profile"));
 
@@ -38,6 +40,7 @@ const CreateNewCourseCopy = lazy(() =>
   import("./components/CourseList & AddCourseList/CreateCourse/CreateNewCourse")
 );
 
+const EditTopic = lazy(() => import("./components/Topic/TopicPages/EditTopic"));
 
 function App() {
   return (
@@ -50,8 +53,10 @@ function App() {
           <Route path="/courselist" element={<CourseList />} />
           <Route path="/addnewcourse" element={<AddNewCourse />} />
           <Route path="/courseoverview/:id" element={<CourseOverview />} />
-          <Route path="/dropdown" element={<dropdown/>}/>
+          <Route path="/dropdown" element={<dropdown />} />
           <Route path="/editchaptertitle/:id" element={<EditChapterTitle />} />
+          <Route path="/coursedescription" element={<CourseDescription />} />
+
           <Route
             path="/createnewchaptertitle" //path="/createnewchaptertitle/:id"
             element={<CreateNewChapterTitle />}
@@ -59,8 +64,8 @@ function App() {
           <Route path="/addtopictitlepage" element={<AddTopicTitlePage />} />
           <Route path="/displaytopic" element={<DisplayTopic />} />
           <Route path="/edittopic" element={<EditTopicPage />} />
-          <Route path="createnewcoursecopy" element={<CreateNewCourseCopy/>}/>
-          <Route path="/coursetitlemodal" element={<CourseTitleModal/>}/>
+          <Route path="createnewcoursecopy" element={<CreateNewCourseCopy />} />
+          <Route path="/coursetitlemodal" element={<CourseTitleModal />} />
         </Routes>
 
         {/* <Footer /> */}
