@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 //2/1/2024 junite, created UI Modal for course title edit, completed
+//2/22024 junite, centered modal
 import React from "react";
 
 const CourseTitleModal = ({ courseTitle }) => {
   return (
     <>
-      <div className="w-[100%] h-[100vh] pt-[150px] pb-32 backdrop-blur-[.1rem] ">
-        <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
+      <div className="w-[100%] h-[100vh] pt-[11.8rem]  2xl:pt-[20rem] backdrop-blur-[.1rem]">
+        <div className="  flex m-auto w-[100%]  border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg bg-[#EBFFE5] lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
           <form action="" className="w-[80%] m-auto py-2 ">
             <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
               <p className=" pb-5 lg:font-bold TeamB_text-shadow lg:text-[1.2rem]  xl:text-[24px] mt-5">

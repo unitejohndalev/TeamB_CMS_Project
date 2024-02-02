@@ -2,6 +2,7 @@
 //1/30/2024 junite, created modal show and hide UI and Functionalities for CourseList
 //1/31/2024 junite, UI modifications
 //2/1/2024 junite, UI modifications and functionalities, mockdata inserted and used for UI test
+//2/22024 junite, UI modifications add background color for edit modal
 
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { IoAdd } from "react-icons/io5";
@@ -10,7 +11,6 @@ import { Link } from "react-router-dom";
 
 //import mock data
 import data from "../../mockData/CourselistCard.json";
-
 
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
@@ -124,31 +124,27 @@ const CourseListCard = () => {
                         {/* change to course_title for api connection */}
                         {course.courseTitle}
                       </Link>
-                  
-                        <span
-                          onClick={() => {
-                            setShowEditTitle((prev) => !prev);
-                            setEditCourseId(course.id);
-                          }}
-                          className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
-                          <FaEdit />
-                        </span>
-                        {showEditTitle && editCourseId === course.id && (
-                          <div className=" lg:w-full h-full fixed top-0 left-0  z-10 ">
-                            <div className="w-[100%]">
-                              <CourseTitleModal
 
-                                courseId={editCourseId}
+                      <span
+                        onClick={() => {
+                          setShowEditTitle((prev) => !prev);
+                          setEditCourseId(course.id);
+                        }}
+                        className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
+                        <FaEdit />
+                      </span>
+                      {showEditTitle && editCourseId === course.id && (
+                        <div className="fixed top-0 left-0 z-10 h-full lg:w-full">
+                          <div className="w-[100%]">
+                            <CourseTitleModal
+                              courseId={editCourseId}
+                              //  past courseTitle as props to set the value of input in CourseTitleModal
 
-                                //  past courseTitle as props to set the value of input in CourseTitleModal
-
-                                courseTitle={course.courseTitle}
-                            
-
-                              />
-                            </div>
+                              courseTitle={course.courseTitle}
+                            />
                           </div>
-                        )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 );
