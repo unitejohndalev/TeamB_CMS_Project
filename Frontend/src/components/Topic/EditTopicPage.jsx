@@ -1,36 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
-//arrow back icon
 import { IoArrowBackCircle } from "react-icons/io5";
-
-//add icon
 import { IoIosAddCircle } from "react-icons/io";
-
-//edit icon
 import { FaEdit } from "react-icons/fa";
-
-
-//import img for vid link and file link
 import vidUpload from "../../assets/vidUpload.svg";
 import quizLink from "../../assets/quizLink.svg";
 import Footer from "../Footer";
 
 const EditTopicPage = () => {
-  //use navigate to back
+  const [videoInputValue, setVideoInputValue] = useState("");
+  const [quizInputValue, setQuizInputValue] = useState("");
+  const [isVideoPopupOpen, setVideoPopupOpen] = useState(false);
+  const [isQuizPopupOpen, setQuizPopupOpen] = useState(false);
   const navigate = useNavigate();
 
   const goBack = () => {
     navigate(-1);
   };
+
+  const toggleVideoPopup = () => {
+    setVideoPopupOpen(!isVideoPopupOpen);
+  };
+
+  const toggleQuizPopup = () => {
+    setQuizPopupOpen(!isQuizPopupOpen);
+  };
+
+  const handleVideoInputChange = (e) => {
+    setVideoInputValue(e.target.value);
+  };
+
+  const handleQuizInputChange = (e) => {
+    setQuizInputValue(e.target.value);
+  };
+
+  const handleVideoDoneClick = () => {
+    console.log("Video Done button clicked. Input value:", videoInputValue);
+    toggleVideoPopup();
+  };
+
+  const handleQuizDoneClick = () => {
+    console.log("Quiz Done button clicked. Input value:", quizInputValue);
+    toggleQuizPopup();
+  };
+
+  const handleVideoCancelClick = () => {
+    setVideoInputValue("");
+    console.log("Video Cancel button clicked");
+    toggleVideoPopup();
+  };
+
+  const handleQuizCancelClick = () => {
+    setQuizInputValue("");
+    console.log("Quiz Cancel button clicked");
+    toggleQuizPopup();
+  };
+
   return (
     <>
       <div className="flex mt-[100px]">
         {/* sidebar */}
-        <div className=" h-[100vh] flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
-          <div
-            className="flex items-center mt-3 cursor-pointer "
-            onClick={goBack}>
+        <div className="h-[100vh] flex flex-col items-center lg:w-[250px] 2xl:w-[375px] bg-[#126912]">
+          <div className="flex items-center mt-3 cursor-pointer" onClick={goBack}>
             <span className="text-[2.5rem] text-white">
               <IoArrowBackCircle />
             </span>
@@ -44,7 +75,6 @@ const EditTopicPage = () => {
             <div>
               <p className="py-2 text-white">Topic 1: Title</p>
             </div>
-
             <div>
               <p className="py-2 text-white">Topic 2: Title</p>
             </div>
@@ -57,9 +87,8 @@ const EditTopicPage = () => {
             <div>
               <p className="py-2 text-white">Topic 5: Title</p>
             </div>
-           
           </div>
-          <div className="flex items-center justify-center mt-10 cursor-pointer ">
+          <div className="flex items-center justify-center mt-10 cursor-pointer">
             <div className="text-white text-[2rem] pr-2">
               <IoIosAddCircle />
             </div>
@@ -105,27 +134,87 @@ const EditTopicPage = () => {
             />
           </div>
           <div className="flex w-[90%] m-auto items-center justify-center lg:gap-x-[5rem] lg:mt-[3rem]">
-            <div className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
+            <div
+              className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer"
+              onClick={toggleVideoPopup}
+            >
               <img
                 src={vidUpload}
                 alt=""
                 className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
               />
-              {/* rotation line not responsive */}
-              {/* <div className="lg:rotate-[25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div>
-              <div className="lg:rotate-[-25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div> */}
             </div>
-            <div className=" relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer">
+            <div
+              className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center justify-center cursor-pointer"
+              onClick={toggleQuizPopup}
+            >
               <img
                 src={quizLink}
                 alt=""
                 className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
               />
-              {/* rotation line not responsive */}
-              {/* <div className="lg:rotate-[25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div>
-              <div className="lg:rotate-[-25.9deg] 2xl:rotate-[29.34deg] lg:w-[20.5rem] 2xl:w-[100%] bg-black h-[.004rem] absolute"></div> */}
             </div>
           </div>
+          {/* Video Popup */}
+          {isVideoPopupOpen && (
+            <div className="fixed inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black opacity-50"></div>
+              <div className="bg-[#EBFFE5] p-8 rounded-lg z-10">
+                <p className="text-lg font-semibold mb-4">Add video Link</p>
+                <input
+                  type="text"
+                  value={videoInputValue}
+                  onChange={handleVideoInputChange}
+                  className="w-[724px] bg-[#BCE8B1] p-2 border border-gray-300 rounded-md mb-4"
+                  placeholder="https://www"
+                />
+                <div className="flex justify-end">
+                  <button
+                    onClick={handleVideoCancelClick}
+                    className="text-black py-2 px-4 rounded-md"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleVideoDoneClick}
+                    className="bg-[#126912] text-white py-2 px-4 rounded-full ml-2"
+                  >
+                    Done
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+          {/* Quiz Popup */}
+          {isQuizPopupOpen && (
+            <div className="fixed inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black opacity-50"></div>
+              <div className="bg-[#EBFFE5] p-8 rounded-lg z-10">
+                <p className="text-lg font-semibold mb-4">Add Quiz Link</p>
+                <input
+                  type="text"
+                  value={quizInputValue}
+                  onChange={handleQuizInputChange}
+                  className="w-[724px] bg-[#BCE8B1] p-2 border border-gray-300 rounded-md mb-4"
+                  placeholder="https://www"
+                />
+                <div className="flex justify-end">
+                  <button
+                    onClick={handleQuizCancelClick}
+                    className="text-black py-2 px-4 rounded"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleQuizDoneClick}
+                    className="bg-[#126912] text-white py-2 px-4 rounded-full ml-2"
+                  >
+                    Done
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
           <div className="mt-5">
             <Footer />
           </div>
@@ -136,5 +225,3 @@ const EditTopicPage = () => {
 };
 
 export default EditTopicPage;
-
-// 1/19/2024
