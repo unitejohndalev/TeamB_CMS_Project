@@ -5,7 +5,8 @@ import React, { Suspense, lazy } from "react";
 import Nav from "./components/NavBar/Nav";
 import Fallbackloading from "./components/FallbackLoading";
 import CourseTitleModal from "./components/CourseList & AddCourseList/CourseModal/CourseTitleModal";
-import CourseDescription from "./components/Topic/CourseDescription";
+
+
 
 const Profile = lazy(() => import("./components/Profile/Profile"));
 
@@ -23,12 +24,7 @@ const CourseOverview = lazy(() =>
   import("./components/CourseList & AddCourseList/CourseOverview")
 );
 
-const EditTopicPage = lazy(() => import("./components/Topic/EditTopicPage"));
 
-const DisplayTopic = lazy(() => import("./components/Topic/DisplayTopic"));
-const AddTopicTitlePage = lazy(() =>
-  import("./components/Topic/AddTopicTitlePage")
-);
 
 const EditChapterTitle = lazy(() =>
   import("./components/CourseList & AddCourseList/EditChapterTitle")
@@ -40,7 +36,7 @@ const CreateNewCourseCopy = lazy(() =>
   import("./components/CourseList & AddCourseList/CreateCourse/CreateNewCourse")
 );
 
-const EditTopic = lazy(() => import("./components/Topic/TopicPages/EditTopic"));
+const TopicPage = lazy(() => import("./components/Topic/TopicPages/TopicPage"));
 
 function App() {
   return (
@@ -55,15 +51,12 @@ function App() {
           <Route path="/courseoverview/:id" element={<CourseOverview />} />
           <Route path="/dropdown" element={<dropdown />} />
           <Route path="/editchaptertitle/:id" element={<EditChapterTitle />} />
-          <Route path="/coursedescription" element={<CourseDescription />} />
-
+      
           <Route
             path="/createnewchaptertitle" //path="/createnewchaptertitle/:id"
             element={<CreateNewChapterTitle />}
           />
-          <Route path="/addtopictitlepage" element={<AddTopicTitlePage />} />
-          <Route path="/displaytopic" element={<DisplayTopic />} />
-          <Route path="/edittopic" element={<EditTopicPage />} />
+          <Route path="/topicpage" element={<TopicPage />} />
           <Route path="createnewcoursecopy" element={<CreateNewCourseCopy />} />
           <Route path="/coursetitlemodal" element={<CourseTitleModal />} />
         </Routes>

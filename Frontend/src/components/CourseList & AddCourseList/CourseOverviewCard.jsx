@@ -1,3 +1,6 @@
+//2/3/2024 junite, fix course title and search bar width
+
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -73,7 +76,7 @@ const CourseOverviewCard = () => {
               </p>
             </div>
             <div className="w-full lg:max-w-[800px]">
-              <div className="text-black  w-[60vw] lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem]  flex justify-between items-center">
+              <div className="text-black  w-full lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem]  flex justify-between items-center">
                 <p className="lg:font-bold TeamB_text-shadow">HTML And CSS</p>
                 
                 <div className="relative  flex items-center lg:w-[300px] 2xl:w-[544px] h-[35px] 2xl:h-[53px]  bg-white outline-none rounded-md border-b-[.1rem] border-black">
@@ -96,7 +99,7 @@ const CourseOverviewCard = () => {
               <div className="w-[98%] font-medium text-[1.4rem] 2xl:text-[36px] m-auto pt-4 mb-5">
                 <span className=" TeamB_text-shadow">Lessons</span>
               </div>
-              <div className="flex justify-center items-center">
+              <div className="flex items-center justify-center">
         
                 <CourseOverviewById />
               </div>

@@ -1,13 +1,11 @@
-/* eslint-disable react/prop-types */
+//2/3/2024 junite, create AddTopic UI, completed
 
-//2/3/2024 junite, create EditTopic UI, completed
 
 import React, { useState } from "react";
 import { FaSave } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
 import Footer from "../../Footer";
-import EditTopiclink from "../../../assets/EditTopicLink.svg";
-import EditQuizLink from "../../../assets/EditQuizLink.svg";
+import vidUpload from "../../../assets/vidUpload.svg";
+import quizLink from "../../../assets/quizLink.svg";
 
 //import toastify react
 import { ToastContainer, toast } from "react-toastify";
@@ -18,7 +16,7 @@ const CloseButton = ({ closeToast }) => (
   <i className="material-icons" onClick={closeToast}></i>
 );
 
-const EditTopic = () => {
+const AddTopic = () => {
   const [videoInputValue, setVideoInputValue] = useState("");
   const [quizInputValue, setQuizInputValue] = useState("");
   const [isVideoPopupOpen, setVideoPopupOpen] = useState(false);
@@ -64,7 +62,7 @@ const EditTopic = () => {
 
   //toast
   const addToCartNotify = () => {
-    toast.success("Topic, Successfully Saved!", {
+    toast.success("Topic, Successfully Created!", {
       position: "top-center",
       autoClose: 500,
       hideProgressBar: true,
@@ -99,6 +97,7 @@ const EditTopic = () => {
               Chapter Title:
             </span>
             <input
+              required
               type="text"
               name=""
               id=""
@@ -107,6 +106,7 @@ const EditTopic = () => {
             />
           </div>
           <textarea
+            required
             name=""
             id=""
             cols="30"
@@ -116,22 +116,28 @@ const EditTopic = () => {
               outline-none rounded-lg placeholder:text-[#070101] placeholder:text-opacity-[55%] mt-5 pl-5"
           />
         </div>
-        <div className="relative flex w-[90%] m-auto items-center justify-center lg:gap-x-[5rem] lg:mt-[3rem]">
+        <div className="flex w-[90%] m-auto items-center justify-center lg:gap-x-[5rem] lg:mt-[3rem]">
           <div
-            className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] rounded-lg flex items-center justify-center cursor-pointer"
+            className="relative 2xl:w-[491px] 2xl:h-[282px]
+           lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex items-center
+            justify-center cursor-pointer"
             onClick={toggleVideoPopup}>
-            <img src={EditTopiclink} alt="" className="" />
-            <span className="absolute ">
-              <FaEdit className="lg:w-[30px] lg:h-[30px] 2xl:w-[59px] 2xl:h-[59px] opacity-[80%]" />
-            </span>
+            <img
+              src={vidUpload}
+              alt=""
+              className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
+            />
           </div>
           <div
-            className="relative 2xl:w-[491px] 2xl:h-[282px] lg:w-[20vw] lg:h-[20vh] rounded-lg flex items-center justify-center cursor-pointer"
+            className=" relative 2xl:w-[491px] 2xl:h-[282px]
+           lg:w-[20vw] lg:h-[20vh] bg-[#126912] rounded-lg flex
+           items-center justify-center cursor-pointer"
             onClick={toggleQuizPopup}>
-            <img src={EditQuizLink} alt="" className="" />
-            <span className="absolute ">
-              <FaEdit className="lg:w-[30px] lg:h-[30px] 2xl:w-[59px] 2xl:h-[59px] opacity-[80%]" />
-            </span>
+            <img
+              src={quizLink}
+              alt=""
+              className="lg:w-[3rem] 2xl:w-[84px] 2xl:h-[87px]"
+            />
           </div>
         </div>
         {/* Video Popup */}
@@ -139,7 +145,7 @@ const EditTopic = () => {
           <div className="fixed inset-0 flex items-center justify-center">
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="bg-[#EBFFE5] p-8 rounded-lg z-10">
-              <p className="mb-4 text-lg font-semibold">Edit Topic Link</p>
+              <p className="mb-4 text-lg font-semibold">Add Topic Link</p>
               <input
                 type="text"
                 value={videoInputValue}
@@ -167,7 +173,7 @@ const EditTopic = () => {
           <div className="fixed inset-0 flex items-center justify-center">
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="bg-[#EBFFE5] p-8 rounded-lg z-10">
-              <p className="mb-4 text-lg font-semibold">Edit Quiz Link</p>
+              <p className="mb-4 text-lg font-semibold">Add Quiz Link</p>
               <input
                 type="text"
                 value={quizInputValue}
@@ -199,4 +205,4 @@ const EditTopic = () => {
   );
 };
 
-export default EditTopic;
+export default AddTopic;
