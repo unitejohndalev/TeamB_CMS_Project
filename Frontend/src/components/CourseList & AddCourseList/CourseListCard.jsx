@@ -109,9 +109,9 @@ const CourseListCard = () => {
               {/* change to currentCourse for API connection */}
               {courselist.map((course, idx) => {
                 return (
-                  <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
-                    <div className=" relative flex px-0 py-0 rounded-md xl:h-[115px]  ">
-                      <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
+                  <div key={idx} className="w-[70vw] mb-4 rounded-md shadow-md">
+                    <div className="relative flex px-0 py-0 rounded-md xl:h-[115px]  ">
+                      <div className="bg-[#BCE8B1] w-full item-center justify-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
                         <p className="lg:font-medium TeamB_text-shadow ">
                           {/* change to course_id for api connection */}
                           PL00{course.id}
@@ -120,7 +120,7 @@ const CourseListCard = () => {
 
                       <Link
                         to={`/courseoverview/${course.course_id}`}
-                        className="text-white TeamB_text-shadow  lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
+                        className="text-white TeamB_text-shadow  lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full py-0 px-4 flex justify items-center
                             rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
                       >
                         {/* change to course_title for api connection */}
