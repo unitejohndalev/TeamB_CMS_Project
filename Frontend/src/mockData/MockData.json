@@ -17,18 +17,7 @@
             "courseNum": "Course 3",
             "courseTitle": "Java Programming",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
-        },
-        {
-            "id": 4,
-            "courseNum": "Course 4",
-            "courseTitle": "Cloud Computing",
-            "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
-        },
-        {
-            "id": 5,
-            "courseNum": "Course 5",
-            "courseTitle": "Java Programming",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
         }
+       
     ]
 }

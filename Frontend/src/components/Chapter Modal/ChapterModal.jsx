@@ -6,7 +6,8 @@ const ChapterModal = ({ chapterTitle }) => {
   return (
     <>
       <div className="w-full h-[100vh] pt-[150px] pb-32 backdrop-blur-[.1rem] ">
-        <div className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-white lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
+        <div
+          className=" flex border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-[#EBFFE5] lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
           <form action="" className="w-[80%] m-auto py-2 ">
             <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
               <p className=" pb-5 lg:font-bold TeamB_text-shadow lg:text-[1.2rem]  xl:text-[24px] mt-5">
