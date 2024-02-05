@@ -120,7 +120,8 @@ const CourseListCard = () => {
                       <Link
                         to={`/courseoverview/${course.course_id}`}
                         className="text-white TeamB_text-shadow  lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
-                            rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
+                            rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
+                      >
                         {/* change to course_title for api connection */}
                         {course.courseTitle}
                       </Link>
@@ -130,7 +131,8 @@ const CourseListCard = () => {
                           setShowEditTitle((prev) => !prev);
                           setEditCourseId(course.id);
                         }}
-                        className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
+                        className="absolute right-2 flex items-center h-full text-white text-[1.5rem]"
+                      >
                         <FaEdit />
                       </span>
                       {showEditTitle && editCourseId === course.id && (
@@ -163,24 +165,24 @@ const CourseListCard = () => {
               </Stack>
             )}
             {/* onClick={() => setShowCreateCourse((prev) => !prev)} */}
+
             <button
-              className=" w-[100%]"
-              onClick={() => setShowCreateCourse((prev) => !prev)}>
-              <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto  items-center justify-center">
-                <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
-                  <span>
-                    <IoAdd className="lg:text-[2rem] text-white" />
-                  </span>
-                </div>
-                <div
-                  className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]
-                  w-[30%] 2xl:w-[50%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className=" 2xl:text-[2rem] TeamB_text-shadow  ">
-                    Add New Course
-                  </span>
-                </div>
+              className="w-[100%] bg-[#126912] flex items-center justify-center h-[10vh] lg:w-[25%] lg:m-auto lg:h-[10vh] overflow-auto rounded-l-md rounded-r-md"
+              onClick={() => setShowCreateCourse((prev) => !prev)}
+            >
+              <div
+                className="bg-[#BCE8B1] w-[35%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md"
+                onClick={() => setShowCreateCourse((prev) => !prev)}
+              >
+                <span>
+                  <IoAdd className="lg:text-[2rem] text-white" />
+                </span>
               </div>
+              <span className="lg:font-bold text-white text-[1.1rem] TeamB_text-shadow mx-2">
+                Add New Course
+              </span>
             </button>
+
             <div className="absolute ">
               <div className="lg:w-[1080px] ">
                 {showCreateCourse && <CopyofCreateNewCourse />}
