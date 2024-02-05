@@ -112,7 +112,7 @@ const CourseListCard = () => {
                   <div key={idx} className="w-[70vw] mb-4 rounded-md shadow-md">
                     <div className="relative flex px-0 py-0 rounded-md xl:h-[115px]  ">
                       <div className="bg-[#BCE8B1] w-full item-center justify-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
-                        <p className="lg:font-medium TeamB_text-shadow  ">
+                        <p className="lg:font-medium TeamB_text-shadow ">
                           {/* change to course_id for api connection */}
                           PL00{course.id}
                         </p>
