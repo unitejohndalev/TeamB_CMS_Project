@@ -94,11 +94,11 @@ const CourseListCard = () => {
               </p>
               <div className="relative  flex items-center lg:w-[300px] 2xl:w-[544px] h-[35px] 2xl:h-[53px]  bg-white outline-none rounded-md border-b-[.1rem] border-black">
                 <input
-                 type="text"
-                 className="outline-none font-normal pl-2 text-[1.3rem] w-full h-[35px] rounded-md"
-                 placeholder="Search"
-                 name="" 
-                id = ""
+                  type="text"
+                  className="outline-none font-normal pl-2 text-[1.3rem] w-full h-[35px] rounded-md"
+                  placeholder="Search"
+                  name=""
+                  id=""
                 />
                 <div className="absolute top-1 right-2">
                   <IoSearchSharp className="text-[1.5rem]" />
@@ -167,22 +167,19 @@ const CourseListCard = () => {
             )}
             {/* onClick={() => setShowCreateCourse((prev) => !prev)} */}
 
-            <button
-              className="w-[100%] bg-[#126912] flex items-center justify-center h-[10vh] lg:w-[25%] lg:m-auto lg:h-[10vh] overflow-auto rounded-l-md rounded-r-md"
+            <div
+              className=" flex items-center justify-center h-[10vh] lg:w-[100%] lg:lg:h-[10vh]  rounded-l-md rounded-r-md"
               onClick={() => setShowCreateCourse((prev) => !prev)}
             >
-              <div
-                className="bg-[#BCE8B1] w-[35%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md"
-                onClick={() => setShowCreateCourse((prev) => !prev)}
-              >
-                <span>
+              <button className="w-[25%] flex">
+                <div className="bg-[#BCE8B1] w-[40%]  flex items-center justify-center h-[8vh] rounded-l-sm lg:rounded-l-md">
                   <IoAdd className="lg:text-[2rem] text-white" />
+                </div>
+                <span className="lg:font-bold text-white w-[100%] flex justify-center text-[1.1rem] items-center h-[8vh] TeamB_text-shadow bg-[#126912] rounded-r-sm lg:rounded-r-md">
+                  Add New Course
                 </span>
-              </div>
-              <span className="lg:font-bold text-white text-[1.1rem] TeamB_text-shadow mx-2">
-                Add New Course
-              </span>
-            </button>
+              </button>
+            </div>
 
             <div className="absolute ">
               <div className="lg:w-[1080px] ">
@@ -192,7 +189,7 @@ const CourseListCard = () => {
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
           </div>
-          <footer className="absolute bottom-10 flex justify-center w-[100%]">
+          <footer className="absolute bottom-2 flex justify-center w-[100%]">
             <div className="">
               <p className="text-[#4D9349] font-medium">
                 All Rights Reserved | Copyright 2024
