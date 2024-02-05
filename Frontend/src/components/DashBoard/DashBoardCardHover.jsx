@@ -12,7 +12,7 @@ const DashBoardCardHover = () => {
 
   return (
     <div className="flex items-center justify-center w-[98vw] pt-[20vh] h-[120vh]  backdrop-blur-[.1rem]">
-      <div className="h-[75vh] w-[60vw]  bg-[#BCE8B1] rounded-lg">
+      <div className="lg:max-h-[500px] lg:max-w-[1080px]  bg-[#BCE8B1] rounded-lg">
         <div
           className="w-[100%] flex items-end justify-end relative"
           onClick={() => setDashBoardHover((prev) => !prev)}>
@@ -28,7 +28,7 @@ const DashBoardCardHover = () => {
         <div className="flex flex-col items-center justify-center w-full">
           <p className="text-[2rem] font-bold">Web Development Course</p>
           <div className="p-10">
-            <p className="bg-[#87D275] p-5 rounded-lg text-justify">
+            <p className="bg-[#87D275] p-5 rounded-lg text-justify py-20">
               Web development is the creation, building, and maintaining of
               websites. It includes aspects such as web design, web publishing,
               web programming, and database management. Web development can
