@@ -26,16 +26,10 @@ const DashBoardCardHover = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center w-full">
-          <p className="text-[2rem] font-bold">Web Development Course</p>
+          <p className="text-[2rem] font-bold">SQL</p>
           <div className="p-10">
             <p className="bg-[#87D275] p-5 rounded-lg text-justify py-20">
-              Web development is the creation, building, and maintaining of
-              websites. It includes aspects such as web design, web publishing,
-              web programming, and database management. Web development can
-              range from developing a simple single static page of plain text to
-              complex web applications, electronic businesses, and social
-              network services. It mainly deals with the non-design aspect of
-              building websites, which includes coding and writing markup.
+            In a SQL querying workshop, participants delve into fundamental concepts such as syntax, database design, and optimization, empowering them with practical skills to write efficient queries.
               <p className="pt-3">With 3 Chapters and 2 topic each</p>
               <p className="pt-2">
                 Get a certificate for passing the course by passing 80% of quiz
