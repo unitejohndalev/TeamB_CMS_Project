@@ -3,20 +3,20 @@
         {
             "id": 1,
             "courseNum": "Course 1",
-            "courseTitle": "Introduction to Programming",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
+            "courseTitle": "SQL",
+            "description": "In a SQL querying workshop, participants delve into fundamental concepts such as syntax, database design, and optimization, empowering them with practical skills to write efficient queries."
         },
         {
             "id": 2,
             "courseNum": "Course 2",
-            "courseTitle": "Cloud Computing",
-            "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
+            "courseTitle": "Subversion",
+            "description": " Apache Subversion (SVN) is a centralized version control system, facilitating collaborative software development through version tracking, allowing multiple developers to work on projects concurrently."
         },
         {
             "id": 3,
             "courseNum": "Course 3",
-            "courseTitle": "Java Programming",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolorum veritatis vitae autem voluptatibus beataeasperiores praesentium magni assumenda sint!"
+            "courseTitle": "HTML",
+            "description": "HTML (Hypertext Markup Language) is the standard language for creating web pages, defining the structure and content using tags, ensuring compatibility and accessibility across various browsers."
         }
        
     ]
