@@ -100,7 +100,7 @@ const Nav = () => {
               onClick={() => setShowDropDown((prev) => !prev)}
               className="  text-[2.5vh]"
             >
-              Hi, JMacbales!
+              Hi, <JMacabales></JMacabales>!
             </p>
             <span
               onClick={() => setShowDropDown((prev) => !prev)}
