@@ -95,7 +95,8 @@ const CourseListCard = () => {
               <div className="relative  flex items-center lg:w-[300px] 2xl:w-[544px] h-[35px] 2xl:h-[53px]  bg-white outline-none rounded-md border-b-[.1rem] border-black">
                 <input
                   type="text"
-                  className="outline-none font-normal pl-2 text-[1.3rem] lg:w-[300px] 2xl:w-[544px] h-[35px] 2xl:h-[53px] rounded-md"
+                  className="outline-none font-normal pl-2 text-[1.3rem] w-full h-[35px] rounded-md"
+                  placeholder="Search"
                   name=""
                   id=""
                 />
@@ -108,10 +109,10 @@ const CourseListCard = () => {
               {/* change to currentCourse for API connection */}
               {courselist.map((course, idx) => {
                 return (
-                  <div key={idx} className="w-[60vw] mb-5 rounded-md shadow-md">
-                    <div className=" relative flex px-0 py-0 rounded-md xl:h-[115px]  ">
-                      <div className="bg-[#BCE8B1] flex py-1 item-center justify-center text-center text-[.8rem] lg:text-[1rem] w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
-                        <p className="lg:font-medium TeamB_text-shadow ">
+                  <div key={idx} className="w-[55vw] mb-4 rounded-md shadow-md">
+                    <div className="relative flex px-0 py-0 rounded-md xl:h-[115px]  ">
+                      <div className="bg-[#BCE8B1] text-[.8rem] lg:text-[.9rem] flex justify items-center w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
+                        <p className="lg:font-medium w-full flex justify-center TeamB_text-shadow">
                           {/* change to course_id for api connection */}
                           PL00{course.id}
                         </p>
@@ -119,8 +120,9 @@ const CourseListCard = () => {
 
                       <Link
                         to={`/courseoverview/${course.course_id}`}
-                        className="text-white TeamB_text-shadow  lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[1.2rem] w-full flex justify-center items-center
-                            rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
+                        className="text-white TeamB_text-shadow  lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[.9rem] w-full py-0 px-4 flex justify items-center
+                            rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
+                      >
                         {/* change to course_title for api connection */}
                         {course.courseTitle}
                       </Link>
@@ -130,7 +132,8 @@ const CourseListCard = () => {
                           setShowEditTitle((prev) => !prev);
                           setEditCourseId(course.id);
                         }}
-                        className="absolute right-2 flex items-center h-full text-white text-[1.5rem]">
+                        className="absolute right-3 flex items-center h-full text-white text-[1.1rem]"
+                      >
                         <FaEdit />
                       </span>
                       {showEditTitle && editCourseId === course.id && (
@@ -163,24 +166,21 @@ const CourseListCard = () => {
               </Stack>
             )}
             {/* onClick={() => setShowCreateCourse((prev) => !prev)} */}
-            <button
-              className=" w-[100%]"
-              onClick={() => setShowCreateCourse((prev) => !prev)}>
-              <div className=" h-[10vh]  flex w-[50%] m-auto lg:w-[80%] overflow-auto  items-center justify-center">
-                <div className="bg-[#87D275] w-[10%]  flex items-center justify-center h-[5vh] lg:h-[10vh] rounded-l-sm lg:rounded-l-md">
-                  <span>
-                    <IoAdd className="lg:text-[2rem] text-white" />
-                  </span>
+
+            <div
+              className=" flex items-center justify-center h-[10vh] lg:w-[100%] lg:lg:h-[10vh]  rounded-l-md rounded-r-md"
+              onClick={() => setShowCreateCourse((prev) => !prev)}
+            >
+              <button className="w-[25%] flex">
+                <div className="bg-[#BCE8B1] w-[40%]  flex items-center justify-center h-[8vh] rounded-l-sm lg:rounded-l-md">
+                  <IoAdd className="lg:text-[2rem] text-white" />
                 </div>
-                <div
-                  className="bg-[#126912] text-white lg:font-bold h-[5vh] lg:h-[10vh]
-                  w-[30%] 2xl:w-[50%] flex items-center justify-center rounded-r-sm  lg:rounded-r-md">
-                  <span className=" 2xl:text-[2rem] TeamB_text-shadow  ">
-                    Add New Course
-                  </span>
-                </div>
-              </div>
-            </button>
+                <span className="lg:font-bold text-white w-[100%] flex justify-center text-[.9rem] items-center h-[8vh] TeamB_text-shadow bg-[#126912] rounded-r-sm lg:rounded-r-md">
+                  Add New Course
+                </span>
+              </button>
+            </div>
+
             <div className="absolute ">
               <div className="lg:w-[1080px] ">
                 {showCreateCourse && <CopyofCreateNewCourse />}
@@ -189,7 +189,7 @@ const CourseListCard = () => {
             {/*January 15 2024*/}
             {/*January 19 2024 -gem modify buttons add footer*/}
           </div>
-          <footer className="absolute bottom-10 flex justify-center w-[100%]">
+          <footer className="absolute bottom-2 flex justify-center w-[100%]">
             <div className="">
               <p className="text-[#4D9349] font-medium">
                 All Rights Reserved | Copyright 2024
