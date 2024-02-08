@@ -18,15 +18,18 @@ public class InstructorService {
     @Autowired
     private InstructorRepository instructorRepository;
    
+    //get all instructors
     public List<Instructor> getAllInstructor() {
         return instructorRepository.findAll();
     }
-
+    
+    //get instructor by instructor id
     public Instructor getInstructorById(Long instructor_id) {
         return instructorRepository.findById(instructor_id)
         .orElseThrow(() -> new InstructorNotFoundException(instructor_id));
     }
 
+    //add new instructor 
     public Instructor saveInstructor(Instructor newInstructor) {
         System.out.println(newInstructor.getInstructor_first_name());
         System.out.println(newInstructor.getInstructor_last_name());
@@ -36,6 +39,7 @@ public class InstructorService {
         return instructorRepository.save(newInstructor);
     }
 
+    //update instructor by instructor id
     public  Instructor updateInstructor(@RequestBody Instructor newInstructor, @PathVariable Long instructor_id){
       return  instructorRepository.findById(instructor_id)
       .map(instructor ->{
@@ -51,7 +55,8 @@ public class InstructorService {
         
       }).orElseThrow(()-> new InstructorNotFoundException(instructor_id));
   }
-
+    
+    // delete intructor by instructor id
     public String deleteInstructor(@PathVariable Long instructor_id){
         if(!instructorRepository.existsById(instructor_id)){
             throw new InstructorNotFoundException(instructor_id);
