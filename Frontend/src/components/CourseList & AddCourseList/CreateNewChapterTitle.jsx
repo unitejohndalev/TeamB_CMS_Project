@@ -69,7 +69,7 @@ const CreateNewChapterTitle = () => {
             <span className="text-[2.5rem]">
               <IoArrowBackCircle />
             </span>
-            <span className="text-[1rem] pl-1">Back</span>
+          
           </div>
           <div className="h-full w-[90%] mt-10 flex mx-auto flex-col lg:w-[70%] lg:m-auto lg:mt-5 items-center gap-5">
             <div className="lg:font-bold py-1 lg:py-0 lg:text-[2rem] w-full flex justify-center items-center">
