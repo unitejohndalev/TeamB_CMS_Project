@@ -26,3 +26,4 @@ const AccDetails = () => {
 
 export default AccDetails;
 //1/19/2024
+// feb 12 - jerome ayos na acc details

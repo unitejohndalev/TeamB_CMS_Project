@@ -88,7 +88,7 @@ const CourseListCard = () => {
         <div className="" ref={pageTopRef}>
           <div className="  xl:w-[1244px]  w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center lg:h-full relative gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
-            <div className="text-black  w-[60vw] lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem]  flex justify-between items-center ">
+            <div className="text-black  w-[55vw] lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem]  flex justify-between items-center ">
               <p className=" 2xl:text-[48px] lg:font-bold TeamB_text-shadow   ">
                 Course List
               </p>

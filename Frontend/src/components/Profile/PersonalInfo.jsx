@@ -1,11 +1,6 @@
-/* eslint-disable react/no-unknown-property */
-//january 12 2024
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-//import logo for profile pic
 import profilePic from "../../assets/Registration.png";
-import signature from "../../assets/signature.png";
 import Footer from "../Footer";
 import PersonalEdit from "./PersonalEdit";
 
@@ -39,7 +34,6 @@ const PersonalInfo = () => {
     instructor_contact_number,
   } = instructor;
 
-  //edit update personal info
   const [editPersonalInfo, setEditPersonalInfo] = useState(true);
   const [updatePersonalInfo, setUpdatePersonalInfo] = useState(false);
 
@@ -52,110 +46,100 @@ const PersonalInfo = () => {
     setEditPersonalInfo(false);
     setUpdatePersonalInfo(true);
   };
+
   return (
     <>
       {editPersonalInfo && (
-        <div className="static bottom-[-.3rem] flex flex-col h-full gap-y-5 w-[90%] lg:h-[450px]  lg:w-[680px]  xl:h-[655px] xl:w-[948px] bg-[#BCE8B1] rounded shadow-md">
-          <div className="lg:w-[90%] lg:m-auto">
-            <div className="lg:flex lg:w-[100%] lg:gap-x-5">
-              <div className="lg:w-[30%] ">
+        <div className="container mx-auto p-4 lg:p-0">
+          <div className="bg-[#BCE8B1] rounded shadow-md p-8">
+            <div className="flex flex-col lg:flex-row justify-center items-center mb-10 gap-y-5 lg:gap-y-0 lg:gap-x-10 lg:w-[99%] lg:m-auto xl:w-[948px]">
+              <div className="lg:w-2/6 mb-20">
                 <img
                   src={profilePic}
                   alt=""
-                  className=" pb-4 hidden lg:flex lg:w-[200px] lg:h-[150px] xl:w-[292px] xl:h-[239px]"
+                  className="w-full lg:w-70 h-auto rounded-lg"
                 />
               </div>
-              <div className="mt-3 relative lg:flex lg:flex-col lg:w-[60%] xl:gap-y-10 lg:gap-y-5">
-                <div className="relative">
-                  <label
-                    htmlFor="firstName"
-                    className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px]  "
-                  >
-                    First Name <span className="text-[#FF2626]">*</span>
-                  </label>
-
-                  {/* FIRSTNAME INPUT */}
-
-                  <input
-                    className="px-2 TeamB_input-style"
-                    id="firstName"
-                    type="text"
-                    name="instructor_first_name" //should be edited
-                    value={instructor_first_name}
-                    onChange={(e) => handleInputChange(e)}
-                    maxLength={50}
-                    disabled
-                  />
-                </div>
-                <div className="relative lg:flex lg:flex-col xl:gap-y-10 lg:gap-y-5">
-                  <label
-                    htmlFor="lastName"
-                    className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px] "
-                  >
-                    Last Name <span className="text-[#FF2626]">*</span>
-                  </label>
-
-                  {/* LASTNAME INPUT */}
-
-                  <input
-                    className="px-2 TeamB_input-style"
-                    id="lastName"
-                    type="text"
-                    name="instructor_last_name" //edit
-                    value={instructor_last_name}
-                    onChange={(e) => handleInputChange(e)}
-                    disabled
-                  />
-                  <div className="lg:flex lg:gap-y-5 lg:flex-col xl:gap-y-10">
-                    <div className="relative">
-                      <label
-                        htmlFor="Email"
-                        className=" text-[#4D4141] text-opacity-[53%] absolute   z-10 top-0 left-2 text-[.8rem] xl:text-[16px]"
-                      >
-                        Email Address
-                      </label>
-
-                      {/* EMAIL INPUT */}
-
-                      <input
-                        className="px-2 TeamB_input-style"
-                        id="Email"
-                        type="number"
-                        name="instructor_username" //edit
-                        value={instructor_email}
-                        onChange={(e) => handleInputChange(e)}
-                        disabled
-                      />
-                    </div>
-
-                    <div className="relative">
-                      {/* CONTACT NUMBER INPUT */}
-
-                      <input
-                        className="px-2 TeamB_input-style mb-7"
-                        placeholder="+63"
-                        type="text"
-                        id="ContactNumber"
-                        name="instructor_contact_number" //edit
-                        value={instructor_contact_number}
-                        onChange={(e) => handleInputChange(e)}
-                        disabled
-                      />
-                      <label
-                        htmlFor="firstName"
-                        className=" text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem] xl:text-[16px]  "
-                      >
-                        Contact Number <span className="text-[#FF2626]">*</span>
-                      </label>
-                      <div />
-                    </div>
+              <div className="lg:w-3/5">
+                <div className="flex flex-col gap-4">
+                  <div className="relative">
+                    <label
+                      htmlFor="firstName"
+                      className="text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem]"
+                    >
+                      First Name{" "}
+                      <span className="text-[#FF2626]">*</span>
+                    </label>
+                    <input
+                      className="px-2 TeamB_input-style"
+                      id="firstName"
+                      type="text"
+                      name="instructor_first_name"
+                      value={instructor_first_name}
+                      onChange={(e) => handleInputChange(e)}
+                      maxLength={50}
+                      disabled
+                    />
+                  </div>
+                  <div className="relative">
+                    <label
+                      htmlFor="lastName"
+                      className="text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem]"
+                    >
+                      Last Name{" "}
+                      <span className="text-[#FF2626]">*</span>
+                    </label>
+                    <input
+                      className="px-2 TeamB_input-style"
+                      id="lastName"
+                      type="text"
+                      name="instructor_last_name"
+                      value={instructor_last_name}
+                      onChange={(e) => handleInputChange(e)}
+                      disabled
+                    />
+                  </div>
+                  <div className="relative">
+                    <label
+                      htmlFor="Email"
+                      className="text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem]"
+                    >
+                      Email Address
+                    </label>
+                    <input
+                      className="px-2 TeamB_input-style"
+                      id="Email"
+                      type="email"
+                      name="instructor_email"
+                      value={instructor_email}
+                      onChange={(e) => handleInputChange(e)}
+                      disabled
+                    />
+                  </div>
+                  <div className="relative">
+                    <label
+                      htmlFor="ContactNumber"
+                      className="text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem]"
+                    >
+                      Contact Number
+                      <span class="text-[#FF2626]">*</span>
+                    </label>
+                    <input
+                      className="px-2 TeamB_input-style"
+                      placeholder="+63"
+                      type="tel"
+                      id="ContactNumber"
+                      name="instructor_contact_number"
+                      value={instructor_contact_number}
+                      onChange={(e) => handleInputChange(e)}
+                      disabled
+                    />
                   </div>
                 </div>
-
-                <div className="lg:w-[100%] lg:flex lg:justify-end">
+                <div className="flex justify-end pt-5">
                   <button
                     onClick={showUpdate}
-                    className="w-full  TeamB_btn-style  lg:w-[120px] lg:flex lg:justify-center xl:w-[170px] rounded-full "
+                    className="w-full TeamB_btn-style lg:w-auto rounded-full"
                   >
                     Edit
                   </button>
@@ -171,5 +155,3 @@ const PersonalInfo = () => {
 };
 
 export default PersonalInfo;
-
-//1/19/2024
