@@ -22,11 +22,7 @@ const CourseOverviewById = () => {
 
   const loadChapters = async () => {
     try {
-
-      const result = await axios.get(
-        `http://localhost:8080/api/courses/byChapter/${id}`
-      );
-
+      const result = await axios.get(`http://localhost:8080/api/courses/${id}`);
 
       // Ensure that result.data is always an array by converting it
       const coursesArray = Array.isArray(result.data)
@@ -47,67 +43,64 @@ const CourseOverviewById = () => {
     setEditModalVisible(true);
   };
 
+  console.log(courses);
+
   return (
     <div className="relative h-full">
       <div className="h-[50vh] lg:max-w-[1080px] lg:flex lg:justify-center">
-
-        {courses.map((chapter, idx) => {
-          console.log(chapter.chapter.chapter_title);
+        {courses.map((course, idx) => {
+          const { chapter } = course;
+          console.log(chapter);
           return (
             <div key={idx} className="lg:w-full">
-              <div className="w-full m-auto mt-5">
-                <div className="flex">
-                  <div
+              {
+                chapter.map((chapter, idx) => {
+               
+             return (
+               <div className="w-full m-auto mt-5" key={idx}>
+              
+                 {/* <Link className="flex ml-auto"> */}
+                 <div
+                   onClick={() => handleEditClick(chapter.chapter_id)}
+                   className="flex items-center gap-2 pr-5 cursor-pointer">
+               
 
-                    className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
-              lg:h-[50px] lg:rounded-[1rem]"
-                  >
-                    <p className="text-shadow">CHAPTER {chapter.chapter.chapter_id}:</p>
-                    <p className="pl-2 lg:font-medium text-shadow">{chapter.chapter.chapter_title}</p>
-
-                  </div>
-                </div>
-                {/* <Link className="flex ml-auto"> */}
-                  <div
-                    onClick={() => handleEditClick(chapter.chapter_id)}
-                    className="flex items-center gap-2 pr-5 cursor-pointer"
-                  >
-                    <div className="text-[#4c604c] text-[1.5rem]">
-                      <FaEdit />
-
-                    <div key={idx}
-                    className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[85%] justify-between items-center">
-                    <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
-                    <div
-                      className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
+                     <div
+                       key={idx}
+                       className="flex 2xl:w-[1186px] 2xl:h-[65px] lg:w-[85%] justify-between items-center">
+                       <div className="h-[1.5rem] w-[1.5rem] bg-[#126912] rounded-[100%]"></div>
+                       <div
+                         className=" 2xl:rounded-[20px] lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] w-[90%] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
               lg:h-[50px] lg:rounded-[1rem]">
-                      <p className="text-shadow">
-                        CHAPTER {chapter.chapter.chapter_id}:
-                      </p>
-                      <p className="pl-2 lg:font-medium text-shadow">
-                        {chapter.chapter.chapter_title}
-                      </p>
+                         <p className="text-shadow">
+                           CHAPTER {chapter.chapter_id}:
+                         </p>
+                         <p className="pl-2 lg:font-medium text-shadow">
+                           {chapter.chapter_title}
+                         </p>
+                       </div>
+                     </div>
+                
+                   <Link className="flex ml-auto">
+                     <div
+                       onClick={() =>
+                         handleEditClick(chapter.chapter_id)
+                       }
+                       className="flex items-center gap-2 pr-5 cursor-pointer">
+                       <div className="text-[#000] text-[2rem]">
+                         <FaEdit />
+                       </div>
 
-                    </div>
-                  </div>
-                  </div>
-                  <Link className="flex ml-auto">
-                    <div
-                      onClick={() =>
-                        handleEditClick(chapter.chapter.chapter_id)
-                      }
-                      className="flex items-center gap-2 pr-5 cursor-pointer">
-                      <div className="text-[#000] text-[2rem]">
-                        <FaEdit />
-                      </div>
-
-                      <div className="text-[#000] text-[2rem]">
-                        <RiDeleteBinLine />
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
+                       <div className="text-[#000] text-[2rem]">
+                         <RiDeleteBinLine />
+                       </div>
+                     </div>
+                   </Link>
+                 </div>
+               </div>
+             );
+                })
+              }
             </div>
           );
         })}{" "}
