@@ -69,11 +69,11 @@ const CopyofCreateChapterTitle = () => {
 
   return (
     <>
-      <div className="fixed top-20 left-20 pt-20 pl-10 w-full h-full backdrop-blur-[.1rem] ">
+      <div className="items-center w-full h-full backdrop-blur-[.1rem] ">
         <div className="w-[100%] h-[100vh] pb-50 ">
-          <div className="lg:w-[1080px] ">
+          <div className="lg:w-[1080px] md:w-[768px]">
             {!formSubmitted && (
-              <div className="flex \ border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-[#EBFFE5] lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
+              <div className="flex \ border-[.01rem] drop-shadow-2xl shadow-lg border-black rounded-lg m-auto bg-[#EBFFE5] md:max-w-[500px] lg:max-w-[550px] 2xl:max-h-[672px] 2xl:max-w-[724px] ">
                 <form onSubmit={handleSubmit} className="w-[80%] m-auto py-2 ">
                   <div className="flex items-center py-1 text-black lg:font-bold lg:text-3xl lg:py-0">
                     <p className=" lg:font-bold TeamB_text-shadow   text-[24px] mt-5">

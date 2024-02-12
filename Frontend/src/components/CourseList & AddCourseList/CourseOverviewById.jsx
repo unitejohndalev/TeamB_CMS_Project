@@ -86,7 +86,7 @@ const CourseOverviewById = () => {
 
                   <Link
                   to='/topicpage'
-                    className=" 2xl:rounded-[20px] w-full lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] bg-[#126912]  py-1 text-center text-[.8rem]  lg:p-5 text-white
+                    className=" 2xl:rounded-[20px] w-full lg:flex lg:items-center lg:font-medium lg:text-[1rem] 2xl:text-[24px] bg-[#126912]  py-1 px-4 text-lef text-[.8rem]  lg:p-5 text-white
                       lg:h-[50px] lg:rounded-[1rem]  "
                       
                       >
