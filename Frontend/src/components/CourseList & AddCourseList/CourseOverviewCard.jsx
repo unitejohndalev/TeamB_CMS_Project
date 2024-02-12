@@ -92,6 +92,7 @@ const CourseOverviewCard = () => {
                   <input
                     type="text"
                     className="outline-none font-normal pl-2 text-[1.3rem] w-full h-[35px] rounded-md"
+                    placeholder="Search"
                     name="course_title"
                     id=""
                   />
