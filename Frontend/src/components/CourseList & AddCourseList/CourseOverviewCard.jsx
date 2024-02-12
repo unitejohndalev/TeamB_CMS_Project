@@ -76,7 +76,7 @@ const CourseOverviewCard = () => {
                 <span className="text-[2.5rem]">
                   <IoArrowBackCircle />
                 </span>
-                <span className="text-[1rem] pl-1">Back</span>
+               
               </div>
               <div className="lg:font-bold lg:text-[2rem] w-full flex justify-center">
                 <p className="lg:font-bold TeamB_text-shadow">
