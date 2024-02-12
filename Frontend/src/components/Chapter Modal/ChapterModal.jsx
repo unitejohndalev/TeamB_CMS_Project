@@ -2,7 +2,7 @@
 //2/1/2024 junite, created UI Modal for course title edit, completed
 import React from "react";
 
-const ChapterModal = ({ chapterTitle }) => {
+const ChapterModal = ({ chapter_title }) => {
   return (
     <>
       <div className="w-full h-[100vh] pt-[150px] pb-32 backdrop-blur-[.1rem] ">
@@ -17,7 +17,7 @@ const ChapterModal = ({ chapterTitle }) => {
             <input
               type="text"
               className="TeamB_input-style bg-[#BCE8B1] opacity-[50%] uppercase p-2"
-              defaultValue={chapterTitle}
+              defaultValue={chapter_title}
               required={false}
             />
             <div className="pt-8 lg:w-full lg:flex lg:justify-end">
