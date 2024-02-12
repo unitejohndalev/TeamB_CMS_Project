@@ -50,7 +50,7 @@ const PersonalInfo = () => {
   return (
     <>
       {editPersonalInfo && (
-        <div className="container mx-auto p-4 lg:p-8">
+        <div className="container mx-auto p-4 lg:p-0">
           <div className="bg-[#BCE8B1] rounded shadow-md p-8">
             <div className="flex flex-col lg:flex-row justify-center items-center mb-10 gap-y-5 lg:gap-y-0 lg:gap-x-10 lg:w-[99%] lg:m-auto xl:w-[948px]">
               <div className="lg:w-2/6 mb-20">
@@ -122,6 +122,7 @@ const PersonalInfo = () => {
                       className="text-[#4D4141] text-opacity-[53%] absolute z-10 top-0 left-2 text-[.8rem]"
                     >
                       Contact Number
+                      <span class="text-[#FF2626]">*</span>
                     </label>
                     <input
                       className="px-2 TeamB_input-style"

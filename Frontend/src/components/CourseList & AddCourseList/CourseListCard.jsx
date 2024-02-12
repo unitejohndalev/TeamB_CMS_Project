@@ -64,7 +64,7 @@ const CourseListCard = () => {
   };
 
   ///mock data for UI Testing
-  const { courselist } = data;
+  const { course} = courses;
 
   //state for show and hide course edit title component
   const [showEditTitle, setShowEditTitle] = useState(false);
@@ -88,7 +88,7 @@ const CourseListCard = () => {
         <div className="" ref={pageTopRef}>
           <div className="  xl:w-[1244px]  w-[90%] flex mx-auto flex-col lg:center-row lg:w-[80vw] lg:m-auto lg:mt-5 items-center lg:h-full relative gap-5">
             {/*January 15 2024, API connection of frontend to backend can fetch data from the backend*/}
-            <div className="text-black  w-[60vw] lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem]  flex justify-between items-center ">
+            <div className="text-black  w-[55vw] lg:font-bold text-[.8rem] py-5 lg:py-0 lg:text-[2rem]  flex justify-between items-center ">
               <p className=" 2xl:text-[48px] lg:font-bold TeamB_text-shadow   ">
                 Course List
               </p>
@@ -107,14 +107,14 @@ const CourseListCard = () => {
             </div>
             <div className="h-full">
               {/* change to currentCourse for API connection */}
-              {courselist.map((course, idx) => {
+              {courses.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[55vw] mb-4 rounded-md shadow-md">
                     <div className="relative flex px-0 py-0 rounded-md xl:h-[115px]  ">
                       <div className="bg-[#BCE8B1] text-[.8rem] lg:text-[.9rem] flex justify items-center w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
                         <p className="lg:font-medium w-full flex justify-center TeamB_text-shadow">
                           {/* change to course_id for api connection */}
-                          PL00{course.id}
+                          PL00{course.course_id}
                         </p>
                       </div>
 
@@ -124,13 +124,13 @@ const CourseListCard = () => {
                             rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
                       >
                         {/* change to course_title for api connection */}
-                        {course.courseTitle}
+                        {course.course_title}
                       </Link>
 
                       <span
                         onClick={() => {
                           setShowEditTitle((prev) => !prev);
-                          setEditCourseId(course.id);
+                          setEditCourseId(course.course_id);
                         }}
                         className="absolute right-3 flex items-center h-full text-white text-[1.1rem]"
                       >

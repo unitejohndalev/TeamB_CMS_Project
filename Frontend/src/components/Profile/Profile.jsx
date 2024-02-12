@@ -45,7 +45,6 @@ const Profile = () => {
             <span className="text-[2.5rem]">
               <IoArrowBackCircle />
             </span>
-            <span className="text-[1rem] pl-1">Back</span>
           </div>
         </div>
         {/* 1/11/2024 fix nav */}

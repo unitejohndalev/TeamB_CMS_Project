@@ -1,11 +1,10 @@
 package com.teambcmsproject.teambcmsprojectspringboot.model;
 
-
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -19,10 +18,14 @@ public class Chapter {
     private Long chapter_id;
     private String chapter_title;
     private String chapter_date_created;
-//january 30 2024
+    // january 30 2024
 
-    @ManyToOne (cascade = CascadeType.ALL)
-    @JoinColumn(name ="course_id")
+    // february 8 2024 bug fixed can add chapter inside course
+
+    // MANY TO ONE RELATIONSHIP BETWEEN COURSE AND CHAPTER
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id")
     private Course course;
 
     public Course getCourse() {
@@ -33,6 +36,7 @@ public class Chapter {
         this.course = course;
     }
 
+    // february 8 2024 bug fixed can add chapter inside course
 
     public Long getChapter_id() {
         return this.chapter_id;
@@ -58,5 +62,4 @@ public class Chapter {
         this.chapter_date_created = chapter_date_created;
     }
 
-  
 }
