@@ -167,19 +167,18 @@ const CourseListCard = () => {
             )}
             {/* onClick={() => setShowCreateCourse((prev) => !prev)} */}
 
-            <div
-              className=" flex items-center justify-center h-[10vh] lg:w-[100%] lg:lg:h-[10vh]  rounded-l-md rounded-r-md"
-              onClick={() => setShowCreateCourse((prev) => !prev)}
-            >
-              <button className="w-[25%] flex">
-                <div className="bg-[#BCE8B1] w-[40%]  flex items-center justify-center h-[8vh] rounded-l-sm lg:rounded-l-md">
-                  <IoAdd className="lg:text-[2rem] text-white" />
-                </div>
-                <span className="lg:font-bold text-white w-[100%] flex justify-center text-[.9rem] items-center h-[8vh] TeamB_text-shadow bg-[#126912] rounded-r-sm lg:rounded-r-md">
-                  Add New Course
-                </span>
-              </button>
-            </div>
+            <div className="flex items-center justify-center lg:justify-start h-[8vh] lg:h-auto lg:w-auto rounded-l-md rounded-r-md" onClick={() => setShowCreateCourse((prev) => !prev)}>
+            <button className="flex items-center bg-[#BCE8B1] rounded-l-md lg:rounded-l-none text-white text-base lg:text-lg font-bold shadow-md rounded">
+    <div className="bg-[#BCE8B1] w-[8ch] flex items-center justify-center h-[8vh] rounded">
+      <IoAdd className="lg:text-[2rem] text-white mr-2 rounded-l-sm lg:rounded-l-md" />
+    </div>
+    <span className="lg:font-bold text-white flex justify-center items-center h-[8vh]  px-4 lg:px-6 text-[.9rem] lg:text-lg xl:text-xl whitespace-nowrap TeamB_text-shadow bg-[#126912] rounded-r-sm lg:rounded-r-md">
+  Add New Course
+</span>
+
+
+  </button>
+</div>
 
             <div className="absolute ">
               <div className="lg:w-[1080px] ">
