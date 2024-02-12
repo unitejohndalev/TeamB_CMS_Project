@@ -24,7 +24,7 @@ const CopyofCreateNewCourse = () => {
   const { showCreateCourse, setShowCreateCourse } = useContext(CourseContext);
 
   //destructu course
-  const { course_title, course_description, chapters } = course;
+  const { course_title, course_description } = course;
 
   const handleInputChange = (e, chapterIndex) => {
     const { name, value } = e.target;
