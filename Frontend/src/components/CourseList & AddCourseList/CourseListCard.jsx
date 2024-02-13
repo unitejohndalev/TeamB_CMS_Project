@@ -64,7 +64,7 @@ const CourseListCard = () => {
   };
 
   ///mock data for UI Testing
-  const { course} = courses;
+  const { course } = courses;
 
   //state for show and hide course edit title component
   const [showEditTitle, setShowEditTitle] = useState(false);
@@ -107,12 +107,12 @@ const CourseListCard = () => {
             </div>
             <div className="h-full">
               {/* change to currentCourse for API connection */}
-              {courses.map((course, idx) => {
+              {currentCourse.map((course, idx) => {
                 return (
                   <div key={idx} className="w-[55vw] mb-4 rounded-md shadow-md">
                     <div className="relative flex px-0 py-0 rounded-md xl:h-[115px]  ">
                       <div className="bg-[#BCE8B1] text-[.8rem] lg:text-[.9rem] flex justify items-center w-[30%] lg:w-[20%] lg:p-5 rounded-l-sm lg:rounded-l-md">
-                        <p className="lg:font-medium w-full flex justify-center TeamB_text-shadow">
+                        <p className="flex justify-center w-full lg:font-medium TeamB_text-shadow">
                           {/* change to course_id for api connection */}
                           PL00{course.course_id}
                         </p>
@@ -121,8 +121,7 @@ const CourseListCard = () => {
                       <Link
                         to={`/courseoverview/${course.course_id}`}
                         className="text-white TeamB_text-shadow  lg:font-bold text-[.8rem] py-1 lg:py-0 lg:text-[.9rem] w-full py-0 px-4 flex justify items-center
-                            rounded-r-sm lg:rounded-r-md 	bg-[#126912] "
-                      >
+                            rounded-r-sm lg:rounded-r-md 	bg-[#126912] ">
                         {/* change to course_title for api connection */}
                         {course.course_title}
                       </Link>
@@ -132,8 +131,7 @@ const CourseListCard = () => {
                           setShowEditTitle((prev) => !prev);
                           setEditCourseId(course.course_id);
                         }}
-                        className="absolute right-3 flex items-center h-full text-white text-[1.1rem]"
-                      >
+                        className="absolute right-3 flex items-center h-full text-white text-[1.1rem]">
                         <FaEdit />
                       </span>
                       {showEditTitle && editCourseId === course.id && (
@@ -154,7 +152,7 @@ const CourseListCard = () => {
               })}
             </div>
 
-            {courses.length < 5 ? (
+            {courses.length < 4 ? (
               <></>
             ) : (
               <Stack spacing={2} className="">
@@ -167,18 +165,18 @@ const CourseListCard = () => {
             )}
             {/* onClick={() => setShowCreateCourse((prev) => !prev)} */}
 
-            <div className="flex items-center justify-center lg:justify-start h-[8vh] lg:h-auto lg:w-auto rounded-l-md rounded-r-md" onClick={() => setShowCreateCourse((prev) => !prev)}>
-            <button className="flex items-center bg-[#BCE8B1] rounded-l-md lg:rounded-l-none text-white text-base lg:text-lg font-bold shadow-md rounded">
-    <div className="bg-[#BCE8B1] w-[8ch] flex items-center justify-center h-[8vh] rounded">
-      <IoAdd className="lg:text-[2rem] text-white mr-2 rounded-l-sm lg:rounded-l-md" />
-    </div>
-    <span className="lg:font-bold text-white flex justify-center items-center h-[8vh]  px-4 lg:px-6 text-[.9rem] lg:text-lg xl:text-xl whitespace-nowrap TeamB_text-shadow bg-[#126912] rounded-r-sm lg:rounded-r-md">
-  Add New Course
-</span>
-
-
-  </button>
-</div>
+            <div
+              className="flex items-center justify-center lg:justify-start h-[8vh] lg:h-auto lg:w-auto rounded-l-md rounded-r-md"
+              onClick={() => setShowCreateCourse((prev) => !prev)}>
+              <button className="flex items-center bg-[#BCE8B1] rounded-l-md lg:rounded-l-none text-white text-base lg:text-lg font-bold shadow-md rounded">
+                <div className="bg-[#BCE8B1] w-[8ch] flex items-center justify-center h-[8vh] rounded">
+                  <IoAdd className="lg:text-[2rem] text-white mr-2 rounded-l-sm lg:rounded-l-md" />
+                </div>
+                <span className="lg:font-bold text-white flex justify-center items-center h-[8vh]  px-4 lg:px-6 text-[.9rem] lg:text-lg xl:text-xl whitespace-nowrap TeamB_text-shadow bg-[#126912] rounded-r-sm lg:rounded-r-md">
+                  Add New Course
+                </span>
+              </button>
+            </div>
 
             <div className="absolute ">
               <div className="lg:w-[1080px] ">
