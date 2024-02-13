@@ -17,18 +17,16 @@ public class TopicService {
      @Autowired
     private TopicRepository topicRepository;
    
-    //GET ALL TOPICS
     public List<Topic> getAllTopic() {
         return topicRepository.findAll();
     }
-    
-    //get topics by id
+
+    @SuppressWarnings("null")
     public Topic getTopicById(Long topic_id) {
         return topicRepository.findById(topic_id)
         .orElseThrow(() -> new TopicNotFoundException(topic_id));
     }
 
-    //adding new topic
     public Topic saveTopic(Topic newTopic) {
         System.out.println(newTopic.getTopic_id());
         System.out.println(newTopic.getTopic_title());
@@ -38,7 +36,7 @@ public class TopicService {
         return topicRepository.save(newTopic);
     }
 
-    //update topic by id
+    @SuppressWarnings("null")
     public Topic updateTopic (@RequestBody Topic newTopic, @PathVariable Long topic_id){
       return  topicRepository.findById(topic_id)
       .map(topic ->{
@@ -50,8 +48,8 @@ public class TopicService {
         
       }).orElseThrow(()-> new TopicNotFoundException(topic_id));
   }
-    
-    //delete topic by id
+
+    @SuppressWarnings("null")
     public String deleteTopic(@PathVariable Long topic_id){
         if(!topicRepository.existsById(topic_id)){
             throw new TopicNotFoundException(topic_id);
